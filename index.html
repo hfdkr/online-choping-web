@@ -5,14 +5,144 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <title>My Project</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Volkhov:wght@400;700&display=swap"
+        rel="stylesheet">
+    <title>Online Shopping</title>
+    <style type="text/tailwindcss">
+        @theme {
+            /* colors */
+            --color-heather-grey: #484848;
+            --color-grey-700: #E0E0E0;
+            --color-black: #000000;
+            --color-white-900: #FFFFFF;
+            --color-white-700: #FAFAFA;
+            --color-red-500: #FF4646;
+            /* fonts */
+            --font-poppins: "Poppins", sans-serif;
+            --font-volkhov: "Volkhov", serif;
+        }
+
+        .header {
+            @apply flex items-center justify-between px-10 py-5 max-w-[1240px] mx-auto;
+        }
+        .nav-name {
+            @apply font-poppins text-[16px] leading-[100%] text-heather-grey hover:text-black;
+        }
+        .navbar {
+            @apply flex items-center gap-8;
+        }
+        .btn-black {
+            @apply inline-block bg-black hover:bg-black/70 rounded-[10px] cursor-pointer font-poppins leading-[100%] text-white-900 transition-colors;
+        }
+        .hero-card {
+            @apply bg-grey-700 rounded-[10px] overflow-hidden flex items-end justify-center;
+        }
+        .outline-text {
+            -webkit-text-stroke: 1.5px var(--color-heather-grey);
+            color: transparent;
+        }
+        .float-btn {
+            @apply grid place-items-center size-[45px] rounded-[10px] cursor-pointer;
+        }
+    </style>
 </head>
 
-<body>
-    <header>
-        
+<body class="bg-white-900">
+    <!-- Header -->
+    <header class="header">
+        <!-- Logo -->
+        <h1 class="font-volkhov text-[52px] leading-[100%] text-heather-grey">FASCO</h1>
+
+        <!-- Navigation -->
+        <nav class="navbar">
+            <a href="#" class="nav-name">Home</a>
+            <a href="#" class="nav-name">Deals</a>
+            <a href="#" class="nav-name">New Arrivals</a>
+            <a href="#" class="nav-name">Packages</a>
+            <a href="#" class="nav-name">Sign in</a>
+            <a href="#" class="btn-black py-[20px] px-[45px] text-[16px] shadow-[0_15px_25px_rgba(0,0,0,0.2)]">Sign
+                Up</a>
+        </nav>
     </header>
-    <main></main>
+
+    <main>
+        <!-- Section 1: hero -->
+        <section class="max-w-[1240px] mx-auto px-10 py-5">
+            <div class="grid grid-cols-1 grid-cols-[1fr_1.1fr_1fr] gap-6 items-stretch">
+
+                <!-- Left card -->
+                <div class="hero-card h-[420px] h-[600px]">
+                    <img class="h-[90%] w-full object-contain object-bottom" src="./assets/fasco-icon-main1.svg"
+                        alt="Man in grey sweater sitting on a wooden crate">
+                </div>
+
+                <!-- Center column -->
+                <div class="flex flex-col justify-between gap-6 h-[600px]">
+                    <div class="h-[150px] rounded-[10px] overflow-hidden bg-grey-700">
+                        <img class="size-full object-cover object-top" src="./assets/fasco-icon-main2.svg"
+                            alt="Four women posing together">
+                    </div>
+
+                    <div class="flex flex-col items-center text-center">
+                        <h2 class="font-poppins font-medium text-[72px] leading-[100%] text-heather-grey">ULTIMATE</h2>
+                        <p class="outline-text font-poppins font-medium text-[130px] leading-[100%]">SALE</p>
+                        <p class="font-poppins text-[14px] tracking-[0.3em] text-heather-grey mt-4">NEW COLLECTION</p>
+                        <a href="#"
+                            class="btn-black mt-6 py-[18px] px-[44px] text-[14px] shadow-[0_15px_25px_rgba(0,0,0,0.2)]">SHOP
+                            NOW</a>
+                    </div>
+
+                    <div class="h-[150px] rounded-[10px] overflow-hidden">
+                        <img class="size-full object-cover object-top" src="./assets/fasco-icon-main3.svg"
+                            alt="Two smiling women">
+                    </div>
+                </div>
+
+                <!-- Right card -->
+                <div class="hero-card h-[420px] h-[600px]">
+                    <img class="h-[90%] w-full object-contain object-bottom" src="./assets/fasco-icon-main4.svg"
+                        alt="Man in rust turtleneck sitting on a stool">
+                </div>
+                <!-- Floating actions -->
+                <section class="">
+                    <div class="grid grid-cols-1 grid-cols-[1fr_1.1fr_1fr] gap-6 items-stretch">
+                        <!-- Floating actions -->
+                        <div class="absolute right-10 bottom-5 flex items-center gap-4">
+                            <!-- Cart -->
+                            <button type="button" aria-label="Open cart"
+                                class="grid place-items-center size-[45px] rounded-[10px] bg-black cursor-pointer">
+                                <img src="./assets/icon-shoping.svg" alt="" class="size-5">
+                            </button>
+
+                            <!-- Back to top -->
+                            <a href="#" aria-label="Back to top"
+                                class="grid place-items-center size-[45px] rounded-full bg-white-900 border border-black">
+                                <img class="w-[17px] h-[26px]" src="./assets/icon-top.svg" alt="">
+                            </a>
+                        </div>
+
+                    </div>
+                </section>
+            </div>
+            
+        </section>
+
+        <!-- Section 2: brand logos -->
+        <section class="max-w-[1240px] mx-auto px-10 py-12">
+            <ul class="flex flex-wrap items-center justify-between gap-x-10 gap-y-6 text-black">
+                <li class="">CHANEL</li>
+                <li class="font-poppins text-[18px]">LOUIS VUITTON</li>
+                <li class="font-volkhov font-bold text-[32px]">PRADA</li>
+                <li class="font-poppins text-[26px] tracking-[-0.02em]">Calvin Klein</li>
+                <li class="font-poppins font-semibold text-[26px] tracking-[0.04em]">DENIM</li>
+            </ul>
+        </section>
+    </main>
+
+
     <footer></footer>
 </body>
 

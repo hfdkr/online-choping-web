@@ -9,6 +9,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.cdnfonts.com/css/digital-numbers" rel="stylesheet">
 
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Volkhov:wght@400;700&family=Share+Tech+Mono&display=swap"
@@ -16,6 +17,7 @@
 
     <title>Online Shopping</title>
     <style type="text/tailwindcss">
+        @import "tailwindcss";
         @theme {
             /* colors */
             --color-heather-grey: #484848;
@@ -28,7 +30,7 @@
             /* fonts */
             --font-poppins: "Poppins", sans-serif;
             --font-volkhov: "Volkhov", serif;
-            --font-digital: "Share Tech Mono", monospace;
+            --font-digital: "Digital Numbers", sans-serif;
         }
 
         .header {
@@ -62,6 +64,9 @@
         .div-span{
             @apply flex flex-col items-center bg-white-900 py-[12px] px-[22px] shadow-[0px_4px_14px_1px_#00000029] rounded-[10px];
         }
+        .button-click{
+            @apply flex h-[48px] w-[48px] items-center justify-center rounded-full border border-gray-300 bg-white shadow-md hover:bg-gray-100;
+        }
     </style>
 </head>
 
@@ -88,7 +93,7 @@
             </a>
         </nav>
     </header>
-
+    <!-- main  -->
     <main>
         <section class="mx-auto max-w-[1040px] px-10 py-5">
             <div class="relative grid grid-cols-[1fr_1.1fr_1fr] items-stretch gap-6">
@@ -131,15 +136,16 @@
                 </div>
             </div>
         </section>
-        <div class="fixed right-6 bottom-[22%] flex items-center gap-4">
-            <button type="button" aria-label="Open cart"
+        <!-- image shop and return to top  -->
+        <div class="fixed right-6 bottom-[22%] flex items-center gap-4 z-999 blur-[0.6px] hover:blur-none">
+            <button type="button"
                 class="grid place-items-center size-[45px] rounded-[10px] bg-black cursor-pointer">
-                <img src="./assets/icon-shoping.svg" alt="" class="size-5" />
+                <img src="./assets/icon-shoping.svg" alt="icon shoping" class="size-5" />
             </button>
 
-            <a href="#" aria-label="Back to top"
+            <a href="#"
                 class="grid place-items-center size-[45px] rounded-full bg-white-900 border border-black">
-                <img class="w-[17px] h-[26px]" src="./assets/icon-top.svg" alt="" />
+                <img class="w-[17px] h-[26px]" src="./assets/icon-top.svg" alt="icon return to top" />
             </a>
         </div>
 
@@ -164,7 +170,7 @@
             </ul>
         </section>
         <!-- section 3: -->
-        <section class="px-10 py-5 bg-gradient-to-b from-[#FFFFFF] to-[#FAFAFA]">
+        <section class="pl-10 py-5 bg-gradient-to-b from-[#FFFFFF] to-[#FAFAFA]">
             <div class="flex justify-between">
                 <div class="max-w-[444px]">
                     <div class="mb-[50px]">
@@ -208,28 +214,21 @@
                         <div class="flex items-start gap-5 w-max">
 
                             <!-- Scroll arrows on the left of Image 1 -->
-                            <div class="absolute top-1/2 -left-12 z-10 flex flex-col gap-3 -translate-y-1/2">
+                            <div class="absolute top-[560px] -left-29 z-10 flex gap-3 -translate-y-1/2">
 
                                 <!-- Scroll left -->
-                                <button type="button"
-                                    onclick="document.getElementById('deals-scroll').scrollBy({ left: -200, behavior: 'smooth' })"
-                                    class="flex h-10 w-10 items-center justify-center rounded-full border border-gray-300 bg-white shadow-md hover:bg-gray-100"
-                                    aria-label="Scroll left">
+                                <button type="button" class="button-click">
                                     <img src="./assets/icon-left.svg" alt="" class="h-5 w-5">
                                 </button>
 
                                 <!-- Scroll right -->
-                                <button type="button"
-                                    onclick="document.getElementById('deals-scroll').scrollBy({ left: 200, behavior: 'smooth' })"
-                                    class="flex h-10 w-10 items-center justify-center rounded-full border border-gray-300 bg-white shadow-md hover:bg-gray-100"
-                                    aria-label="Scroll right">
+                                <button type="button" class="button-click">
                                     <img src="./assets/icon-right.svg" alt="" class="h-5 w-5">
                                 </button>
-
                             </div>
 
                             <!-- Image 1: big -->
-                            <div class="w-[280px] shrink-0 relative">
+                            <div class="w-[404px] shrink-0 relative">
                                 <img src="./assets/fasco-icon-section1.svg" alt="Fashion model 1"
                                     class="w-full h-[582px] object-cover">
 
@@ -251,15 +250,15 @@
                             </div>
 
                             <!-- Image 2 -->
-                            <div class="w-[180px] shrink-0">
+                            <div class="w-[372px] shrink-0">
                                 <img src="./assets/fasco-icon-section2.svg" alt="Fashion model 2"
                                     class="w-full h-[486px] object-cover">
                             </div>
 
                             <!-- Image 3 -->
-                            <div class="w-[180px] shrink-0">
+                            <div class="w-[372px]">
                                 <img src="./assets/fasco-icon-section3.svg" alt="Fashion model 3"
-                                    class="w-full h-[350px] object-contain">
+                                    class="w-[372px] h-[350px]">
                             </div>
 
                         </div>
@@ -271,7 +270,7 @@
                             class="w-4 h-4 rounded-full border border-black bg-white flex items-center justify-center">
                             <span class="w-2 h-2 rounded-full bg-black"></span>
                         </span>
-                        <span class="w-3 h-3 rounded-full bg-[#D9D9D9]"></span>
+                        <span class="w-3 h-3 rounded-full bg-[#D9D9D9] "></span>
                         <span class="w-3 h-3 rounded-full bg-[#D9D9D9]"></span>
                         <span class="w-3 h-3 rounded-full bg-[#D9D9D9]"></span>
                     </div>
@@ -281,9 +280,12 @@
             </div>
 
         </section>
+        <section class="my-[150px]">
+            <div>
+                <h3 class="font-volkhov text-[46px] leading-[100%] text-heather-grey">New Arrivals</h3>
+            </div>
+        </section>
     </main>
-
-
     <footer></footer>
 </body>
 

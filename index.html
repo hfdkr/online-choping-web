@@ -67,6 +67,33 @@
         .button-click{
             @apply flex h-[48px] w-[48px] items-center justify-center rounded-full border border-gray-300 bg-white shadow-md hover:bg-gray-100;
         }
+        .button-arrival{
+            @apply w-[207px] h-[56px] bg-white-700 rounded-[10px] text-[16px] font-poppins leading-[100%] text-grey-900 cursor-pointer;
+        }
+        .button-shadow{
+            @apply bg-black rounded-[10px] w-[207px] h-[56px] shadow-[0_20px_35px_0_#00000026] text-white-900 text-[16px] font-poppins leading-[100%] items-center cursor-pointer;
+        }
+        .div-cards{
+            @apply grid grid-cols-3 grid-rows-2 gap-4;
+        }
+        .div-spanCard{
+            @apply flex justify-between mt-[12px];
+        }
+        .card{
+            @apply bg-white-900 p-4;
+        }
+        .text-card{
+            @apply text-[20px] font-poppins leading-[100%] text-heather-grey font-medium;
+        }
+        .span-text{
+            @apply font-poppins text-[12px] leading-[100%] text-grey-900 font-medium;
+        }
+        .span-prix{
+            @apply font-poppins text-[25px] leading-[20px] tracking-[-1%] text-grey-900 font-medium;
+        }
+        .span-sold{
+            @apply text-red-500 font-poppins text-[12px] leading-[20px] tracking-[-1%];
+        }
     </style>
 </head>
 
@@ -138,13 +165,11 @@
         </section>
         <!-- image shop and return to top  -->
         <div class="fixed right-6 bottom-[22%] flex items-center gap-4 z-999 blur-[0.6px] hover:blur-none">
-            <button type="button"
-                class="grid place-items-center size-[45px] rounded-[10px] bg-black cursor-pointer">
+            <button type="button" class="grid place-items-center size-[45px] rounded-[10px] bg-black cursor-pointer">
                 <img src="./assets/icon-shoping.svg" alt="icon shoping" class="size-5" />
             </button>
 
-            <a href="#"
-                class="grid place-items-center size-[45px] rounded-full bg-white-900 border border-black">
+            <a href="#" class="grid place-items-center size-[45px] rounded-full bg-white-900 border border-black">
                 <img class="w-[17px] h-[26px]" src="./assets/icon-top.svg" alt="icon return to top" />
             </a>
         </div>
@@ -170,7 +195,7 @@
             </ul>
         </section>
         <!-- section 3: -->
-        <section class="pl-10 py-5 bg-gradient-to-b from-[#FFFFFF] to-[#FAFAFA]">
+        <section class="space-y-[150px] pl-36 py-5 bg-gradient-to-b from-[#FFFFFF] to-[#FAFAFA]">
             <div class="flex justify-between">
                 <div class="max-w-[444px]">
                     <div class="mb-[50px]">
@@ -228,7 +253,7 @@
                             </div>
 
                             <!-- Image 1: big -->
-                            <div class="w-[404px] shrink-0 relative">
+                            <div class=" shrink-0 relative">
                                 <img src="./assets/fasco-icon-section1.svg" alt="Fashion model 1"
                                     class="w-full h-[582px] object-cover">
 
@@ -250,29 +275,29 @@
                             </div>
 
                             <!-- Image 2 -->
-                            <div class="w-[372px] shrink-0">
+                            <div class="relative shrink-0">
                                 <img src="./assets/fasco-icon-section2.svg" alt="Fashion model 2"
                                     class="w-full h-[486px] object-cover">
+                                <div>
+                                    <!-- Scroll indicators under Image 2 -->
+                                    <div class="absolute -bottom-[60px] left-[10px] flex items-center gap-2">
+                                        <span
+                                            class="w-4 h-4 rounded-full border border-black bg-white flex items-center justify-center">
+                                            <span class="w-2 h-2 rounded-full bg-black"></span>
+                                        </span>
+                                        <span class="w-3 h-3 rounded-full bg-[#D9D9D9] "></span>
+                                        <span class="w-3 h-3 rounded-full bg-[#D9D9D9]"></span>
+                                        <span class="w-3 h-3 rounded-full bg-[#D9D9D9]"></span>
+                                    </div>
+                                </div>
                             </div>
 
                             <!-- Image 3 -->
-                            <div class="w-[372px]">
-                                <img src="./assets/fasco-icon-section3.svg" alt="Fashion model 3"
-                                    class="w-[372px] h-[350px]">
+                            <div class=" 30% OFF ">
+                                <img src="./assets/fasco-icon-section3.svg" alt="Fashion model 3" class="h-[350px]">
                             </div>
 
                         </div>
-                    </div>
-
-                    <!-- Scroll indicators under Image 2 -->
-                    <div class="absolute bottom-[40px] left-[300px] flex items-center gap-2">
-                        <span
-                            class="w-4 h-4 rounded-full border border-black bg-white flex items-center justify-center">
-                            <span class="w-2 h-2 rounded-full bg-black"></span>
-                        </span>
-                        <span class="w-3 h-3 rounded-full bg-[#D9D9D9] "></span>
-                        <span class="w-3 h-3 rounded-full bg-[#D9D9D9]"></span>
-                        <span class="w-3 h-3 rounded-full bg-[#D9D9D9]"></span>
                     </div>
 
                 </div>
@@ -280,10 +305,244 @@
             </div>
 
         </section>
-        <section class="my-[150px]">
-            <div>
-                <h3 class="font-volkhov text-[46px] leading-[100%] text-heather-grey">New Arrivals</h3>
+        <section class=" px-10 py-5 bg-white-700">
+            <div class="mt-[150px] mx-auto items-center max-w-[1040px]">
+                <div class="items-center flex flex-col justify-center">
+                    <div class="max-w-[614px] text-center space-y-[20px]">
+                        <h3 class="font-volkhov text-[46px] leading-[100%] text-heather-grey">New Arrivals</h3>
+                        <p class="font-poppins text-[16px] leading-[26px] text-grey-900">Lorem ipsum dolor sit amet,
+                            consectetur adipiscing elit. Scelerisque duis ultrices sollicitudin aliquam sem. Scelerisque
+                            duis ultrices sollicitudin</p>
+                    </div>
+
+                </div>
+                <div class="flex justify-between gap-[30px] my-[50px]">
+                    <button class="button-arrival">Men’s Fashion</button>
+                    <button class="button-shadow">Women’s Fashion</button>
+                    <button class="button-arrival">Women Accessories</button>
+                    <button class="button-arrival">Men Accessories</button>
+                    <button class="button-arrival">Discount Deals</button>
+                </div>
+                <div class="div-cards">
+                    <!-- card 1 -->
+                    <div class="card">
+                        <div>
+                            <img src="./assets/fasco-icon-section2-1.svg" alt="">
+                        </div>
+                        <div class="div-spanCard">
+                            <div>
+                                <h4 class="text-card">Shiny Dress</h4>
+                                <span class="text-grey-900">Al Karam</span>
+                            </div>
+                            <div class="flex">
+                                <span><img src="./assets/icon-star.svg" alt="icon-star"></span>
+                                <span><img src="./assets/icon-star.svg" alt="icon-star"></span>
+                                <span><img src="./assets/icon-star.svg" alt="icon-star"></span>
+                                <span><img src="./assets/icon-star.svg" alt="icon-star"></span>
+                                <span><img src="./assets/icon-star.svg" alt="icon-star"></span>
+                            </div>
+
+                        </div>
+                        <div class="my-[25px]">
+                            <span class="span-text">(4.1k)
+                                Customer Reviews</span>
+                        </div>
+
+                        <div class="flex justify-between">
+                            <span class="span-prix">$95.50</span>
+                            <span class="span-sold">Almost
+                                Sold Out</span>
+                        </div>
+                    </div>
+                    <!-- card 2 -->
+                    <div class="card">
+                        <div>
+                            <img src="./assets/fasco-icon-section2-2.svg" alt="">
+                        </div>
+                        <div class="div-spanCard">
+                            <div>
+                                <h4 class="text-card">Long Dress</h4>
+                                <span class="text-grey-900">Al Karam</span>
+                            </div>
+                            <!-- div 5 star -->
+                            <div class="flex">
+                                <span><img src="./assets/icon-star.svg" alt="icon-star"></span>
+                                <span><img src="./assets/icon-star.svg" alt="icon-star"></span>
+                                <span><img src="./assets/icon-star.svg" alt="icon-star"></span>
+                                <span><img src="./assets/icon-star.svg" alt="icon-star"></span>
+                                <span><img src="./assets/icon-star.svg" alt="icon-star"></span>
+                            </div>
+
+                        </div>
+                        <div class="my-[25px]">
+                            <span class="span-text">(4.1k)
+                                Customer Reviews</span>
+                        </div>
+
+                        <div class="flex justify-between">
+                            <span class="span-prix">$95.50</span>
+                            <span class="span-sold">Almost
+                                Sold Out</span>
+                        </div>
+                    </div>
+                    <!-- card 3 -->
+                    <div class="card">
+                        <div>
+                            <img src="./assets/fasco-icon-section2-3.svg" alt="">
+                        </div>
+                        <div class="div-spanCard">
+                            <div>
+                                <h4 class="text-card">Full Sweater</h4>
+                                <span class="text-grey-900">Al Karam</span>
+                            </div>
+                            <!-- div 5 star -->
+                            <div class="flex">
+                                <span><img src="./assets/icon-star.svg" alt="icon-star"></span>
+                                <span><img src="./assets/icon-star.svg" alt="icon-star"></span>
+                                <span><img src="./assets/icon-star.svg" alt="icon-star"></span>
+                                <span><img src="./assets/icon-star.svg" alt="icon-star"></span>
+                                <span><img src="./assets/icon-star.svg" alt="icon-star"></span>
+                            </div>
+
+                        </div>
+                        <div class="my-[25px]">
+                            <span class="span-text">(4.1k)
+                                Customer Reviews</span>
+                        </div>
+
+                        <div class="flex justify-between">
+                            <span class="span-prix">$95.50</span>
+                            <span class="span-sold">Almost
+                                Sold Out</span>
+                        </div>
+                    </div>
+                    <!-- card 4 -->
+                    <div class="card">
+                        <div>
+                            <img src="./assets/fasco-icon-section2-4.svg" alt="">
+                        </div>
+                        <div class="div-spanCard">
+                            <div>
+                                <h4 class="text-card">White Dress</h4>
+                                <span class="text-grey-900">Al Karam</span>
+                            </div>
+                            <!-- div 5 star -->
+                            <div class="flex">
+                                <span><img src="./assets/icon-star.svg" alt="icon-star"></span>
+                                <span><img src="./assets/icon-star.svg" alt="icon-star"></span>
+                                <span><img src="./assets/icon-star.svg" alt="icon-star"></span>
+                                <span><img src="./assets/icon-star.svg" alt="icon-star"></span>
+                                <span><img src="./assets/icon-star.svg" alt="icon-star"></span>
+                            </div>
+
+                        </div>
+                        <div class="my-[25px]">
+                            <span class="span-text">(4.1k)
+                                Customer Reviews</span>
+                        </div>
+
+                        <div class="flex justify-between">
+                            <span class="span-prix">$95.50</span>
+                            <span class="span-sold">Almost
+                                Sold Out</span>
+                        </div>
+                    </div>
+                    <!-- card 5 -->
+                    <div class="card">
+                        <div>
+                            <img src="./assets/fasco-icon-section2-5.svg" alt="">
+                        </div>
+                        <div class="div-spanCard">
+                            <div>
+                                <h4 class="text-card">Colorful Dress</h4>
+                                <span class="text-grey-900">Al Karam</span>
+                            </div>
+                            <!-- div 5 star -->
+                            <div class="flex">
+                                <span><img src="./assets/icon-star.svg" alt="icon-star"></span>
+                                <span><img src="./assets/icon-star.svg" alt="icon-star"></span>
+                                <span><img src="./assets/icon-star.svg" alt="icon-star"></span>
+                                <span><img src="./assets/icon-star.svg" alt="icon-star"></span>
+                                <span><img src="./assets/icon-star.svg" alt="icon-star"></span>
+                            </div>
+
+                        </div>
+                        <div class="my-[25px]">
+                            <span class="span-text">(4.1k) Customer Reviews</span>
+                        </div>
+
+                        <div class="flex justify-between">
+                            <span class="span-prix">$95.50</span>
+                            <span class="span-sold">Almost Sold Out</span>
+                        </div>
+                    </div>
+                    <!-- card 6 -->
+                    <div class="card">
+                        <div>
+                            <img src="./assets/fasco-icon-section2-6.svg" alt="">
+                        </div>
+                        <div class="div-spanCard">
+                            <div>
+                                <h4 class="text-card">White Shirt</h4>
+                                <span class="text-grey-900">Al Karam</span>
+                            </div>
+                            <!-- div 5 star -->
+                            <div class="flex">
+                                <span><img src="./assets/icon-star.svg" alt="icon-star"></span>
+                                <span><img src="./assets/icon-star.svg" alt="icon-star"></span>
+                                <span><img src="./assets/icon-star.svg" alt="icon-star"></span>
+                                <span><img src="./assets/icon-star.svg" alt="icon-star"></span>
+                                <span><img src="./assets/icon-star.svg" alt="icon-star"></span>
+                            </div>
+
+                        </div>
+                        <div class="my-[25px]">
+                            <span class="span-text">(4.1k) Customer Reviews</span>
+                        </div>
+
+                        <div class="flex justify-between">
+                            <span class="span-prix">$95.50</span>
+                            <span class="span-sold">Almost Sold Out</span>
+                        </div>
+                    </div>
+                </div>
+
             </div>
+            <button class="mx-auto mt-[50px] block w-[207px] h-[56px] text-center bg-black text-white rounded-[10px]">
+                View More
+            </button>
+        </section>
+        <section>
+            <section class="relative mx-auto w-full max-w-[560px]">
+
+                <!-- Model image -->
+                <img src="./assets/fasco-icon-section-3.svg" class="w-full h-auto" alt="Fashion model">
+
+                <!-- Flat Cap (Right) -->
+                <div class="absolute top-[0%] right-0 flex items-center">
+                    <span class="w-[60px] border-t border-black"></span>
+                    <span class="bg-white border border-black px-5 py-2 text-sm whitespace-nowrap">
+                        Flat Cap
+                    </span>
+                </div>
+
+                <!-- Suspender (Left) -->
+                <div class="absolute top-[28%] left-0 flex items-center">
+                    <span class="bg-white border border-black px-5 py-2 text-sm whitespace-nowrap">
+                        Suspender
+                    </span>
+                    <span class="w-[80px] border-t border-black"></span>
+                </div>
+
+                <!-- Hugo Boss (Left) -->
+                <div class="absolute top-[55%] left-0 flex items-center">
+                    <span class="bg-white border border-black px-5 py-2 text-sm whitespace-nowrap">
+                        Hugo Boss
+                    </span>
+                    <span class="w-[80px] border-t border-black"></span>
+                </div>
+
+            </section>
         </section>
     </main>
     <footer></footer>

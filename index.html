@@ -94,6 +94,24 @@
         .span-sold{
             @apply text-red-500 font-poppins text-[12px] leading-[20px] tracking-[-1%];
         }
+        .span-quality{
+            @apply whitespace-nowrap font-poppins font-medium text-[20px] leading-[100%] text-heather-grey;}
+        .span-crafter{
+            @apply whitespace-nowrap font-poppins text-[12px] leading-[26px] text-heather-grey;
+        }
+        /* auto scroll card image  */
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-30%);
+            }
+        }
+        .auto-scroll {
+            animation: scroll 15s linear infinite alternate;
+        }
+
     </style>
 </head>
 
@@ -305,6 +323,7 @@
             </div>
 
         </section>
+        <!-- section 4: -->
         <section class=" px-10 py-5 bg-white-700">
             <div class="mt-[150px] mx-auto items-center max-w-[1040px]">
                 <div class="items-center flex flex-col justify-center">
@@ -508,42 +527,127 @@
                 </div>
 
             </div>
-            <button class="mx-auto mt-[50px] block w-[207px] h-[56px] text-center bg-black text-white rounded-[10px]">
+            <button class="mx-auto mt-[50px] block w-[207px] h-[56px] text-center bg-black hover:bg-black/60 hover:cursor-pointer text-white rounded-[10px]">
                 View More
             </button>
         </section>
         <section>
-            <section class="relative mx-auto w-full max-w-[560px]">
-
-                <!-- Model image -->
-                <img src="./assets/fasco-icon-section-3.svg" class="w-full h-auto" alt="Fashion model">
-
-                <!-- Flat Cap (Right) -->
-                <div class="absolute top-[0%] right-0 flex items-center">
-                    <span class="w-[60px] border-t border-black"></span>
-                    <span class="bg-white border border-black px-5 py-2 text-sm whitespace-nowrap">
-                        Flat Cap
-                    </span>
+            <!-- section 5: -->
+            <section class="relative mx-auto max-w-[1040px]">
+                <div>
                 </div>
+                <div class="flex justify-between gap-[116px] py-[72px] rounded-[5px]">
+                    <!-- card 1: -->
+                    <div class="flex items-center gap-4">
+                        <img src="./assets/icon-section3-1.svg" alt="High Quality icon" class="w-[38px] h-[50px]">
 
-                <!-- Suspender (Left) -->
-                <div class="absolute top-[28%] left-0 flex items-center">
-                    <span class="bg-white border border-black px-5 py-2 text-sm whitespace-nowrap">
-                        Suspender
-                    </span>
-                    <span class="w-[80px] border-t border-black"></span>
+                        <div class="flex flex-col w-fit">
+                            <span class="span-quality">
+                                High Quality
+                            </span>
+
+                            <span class="span-crafter">
+                                Crafted from top materials
+                            </span>
+                        </div>
+                    </div>
+                    <!-- card 2: -->
+                    <div class="flex items-center gap-4">
+                        <img src="./assets/icon-section3-2.svg" alt="High Quality icon" class="w-[38px] h-[50px]">
+
+                        <div class="flex flex-col w-fit">
+                            <span class="span-quality">
+                                High Quality
+                            </span>
+
+                            <span class="span-crafter">
+                                Crafted from top materials
+                            </span>
+                        </div>
+                    </div>
+                    <!-- card 3: -->
+                    <div class="flex items-center gap-4">
+                        <img src="./assets/icon-section3-3.svg" alt="High Quality icon" class="w-[38px] h-[50px]">
+
+                        <div class="flex flex-col w-fit">
+                            <span class="span-quality">
+                                High Quality
+                            </span>
+
+                            <span class="span-crafter">
+                                Crafted from top materials
+                            </span>
+                        </div>
+                    </div>
+                    <!-- card 4: -->
+                    <div class="flex items-center gap-4">
+                        <img src="./assets/icon-section3-4.svg" alt="High Quality icon" class="w-[38px] h-[50px]">
+
+                        <div class="flex flex-col w-fit">
+                            <span class="span-quality">
+                                High Quality
+                            </span>
+
+                            <span class="span-crafter">
+                                Crafted from top materials
+                            </span>
+                        </div>
+                    </div>
                 </div>
-
-                <!-- Hugo Boss (Left) -->
-                <div class="absolute top-[55%] left-0 flex items-center">
-                    <span class="bg-white border border-black px-5 py-2 text-sm whitespace-nowrap">
-                        Hugo Boss
-                    </span>
-                    <span class="w-[80px] border-t border-black"></span>
-                </div>
-
             </section>
-        </section>
+            <!-- section 6: -->
+            <section class="py-5 bg-white-700">
+                <div class="mt-[150px] items-center ">
+                    <div class="items-center mx-auto max-w-[1040px] flex flex-col justify-center">
+                        <div class="max-w-[614px] text-center space-y-[20px]">
+                            <h3 class="font-volkhov text-[46px] leading-[100%] text-heather-grey">Follow Us On Instagram
+                            </h3>
+                            <p class="font-poppins text-[16px] leading-[26px] text-grey-900">Lorem ipsum dolor sit amet,
+                                consectetur adipiscing elit. Scelerisque duis ultrices sollicitudin aliquam sem.
+                                Scelerisque duis ultrices sollicitudin </p>
+                        </div>
+                    </div>
+
+                    <div class="overflow-hidden mt-[100px]">
+                        <div class="flex w-max auto-scroll">
+                            <div>
+                                <img src="./assets/fasco-section4-image-1.svg" alt="Fashion collection card 1">
+                            </div>
+
+                            <!-- card img 2 -->
+                            <div>
+                                <img src="./assets/fasco-section4-image-2.svg" alt="Fashion collection card 2">
+                            </div>
+
+                            <!-- card img 3 -->
+                            <div>
+                                <img src="./assets/fasco-section4-image-3.svg" alt="Fashion collection card 3">
+                            </div>
+
+                            <!-- card img 4 -->
+                            <div>
+                                <img src="./assets/fasco-section4-image-4.svg" alt="Fashion collection card 4">
+                            </div>
+
+                            <!-- card img 5 -->
+                            <div>
+                                <img src="./assets/fasco-section4-image-5.svg" alt="Fashion collection card 5">
+                            </div>
+
+                            <!-- card img 6 -->
+                            <div>
+                                <img src="./assets/fasco-section4-image-6.svg" alt="Fashion collection card 6">
+                            </div>
+
+                            <!-- card img 7 -->
+                            <div>
+                                <img src="./assets/fasco-section4-image-7.svg" alt="Fashion collection card 7">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
     </main>
     <footer></footer>
 </body>

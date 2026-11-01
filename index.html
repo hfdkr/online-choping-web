@@ -22,9 +22,10 @@
         /* colors */
         --color-heather-grey: #484848;
         --color-grey-900: #8a8a8a;
+        --color-grey-600:#767676;
         --color-grey-700: #e0e0e0;
         --color-grey-800: #d9d9d9;
-        --color-black: #000000;
+        --color-black-900: #000000;
         --color-white-900: #ffffff;
         --color-white-700: #fafafa;
         --color-red-500: #ff4646;
@@ -37,13 +38,13 @@
         @apply flex items-center justify-evenly px-10 py-5 max-w-[1240px] mx-auto;
       }
       .nav-name {
-        @apply font-poppins text-[16px] leading-[100%] text-heather-grey hover:text-black;
+        @apply font-poppins text-[16px] leading-[100%] text-heather-grey hover:text-black-900 hover:underline;
       }
       .navbar {
-        @apply flex items-center gap-8;
+        @apply flex items-center;
       }
       .btn-black {
-        @apply inline-block bg-black hover:bg-black/70 rounded-[10px] cursor-pointer font-poppins leading-[100%] text-white-900 transition-colors;
+        @apply inline-block bg-black-900 hover:bg-black-900/70 rounded-[10px] cursor-pointer font-poppins leading-[100%] text-white-900 transition-colors;
       }
       .hero-card {
         @apply bg-grey-700 rounded-[10px] overflow-hidden flex items-end justify-center;
@@ -71,10 +72,10 @@
         @apply flex h-[48px] w-[48px] items-center justify-center rounded-full border border-gray-300 bg-white shadow-md hover:bg-gray-100;
       }
       .button-arrival {
-        @apply w-[207px] h-[56px] bg-white-700 rounded-[10px] text-[16px] font-poppins leading-[100%] text-grey-900 cursor-pointer hover:shadow-[0px_1px_17px_0px_#ff4646] hover:bg-black/90 hover:text-white-900;
+        @apply w-[207px] h-[56px] bg-white-700 rounded-[10px] text-[16px] font-poppins leading-[100%] text-grey-900 cursor-pointer hover:shadow-[0px_1px_17px_0px_#ff4646] hover:bg-black-900/90 hover:text-white-900;
       }
       .button-shadow {
-        @apply bg-black rounded-[10px] w-[207px] h-[56px] shadow-[0_20px_35px_0_#00000026] text-white-900 text-[16px] font-poppins leading-[100%] items-center cursor-pointer hover:shadow-[0px_1px_10px_0px_#ff4646] hover:bg-black/90;
+        @apply bg-black-900 rounded-[10px] w-[207px] h-[56px] shadow-[0_20px_35px_0_#00000026] text-white-900 text-[16px] font-poppins leading-[100%] items-center cursor-pointer hover:shadow-[0px_1px_10px_0px_#ff4646] hover:bg-black-900/90;
       }
       .div-cards {
         @apply grid grid-cols-3 grid-rows-2 gap-4;
@@ -115,6 +116,12 @@
       .auto-scroll {
         animation: scroll 15s linear infinite alternate;
       }
+      .span-picky{
+        @apply absolute z-30 flex items-center justify-center w-[6.43%] h-[6.35%] border border-[#000000] bg-white/60 text-[11px] whitespace-nowrap;
+      }
+      .span-circle{
+        @apply absolute z-30 w-[14px] h-[14px] rounded-full bg-white border-[1.5px] border-[#4a4a4a] -translate-x-1/2 -translate-y-1/2;
+      }
     </style>
 </head>
 
@@ -129,11 +136,11 @@
         </a>
 
         <!-- Navigation -->
-        <nav class="navbar">
-            <a href="#top" class="nav-name">Home</a>
-            <a href="#" class="nav-name">Deals</a>
-            <a href="#" class="nav-name">New Arrivals</a>
-            <a href="#" class="nav-name">Packages</a>
+        <nav class="navbar gap-8">
+            <a href="#home" class="nav-name">Home</a>
+            <a href="#Deals" class="nav-name">Deals</a>
+            <a href="#arrivale" class="nav-name">New Arrivals</a>
+            <a href="#package" class="nav-name">Packages</a>
             <a href="signin.html" class="nav-name">Sign in</a>
             <a href="sign up.html"
                 class="btn-black px-[32px] py-[14px] text-[14px] shadow-[0_12px_20px_rgba(0,0,0,0.18)]">
@@ -186,18 +193,18 @@
         </section>
         <!-- image shop and return to top  -->
         <div class="fixed right-6 bottom-[22%] flex items-center gap-4 z-999 blur-[0.6px] hover:blur-none">
-            <button type="button" class="grid place-items-center size-[45px] rounded-[10px] bg-black cursor-pointer">
+            <button type="button" class="grid place-items-center size-[45px] rounded-[10px] bg-black-900 cursor-pointer">
                 <img src="./assets/icon-shoping.svg" alt="icon shoping" class="size-5" />
             </button>
 
-            <a href="#" class="grid place-items-center size-[45px] rounded-full bg-white-900 border border-black">
+            <a href="#" class="grid place-items-center size-[45px] rounded-full bg-white-900 border border-black-900">
                 <img class="w-[17px] h-[26px]" src="./assets/icon-top.svg" alt="icon return to top" />
             </a>
         </div>
 
         <section class="mt-8 bg-white py-7">
             <ul
-                class="mx-auto flex max-w-[1080px] flex-wrap items-center justify-between gap-x-10 gap-y-6 px-10 text-black">
+                class="mx-auto flex max-w-[1080px] flex-wrap items-center justify-between gap-x-10 gap-y-6 px-10 text-black-900">
                 <li>
                     <img src="./assets/chanel-logo.svg" alt="CHANEL" class="h-6 w-auto" />
                 </li>
@@ -228,7 +235,7 @@
                             Scelerisque duis ultrices sollicitudin aliquam sem. Scelerisque
                             duis ultrices sollicitudin
                         </p>
-                        <button class="bg-black py-[20px] px-[60px] rounded-[10px] leading-[100%] text-white-900">
+                        <button class="bg-black-900 py-[20px] px-[60px] rounded-[10px] leading-[100%] text-white-900">
                             Buy Now
                         </button>
                     </div>
@@ -289,7 +296,7 @@
                                         </h6>
                                     </div>
 
-                                    <p class="mt-2 font-poppins text-[28px] font-semibold text-black">
+                                    <p class="mt-2 font-poppins text-[28px] font-semibold text-black-900">
                                         30% OFF
                                     </p>
                                 </div>
@@ -303,8 +310,8 @@
                                     <!-- Scroll indicators under Image 2 -->
                                     <div class="absolute -bottom-[60px] left-[10px] flex items-center gap-2">
                                         <span
-                                            class="w-4 h-4 rounded-full border border-black bg-white flex items-center justify-center">
-                                            <span class="w-2 h-2 rounded-full bg-black"></span>
+                                            class="w-4 h-4 rounded-full border border-black-900 bg-white flex items-center justify-center">
+                                            <span class="w-2 h-2 rounded-full bg-black-900"></span>
                                         </span>
                                         <span class="span"></span>
                                         <span class="span"></span>
@@ -515,53 +522,106 @@
                 </div>
             </div>
             <button
-                class="mx-auto mt-[50px] block w-[207px] h-[56px] text-center bg-black hover:bg-black/60 hover:cursor-pointer text-white rounded-[10px]">
+                class="mx-auto mt-[50px] block w-[207px] h-[56px] text-center bg-black-900 hover:bg-black-900/60 hover:cursor-pointer text-white rounded-[10px]">
                 View More
             </button>
         </section>
         <!-- section 5: -->
-        <section class="relative mx-auto max-w-[1040px]">
-            <div>
-                <div class="flex justify-between gap-[116px] py-[72px] rounded-[5px]">
-                    <!-- card 1: -->
-                    <div class="flex items-center gap-4">
-                        <img src="./assets/icon-section3-1.svg" alt="High Quality icon" class="w-[38px] h-[50px]" />
+        <section class="relative mx-auto w-full max-w-[1440px]">
+            <!-- PRODUCT -->
+            <div class="relative w-full aspect-[945/280] overflow-hidden bg-white">
+                <!-- gray diagonal panel -->
+                <div class="absolute inset-0 bg-[#D9D9D9] [clip-path:polygon(55.03%_0,100%_0,100%_100%,45.29%_100%)]">
+                </div>
+                <!-- image (model + black shapes) -->
+                <img src="./assets/fasco-icon-section-3.svg" alt="Woman wearing the Peaky Blinders outfit"
+                    class="absolute bottom-0 left-[9.3%] h-full w-auto z-10" />
+                <!-- diagonal line + annotation lines -->
+                <svg class="absolute inset-0 w-full h-full z-20 pointer-events-none" viewBox="0 0 945 280"
+                    preserveAspectRatio="none">
+                    <line x1="520" y1="0" x2="428" y2="280" stroke="#000" stroke-width="1.5"
+                        vector-effect="non-scaling-stroke" />
+                    <g fill="none" stroke="#4a4a4a" stroke-width="1">
+                        <!-- Flat Cap -->
+                        <polyline points="259,15 294,15 306,28" vector-effect="non-scaling-stroke" />
+                        <!-- Suspender -->
+                        <polyline points="218,70 154,70 143,82" vector-effect="non-scaling-stroke" />
+                        <!-- Hugo Boss (right) -->
+                        <polyline points="236,102 271,102 282,114" vector-effect="non-scaling-stroke" />
+                        <!-- Hugo Boss (left) -->
+                        <polyline points="197,149 133,149 122,161" vector-effect="non-scaling-stroke" />
+                        <!-- Santoni -->
+                        <polyline points="238,232 272,232 283,245" vector-effect="non-scaling-stroke" />
+                    </g>
+                </svg>
 
-                        <div class="flex flex-col w-fit">
-                            <span class="span-quality"> High Quality </span>
+                <!-- circles -->
+                <span class="span-circle left-[27.41%] top-[5.36%]"></span>
+                <span class="span-circle left-[23.07%] top-[25%]"></span>
+                <span class="span-circle left-[24.97%] top-[36.43%]"></span>
+                <span class="span-circle left-[20.85%] top-[53.21%]"></span>
+                <span class="span-circle left-[25.19%] top-[82.86%]"></span>
 
-                            <span class="span-crafter"> Crafted from top materials </span>
-                        </div>
+                <!-- labels -->
+                <span class="span-picky left-[32.38%] top-[10%]">Flat
+                    Cap</span>
+                <span class="span-picky left-[10.79%] top-[29.29%]">Suspender</span>
+                <span class="span-picky left-[29.84%] top-[40.71%]">Hugo
+                    Boss</span>
+                <span class="span-picky left-[8.5%] top-[57.5%]">Hugo
+                    Boss</span>
+                <span class="span-picky left-[29.95%] top-[87.5%]">Santoni</span>
+                <!-- product info -->
+                <div class="absolute inset-y-0 left-[56.6%] w-[40%] z-30 flex flex-col justify-center">
+                    <span class="font-poppins text-[16px] leading-[100%] text-grey-600">Women Collection</span>
+                    <h2 class="font-volkhov text-[46px] leading-[100%] text-heather-grey my-[20px]">Peaky Blinders</h2>
+                    <h3 class="font-poppins text-[16px] leading-[100%] underline text-black-900">DESCRIPTION</h3>
+                    <p class="my-[20px] font-poppins text-[16px] leading-[100%] text-grey-600">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Scelerisque duis ultrices sollicitudin
+                        aliquam sem. Scelerisque duis ultrices sollicitudin. Lorem ipsum dolor sit amet, consectetur
+                        adipiscing elit. Scelerisque duis.
+                    </p>
+                    <div class="flex gap-[15px] items-center">
+                        <span class="font-poppins text-[16px] leading-[100%] text-grey-600">Size:</span>
+                        <span class="font-poppins text-[16px] leading-[100%] text-white-900 bg-black-900 py-[6px] px-[20px] rounded-[10px]">M</span>
                     </div>
-                    <!-- card 2: -->
-                    <div class="flex items-center gap-4">
-                        <img src="./assets/icon-section3-2.svg" alt="High Quality icon" class="w-[38px] h-[50px]" />
+                    <p class="my-[20px] font-poppins font-medium leading-[100%] text-black-900">
+                        <span class="text-[28px]">$100</span><span class="text-[24px]">.00</span>
+                    </p>
+                    <button type="button" class="flex w-[207px] h-[56px] bg-black-900 hover:bg-black-900/70 cursor-pointer items-center justify-center rounded-[10px] text-white-900 font-poppins text-[16px] leading-[100%]">
+                        Buy Now
+                    </button>
+                </div>
+            </div>
 
-                        <div class="flex flex-col w-fit">
-                            <span class="span-quality"> High Quality </span>
-
-                            <span class="span-crafter"> Crafted from top materials </span>
-                        </div>
+            <!-- FEATURES -->
+            <div class="mx-auto max-w-[1040px] px-10 flex justify-between py-[72px]">
+                <div class="flex items-center gap-4">
+                    <img src="./assets/icon-section3-1.svg" alt="High Quality icon" class="w-[38px] h-[50px]" />
+                    <div class="flex flex-col w-fit">
+                        <span class="span-quality">High Quality</span>
+                        <span class="span-crafter">crafted from top materials</span>
                     </div>
-                    <!-- card 3: -->
-                    <div class="flex items-center gap-4">
-                        <img src="./assets/icon-section3-3.svg" alt="High Quality icon" class="w-[38px] h-[50px]" />
-
-                        <div class="flex flex-col w-fit">
-                            <span class="span-quality"> High Quality </span>
-
-                            <span class="span-crafter"> Crafted from top materials </span>
-                        </div>
+                </div>
+                <div class="flex items-center gap-4">
+                    <img src="./assets/icon-section3-2.svg" alt="Warranty Protection icon" class="w-[38px] h-[50px]" />
+                    <div class="flex flex-col w-fit">
+                        <span class="span-quality">Warranty Protection</span>
+                        <span class="span-crafter">Over 2 years</span>
                     </div>
-                    <!-- card 4: -->
-                    <div class="flex items-center gap-4">
-                        <img src="./assets/icon-section3-4.svg" alt="High Quality icon" class="w-[38px] h-[50px]" />
-
-                        <div class="flex flex-col w-fit">
-                            <span class="span-quality"> High Quality </span>
-
-                            <span class="span-crafter"> Crafted from top materials </span>
-                        </div>
+                </div>
+                <div class="flex items-center gap-4">
+                    <img src="./assets/icon-section3-3.svg" alt="Free Shipping icon" class="w-[38px] h-[50px]" />
+                    <div class="flex flex-col w-fit">
+                        <span class="span-quality">Free Shipping</span>
+                        <span class="span-crafter">Order over 150 $</span>
+                    </div>
+                </div>
+                <div class="flex items-center gap-4">
+                    <img src="./assets/icon-section3-4.svg" alt="24/7 Support icon" class="w-[38px] h-[50px]" />
+                    <div class="flex flex-col w-fit">
+                        <span class="span-quality">24 / 7 Support</span>
+                        <span class="span-crafter">Dedicated support</span>
                     </div>
                 </div>
             </div>
@@ -770,7 +830,8 @@
                     </div>
                     <div class="flex justify-center">
                         <button
-                            class="items-center font-poppins text-[16px] leading-[100%] text-white-900 bg-black w-[207px] h-[56px] shadow-[0px_20px_35px_0px_#00000026] rounded-[10px]">Subscribe Now</button>
+                            class="items-center font-poppins text-[16px] leading-[100%] text-white-900 bg-black-900 w-[207px] h-[56px] shadow-[0px_20px_35px_0px_#00000026] rounded-[10px]">Subscribe
+                            Now</button>
 
                     </div>
                 </div>
@@ -783,7 +844,22 @@
 
         </section>
     </main>
-    <footer></footer>
+    <footer class="mx-auto max-w-[1040px] mt-[50px] mb-[23px]">
+        <div class="flex justify-between">
+            <h2 class="font-volkhov text-[32px] leading-[100%] text-heather-grey">FASCO</h2>
+            <nav class="navbar gap-[38px]">
+                <a href="#" class="nav-name">Support Center</a>
+                <a href="#" class="nav-name">Invoicing</a>
+                <a href="#" class="nav-name">Contract</a>
+                <a href="#" class="nav-name">Careers</a>
+                <a href="#" class="nav-name">Blog</a>
+                <a href="#" class="nav-name">FAQ,s</a>
+            </nav>
+        </div>
+        <div class="items-center flex justify-center mt-[50px] ">
+            <span>Copyright &copy; 2022 Xpro . All Rights Reseved.</span>
+        </div>
+    </footer>
 </body>
 
 </html>

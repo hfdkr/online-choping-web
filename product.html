@@ -54,7 +54,27 @@
         .div-active{
             @apply border border-black-900 w-fit p-[6px];
         }
-        
+        .number-time{
+            @apply font-jost font-semibold text-[20px] leading-[32px] text-[#FF706B] px-[2px];
+        }
+        .span-picky{
+            @apply absolute z-30 flex items-center justify-center w-[6.43%] h-[6.35%] border border-[#000000] bg-white/60 text-[11px] whitespace-nowrap;
+        }
+        .number-time {
+            @apply font-digital text-[32px] leading-[100%] text-heather-grey;
+        }
+        .zone-span {
+            @apply font-poppins text-[24px] leading-[120%] text-heather-grey;
+        }
+        .div-span {
+            @apply flex flex-col items-center bg-white-900 py-[12px] px-[22px] shadow-[0px_4px_14px_1px_#00000029] rounded-[10px];
+        }
+        .button-click {
+            @apply flex h-[48px] w-[48px] items-center justify-center rounded-full border border-gray-300 bg-white shadow-md hover:bg-gray-100;
+        }
+         .span {
+            @apply w-3 h-3 rounded-full bg-grey-800;
+        }
     </style>
 </head>
 
@@ -137,7 +157,7 @@
                         Fasco
                     </span>
 
-                    <div class="flex justify-between items-center w-[400px]">
+                    <div class="flex justify-between items-center w-[490px]">
                         <h2 class="font-volkhov text-[30px] leading-[42px]">
                             Denim Jacket
                         </h2>
@@ -176,24 +196,368 @@
                         <img src="./assets-product/icon-view.svg" alt="">
                         <span class="">24 <span>people are viewing this right now</span></span>
                     </div>
-                   <div class="w-[400px] h-[58px] border border-[#F8CCCC] bg-[#FDEFEE] rounded-[4px] my-[30px] px-[15px]">
-    <div class="flex justify-between items-center h-full">
-        <h5>Hurry up! Sale ends in:</h5>
+                    <!-- div time  -->
+                    <div
+                        class="w-[490px] h-[58px] border border-[#F8CCCC] bg-[#FDEFEE] rounded-[4px] my-[30px] px-[15px]">
+                        <div class="flex justify-between items-center h-full">
+                            <h5 class="font-volkhov text-[18px] leading-[28px] text-[#FF706B]">Hurry up! Sale ends in:
+                            </h5>
 
-        <div class="flex items-center gap-[1.75px]">
-            <span class="number-time">02</span>
-            <span class="number-time">:</span>
-            <span class="number-time">06</span>
-            <span class="number-time">:</span>
-            <span class="number-time">05</span>
-            <span class="number-time">:</span>
-            <span class="number-time">30</span>
-        </div>
-    </div>
-</div>
+                            <div class="flex items-center gap-[1.75px]">
+                                <span class="number-time">02</span>
+                                <span class="number-time">:</span>
+                                <span class="number-time">06</span>
+                                <span class="number-time">:</span>
+                                <span class="number-time">05</span>
+                                <span class="number-time">:</span>
+                                <span class="number-time">30</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- div content  -->
+                    <div class="space-y-[13px]">
+                        <span class="font-jost  text-[16px] leading-[24px] text-[#666666]">Only <span>9</span> item(s)
+                            left in stock!</span>
+                        <div class="w-[490px] h-[5px] mt-[13px] bg-[#DEDEDE] rounded-[2px] ">
+                            <div class="bg-[#EF2D2D] w-[29.25px] h-[5px] rounded-[2px]"></div>
+                        </div>
+                    </div>
+                    <!-- div size -->
+
+
+                    <div class="mt-[30px]">
+                        <span class="font-volkhov font-bold text-[16px] leading-[24px] text-black-900">Size: M</span>
+
+                        <div class="flex gap-[10px] items-center mt-[10px]">
+                            <!-- Size M (active) -->
+                            <div
+                                class="w-[45px] h-[45px] flex items-center justify-center bg-black-900 text-white-900 rounded-[5px] border border-black-900">
+                                M
+                            </div>
+
+                            <!-- Size L -->
+                            <div
+                                class="w-[45px] h-[45px] flex items-center justify-center bg-white-900 text-black-900 rounded-[5px] border border-[#EEEEEE]">
+                                L
+                            </div>
+
+                            <!-- Size XL -->
+                            <div
+                                class="w-[45px] h-[45px] flex items-center justify-center bg-white-900 text-black-900 rounded-[5px] border border-[#EEEEEE]">
+                                XL
+                            </div>
+
+                            <!-- Size XXL -->
+                            <div
+                                class="w-[45px] h-[45px] flex items-center justify-center bg-white-900 text-black-900 rounded-[5px] border border-[#EEEEEE]">
+                                XXL
+                            </div>
+                        </div>
+                        <!-- color div -->
+                        <div class="mt-[14px]">
+                            <span class="font-volkhov font-bold text-[16px] leading-[24px] text-black-900">Color:
+                                Blue</span>
+
+                            <div class="flex gap-[10px] mt-[10px]">
+                                <!-- Color 1 -->
+                                <div
+                                    class="w-[40px] h-[40px] rounded-full shadow-[inset_0_0_0_4px_#FFFFFF,0_0_0_1px_#000000] p-[5px]">
+                                    <div class="w-full h-full bg-[#8DB4D2] rounded-full"></div>
+                                </div>
+                                <!-- color 2 -->
+                                <div class="w-[40px] h-[40px] rounded-full shadow-[inset_0_0_0_1px_#FFFFFF] p-[5px]">
+                                    <div class="w-full h-full bg-[#000000] rounded-full"></div>
+                                </div>
+                                <!-- color 3 -->
+                                <div class="w-[40px] h-[40px] rounded-full shadow-[inset_0_0_0_1px_#FFFFFF] p-[5px]">
+                                    <div class="w-full h-full bg-[#FFD1DC] rounded-full"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
         </section>
+        <!-- section 2: -->
+        <section class="relative mx-auto w-full my-[26px] max-w-[1440px]">
+            <!-- PRODUCT -->
+            <div class="relative w-full aspect-[945/280] overflow-hidden bg-white">
+                <!-- gray diagonal panel -->
+                <div class="absolute inset-0 bg-[#D9D9D9] [clip-path:polygon(55.03%_0,100%_0,100%_100%,45.29%_100%)]">
+                </div>
+                <!-- image (model + black shapes) -->
+                <img src="./assets/fasco-icon-section-3.svg" alt="Woman wearing the Peaky Blinders outfit"
+                    class="absolute bottom-0 left-[9.3%] h-full w-auto z-10" />
+                <!-- diagonal line + annotation lines -->
+                <svg class="absolute inset-0 w-full h-full z-20 pointer-events-none" viewBox="0 0 945 280"
+                    preserveAspectRatio="none">
+                    <line x1="520" y1="0" x2="428" y2="280" stroke="#000" stroke-width="1.5"
+                        vector-effect="non-scaling-stroke" />
+                    <g fill="none" stroke="#4a4a4a" stroke-width="1">
+                        <!-- Flat Cap -->
+                        <polyline points="259,15 294,15 306,28" vector-effect="non-scaling-stroke" />
+                        <!-- Suspender -->
+                        <polyline points="218,70 154,70 143,82" vector-effect="non-scaling-stroke" />
+                        <!-- Hugo Boss (right) -->
+                        <polyline points="236,102 271,102 282,114" vector-effect="non-scaling-stroke" />
+                        <!-- Hugo Boss (left) -->
+                        <polyline points="197,149 133,149 122,161" vector-effect="non-scaling-stroke" />
+                        <!-- Santoni -->
+                        <polyline points="238,232 272,232 283,245" vector-effect="non-scaling-stroke" />
+                    </g>
+                </svg>
 
+                <!-- circles -->
+                <span class="span-circle left-[27.41%] top-[5.36%]"></span>
+                <span class="span-circle left-[23.07%] top-[25%]"></span>
+                <span class="span-circle left-[24.97%] top-[36.43%]"></span>
+                <span class="span-circle left-[20.85%] top-[53.21%]"></span>
+                <span class="span-circle left-[25.19%] top-[82.86%]"></span>
+
+                <!-- labels -->
+                <span class="span-picky left-[32.38%] top-[10%]">Flat
+                    Cap</span>
+                <span class="span-picky left-[10.79%] top-[29.29%]">Suspender</span>
+                <span class="span-picky left-[29.84%] top-[40.71%]">Hugo
+                    Boss</span>
+                <span class="span-picky left-[8.5%] top-[57.5%]">Hugo
+                    Boss</span>
+                <span class="span-picky left-[29.95%] top-[87.5%]">Santoni</span>
+                <!-- product info -->
+                <div class="absolute inset-y-0 left-[56.6%] w-[40%] z-30 flex flex-col justify-center">
+                    <span class="font-poppins text-[16px] leading-[100%] text-grey-600">Women Collection</span>
+                    <h2 class="font-volkhov text-[46px] leading-[100%] text-heather-grey my-[20px]">Peaky Blinders</h2>
+                    <h3 class="font-poppins text-[16px] leading-[100%] underline text-black-900">DESCRIPTION</h3>
+                    <p class="my-[20px] font-poppins text-[16px] leading-[100%] text-grey-600">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Scelerisque duis ultrices sollicitudin
+                        aliquam sem. Scelerisque duis ultrices sollicitudin. Lorem ipsum dolor sit amet, consectetur
+                        adipiscing elit. Scelerisque duis.
+                    </p>
+                    <div class="flex gap-[15px] items-center">
+                        <span class="font-poppins text-[16px] leading-[100%] text-grey-600">Size:</span>
+                        <span
+                            class="font-poppins text-[16px] leading-[100%] text-white-900 bg-black-900 py-[6px] px-[20px] rounded-[10px]">M</span>
+                    </div>
+                    <p class="my-[20px] font-poppins font-medium leading-[100%] text-black-900">
+                        <span class="text-[28px]">$100</span><span class="text-[24px]">.00</span>
+                    </p>
+                    <button type="button"
+                        class="flex w-[207px] h-[56px] bg-black-900 hover:bg-black-900/70 cursor-pointer items-center justify-center rounded-[10px] text-white-900 font-poppins text-[16px] leading-[100%]">
+                        Buy Now
+                    </button>
+                </div>
+            </div>
+
+            <!-- FEATURES -->
+            <div class="mx-auto max-w-[1040px] px-10 flex justify-between py-[72px]">
+                <div class="flex items-center gap-4">
+                    <img src="./assets/icon-section3-1.svg" alt="High Quality icon" class="w-[38px] h-[50px]" />
+                    <div class="flex flex-col w-fit">
+                        <span class="span-quality">High Quality</span>
+                        <span class="span-crafter">crafted from top materials</span>
+                    </div>
+                </div>
+                <div class="flex items-center gap-4">
+                    <img src="./assets/icon-section3-2.svg" alt="Warranty Protection icon" class="w-[38px] h-[50px]" />
+                    <div class="flex flex-col w-fit">
+                        <span class="span-quality">Warranty Protection</span>
+                        <span class="span-crafter">Over 2 years</span>
+                    </div>
+                </div>
+                <div class="flex items-center gap-4">
+                    <img src="./assets/icon-section3-3.svg" alt="Free Shipping icon" class="w-[38px] h-[50px]" />
+                    <div class="flex flex-col w-fit">
+                        <span class="span-quality">Free Shipping</span>
+                        <span class="span-crafter">Order over 150 $</span>
+                    </div>
+                </div>
+                <div class="flex items-center gap-4">
+                    <img src="./assets/icon-section3-4.svg" alt="24/7 Support icon" class="w-[38px] h-[50px]" />
+                    <div class="flex flex-col w-fit">
+                        <span class="span-quality">24 / 7 Support</span>
+                        <span class="span-crafter">Dedicated support</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- section 3 : -->
+        <section class="space-y-[150px] pl-36 py-5 bg-gradient-to-b from-[#FFFFFF] to-[#FAFAFA]">
+            <div class="flex justify-between">
+                <div class="max-w-[444px]">
+                    <div class="mb-[50px]">
+                        <h2 class="mb-[20px] text-[46px] font-volkhov leading-[100%] text-heather-grey">
+                            People Also Loved
+                        </h2>
+                        <p class="mb-[40px] text-[16px] text-grey-900 leading-[26px] font-poppins">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            Scelerisque duis ultrices sollicitudin aliquam sem. Scelerisque
+                            duis ultrices sollicitudin
+                        </p>
+                        <button class="bg-black-900 py-[20px] px-[60px] rounded-[10px] leading-[100%] text-white-900">
+                            Buy Now
+                        </button>
+                    </div>
+                    <div>
+                        <h4 class="font-poppins font-medium text-[28px] leading-[100%] text-heather-grey mb-[15px]">
+                            Hurry, Before It’s Too Late!</h4>
+                        <div class="flex justify-between items-center">
+
+                            <div class="div-span">
+                                <span class="number-time">02</span>
+                                <span class="zone-spane">Days</span>
+                            </div>
+
+                            <div class="div-span">
+                                <span class="number-time">06</span>
+                                <span class="zone-spane">Hr</span>
+                            </div>
+
+                            <div class="div-span">
+                                <span class="number-time">05</span>
+                                <span class="zone-spane">Mins</span>
+                            </div>
+
+                            <div class="div-span">
+                                <span class="number-time">30</span>
+                                <span class="zone-spane">Sec</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Images section -->
+                <div class="relative w-[600px] shrink-0">
+                    <!-- Scrollable images -->
+                    <div class="overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+                        <div class="flex items-start gap-5 w-max">
+                            <!-- Scroll arrows on the left of Image 1 -->
+                            <div class="absolute top-[560px] -left-29 z-10 flex gap-3 -translate-y-1/2">
+                                <!-- Scroll left -->
+                                <button type="button" class="button-click">
+                                    <img src="./assets/icon-left.svg" alt="" class="h-5 w-5" />
+                                </button>
+
+                                <!-- Scroll right -->
+                                <button type="button" class="button-click">
+                                    <img src="./assets/icon-right.svg" alt="" class="h-5 w-5" />
+                                </button>
+                            </div>
+
+                            <!-- Image 1: big -->
+                            <div class="shrink-0 relative">
+                                <img src="./assets/fasco-icon-section1.svg" alt="Fashion model 1"
+                                    class="w-full h-[582px] object-cover" />
+
+                                <!-- Image 1 content -->
+                                <div
+                                    class="absolute bottom-[24px] left-[24px] w-fit p-4 bg-[#FFFFFF]/80 backdrop-blur-[7px]">
+                                    <div class="flex items-center gap-3">
+                                        <span class="font-poppins text-[16px] text-heather-grey">01</span>
+                                        <span class="w-[40px] h-[1px] bg-heather-grey"></span>
+                                        <h6 class="font-poppins text-[16px] text-heather-grey">
+                                            Spring Sale
+                                        </h6>
+                                    </div>
+
+                                    <p class="mt-2 font-poppins text-[28px] font-semibold text-black-900">
+                                        30% OFF
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Image 2 -->
+                            <div class="relative shrink-0">
+                                <img src="./assets/fasco-icon-section2.svg" alt="Fashion model 2"
+                                    class="w-full h-[486px] object-cover" />
+                                <div>
+                                    <!-- Scroll indicators under Image 2 -->
+                                    <div class="absolute -bottom-[60px] left-[10px] flex items-center gap-2">
+                                        <span
+                                            class="w-4 h-4 rounded-full border border-black-900 bg-white flex items-center justify-center">
+                                            <span class="w-2 h-2 rounded-full bg-black-900"></span>
+                                        </span>
+                                        <span class="span"></span>
+                                        <span class="span"></span>
+                                        <span class="span"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Image 3 -->
+                            <div class="30% OFF">
+                                <img src="./assets/fasco-icon-section3.svg" alt="Fashion model 3" class="h-[350px]" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- section 8: -->
+        <section class="mt-[138px] w-full max-w-[1200px] mx-auto px-[30px]">
+
+            <div class="flex items-center justify-between gap-[40px]">
+
+                <!-- div 1: Left image -->
+                <div class="shrink-0">
+                    <img src="./assets/fasco-section6-card1.svg" alt="">
+                </div>
+
+                <!-- div 2: Center content -->
+                <div class="flex-1 min-w-0 flex flex-col ">
+
+                    <!-- Title and description -->
+                    <div class="w-full flex flex-col items-center text-center">
+
+                        <h3 class="font-volkhov text-[46px] leading-[100%] text-heather-grey whitespace-nowrap">
+                            Subscribe To Our Newsletter
+                        </h3>
+
+                        <p class="font-poppins text-[16px] leading-[26px] text-grey-900 whitespace-nowrap mt-[20px]">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            Scelerisque duis <br> ultrices sollicitudin aliquam sem.
+                            Scelerisque duis ultrices sollicitudin
+                        </p>
+
+                    </div>
+                    <!-- Email -->
+                    <div
+                        class="my-[30px] flex justify-start items-start w-[400px] pt-[28px] pb-[32px] pl-[30px] shadow-[0px_3.02px_3.15px_#00000002,0px_13.28px_6.52px_#00000002]">
+
+                        <span class="font-poppins text-[22px] leading-[26px] text-grey-900">
+                            michael@ymail.com
+                        </span>
+
+                    </div>
+                    <div class="flex justify-center">
+                        <button
+                            class="items-center font-poppins text-[16px] leading-[100%] text-white-900 bg-black-900 w-[207px] h-[56px] shadow-[0px_20px_35px_0px_#00000026] rounded-[10px]">Subscribe
+                            Now</button>
+
+                    </div>
+                </div>
+
+                <!-- div 3: Right image -->
+                <div class="shrink-0">
+                    <img src="./assets/fasco-section6-card2.svg" alt="">
+                </div>
+            </div>
+
+        </section>
     </main>
+    <footer class="border-t border-[#DEDFE1] mt-[50px] py-[20px]">
+        <div class="flex justify-between mx-auto max-w-[1040px]">
+            <h2 class="font-volkhov text-[32px] leading-[100%] text-heather-grey">FASCO</h2>
+            <nav class="navbar gap-[38px]">
+                <a href="#" class="nav-name">Support Center</a>
+                <a href="#" class="nav-name">Invoicing</a>
+                <a href="#" class="nav-name">Contract</a>
+                <a href="#" class="nav-name">Careers</a>
+                <a href="#" class="nav-name">Blog</a>
+                <a href="#" class="nav-name">FAQ,s</a>
+            </nav>
+        </div>
+        <div class="items-center flex justify-center mt-[50px] ">
+            <span>Copyright &copy; 2022 Xpro . All Rights Reseved.</span>
+        </div>
+    </footer>
 </body>
 
 </html>

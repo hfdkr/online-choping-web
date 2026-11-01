@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&family=Volkhov:wght@400;700&family=Share+Tech+Mono&display=swap"
+        rel="stylesheet" />
+
+    <!-- Digital Numbers Font -->
+    <link href="https://fonts.cdnfonts.com/css/digital-numbers" rel="stylesheet" />
+    <title>Shopping Product</title>
+
+    <style type="text/tailwindcss">
+        @theme {
+            /* Colors */
+            --color-heather-grey: #484848;
+            --color-grey-900: #8a8a8a;
+            --color-grey-600: #767676;
+            --color-grey-700: #e0e0e0;
+            --color-grey-800: #d9d9d9;
+            --color-black-900: #000000;
+            --color-white-900: #ffffff;
+            --color-white-700: #fafafa;
+            --color-red-500: #ff4646;
+
+            /* Fonts */
+            --font-poppins: "Poppins", sans-serif;
+            --font-volkhov: "Volkhov", serif;
+            --font-digital: "Digital Numbers", sans-serif;
+            --font-jost: "Jost", sans-serif;
+        }
+
+        .nav-name {
+            @apply font-poppins text-[16px] leading-[100%] text-heather-grey hover:text-black-900;
+        }
+
+        .navbar {
+            @apply flex items-center;
+        }
+
+        .btn-black {
+            @apply bg-black-900 text-white-900 rounded-[10px] font-poppins hover:bg-heather-grey transition-colors;
+        }
+        .div-active{
+            @apply border border-black-900 w-fit p-[6px];
+        }
+        
+    </style>
+</head>
+
+<body class="bg-white-900">
+
+    <!-- Header -->
+    <header id="top" class="flex items-center justify-between px-10 mx-auto max-w-[1070px] py-5">
+
+        <!-- Logo -->
+        <a href="#" aria-label="FASCO home" class="shrink-0">
+            <h1 class="font-volkhov text-[40px] leading-[100%] text-heather-grey">
+                FASCO
+            </h1>
+        </a>
+
+        <!-- Navigation -->
+        <nav class="navbar gap-8">
+            <a href="#home" class="nav-name">Home</a>
+            <a href="#Deals" class="nav-name">Shop</a>
+            <a href="#arrivale" class="nav-name border-b border-heather-grey py-[10px]">Products</a>
+            <a href="#package" class="nav-name">Pages</a>
+        </nav>
+
+        <!-- Header Icons -->
+        <div class="flex items-center gap-4">
+            <a href="#" aria-label="Search">
+                <img src="./assets-product/icon-search.svg" alt="Search" class="w-6 h-6" />
+            </a>
+
+            <a href="#" aria-label="Shopping cart">
+                <img src="./assets-product/icon-user.svg" alt="User account" class="w-6 h-6" />
+            </a>
+
+            <a href="#" aria-label="User account">
+                <img src="./assets-product/icon-star.svg" alt="Pin Shoping" class="w-6 h-6" />
+            </a>
+            <a href="#" aria-label="User account">
+                <img src="./assets-product/icon-wallet.svg" alt="Shopping cart " class="w-6 h-6" />
+            </a>
+        </div>
+
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- section 1: -->
+        <section class="mx-auto max-w-[1070px] py-5">
+            <div class="flex justify-evenly">
+                <div class="flex gap-5">
+                    <div class="space-y-[10px]">
+                        <div class="">
+                            <img src="./assets-product/icon-section1-Jacket.svg" alt="Women's jacket" />
+                        </div>
+                        <div class="div-active">
+                            <img src="./assets-product/icon-section1-girl.svg" alt="Woman wearing a fashion outfit" />
+                        </div>
+                        <div class="">
+                            <img src="./assets-product/icon-section1-man.svg" alt="Man wearing casual clothing" />
+                        </div>
+                        <div>
+                            <img src="./assets-product/icon-section1-full_girl.svg"
+                                alt="Full-body view of a woman in a fashion outfit" />
+                        </div>
+                        <div class="">
+                            <img src="./assets-product/icon-section1-jacket-janes.svg" alt="Women's jeans jacket" />
+                        </div>
+                        <div class="">
+                            <img src="./assets-product/icon-section1-black_Jacket.svg" alt="Black jacket" />
+                        </div>
+                        <div class="">
+                            <img src="./assets-product/icon-section1-full_body.svg" alt="Full-body fashion model" />
+                        </div>
+                    </div>
+                    <div>
+                        <img src="./assets-product/icon-section1-red_girl.svg" alt="">
+                    </div>
+                </div>
+                <div class="w-[400px]">
+                    <span class="font-volkhov my-[5px] text-[14px] uppercase">
+                        Fasco
+                    </span>
+
+                    <div class="flex justify-between items-center w-[400px]">
+                        <h2 class="font-volkhov text-[30px] leading-[42px]">
+                            Denim Jacket
+                        </h2>
+
+                        <div class="border border-[#EEEEEE] rounded-full p-[12px]">
+                            <img src="./assets-product/icon-star.svg" alt="icon star">
+                        </div>
+                    </div>
+                    <!-- div stars  -->
+                    <div class="flex items-center gap-[8px]">
+                        <div class="flex">
+                            <span><img src="./assets-product/black-star.svg" alt="icon-star" /></span>
+                            <span><img src="./assets-product/black-star.svg" alt="icon-star" /></span>
+                            <span><img src="./assets-product/black-star.svg" alt="icon-star" /></span>
+                            <span><img src="./assets-product/black-star.svg" alt="icon-star" /></span>
+                            <span><img src="./assets-product/white-star.svg" alt="icon-star" /></span>
+                        </div>
+                        <div>
+                            <span class="items-center">(3)</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-[8px] mt-[20px] mb-[30px]">
+                        <div class="flex gap-[7px] items-center">
+                            <span class="font-volkhov text-[24px] leading-[32px] text-black-900">$39.00</span>
+                            <span
+                                class="font-jost text-[16px] leading-[19.2px] text-[#666666] line-through">$59.00</span>
+                            <button
+                                class="pt-[2.5px] pr-[9.69px] pb-[2.5px] pl-[10px] flex bg-[#DA3F3F] rounded-[11px] uppercase">
+                                <span
+                                    class="flex gap-[4.61px] text-white-900 font-jost text-[11px] leading-[16px] ">Save<span
+                                        class="">33%</span></span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="flex gap-[10px] font-poppins text-[16px] leading-[24px] text-grey-900">
+                        <img src="./assets-product/icon-view.svg" alt="">
+                        <span class="">24 <span>people are viewing this right now</span></span>
+                    </div>
+                   <div class="w-[400px] h-[58px] border border-[#F8CCCC] bg-[#FDEFEE] rounded-[4px] my-[30px] px-[15px]">
+    <div class="flex justify-between items-center h-full">
+        <h5>Hurry up! Sale ends in:</h5>
+
+        <div class="flex items-center gap-[1.75px]">
+            <span class="number-time">02</span>
+            <span class="number-time">:</span>
+            <span class="number-time">06</span>
+            <span class="number-time">:</span>
+            <span class="number-time">05</span>
+            <span class="number-time">:</span>
+            <span class="number-time">30</span>
+        </div>
+    </div>
+</div>
+        </section>
+
+    </main>
+</body>
+
+</html>

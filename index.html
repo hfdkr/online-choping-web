@@ -1,117 +1,120 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.cdnfonts.com/css/digital-numbers" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.cdnfonts.com/css/digital-numbers" rel="stylesheet" />
 
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Volkhov:wght@400;700&family=Share+Tech+Mono&display=swap"
-        rel="stylesheet">
+        rel="stylesheet" />
 
     <title>Online Shopping</title>
     <style type="text/tailwindcss">
         @import "tailwindcss";
-        @theme {
-            /* colors */
-            --color-heather-grey: #484848;
-            --color-grey-900:#8A8A8A;
-            --color-grey-700: #E0E0E0;
-            --color-black: #000000;
-            --color-white-900: #FFFFFF;
-            --color-white-700: #FAFAFA;
-            --color-red-500: #FF4646;
-            /* fonts */
-            --font-poppins: "Poppins", sans-serif;
-            --font-volkhov: "Volkhov", serif;
-            --font-digital: "Digital Numbers", sans-serif;
+      @theme {
+        /* colors */
+        --color-heather-grey: #484848;
+        --color-grey-900: #8a8a8a;
+        --color-grey-700: #e0e0e0;
+        --color-grey-800: #d9d9d9;
+        --color-black: #000000;
+        --color-white-900: #ffffff;
+        --color-white-700: #fafafa;
+        --color-red-500: #ff4646;
+        /* fonts */
+        --font-poppins: "Poppins", sans-serif;
+        --font-volkhov: "Volkhov", serif;
+        --font-digital: "Digital Numbers", sans-serif;
+      }
+      .header {
+        @apply flex items-center justify-evenly px-10 py-5 max-w-[1240px] mx-auto;
+      }
+      .nav-name {
+        @apply font-poppins text-[16px] leading-[100%] text-heather-grey hover:text-black;
+      }
+      .navbar {
+        @apply flex items-center gap-8;
+      }
+      .btn-black {
+        @apply inline-block bg-black hover:bg-black/70 rounded-[10px] cursor-pointer font-poppins leading-[100%] text-white-900 transition-colors;
+      }
+      .hero-card {
+        @apply bg-grey-700 rounded-[10px] overflow-hidden flex items-end justify-center;
+      }
+      .span {
+        @apply w-3 h-3 rounded-full bg-grey-800;
+      }
+      .outline-text {
+        -webkit-text-stroke: 1.5px var(--color-heather-grey);
+        color: transparent;
+      }
+      .float-btn {
+        @apply grid place-items-center size-[45px] rounded-[10px] cursor-pointer;
+      }
+      .number-time {
+        @apply font-digital text-[32px] leading-[100%] text-heather-grey;
+      }
+      .zone-span {
+        @apply font-poppins text-[24px] leading-[120%] text-heather-grey;
+      }
+      .div-span {
+        @apply flex flex-col items-center bg-white-900 py-[12px] px-[22px] shadow-[0px_4px_14px_1px_#00000029] rounded-[10px];
+      }
+      .button-click {
+        @apply flex h-[48px] w-[48px] items-center justify-center rounded-full border border-gray-300 bg-white shadow-md hover:bg-gray-100;
+      }
+      .button-arrival {
+        @apply w-[207px] h-[56px] bg-white-700 rounded-[10px] text-[16px] font-poppins leading-[100%] text-grey-900 cursor-pointer hover:shadow-[0px_1px_17px_0px_#ff4646] hover:bg-black/90 hover:text-white-900;
+      }
+      .button-shadow {
+        @apply bg-black rounded-[10px] w-[207px] h-[56px] shadow-[0_20px_35px_0_#00000026] text-white-900 text-[16px] font-poppins leading-[100%] items-center cursor-pointer hover:shadow-[0px_1px_10px_0px_#ff4646] hover:bg-black/90;
+      }
+      .div-cards {
+        @apply grid grid-cols-3 grid-rows-2 gap-4;
+      }
+      .div-spanCard {
+        @apply flex justify-between mt-[12px];
+      }
+      .card {
+        @apply bg-white-900 p-4;
+      }
+      .text-card {
+        @apply text-[20px] font-poppins leading-[100%] text-heather-grey font-medium;
+      }
+      .span-text {
+        @apply font-poppins text-[12px] leading-[100%] text-grey-900 font-medium;
+      }
+      .span-prix {
+        @apply font-poppins text-[25px] leading-[20px] tracking-[-1%] text-grey-900 font-medium;
+      }
+      .span-sold {
+        @apply text-red-500 font-poppins text-[12px] leading-[20px] tracking-[-1%];
+      }
+      .span-quality {
+        @apply whitespace-nowrap font-poppins font-medium text-[20px] leading-[100%] text-heather-grey;
+      }
+      .span-crafter {
+        @apply whitespace-nowrap font-poppins text-[12px] leading-[26px] text-heather-grey;
+      }
+      /* auto scroll card image  */
+      @keyframes scroll {
+        0% {
+          transform: translateX(0);
         }
-
-        .header {
-            @apply flex items-center justify-evenly px-10 py-5 max-w-[1240px] mx-auto;
+        100% {
+          transform: translateX(-30%);
         }
-        .nav-name {
-            @apply font-poppins text-[16px] leading-[100%] text-heather-grey hover:text-black;
-        }
-        .navbar {
-            @apply flex items-center gap-8;
-        }
-        .btn-black {
-            @apply inline-block bg-black hover:bg-black/70 rounded-[10px] cursor-pointer font-poppins leading-[100%] text-white-900 transition-colors;
-        }
-        .hero-card {
-            @apply bg-grey-700 rounded-[10px] overflow-hidden flex items-end justify-center;
-        }
-        .outline-text {
-            -webkit-text-stroke: 1.5px var(--color-heather-grey);
-            color: transparent;
-        }
-        .float-btn {
-            @apply grid place-items-center size-[45px] rounded-[10px] cursor-pointer;
-        }
-        .number-time{
-            @apply font-digital text-[32px] leading-[100%] text-heather-grey;
-        }
-        .zone-span{
-            @apply font-poppins text-[24px] leading-[120%] text-heather-grey;
-        }
-        .div-span{
-            @apply flex flex-col items-center bg-white-900 py-[12px] px-[22px] shadow-[0px_4px_14px_1px_#00000029] rounded-[10px];
-        }
-        .button-click{
-            @apply flex h-[48px] w-[48px] items-center justify-center rounded-full border border-gray-300 bg-white shadow-md hover:bg-gray-100;
-        }
-        .button-arrival{
-            @apply w-[207px] h-[56px] bg-white-700 rounded-[10px] text-[16px] font-poppins leading-[100%] text-grey-900 cursor-pointer;
-        }
-        .button-shadow{
-            @apply bg-black rounded-[10px] w-[207px] h-[56px] shadow-[0_20px_35px_0_#00000026] text-white-900 text-[16px] font-poppins leading-[100%] items-center cursor-pointer;
-        }
-        .div-cards{
-            @apply grid grid-cols-3 grid-rows-2 gap-4;
-        }
-        .div-spanCard{
-            @apply flex justify-between mt-[12px];
-        }
-        .card{
-            @apply bg-white-900 p-4;
-        }
-        .text-card{
-            @apply text-[20px] font-poppins leading-[100%] text-heather-grey font-medium;
-        }
-        .span-text{
-            @apply font-poppins text-[12px] leading-[100%] text-grey-900 font-medium;
-        }
-        .span-prix{
-            @apply font-poppins text-[25px] leading-[20px] tracking-[-1%] text-grey-900 font-medium;
-        }
-        .span-sold{
-            @apply text-red-500 font-poppins text-[12px] leading-[20px] tracking-[-1%];
-        }
-        .span-quality{
-            @apply whitespace-nowrap font-poppins font-medium text-[20px] leading-[100%] text-heather-grey;}
-        .span-crafter{
-            @apply whitespace-nowrap font-poppins text-[12px] leading-[26px] text-heather-grey;
-        }
-        /* auto scroll card image  */
-        @keyframes scroll {
-            0% {
-                transform: translateX(0);
-            }
-            100% {
-                transform: translateX(-30%);
-            }
-        }
-        .auto-scroll {
-            animation: scroll 15s linear infinite alternate;
-        }
-
+      }
+      .auto-scroll {
+        animation: scroll 15s linear infinite alternate;
+      }
     </style>
 </head>
 
@@ -217,14 +220,17 @@
             <div class="flex justify-between">
                 <div class="max-w-[444px]">
                     <div class="mb-[50px]">
-                        <h2 class="mb-[20px] text-[46px] font-volkhov leading-[100%] text-heather-grey">Deals Of The
-                            Month</h2>
-                        <p class="mb-[40px] text-[16px] text-grey-900 leading-[26px] font-poppins">Lorem ipsum dolor sit
-                            amet, consectetur adipiscing elit. Scelerisque duis ultrices
-                            sollicitudin
-                            aliquam sem. Scelerisque duis ultrices sollicitudin </p>
-                        <button class="bg-black py-[20px] px-[60px] rounded-[10px] leading-[100%] text-white-900">Buy
-                            Now</button>
+                        <h2 class="mb-[20px] text-[46px] font-volkhov leading-[100%] text-heather-grey">
+                            Deals Of The Month
+                        </h2>
+                        <p class="mb-[40px] text-[16px] text-grey-900 leading-[26px] font-poppins">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            Scelerisque duis ultrices sollicitudin aliquam sem. Scelerisque
+                            duis ultrices sollicitudin
+                        </p>
+                        <button class="bg-black py-[20px] px-[60px] rounded-[10px] leading-[100%] text-white-900">
+                            Buy Now
+                        </button>
                     </div>
                     <div class="flex justify-between items-center">
                         <div class="div-span">
@@ -251,29 +257,26 @@
 
                 <!-- Images section -->
                 <div class="relative w-[600px] shrink-0">
-
                     <!-- Scrollable images -->
                     <div class="overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
                         <div class="flex items-start gap-5 w-max">
-
                             <!-- Scroll arrows on the left of Image 1 -->
                             <div class="absolute top-[560px] -left-29 z-10 flex gap-3 -translate-y-1/2">
-
                                 <!-- Scroll left -->
                                 <button type="button" class="button-click">
-                                    <img src="./assets/icon-left.svg" alt="" class="h-5 w-5">
+                                    <img src="./assets/icon-left.svg" alt="" class="h-5 w-5" />
                                 </button>
 
                                 <!-- Scroll right -->
                                 <button type="button" class="button-click">
-                                    <img src="./assets/icon-right.svg" alt="" class="h-5 w-5">
+                                    <img src="./assets/icon-right.svg" alt="" class="h-5 w-5" />
                                 </button>
                             </div>
 
                             <!-- Image 1: big -->
-                            <div class=" shrink-0 relative">
+                            <div class="shrink-0 relative">
                                 <img src="./assets/fasco-icon-section1.svg" alt="Fashion model 1"
-                                    class="w-full h-[582px] object-cover">
+                                    class="w-full h-[582px] object-cover" />
 
                                 <!-- Image 1 content -->
                                 <div
@@ -295,7 +298,7 @@
                             <!-- Image 2 -->
                             <div class="relative shrink-0">
                                 <img src="./assets/fasco-icon-section2.svg" alt="Fashion model 2"
-                                    class="w-full h-[486px] object-cover">
+                                    class="w-full h-[486px] object-cover" />
                                 <div>
                                     <!-- Scroll indicators under Image 2 -->
                                     <div class="absolute -bottom-[60px] left-[10px] flex items-center gap-2">
@@ -303,37 +306,36 @@
                                             class="w-4 h-4 rounded-full border border-black bg-white flex items-center justify-center">
                                             <span class="w-2 h-2 rounded-full bg-black"></span>
                                         </span>
-                                        <span class="w-3 h-3 rounded-full bg-[#D9D9D9] "></span>
-                                        <span class="w-3 h-3 rounded-full bg-[#D9D9D9]"></span>
-                                        <span class="w-3 h-3 rounded-full bg-[#D9D9D9]"></span>
+                                        <span class="span"></span>
+                                        <span class="span"></span>
+                                        <span class="span"></span>
                                     </div>
                                 </div>
                             </div>
 
                             <!-- Image 3 -->
-                            <div class=" 30% OFF ">
-                                <img src="./assets/fasco-icon-section3.svg" alt="Fashion model 3" class="h-[350px]">
+                            <div class="30% OFF">
+                                <img src="./assets/fasco-icon-section3.svg" alt="Fashion model 3" class="h-[350px]" />
                             </div>
-
                         </div>
                     </div>
-
                 </div>
-
             </div>
-
         </section>
         <!-- section 4: -->
-        <section class=" px-10 py-5 bg-white-700">
+        <section class="px-10 py-5 bg-white-700">
             <div class="mt-[150px] mx-auto items-center max-w-[1040px]">
                 <div class="items-center flex flex-col justify-center">
                     <div class="max-w-[614px] text-center space-y-[20px]">
-                        <h3 class="font-volkhov text-[46px] leading-[100%] text-heather-grey">New Arrivals</h3>
-                        <p class="font-poppins text-[16px] leading-[26px] text-grey-900">Lorem ipsum dolor sit amet,
-                            consectetur adipiscing elit. Scelerisque duis ultrices sollicitudin aliquam sem. Scelerisque
-                            duis ultrices sollicitudin</p>
+                        <h3 class="font-volkhov text-[46px] leading-[100%] text-heather-grey">
+                            New Arrivals
+                        </h3>
+                        <p class="font-poppins text-[16px] leading-[26px] text-grey-900">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            Scelerisque duis ultrices sollicitudin aliquam sem. Scelerisque
+                            duis ultrices sollicitudin
+                        </p>
                     </div>
-
                 </div>
                 <div class="flex justify-between gap-[30px] my-[50px]">
                     <button class="button-arrival">Men’s Fashion</button>
@@ -346,7 +348,7 @@
                     <!-- card 1 -->
                     <div class="card">
                         <div>
-                            <img src="./assets/fasco-icon-section2-1.svg" alt="">
+                            <img src="./assets/fasco-icon-section2-1.svg" alt="" />
                         </div>
                         <div class="div-spanCard">
                             <div>
@@ -354,29 +356,26 @@
                                 <span class="text-grey-900">Al Karam</span>
                             </div>
                             <div class="flex">
-                                <span><img src="./assets/icon-star.svg" alt="icon-star"></span>
-                                <span><img src="./assets/icon-star.svg" alt="icon-star"></span>
-                                <span><img src="./assets/icon-star.svg" alt="icon-star"></span>
-                                <span><img src="./assets/icon-star.svg" alt="icon-star"></span>
-                                <span><img src="./assets/icon-star.svg" alt="icon-star"></span>
+                                <span><img src="./assets/icon-star.svg" alt="icon-star" /></span>
+                                <span><img src="./assets/icon-star.svg" alt="icon-star" /></span>
+                                <span><img src="./assets/icon-star.svg" alt="icon-star" /></span>
+                                <span><img src="./assets/icon-star.svg" alt="icon-star" /></span>
+                                <span><img src="./assets/icon-star.svg" alt="icon-star" /></span>
                             </div>
-
                         </div>
                         <div class="my-[25px]">
-                            <span class="span-text">(4.1k)
-                                Customer Reviews</span>
+                            <span class="span-text">(4.1k) Customer Reviews</span>
                         </div>
 
                         <div class="flex justify-between">
                             <span class="span-prix">$95.50</span>
-                            <span class="span-sold">Almost
-                                Sold Out</span>
+                            <span class="span-sold">Almost Sold Out</span>
                         </div>
                     </div>
                     <!-- card 2 -->
                     <div class="card">
                         <div>
-                            <img src="./assets/fasco-icon-section2-2.svg" alt="">
+                            <img src="./assets/fasco-icon-section2-2.svg" alt="" />
                         </div>
                         <div class="div-spanCard">
                             <div>
@@ -385,29 +384,26 @@
                             </div>
                             <!-- div 5 star -->
                             <div class="flex">
-                                <span><img src="./assets/icon-star.svg" alt="icon-star"></span>
-                                <span><img src="./assets/icon-star.svg" alt="icon-star"></span>
-                                <span><img src="./assets/icon-star.svg" alt="icon-star"></span>
-                                <span><img src="./assets/icon-star.svg" alt="icon-star"></span>
-                                <span><img src="./assets/icon-star.svg" alt="icon-star"></span>
+                                <span><img src="./assets/icon-star.svg" alt="icon-star" /></span>
+                                <span><img src="./assets/icon-star.svg" alt="icon-star" /></span>
+                                <span><img src="./assets/icon-star.svg" alt="icon-star" /></span>
+                                <span><img src="./assets/icon-star.svg" alt="icon-star" /></span>
+                                <span><img src="./assets/icon-star.svg" alt="icon-star" /></span>
                             </div>
-
                         </div>
                         <div class="my-[25px]">
-                            <span class="span-text">(4.1k)
-                                Customer Reviews</span>
+                            <span class="span-text">(4.1k) Customer Reviews</span>
                         </div>
 
                         <div class="flex justify-between">
                             <span class="span-prix">$95.50</span>
-                            <span class="span-sold">Almost
-                                Sold Out</span>
+                            <span class="span-sold">Almost Sold Out</span>
                         </div>
                     </div>
                     <!-- card 3 -->
                     <div class="card">
                         <div>
-                            <img src="./assets/fasco-icon-section2-3.svg" alt="">
+                            <img src="./assets/fasco-icon-section2-3.svg" alt="" />
                         </div>
                         <div class="div-spanCard">
                             <div>
@@ -416,29 +412,26 @@
                             </div>
                             <!-- div 5 star -->
                             <div class="flex">
-                                <span><img src="./assets/icon-star.svg" alt="icon-star"></span>
-                                <span><img src="./assets/icon-star.svg" alt="icon-star"></span>
-                                <span><img src="./assets/icon-star.svg" alt="icon-star"></span>
-                                <span><img src="./assets/icon-star.svg" alt="icon-star"></span>
-                                <span><img src="./assets/icon-star.svg" alt="icon-star"></span>
+                                <span><img src="./assets/icon-star.svg" alt="icon-star" /></span>
+                                <span><img src="./assets/icon-star.svg" alt="icon-star" /></span>
+                                <span><img src="./assets/icon-star.svg" alt="icon-star" /></span>
+                                <span><img src="./assets/icon-star.svg" alt="icon-star" /></span>
+                                <span><img src="./assets/icon-star.svg" alt="icon-star" /></span>
                             </div>
-
                         </div>
                         <div class="my-[25px]">
-                            <span class="span-text">(4.1k)
-                                Customer Reviews</span>
+                            <span class="span-text">(4.1k) Customer Reviews</span>
                         </div>
 
                         <div class="flex justify-between">
                             <span class="span-prix">$95.50</span>
-                            <span class="span-sold">Almost
-                                Sold Out</span>
+                            <span class="span-sold">Almost Sold Out</span>
                         </div>
                     </div>
                     <!-- card 4 -->
                     <div class="card">
                         <div>
-                            <img src="./assets/fasco-icon-section2-4.svg" alt="">
+                            <img src="./assets/fasco-icon-section2-4.svg" alt="" />
                         </div>
                         <div class="div-spanCard">
                             <div>
@@ -447,29 +440,26 @@
                             </div>
                             <!-- div 5 star -->
                             <div class="flex">
-                                <span><img src="./assets/icon-star.svg" alt="icon-star"></span>
-                                <span><img src="./assets/icon-star.svg" alt="icon-star"></span>
-                                <span><img src="./assets/icon-star.svg" alt="icon-star"></span>
-                                <span><img src="./assets/icon-star.svg" alt="icon-star"></span>
-                                <span><img src="./assets/icon-star.svg" alt="icon-star"></span>
+                                <span><img src="./assets/icon-star.svg" alt="icon-star" /></span>
+                                <span><img src="./assets/icon-star.svg" alt="icon-star" /></span>
+                                <span><img src="./assets/icon-star.svg" alt="icon-star" /></span>
+                                <span><img src="./assets/icon-star.svg" alt="icon-star" /></span>
+                                <span><img src="./assets/icon-star.svg" alt="icon-star" /></span>
                             </div>
-
                         </div>
                         <div class="my-[25px]">
-                            <span class="span-text">(4.1k)
-                                Customer Reviews</span>
+                            <span class="span-text">(4.1k) Customer Reviews</span>
                         </div>
 
                         <div class="flex justify-between">
                             <span class="span-prix">$95.50</span>
-                            <span class="span-sold">Almost
-                                Sold Out</span>
+                            <span class="span-sold">Almost Sold Out</span>
                         </div>
                     </div>
                     <!-- card 5 -->
                     <div class="card">
                         <div>
-                            <img src="./assets/fasco-icon-section2-5.svg" alt="">
+                            <img src="./assets/fasco-icon-section2-5.svg" alt="" />
                         </div>
                         <div class="div-spanCard">
                             <div>
@@ -478,13 +468,12 @@
                             </div>
                             <!-- div 5 star -->
                             <div class="flex">
-                                <span><img src="./assets/icon-star.svg" alt="icon-star"></span>
-                                <span><img src="./assets/icon-star.svg" alt="icon-star"></span>
-                                <span><img src="./assets/icon-star.svg" alt="icon-star"></span>
-                                <span><img src="./assets/icon-star.svg" alt="icon-star"></span>
-                                <span><img src="./assets/icon-star.svg" alt="icon-star"></span>
+                                <span><img src="./assets/icon-star.svg" alt="icon-star" /></span>
+                                <span><img src="./assets/icon-star.svg" alt="icon-star" /></span>
+                                <span><img src="./assets/icon-star.svg" alt="icon-star" /></span>
+                                <span><img src="./assets/icon-star.svg" alt="icon-star" /></span>
+                                <span><img src="./assets/icon-star.svg" alt="icon-star" /></span>
                             </div>
-
                         </div>
                         <div class="my-[25px]">
                             <span class="span-text">(4.1k) Customer Reviews</span>
@@ -498,7 +487,7 @@
                     <!-- card 6 -->
                     <div class="card">
                         <div>
-                            <img src="./assets/fasco-icon-section2-6.svg" alt="">
+                            <img src="./assets/fasco-icon-section2-6.svg" alt="" />
                         </div>
                         <div class="div-spanCard">
                             <div>
@@ -507,13 +496,12 @@
                             </div>
                             <!-- div 5 star -->
                             <div class="flex">
-                                <span><img src="./assets/icon-star.svg" alt="icon-star"></span>
-                                <span><img src="./assets/icon-star.svg" alt="icon-star"></span>
-                                <span><img src="./assets/icon-star.svg" alt="icon-star"></span>
-                                <span><img src="./assets/icon-star.svg" alt="icon-star"></span>
-                                <span><img src="./assets/icon-star.svg" alt="icon-star"></span>
+                                <span><img src="./assets/icon-star.svg" alt="icon-star" /></span>
+                                <span><img src="./assets/icon-star.svg" alt="icon-star" /></span>
+                                <span><img src="./assets/icon-star.svg" alt="icon-star" /></span>
+                                <span><img src="./assets/icon-star.svg" alt="icon-star" /></span>
+                                <span><img src="./assets/icon-star.svg" alt="icon-star" /></span>
                             </div>
-
                         </div>
                         <div class="my-[25px]">
                             <span class="span-text">(4.1k) Customer Reviews</span>
@@ -525,129 +513,275 @@
                         </div>
                     </div>
                 </div>
-
             </div>
-            <button class="mx-auto mt-[50px] block w-[207px] h-[56px] text-center bg-black hover:bg-black/60 hover:cursor-pointer text-white rounded-[10px]">
+            <button
+                class="mx-auto mt-[50px] block w-[207px] h-[56px] text-center bg-black hover:bg-black/60 hover:cursor-pointer text-white rounded-[10px]">
                 View More
             </button>
         </section>
-        <section>
-            <!-- section 5: -->
-            <section class="relative mx-auto max-w-[1040px]">
-                <div>
-                </div>
+        <!-- section 5: -->
+        <section class="relative mx-auto max-w-[1040px]">
+            <div>
                 <div class="flex justify-between gap-[116px] py-[72px] rounded-[5px]">
                     <!-- card 1: -->
                     <div class="flex items-center gap-4">
-                        <img src="./assets/icon-section3-1.svg" alt="High Quality icon" class="w-[38px] h-[50px]">
+                        <img src="./assets/icon-section3-1.svg" alt="High Quality icon" class="w-[38px] h-[50px]" />
 
                         <div class="flex flex-col w-fit">
-                            <span class="span-quality">
-                                High Quality
-                            </span>
+                            <span class="span-quality"> High Quality </span>
 
-                            <span class="span-crafter">
-                                Crafted from top materials
-                            </span>
+                            <span class="span-crafter"> Crafted from top materials </span>
                         </div>
                     </div>
                     <!-- card 2: -->
                     <div class="flex items-center gap-4">
-                        <img src="./assets/icon-section3-2.svg" alt="High Quality icon" class="w-[38px] h-[50px]">
+                        <img src="./assets/icon-section3-2.svg" alt="High Quality icon" class="w-[38px] h-[50px]" />
 
                         <div class="flex flex-col w-fit">
-                            <span class="span-quality">
-                                High Quality
-                            </span>
+                            <span class="span-quality"> High Quality </span>
 
-                            <span class="span-crafter">
-                                Crafted from top materials
-                            </span>
+                            <span class="span-crafter"> Crafted from top materials </span>
                         </div>
                     </div>
                     <!-- card 3: -->
                     <div class="flex items-center gap-4">
-                        <img src="./assets/icon-section3-3.svg" alt="High Quality icon" class="w-[38px] h-[50px]">
+                        <img src="./assets/icon-section3-3.svg" alt="High Quality icon" class="w-[38px] h-[50px]" />
 
                         <div class="flex flex-col w-fit">
-                            <span class="span-quality">
-                                High Quality
-                            </span>
+                            <span class="span-quality"> High Quality </span>
 
-                            <span class="span-crafter">
-                                Crafted from top materials
-                            </span>
+                            <span class="span-crafter"> Crafted from top materials </span>
                         </div>
                     </div>
                     <!-- card 4: -->
                     <div class="flex items-center gap-4">
-                        <img src="./assets/icon-section3-4.svg" alt="High Quality icon" class="w-[38px] h-[50px]">
+                        <img src="./assets/icon-section3-4.svg" alt="High Quality icon" class="w-[38px] h-[50px]" />
 
                         <div class="flex flex-col w-fit">
-                            <span class="span-quality">
-                                High Quality
-                            </span>
+                            <span class="span-quality"> High Quality </span>
 
-                            <span class="span-crafter">
-                                Crafted from top materials
-                            </span>
+                            <span class="span-crafter"> Crafted from top materials </span>
                         </div>
                     </div>
                 </div>
-            </section>
-            <!-- section 6: -->
-            <section class="py-5 bg-white-700">
-                <div class="mt-[150px] items-center ">
-                    <div class="items-center mx-auto max-w-[1040px] flex flex-col justify-center">
-                        <div class="max-w-[614px] text-center space-y-[20px]">
-                            <h3 class="font-volkhov text-[46px] leading-[100%] text-heather-grey">Follow Us On Instagram
-                            </h3>
-                            <p class="font-poppins text-[16px] leading-[26px] text-grey-900">Lorem ipsum dolor sit amet,
-                                consectetur adipiscing elit. Scelerisque duis ultrices sollicitudin aliquam sem.
-                                Scelerisque duis ultrices sollicitudin </p>
+            </div>
+        </section>
+        <!-- section 6: -->
+        <section class="py-5 bg-white-700">
+            <div class="mt-[150px] items-center">
+                <div class="items-center mx-auto max-w-[1040px] flex flex-col justify-center">
+                    <div class="max-w-[614px] text-center space-y-[20px]">
+                        <h3 class="font-volkhov text-[46px] leading-[100%] text-heather-grey">
+                            Follow Us On Instagram
+                        </h3>
+                        <p class="font-poppins text-[16px] leading-[26px] text-grey-900">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            Scelerisque duis ultrices sollicitudin aliquam sem. Scelerisque
+                            duis ultrices sollicitudin
+                        </p>
+                    </div>
+                </div>
+
+                <div class="overflow-hidden mt-[100px]">
+                    <div class="flex w-max auto-scroll">
+                        <div>
+                            <img src="./assets/fasco-section4-image-1.svg" alt="Fashion collection card 1" />
+                        </div>
+
+                        <!-- card img 2 -->
+                        <div>
+                            <img src="./assets/fasco-section4-image-2.svg" alt="Fashion collection card 2" />
+                        </div>
+
+                        <!-- card img 3 -->
+                        <div>
+                            <img src="./assets/fasco-section4-image-3.svg" alt="Fashion collection card 3" />
+                        </div>
+
+                        <!-- card img 4 -->
+                        <div>
+                            <img src="./assets/fasco-section4-image-4.svg" alt="Fashion collection card 4" />
+                        </div>
+
+                        <!-- card img 5 -->
+                        <div>
+                            <img src="./assets/fasco-section4-image-5.svg" alt="Fashion collection card 5" />
+                        </div>
+
+                        <!-- card img 6 -->
+                        <div>
+                            <img src="./assets/fasco-section4-image-6.svg" alt="Fashion collection card 6" />
+                        </div>
+
+                        <!-- card img 7 -->
+                        <div>
+                            <img src="./assets/fasco-section4-image-7.svg" alt="Fashion collection card 7" />
                         </div>
                     </div>
-
-                    <div class="overflow-hidden mt-[100px]">
-                        <div class="flex w-max auto-scroll">
-                            <div>
-                                <img src="./assets/fasco-section4-image-1.svg" alt="Fashion collection card 1">
-                            </div>
-
-                            <!-- card img 2 -->
-                            <div>
-                                <img src="./assets/fasco-section4-image-2.svg" alt="Fashion collection card 2">
-                            </div>
-
-                            <!-- card img 3 -->
-                            <div>
-                                <img src="./assets/fasco-section4-image-3.svg" alt="Fashion collection card 3">
-                            </div>
-
-                            <!-- card img 4 -->
-                            <div>
-                                <img src="./assets/fasco-section4-image-4.svg" alt="Fashion collection card 4">
-                            </div>
-
-                            <!-- card img 5 -->
-                            <div>
-                                <img src="./assets/fasco-section4-image-5.svg" alt="Fashion collection card 5">
-                            </div>
-
-                            <!-- card img 6 -->
-                            <div>
-                                <img src="./assets/fasco-section4-image-6.svg" alt="Fashion collection card 6">
-                            </div>
-
-                            <!-- card img 7 -->
-                            <div>
-                                <img src="./assets/fasco-section4-image-7.svg" alt="Fashion collection card 7">
+                </div>
+            </div>
+        </section>
+        <!-- section 7: -->
+        <section class="py-5 bg-white-700">
+            <div class="mt-[150px] ">
+                <div class="text-center space-y-[20px]">
+                    <h3 class="font-volkhov text-[46px] leading-[100%] text-heather-grey whitespace-nowrap">
+                        This Is What Our Customers Say
+                    </h3>
+                    <p class="font-poppins text-[16px] leading-[26px] text-grey-900 max-w-[614px] mx-auto text-center">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Scelerisque duis
+                    </p>
+                </div>
+                <!-- div cards  -->
+                <div class="relative mx-auto max-w-[1040px] flex flex-col items-center justify-center">
+                    <div class="flex relative">
+                        <!-- card 1 -->
+                        <div
+                            class="mt-[70px] absolute -right-[9px] top-[160px] w-[646px] h-[299px] -translate-y-1/2 z-0">
+                            <div
+                                class="relative bg-white-900 flex gap-[83px] p-[50px] max-w-[856px] shadow-[0px_20px_60px_0px_#2E213D14]">
+                                <div class="bg-grey-800 w-[180px] h-[180px]"></div>
+                                <div class="absolute top-[30px] left-[69px]">
+                                    <img src="./assets/fasco-section5-card2.svg" alt="fasco image" />
+                                </div>
                             </div>
                         </div>
+                        <!-- card 2 -->
+                        <div
+                            class="mt-[70px] absolute -right-[619px] top-[160px] w-[600px] h-[299px] -translate-y-1/2 z-0">
+                            <div
+                                class="relative flex justify-between gap-[200px] bg-white-900 flex gap-[83px] p-[50px] max-w-[856px] shadow-[0px_20px_60px_0px_#2E213D14]">
+                                <div class="bg-grey-800 w-[180px] h-[180px]"></div>
+                                <div class="absolute top-[30px] left-[69px]">
+                                    <img src="./assets/fasco-section5-card2.svg" alt="fasco image" />
+                                </div>
+                                <div>
+                                    <p class="font-poppins text-[12px] leading-[100%] text-heather-grey">
+                                        "You won't regret it. I would like to personally thank you
+                                        for your outstanding product. Absolutely wonderful!"
+                                    </p>
+                                    <div class="flex mt-[30px] w-[71px] h-[14px]">
+                                        <span><img src="./assets/icon-star.svg" alt="icon-star" /></span>
+                                        <span><img src="./assets/icon-star.svg" alt="icon-star" /></span>
+                                        <span><img src="./assets/icon-star.svg" alt="icon-star" /></span>
+                                        <span><img src="./assets/icon-star.svg" alt="icon-star" /></span>
+                                        <span><img src="./assets/icon-star.svg" alt="icon-star" /></span>
+                                    </div>
+                                    <div class="w-[230px] h-[1px] bg-heather-grey mt-[27px] mb-[15px]"></div>
+                                    <div class="space-y-[13px]">
+                                        <h5 class="font-volkhov text-[24px] leading-[100%] text-heather-grey">
+                                            Megen W.
+                                        </h5>
+                                        <span class="font-poppins text-[12px] leading-[100%] text-heather-grey">UI
+                                            Designer</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <!-- card 3 -->
+                        <div
+                            class="absolute top-0 left-1/2 -translate-x-1/2 bg-white-900 flex gap-[50px] w-[864px] h-[400px] z-99 shadow-[0px_20px_60px_0px_#2E213D14]">
+                            <div
+                                class="relative bg-white-900 flex gap-[83px] p-[50px] shadow-[0px_20px_60px_0px_#2E213D14]">
+                                <div class="bg-grey-800 w-[242px] h-[242px]"></div>
+                                <div class="absolute top-[30px] left-[69px]">
+                                    <img src="./assets/fasco-section5-card1.svg" alt="fasco image" />
+                                </div>
+                                <div>
+                                    <p class="font-poppins text-[16px] leading-[100%] text-heather-grey max-w-[419px]">
+                                        "You won't regret it. I would like to personally thank you
+                                        for your outstanding product. Absolutely wonderful!"
+                                    </p>
+                                    <div class="flex mt-[30px]">
+                                        <span><img src="./assets/icon-star.svg" alt="icon-star" /></span>
+                                        <span><img src="./assets/icon-star.svg" alt="icon-star" /></span>
+                                        <span><img src="./assets/icon-star.svg" alt="icon-star" /></span>
+                                        <span><img src="./assets/icon-star.svg" alt="icon-star" /></span>
+                                        <span><img src="./assets/icon-star.svg" alt="icon-star" /></span>
+                                    </div>
+                                    <div class="w-[230px] h-[1px] bg-heather-grey mt-[27px] mb-[15px]"></div>
+                                    <div class="space-y-[13px]">
+                                        <h5 class="font-volkhov text-[32px] leading-[100%] text-heather-grey">
+                                            James K.
+                                        </h5>
+                                        <span
+                                            class="font-poppins text-[16px] leading-[100%] text-heather-grey">Traveler</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Scroll arrows on the left of Image 1 -->
+                    <div class="absolute top-[470px] z-99 flex gap-3 ">
+                        <!-- Scroll left -->
+                        <button type="button" class="button-click">
+                            <img src="./assets/icon-left.svg" alt="" class="h-5 w-5" />
+                        </button>
+
+                        <!-- Scroll right -->
+                        <button type="button" class="button-click">
+                            <img src="./assets/icon-right.svg" alt="" class="h-5 w-5" />
+                        </button>
                     </div>
 
                 </div>
-            </section>
+
+            </div>
+
+        </section>
+
+        <!-- section 8: -->
+        <section class="mt-[650px] w-full max-w-[1200px] mx-auto px-[30px]">
+
+            <div class="flex items-center justify-between gap-[40px]">
+
+                <!-- div 1: Left image -->
+                <div class="shrink-0">
+                    <img src="./assets/fasco-section6-card1.svg" alt="">
+                </div>
+
+                <!-- div 2: Center content -->
+                <div class="flex-1 min-w-0 flex flex-col ">
+
+                    <!-- Title and description -->
+                    <div class="w-full flex flex-col items-center text-center">
+
+                        <h3 class="font-volkhov text-[46px] leading-[100%] text-heather-grey whitespace-nowrap">
+                            Subscribe To Our Newsletter
+                        </h3>
+
+                        <p class="font-poppins text-[16px] leading-[26px] text-grey-900 whitespace-nowrap mt-[20px]">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            Scelerisque duis <br> ultrices sollicitudin aliquam sem.
+                            Scelerisque duis ultrices sollicitudin
+                        </p>
+
+                    </div>
+                    <!-- Email -->
+                    <div
+                        class="my-[30px] flex justify-start items-start w-[400px] pt-[28px] pb-[32px] pl-[30px] shadow-[0px_3.02px_3.15px_#00000002,0px_13.28px_6.52px_#00000002]">
+
+                        <span class="font-poppins text-[22px] leading-[26px] text-grey-900">
+                            michael@ymail.com
+                        </span>
+
+                    </div>
+                    <div class="flex justify-center">
+                        <button
+                            class="items-center font-poppins text-[16px] leading-[100%] text-white-900 bg-black w-[207px] h-[56px] shadow-[0px_20px_35px_0px_#00000026] rounded-[10px]">Subscribe Now</button>
+
+                    </div>
+                </div>
+
+                <!-- div 3: Right image -->
+                <div class="shrink-0">
+                    <img src="./assets/fasco-section6-card2.svg" alt="">
+                </div>
+            </div>
+
+        </section>
     </main>
     <footer></footer>
 </body>

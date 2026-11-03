@@ -61,6 +61,9 @@
         .span-picky{
             @apply absolute z-30 flex items-center justify-center w-[6.43%] h-[6.35%] border border-[#000000] bg-white/60 text-[11px] whitespace-nowrap;
         }
+        .span.button{
+            @apply font-volkhov text-[22px] leading-[32px] text-black-900;
+        }
     </style>
 </head>
 
@@ -365,8 +368,8 @@
 
             <!-- subtotal -->
             <div class="flex justify-between items-center mt-[25px]">
-                <span class="font-volkhov text-[22px] leading-[32px] text-black-900">Subtotal</span>
-                <span class="font-volkhov text-[22px] leading-[32px] text-black-900">$100.00</span>
+                <span class="span-button">Subtotal</span>
+                <span class="span-button">$100.00</span>
             </div>
 
             <!-- checkout -->

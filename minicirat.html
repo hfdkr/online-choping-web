@@ -28,6 +28,7 @@
             --color-grey-600: #767676;
             --color-grey-700: #e0e0e0;
             --color-grey-800: #d9d9d9;
+            --color-light-gray: #EEEEEE;
             --color-black-900: #000000;
             --color-white-900: #ffffff;
             --color-white-700: #fafafa;
@@ -59,21 +60,6 @@
         }
         .span-picky{
             @apply absolute z-30 flex items-center justify-center w-[6.43%] h-[6.35%] border border-[#000000] bg-white/60 text-[11px] whitespace-nowrap;
-        }
-        .number-time {
-            @apply font-digital text-[32px] leading-[100%] text-heather-grey;
-        }
-        .zone-span {
-            @apply font-poppins text-[24px] leading-[120%] text-heather-grey;
-        }
-        .div-span {
-            @apply flex flex-col items-center bg-white-900 py-[12px] px-[22px] shadow-[0px_4px_14px_1px_#00000029] rounded-[10px];
-        }
-        .button-click {
-            @apply flex h-[48px] w-[48px] items-center justify-center rounded-full border border-gray-300 bg-white shadow-md hover:bg-gray-100;
-        }
-         .span {
-            @apply w-3 h-3 rounded-full bg-grey-800;
         }
     </style>
 </head>
@@ -117,4 +103,285 @@
         </div>
 
     </header>
+
+    <!-- Main Content -->
+    <main class="relative">
+        <!-- section 1: -->
+        <section class="mx-auto max-w-[1070px] py-5">
+            <!-- fixed gap between image and text (adjust to the Figma value) -->
+            <div class="flex justify-center gap-[60px]">
+                <div class="flex gap-5 shrink-0">
+                    <!-- div images -->
+                    <div class="space-y-[10px]">
+                        <div class="">
+                            <img src="./assets-product/icon-section1-Jacket.svg" alt="Women's jacket" />
+                        </div>
+                        <div class="div-active">
+                            <img src="./assets-product/icon-section1-girl.svg" alt="Woman wearing a fashion outfit" />
+                        </div>
+                        <div class="">
+                            <img src="./assets-product/icon-section1-man.svg" alt="Man wearing casual clothing" />
+                        </div>
+                        <div>
+                            <img src="./assets-product/icon-section1-full_girl.svg"
+                                alt="Full-body view of a woman in a fashion outfit" />
+                        </div>
+                        <div class="">
+                            <img src="./assets-product/icon-section1-jacket-janes.svg" alt="Women's jeans jacket" />
+                        </div>
+                        <div class="">
+                            <img src="./assets-product/icon-section1-black_Jacket.svg" alt="Black jacket" />
+                        </div>
+                        <div class="">
+                            <img src="./assets-product/icon-section1-full_body.svg" alt="Full-body fashion model" />
+                        </div>
+                    </div>
+                    <!-- main image: fixed width, height follows the ratio -->
+                    <div class="w-[400px] shrink-0">
+                        <img src="./assets-product/icon-section1-red_girl.svg" alt="Woman wearing a red jacket"
+                            class="w-full h-auto block">
+                    </div>
+                </div>
+
+                <!-- right column: width = widest content (490px) -->
+                <div class="w-[490px] shrink-0">
+                    <span class="block font-volkhov my-[5px] text-[14px] uppercase">
+                        Fasco
+                    </span>
+
+                    <div class="flex justify-between items-center w-full">
+                        <h2 class="font-volkhov text-[30px] leading-[42px]">
+                            Denim Jacket
+                        </h2>
+
+                        <div class="border border-light-gray rounded-full p-[12px]">
+                            <img src="./assets-product/icon-star.svg" alt="icon star">
+                        </div>
+                    </div>
+
+                    <!-- div stars -->
+                    <div class="flex items-center gap-[8px]">
+                        <div class="flex">
+                            <span><img src="./assets-product/black-star.svg" alt="icon-star" /></span>
+                            <span><img src="./assets-product/black-star.svg" alt="icon-star" /></span>
+                            <span><img src="./assets-product/black-star.svg" alt="icon-star" /></span>
+                            <span><img src="./assets-product/black-star.svg" alt="icon-star" /></span>
+                            <span><img src="./assets-product/white-star.svg" alt="icon-star" /></span>
+                        </div>
+                        <div>
+                            <span class="items-center">(3)</span>
+                        </div>
+                    </div>
+
+                    <!-- div price -->
+                    <div class="flex items-center gap-[8px] mt-[20px] mb-[30px]">
+                        <div class="flex gap-[7px] items-center">
+                            <span class="font-volkhov text-[24px] leading-[32px] text-black-900">$39.00</span>
+                            <span
+                                class="font-jost text-[16px] leading-[19.2px] text-[#666666] line-through">$59.00</span>
+                            <button
+                                class="pt-[2.5px] pr-[9.69px] pb-[2.5px] pl-[10px] flex bg-[#DA3F3F] rounded-[11px] uppercase">
+                                <span
+                                    class="flex gap-[4.61px] text-white-900 font-jost text-[11px] leading-[16px]">Save<span
+                                        class="">33%</span></span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- div viewing -->
+                    <div class="flex gap-[10px] font-poppins text-[16px] leading-[24px] text-grey-900">
+                        <img src="./assets-product/icon-view.svg" alt="">
+                        <span class="">24 <span>people are viewing this right now</span></span>
+                    </div>
+
+                    <!-- div time -->
+                    <div class="w-full h-[58px] border border-[#F8CCCC] bg-[#FDEFEE] rounded-[4px] my-[30px] px-[15px]">
+                        <div class="flex justify-between items-center h-full">
+                            <h5 class="font-volkhov text-[18px] leading-[28px] text-[#FF706B] whitespace-nowrap">
+                                Hurry up! Sale ends in:
+                            </h5>
+
+                            <div class="flex items-center">
+                                <span class="number-time">02</span>
+                                <span class="number-time">:</span>
+                                <span class="number-time">06</span>
+                                <span class="number-time">:</span>
+                                <span class="number-time">05</span>
+                                <span class="number-time">:</span>
+                                <span class="number-time">30</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- div stock -->
+                    <div class="space-y-[13px]">
+                        <span class="font-jost text-[16px] leading-[24px] text-[#666666]">Only <span>9</span> item(s)
+                            left in stock!</span>
+                        <div class="w-full h-[5px] mt-[13px] bg-[#DEDEDE] rounded-[2px]">
+                            <div class="bg-[#EF2D2D] w-[29.25px] h-[5px] rounded-[2px]"></div>
+                        </div>
+                    </div>
+
+                    <!-- div size -->
+                    <div class="mt-[30px]">
+                        <span class="font-volkhov font-bold text-[16px] leading-[24px] text-black-900">Size: M</span>
+
+                        <div class="flex gap-[10px] items-center mt-[10px]">
+                            <!-- Size M (active) -->
+                            <div
+                                class="w-[45px] h-[45px] flex items-center justify-center bg-black-900 text-white-900 rounded-[5px] border border-black-900">
+                                M
+                            </div>
+                            <!-- Size L -->
+                            <div
+                                class="w-[45px] h-[45px] flex items-center justify-center bg-white-900 text-black-900 rounded-[5px] border border-light-gray">
+                                L
+                            </div>
+                            <!-- Size XL -->
+                            <div
+                                class="w-[45px] h-[45px] flex items-center justify-center bg-white-900 text-black-900 rounded-[5px] border border-light-gray">
+                                XL
+                            </div>
+                            <!-- Size XXL -->
+                            <div
+                                class="w-[45px] h-[45px] flex items-center justify-center bg-white-900 text-black-900 rounded-[5px] border border-light-gray">
+                                XXL
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- div color -->
+                    <div class="mt-[14px]">
+                        <span class="font-volkhov font-bold text-[16px] leading-[24px] text-black-900">Color:
+                            Blue</span>
+
+                        <div class="flex gap-[10px] mt-[10px]">
+                            <!-- Color 1 (active) -->
+                            <div
+                                class="w-[40px] h-[40px] rounded-full shadow-[inset_0_0_0_4px_#FFFFFF,0_0_0_1px_#000000] p-[5px]">
+                                <div class="w-full h-full bg-[#8DB4D2] rounded-full"></div>
+                            </div>
+                            <!-- Color 2 -->
+                            <div class="w-[40px] h-[40px] rounded-full shadow-[inset_0_0_0_1px_#FFFFFF] p-[5px]">
+                                <div class="w-full h-full bg-[#000000] rounded-full"></div>
+                            </div>
+                            <!-- Color 3 -->
+                            <div class="w-[40px] h-[40px] rounded-full shadow-[inset_0_0_0_1px_#FFFFFF] p-[5px]">
+                                <div class="w-full h-full bg-[#FFD1DC] rounded-full"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- div quantity -->
+                    <div class="mt-[29px]">
+                        <span class="font-volkhov text-[16px] leading-[24px] text-black-900">
+                            Quantity
+                        </span>
+                        <div class="flex gap-[30px] mt-[13px] pb-[65px] w-full">
+                            <div class="border border-light-gray w-[128px] h-[46px] items-center flex justify-evenly">
+                                <span class="cursor-pointer">-</span>
+                                <span>1</span>
+                                <span class="cursor-pointer">+</span>
+                            </div>
+
+                            <div
+                                class="flex-1 h-[45px] rounded-[5px] border flex items-center justify-center cursor-pointer hover:bg-black-900 hover:text-white-900 hover:rounded-[10px]">
+                                <span>Add to cart</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- div actions (border = full column width) -->
+                    <div class="w-full flex gap-[30px]">
+                        <!-- first one -->
+                        <div class="flex items-center gap-[8px]">
+                            <img src="./assets-product/icon-compare.svg" alt="icon compare">
+                            <span class="span-thired">Compare</span>
+                        </div>
+                        <!-- second one -->
+                        <div class="flex items-center gap-[8px]">
+                            <img src="./assets-product/icon-ask.svg" alt="icon ask">
+                            <span class="span-thired">Ask a question</span>
+                        </div>
+                        <!-- last one -->
+                        <div class="flex items-center gap-[8px]">
+                            <img src="./assets-product/icon-share.svg" alt="icon share">
+                            <span class="span-thired">Share</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- gray overlay on the whole page (behind the cart), like Figma -->
+    <div class="fixed inset-0 z-40 bg-[#78787869]"></div>
+
+    <!-- Shopping cart panel: pinned to the right edge of the screen, full height.
+         flex-col: products at the top, subtotal + checkout pushed to the bottom -->
+    <aside
+        class="fixed top-0 right-0 z-50 w-[500px] max-w-full h-screen overflow-y-auto bg-white-900 flex flex-col px-[44px] pt-[45px] pb-[40px]">
+
+        <!-- close button -->
+        <button type="button" aria-label="Close cart" class="absolute top-[45px] right-[44px] cursor-pointer">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="1.5"
+                stroke-linecap="round">
+                <path d="M5 5l14 14M19 5L5 19" />
+            </svg>
+        </button>
+
+        <!-- top: title + products -->
+        <div>
+            <h2 class="font-volkhov text-[42px] leading-[32px] text-black-900">Shopping Cart</h2>
+            <p class="font-poppins text-[20px] leading-[32px] whitespace-nowrap mt-[26px] text-grey-900">Buy <span
+                    class="font-bold text-black-900">$122.35</span> More And Get <span
+                    class="font-bold text-black-900">Free Shipping</span></p>
+
+            <!-- product -->
+            <div class="mt-[67px] flex gap-[22px] pb-[20px] border-b border-light-gray">
+                <img src="./assets-product/Product-Image.svg" alt="Product-Image">
+                <div>
+                    <h5 class="font-volkhov text-[22px] leading-[42px] text-black-900">Denim Jacket</h5>
+                    <p class="font-poppins text-[22px] leading-[42px] text-grey-900">Color : Red</p>
+                    <span class="font-poppins text-[22px] leading-[42px] text-black-900">$14.80</span>
+                    <div
+                        class="w-[170px] h-[59px] rounded-[5px] px-[15px] bg-[#F1F1F1] mt-[9px] items-center flex justify-evenly">
+                        <span class="cursor-pointer">-</span>
+                        <span>1</span>
+                        <span class="cursor-pointer">+</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- bottom: pushed down with mt-auto -->
+        <div class="mt-auto pt-[40px]">
+            <!-- gift wrap -->
+            <label class="flex items-center gap-[12px] pb-[20px] border-b border-light-gray cursor-pointer">
+                <input type="checkbox" class="w-[22px] h-[22px] accent-black-900 cursor-pointer">
+                <span class="font-poppins text-[16px] leading-[24px] text-grey-900">For <span
+                        class="text-black-900">$10.00</span> Please Wrap The Product</span>
+            </label>
+
+            <!-- subtotal -->
+            <div class="flex justify-between items-center mt-[25px]">
+                <span class="font-volkhov text-[22px] leading-[32px] text-black-900">Subtotal</span>
+                <span class="font-volkhov text-[22px] leading-[32px] text-black-900">$100.00</span>
+            </div>
+
+            <!-- checkout -->
+            <button type="button"
+                class="mt-[25px] w-full h-[56px] rounded-[10px] bg-black-900 hover:bg-black-900/70 cursor-pointer text-white-900 font-poppins text-[16px] leading-[100%] shadow-[0px_20px_35px_#00000026]">
+                Checkout
+            </button>
+
+            <!-- view cart -->
+            <a href="#"
+                class="block mt-[20px] text-center font-volkhov text-[18px] leading-[24px] text-black-900 underline">
+                View Cart
+            </a>
+        </div>
+    </aside>
 </body>
+
+</html>

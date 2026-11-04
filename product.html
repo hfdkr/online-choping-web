@@ -91,44 +91,492 @@
         .span-thired{
             @apply font-jost text-[16px] leading-[24px] text-black-900;
         }
+
+        /* ============================================================
+           Page sections (utilities moved out of the HTML)
+           ============================================================ */
+        /* ===== Page ===== */
+        .page-body {
+          @apply bg-white-900;
+        }
+
+        /* ===== Header ===== */
+        .header-bar {
+          @apply flex items-center justify-between px-10 mx-auto max-w-[1070px] py-5;
+        }
+        .logo-link {
+          @apply shrink-0;
+        }
+        .logo-title {
+          @apply font-volkhov text-[40px] leading-[100%] text-heather-grey;
+        }
+        .nav-main {
+          @apply gap-8;
+        }
+        .nav-active {
+          @apply border-b border-heather-grey py-[10px];
+        }
+        .header-icons {
+          @apply flex items-center gap-4;
+        }
+        .header-icon {
+          @apply w-6 h-6;
+        }
+
+        /* ===== Product details ===== */
+        .product-section {
+          @apply mx-auto max-w-[1070px] py-5;
+        }
+        .product-layout {
+          @apply flex justify-center gap-[60px];
+        }
+        .product-gallery {
+          @apply flex gap-5 shrink-0;
+        }
+        .gallery-thumbs {
+          @apply space-y-[10px];
+        }
+        .gallery-main {
+          @apply w-[400px] shrink-0;
+        }
+        .gallery-main-img {
+          @apply w-full h-auto block;
+        }
+        .product-info {
+          @apply w-[490px] shrink-0;
+        }
+        .product-brand {
+          @apply block font-volkhov my-[5px] text-[14px] uppercase;
+        }
+        .product-title-row {
+          @apply flex justify-between items-center w-full;
+        }
+        .product-title {
+          @apply font-volkhov text-[30px] leading-[42px];
+        }
+        .wishlist-btn {
+          @apply border border-light-gray rounded-full p-[12px];
+        }
+        .rating-row {
+          @apply flex items-center gap-[8px];
+        }
+        .rating-stars {
+          @apply flex;
+        }
+        .rating-count {
+          @apply items-center;
+        }
+        .price-row {
+          @apply flex items-center gap-[8px] mt-[20px] mb-[30px];
+        }
+        .price-group {
+          @apply flex gap-[7px] items-center;
+        }
+        .price-current {
+          @apply font-volkhov text-[24px] leading-[32px] text-black-900;
+        }
+        .price-old {
+          @apply font-jost text-[16px] leading-[19.2px] text-[#666666] line-through;
+        }
+        .price-badge {
+          @apply pt-[2.5px] pr-[9.69px] pb-[2.5px] pl-[10px] flex bg-[#DA3F3F] rounded-[11px] uppercase;
+        }
+        .price-badge-text {
+          @apply flex gap-[4.61px] text-white-900 font-jost text-[11px] leading-[16px];
+        }
+        .viewers-row {
+          @apply flex gap-[10px] font-poppins text-[16px] leading-[24px] text-grey-900;
+        }
+        .sale-timer {
+          @apply w-full h-[58px] border border-[#F8CCCC] bg-[#FDEFEE] rounded-[4px] my-[30px] px-[15px];
+        }
+        .sale-timer-inner {
+          @apply flex justify-between items-center h-full;
+        }
+        .sale-timer-title {
+          @apply font-volkhov text-[18px] leading-[28px] text-[#FF706B] whitespace-nowrap;
+        }
+        .sale-timer-digits {
+          @apply flex items-center;
+        }
+        .stock-block {
+          @apply space-y-[13px];
+        }
+        .stock-text {
+          @apply font-jost text-[16px] leading-[24px] text-[#666666];
+        }
+        .stock-bar {
+          @apply w-full h-[5px] mt-[13px] bg-[#DEDEDE] rounded-[2px];
+        }
+        .stock-bar-fill {
+          @apply bg-[#EF2D2D] w-[29.25px] h-[5px] rounded-[2px];
+        }
+        .size-block {
+          @apply mt-[30px];
+        }
+        .option-label {
+          @apply font-volkhov font-bold text-[16px] leading-[24px] text-black-900;
+        }
+        .size-options {
+          @apply flex gap-[10px] items-center mt-[10px];
+        }
+        .size-btn-active {
+          @apply w-[45px] h-[45px] flex items-center justify-center bg-black-900 text-white-900 rounded-[5px] border border-black-900;
+        }
+        .size-btn {
+          @apply w-[45px] h-[45px] flex items-center justify-center bg-white-900 text-black-900 rounded-[5px] border border-light-gray;
+        }
+        .color-block {
+          @apply mt-[14px];
+        }
+        .color-options {
+          @apply flex gap-[10px] mt-[10px];
+        }
+        .swatch-active {
+          @apply w-[40px] h-[40px] rounded-full shadow-[inset_0_0_0_4px_#FFFFFF,0_0_0_1px_#000000] p-[5px];
+        }
+        .swatch-blue {
+          @apply w-full h-full bg-[#8DB4D2] rounded-full;
+        }
+        .swatch {
+          @apply w-[40px] h-[40px] rounded-full shadow-[inset_0_0_0_1px_#FFFFFF] p-[5px];
+        }
+        .swatch-black {
+          @apply w-full h-full bg-[#000000] rounded-full;
+        }
+        .swatch-pink {
+          @apply w-full h-full bg-[#FFD1DC] rounded-full;
+        }
+        .quantity-block {
+          @apply mt-[29px];
+        }
+        .quantity-label {
+          @apply font-volkhov text-[16px] leading-[24px] text-black-900;
+        }
+        .quantity-row {
+          @apply flex gap-[30px] mt-[13px] pb-[65px] w-full;
+        }
+        .quantity-picker {
+          @apply border border-light-gray w-[128px] h-[46px] items-center flex justify-evenly;
+        }
+        .qty-btn {
+          @apply cursor-pointer;
+        }
+        .add-to-cart-btn {
+          @apply flex-1 h-[45px] rounded-[5px] border flex items-center justify-center cursor-pointer hover:bg-black-900 hover:text-white-900 hover:rounded-[10px];
+        }
+        .product-actions {
+          @apply w-full flex gap-[30px] border-b border-light-gray pb-[12px];
+        }
+        .product-action {
+          @apply flex items-center gap-[8px];
+        }
+        .delivery-info {
+          @apply my-[30px];
+        }
+        .delivery-row {
+          @apply flex gap-[6.5px] mb-[8px];
+        }
+        .delivery-label {
+          @apply font-volkhov font-bold text-[16px] leading-[24px] text-black-900;
+        }
+        .delivery-value {
+          @apply font-jost text-[16px] leading-[24px] text-black-900;
+        }
+        .delivery-row-last {
+          @apply flex gap-[6.5px];
+        }
+        .secure-checkout {
+          @apply bg-[#F8F8F8] items-center flex flex-col justify-center space-y-[20px] py-[20px];
+        }
+        .secure-checkout-text {
+          @apply font-volkhov text-[16px] leading-[100%] text-black-900;
+        }
+
+        /* ===== Peaky Blinders ===== */
+        .peaky-section {
+          @apply relative w-full my-[26px];
+        }
+        .peaky-wrapper {
+          @apply relative w-full flex flex-col overflow-hidden bg-white min-[991px]:block min-[991px]:aspect-[1920/570.2] min-[991px]:min-h-[480px];
+        }
+        .peaky-diagonal-panel {
+          @apply hidden min-[991px]:block absolute inset-0 bg-[#D9D9D9] [clip-path:polygon(55.03%_0,100%_0,100%_100%,45.29%_100%)];
+        }
+        .peaky-diagonal-line {
+          @apply hidden min-[991px]:block absolute inset-0 w-full h-full z-20 pointer-events-none;
+        }
+        .peaky-model-mobile {
+          @apply min-[991px]:hidden mx-auto my-[30px] h-[360px] w-auto max-w-full object-contain;
+        }
+        .peaky-model-zone {
+          @apply hidden min-[991px]:block absolute inset-x-0 top-1/2 -translate-y-1/2 aspect-[1920/570.2] z-10;
+        }
+        .peaky-model-inset {
+          @apply absolute inset-[5%];
+        }
+        .peaky-model-img {
+          @apply absolute bottom-0 left-[9.3%] h-full w-auto max-w-none z-10;
+        }
+        .peaky-annotations {
+          @apply absolute inset-0 w-full h-full z-20 pointer-events-none;
+        }
+        .circle-flat-cap {
+          @apply left-[27.41%] top-[5.36%];
+        }
+        .circle-suspender {
+          @apply left-[23.07%] top-[25%];
+        }
+        .circle-hugo-right {
+          @apply left-[24.97%] top-[36.43%];
+        }
+        .circle-hugo-left {
+          @apply left-[20.85%] top-[53.21%];
+        }
+        .circle-santoni {
+          @apply left-[25.19%] top-[82.86%];
+        }
+        .label-flat-cap {
+          @apply left-[32.38%] top-[10%];
+        }
+        .label-suspender {
+          @apply left-[10.79%] top-[29.29%];
+        }
+        .label-hugo-right {
+          @apply left-[29.84%] top-[40.71%];
+        }
+        .label-hugo-left {
+          @apply left-[8.5%] top-[57.5%];
+        }
+        .label-santoni {
+          @apply left-[29.95%] top-[87.5%];
+        }
+        .peaky-info {
+          @apply relative z-30 flex flex-col justify-center bg-[#D9D9D9] px-6 py-10 min-[991px]:absolute min-[991px]:inset-y-0 min-[991px]:left-[56.6%] min-[991px]:w-[40%] min-[991px]:bg-transparent min-[991px]:px-0 min-[991px]:py-[30px];
+        }
+        .peaky-collection {
+          @apply font-poppins text-[16px] leading-[100%] text-grey-600;
+        }
+        .peaky-title {
+          @apply font-volkhov text-[46px] leading-[100%] text-heather-grey my-[20px];
+        }
+        .peaky-desc-title {
+          @apply font-poppins text-[16px] leading-[100%] underline text-black-900;
+        }
+        .peaky-desc {
+          @apply my-[20px] font-poppins text-[16px] leading-[100%] text-grey-600;
+        }
+        .peaky-size-row {
+          @apply flex gap-[15px] items-center;
+        }
+        .peaky-size-label {
+          @apply font-poppins text-[16px] leading-[100%] text-grey-600;
+        }
+        .peaky-size-badge {
+          @apply font-poppins text-[16px] leading-[100%] text-white-900 bg-black-900 py-[6px] px-[20px] rounded-[10px];
+        }
+        .peaky-price {
+          @apply my-[20px] font-poppins font-medium leading-[100%] text-black-900;
+        }
+        .peaky-price-int {
+          @apply text-[28px];
+        }
+        .peaky-price-dec {
+          @apply text-[24px];
+        }
+        .peaky-buy-btn {
+          @apply flex w-[207px] h-[56px] bg-black-900 hover:bg-black-900/70 cursor-pointer items-center justify-center rounded-[10px] text-white-900 font-poppins text-[16px] leading-[100%];
+        }
+
+        /* ===== Features ===== */
+        .features-row {
+          @apply mx-auto max-w-[1040px] px-10 flex justify-between py-[72px];
+        }
+        .feature-item {
+          @apply flex items-center gap-4;
+        }
+        .feature-icon {
+          @apply w-[38px] h-[50px];
+        }
+        .feature-text {
+          @apply flex flex-col w-fit;
+        }
+
+        /* ===== People also loved ===== */
+        .loved-section {
+          @apply space-y-[150px] pl-36 py-5 bg-gradient-to-b from-[#FFFFFF] to-[#FAFAFA];
+        }
+        .loved-row {
+          @apply flex justify-between;
+        }
+        .loved-content {
+          @apply max-w-[444px];
+        }
+        .loved-intro {
+          @apply mb-[50px];
+        }
+        .loved-title {
+          @apply mb-[20px] text-[46px] font-volkhov leading-[100%] text-heather-grey;
+        }
+        .loved-text {
+          @apply mb-[40px] text-[16px] text-grey-900 leading-[26px] font-poppins;
+        }
+        .loved-buy-btn {
+          @apply bg-black-900 py-[20px] px-[60px] rounded-[10px] leading-[100%] text-white-900;
+        }
+        .loved-countdown-title {
+          @apply font-poppins font-medium text-[28px] leading-[100%] text-heather-grey mb-[15px];
+        }
+        .loved-countdown {
+          @apply flex justify-between items-center;
+        }
+        .loved-gallery {
+          @apply relative w-[600px] shrink-0;
+        }
+        .loved-scroller {
+          @apply overflow-x-auto [scrollbar-width:none];
+        }
+        .loved-scroller::-webkit-scrollbar {  /* = [&::-webkit-scrollbar]:hidden */
+          display: none;
+        }
+        .loved-track {
+          @apply flex items-start gap-5 w-max;
+        }
+        .loved-arrows {
+          @apply absolute top-[560px] -left-29 z-10 flex gap-3 -translate-y-1/2;
+        }
+        .arrow-icon {
+          @apply h-5 w-5;
+        }
+        .loved-slide-main {
+          @apply shrink-0 relative;
+        }
+        .loved-slide-main-img {
+          @apply w-full h-[582px] object-cover;
+        }
+        .loved-slide-caption {
+          @apply absolute bottom-[24px] left-[24px] w-fit p-4 bg-[#FFFFFF]/80 backdrop-blur-[7px];
+        }
+        .loved-caption-row {
+          @apply flex items-center gap-3;
+        }
+        .loved-caption-text {
+          @apply font-poppins text-[16px] text-heather-grey;
+        }
+        .loved-caption-line {
+          @apply w-[40px] h-[1px] bg-heather-grey;
+        }
+        .loved-caption-discount {
+          @apply mt-2 font-poppins text-[28px] font-semibold text-black-900;
+        }
+        .loved-slide {
+          @apply relative shrink-0;
+        }
+        .loved-slide-img {
+          @apply w-full h-[486px] object-cover;
+        }
+        .loved-dots {
+          @apply absolute -bottom-[60px] left-[10px] flex items-center gap-2;
+        }
+        .loved-dot-active {
+          @apply w-4 h-4 rounded-full border border-black-900 bg-white flex items-center justify-center;
+        }
+        .loved-dot-active-inner {
+          @apply w-2 h-2 rounded-full bg-black-900;
+        }
+        .loved-slide-small-img {
+          @apply h-[350px];
+        }
+
+        /* ===== Newsletter ===== */
+        .newsletter-section {
+          @apply mt-[138px] w-full max-w-[1200px] mx-auto px-[30px];
+        }
+        .newsletter-row {
+          @apply flex items-center justify-between gap-[40px];
+        }
+        .newsletter-side {
+          @apply shrink-0;
+        }
+        .newsletter-center {
+          @apply flex-1 min-w-0 flex flex-col;
+        }
+        .newsletter-heading {
+          @apply w-full flex flex-col items-center text-center;
+        }
+        .newsletter-title {
+          @apply font-volkhov text-[46px] leading-[100%] text-heather-grey whitespace-nowrap;
+        }
+        .newsletter-text {
+          @apply font-poppins text-[16px] leading-[26px] text-grey-900 whitespace-nowrap mt-[20px];
+        }
+        .newsletter-email {
+          @apply my-[30px] flex justify-start items-start w-[400px] pt-[28px] pb-[32px] pl-[30px] shadow-[0px_3.02px_3.15px_#00000002,0px_13.28px_6.52px_#00000002];
+        }
+        .newsletter-email-text {
+          @apply font-poppins text-[22px] leading-[26px] text-grey-900;
+        }
+        .newsletter-btn-wrap {
+          @apply flex justify-center;
+        }
+        .newsletter-btn {
+          @apply items-center font-poppins text-[16px] leading-[100%] text-white-900 bg-black-900 w-[207px] h-[56px] shadow-[0px_20px_35px_0px_#00000026] rounded-[10px];
+        }
+
+        /* ===== Footer ===== */
+        .site-footer {
+          @apply border-t border-[#DEDFE1] mt-[50px] py-[20px];
+        }
+        .footer-top {
+          @apply flex justify-between mx-auto max-w-[1040px];
+        }
+        .footer-logo {
+          @apply font-volkhov text-[32px] leading-[100%] text-heather-grey;
+        }
+        .footer-nav {
+          @apply gap-[38px];
+        }
+        .footer-copyright {
+          @apply items-center flex justify-center mt-[50px];
+        }
     </style>
 </head>
 
-<body class="bg-white-900">
+<body class="page-body">
 
     <!-- Header -->
-    <header id="top" class="flex items-center justify-between px-10 mx-auto max-w-[1070px] py-5">
+    <header id="top" class="header-bar">
 
         <!-- Logo -->
-        <a href="#" aria-label="FASCO home" class="shrink-0">
-            <h1 class="font-volkhov text-[40px] leading-[100%] text-heather-grey">
+        <a href="#" aria-label="FASCO home" class="logo-link">
+            <h1 class="logo-title">
                 FASCO
             </h1>
         </a>
 
         <!-- Navigation -->
-        <nav class="navbar gap-8">
+        <nav class="navbar nav-main">
             <a href="#home" class="nav-name">Home</a>
             <a href="#Deals" class="nav-name">Shop</a>
-            <a href="#arrivale" class="nav-name border-b border-heather-grey py-[10px]">Products</a>
+            <a href="#arrivale" class="nav-name nav-active">Products</a>
             <a href="#package" class="nav-name">Pages</a>
         </nav>
 
         <!-- Header Icons -->
-        <div class="flex items-center gap-4">
+        <div class="header-icons">
             <a href="#" aria-label="Search">
-                <img src="./assets-product/icon-search.svg" alt="Search" class="w-6 h-6" />
+                <img src="./assets-product/icon-search.svg" alt="Search" class="header-icon" />
             </a>
 
             <a href="#" aria-label="Shopping cart">
-                <img src="./assets-product/icon-user.svg" alt="User account" class="w-6 h-6" />
+                <img src="./assets-product/icon-user.svg" alt="User account" class="header-icon" />
             </a>
 
             <a href="#" aria-label="User account">
-                <img src="./assets-product/icon-star.svg" alt="Pin Shoping" class="w-6 h-6" />
+                <img src="./assets-product/icon-star.svg" alt="Pin Shoping" class="header-icon" />
             </a>
             <a href="#" aria-label="User account">
-                <img src="./assets-product/icon-wallet.svg" alt="Shopping cart " class="w-6 h-6" />
+                <img src="./assets-product/icon-wallet.svg" alt="Shopping cart " class="header-icon" />
             </a>
         </div>
 
@@ -137,12 +585,12 @@
     <!-- Main Content -->
     <main>
         <!-- section 1: -->
-        <section class="mx-auto max-w-[1070px] py-5">
+        <section class="product-section">
             <!-- fixed gap between image and text (adjust to the Figma value) -->
-            <div class="flex justify-center gap-[60px]">
-                <div class="flex gap-5 shrink-0">
+            <div class="product-layout">
+                <div class="product-gallery">
                     <!-- div images -->
-                    <div class="space-y-[10px]">
+                    <div class="gallery-thumbs">
                         <div class="">
                             <img src="./assets-product/icon-section1-Jacket.svg" alt="Women's jacket" />
                         </div>
@@ -167,31 +615,31 @@
                         </div>
                     </div>
                     <!-- main image: fixed width, height follows the ratio -->
-                    <div class="w-[400px] shrink-0">
+                    <div class="gallery-main">
                         <img src="./assets-product/icon-section1-red_girl.svg" alt="Woman wearing a red jacket"
-                            class="w-full h-auto block">
+                            class="gallery-main-img">
                     </div>
                 </div>
 
                 <!-- right column: width = widest content (490px) -->
-                <div class="w-[490px] shrink-0">
-                    <span class="block font-volkhov my-[5px] text-[14px] uppercase">
+                <div class="product-info">
+                    <span class="product-brand">
                         Fasco
                     </span>
 
-                    <div class="flex justify-between items-center w-full">
-                        <h2 class="font-volkhov text-[30px] leading-[42px]">
+                    <div class="product-title-row">
+                        <h2 class="product-title">
                             Denim Jacket
                         </h2>
 
-                        <div class="border border-light-gray rounded-full p-[12px]">
+                        <div class="wishlist-btn">
                             <img src="./assets-product/icon-star.svg" alt="icon star">
                         </div>
                     </div>
 
                     <!-- div stars -->
-                    <div class="flex items-center gap-[8px]">
-                        <div class="flex">
+                    <div class="rating-row">
+                        <div class="rating-stars">
                             <span><img src="./assets-product/black-star.svg" alt="icon-star" /></span>
                             <span><img src="./assets-product/black-star.svg" alt="icon-star" /></span>
                             <span><img src="./assets-product/black-star.svg" alt="icon-star" /></span>
@@ -199,39 +647,39 @@
                             <span><img src="./assets-product/white-star.svg" alt="icon-star" /></span>
                         </div>
                         <div>
-                            <span class="items-center">(3)</span>
+                            <span class="rating-count">(3)</span>
                         </div>
                     </div>
 
                     <!-- div price -->
-                    <div class="flex items-center gap-[8px] mt-[20px] mb-[30px]">
-                        <div class="flex gap-[7px] items-center">
-                            <span class="font-volkhov text-[24px] leading-[32px] text-black-900">$39.00</span>
+                    <div class="price-row">
+                        <div class="price-group">
+                            <span class="price-current">$39.00</span>
                             <span
-                                class="font-jost text-[16px] leading-[19.2px] text-[#666666] line-through">$59.00</span>
+                                class="price-old">$59.00</span>
                             <button
-                                class="pt-[2.5px] pr-[9.69px] pb-[2.5px] pl-[10px] flex bg-[#DA3F3F] rounded-[11px] uppercase">
+                                class="price-badge">
                                 <span
-                                    class="flex gap-[4.61px] text-white-900 font-jost text-[11px] leading-[16px]">Save<span
+                                    class="price-badge-text">Save<span
                                         class="">33%</span></span>
                             </button>
                         </div>
                     </div>
 
                     <!-- div viewing -->
-                    <div class="flex gap-[10px] font-poppins text-[16px] leading-[24px] text-grey-900">
+                    <div class="viewers-row">
                         <img src="./assets-product/icon-view.svg" alt="">
                         <span class="">24 <span>people are viewing this right now</span></span>
                     </div>
 
                     <!-- div time -->
-                    <div class="w-full h-[58px] border border-[#F8CCCC] bg-[#FDEFEE] rounded-[4px] my-[30px] px-[15px]">
-                        <div class="flex justify-between items-center h-full">
-                            <h5 class="font-volkhov text-[18px] leading-[28px] text-[#FF706B] whitespace-nowrap">
+                    <div class="sale-timer">
+                        <div class="sale-timer-inner">
+                            <h5 class="sale-timer-title">
                                 Hurry up! Sale ends in:
                             </h5>
 
-                            <div class="flex items-center">
+                            <div class="sale-timer-digits">
                                 <span class="number-time">02</span>
                                 <span class="number-time">:</span>
                                 <span class="number-time">06</span>
@@ -244,120 +692,120 @@
                     </div>
 
                     <!-- div stock -->
-                    <div class="space-y-[13px]">
-                        <span class="font-jost text-[16px] leading-[24px] text-[#666666]">Only <span>9</span> item(s)
+                    <div class="stock-block">
+                        <span class="stock-text">Only <span>9</span> item(s)
                             left in stock!</span>
-                        <div class="w-full h-[5px] mt-[13px] bg-[#DEDEDE] rounded-[2px]">
-                            <div class="bg-[#EF2D2D] w-[29.25px] h-[5px] rounded-[2px]"></div>
+                        <div class="stock-bar">
+                            <div class="stock-bar-fill"></div>
                         </div>
                     </div>
 
                     <!-- div size -->
-                    <div class="mt-[30px]">
-                        <span class="font-volkhov font-bold text-[16px] leading-[24px] text-black-900">Size: M</span>
+                    <div class="size-block">
+                        <span class="option-label">Size: M</span>
 
-                        <div class="flex gap-[10px] items-center mt-[10px]">
+                        <div class="size-options">
                             <!-- Size M (active) -->
                             <div
-                                class="w-[45px] h-[45px] flex items-center justify-center bg-black-900 text-white-900 rounded-[5px] border border-black-900">
+                                class="size-btn-active">
                                 M
                             </div>
                             <!-- Size L -->
                             <div
-                                class="w-[45px] h-[45px] flex items-center justify-center bg-white-900 text-black-900 rounded-[5px] border border-light-gray">
+                                class="size-btn">
                                 L
                             </div>
                             <!-- Size XL -->
                             <div
-                                class="w-[45px] h-[45px] flex items-center justify-center bg-white-900 text-black-900 rounded-[5px] border border-light-gray">
+                                class="size-btn">
                                 XL
                             </div>
                             <!-- Size XXL -->
                             <div
-                                class="w-[45px] h-[45px] flex items-center justify-center bg-white-900 text-black-900 rounded-[5px] border border-light-gray">
+                                class="size-btn">
                                 XXL
                             </div>
                         </div>
                     </div>
 
                     <!-- div color -->
-                    <div class="mt-[14px]">
-                        <span class="font-volkhov font-bold text-[16px] leading-[24px] text-black-900">Color:
+                    <div class="color-block">
+                        <span class="option-label">Color:
                             Blue</span>
 
-                        <div class="flex gap-[10px] mt-[10px]">
+                        <div class="color-options">
                             <!-- Color 1 (active) -->
                             <div
-                                class="w-[40px] h-[40px] rounded-full shadow-[inset_0_0_0_4px_#FFFFFF,0_0_0_1px_#000000] p-[5px]">
-                                <div class="w-full h-full bg-[#8DB4D2] rounded-full"></div>
+                                class="swatch-active">
+                                <div class="swatch-blue"></div>
                             </div>
                             <!-- Color 2 -->
-                            <div class="w-[40px] h-[40px] rounded-full shadow-[inset_0_0_0_1px_#FFFFFF] p-[5px]">
-                                <div class="w-full h-full bg-[#000000] rounded-full"></div>
+                            <div class="swatch">
+                                <div class="swatch-black"></div>
                             </div>
                             <!-- Color 3 -->
-                            <div class="w-[40px] h-[40px] rounded-full shadow-[inset_0_0_0_1px_#FFFFFF] p-[5px]">
-                                <div class="w-full h-full bg-[#FFD1DC] rounded-full"></div>
+                            <div class="swatch">
+                                <div class="swatch-pink"></div>
                             </div>
                         </div>
                     </div>
 
                     <!-- div quantity -->
-                    <div class="mt-[29px]">
-                        <span class="font-volkhov text-[16px] leading-[24px] text-black-900">
+                    <div class="quantity-block">
+                        <span class="quantity-label">
                             Quantity
                         </span>
-                        <div class="flex gap-[30px] mt-[13px] pb-[65px] w-full">
-                            <div class="border border-light-gray w-[128px] h-[46px] items-center flex justify-evenly">
-                                <span class="cursor-pointer">-</span>
+                        <div class="quantity-row">
+                            <div class="quantity-picker">
+                                <span class="qty-btn">-</span>
                                 <span>1</span>
-                                <span class="cursor-pointer">+</span>
+                                <span class="qty-btn">+</span>
                             </div>
 
                             <div
-                                class="flex-1 h-[45px] rounded-[5px] border flex items-center justify-center cursor-pointer hover:bg-black-900 hover:text-white-900 hover:rounded-[10px]">
+                                class="add-to-cart-btn">
                                 <span>Add to cart</span>
                             </div>
                         </div>
                     </div>
 
                     <!-- div actions (border = full column width) -->
-                    <div class="w-full flex gap-[30px] border-b border-light-gray pb-[12px]">
+                    <div class="product-actions">
                         <!-- first one -->
-                        <div class="flex items-center gap-[8px]">
+                        <div class="product-action">
                             <img src="./assets-product/icon-compare.svg" alt="icon compare">
                             <span class="span-thired">Compare</span>
                         </div>
                         <!-- second one -->
-                        <div class="flex items-center gap-[8px]">
+                        <div class="product-action">
                             <img src="./assets-product/icon-ask.svg" alt="icon ask">
                             <span class="span-thired">Ask a question</span>
                         </div>
                         <!-- last one -->
-                        <div class="flex items-center gap-[8px]">
+                        <div class="product-action">
                             <img src="./assets-product/icon-share.svg" alt="icon share">
                             <span class="span-thired">Share</span>
                         </div>
                     </div>
-                    <div class="my-[30px]">
-                        <div class="flex gap-[6.5px] mb-[8px]">
+                    <div class="delivery-info">
+                        <div class="delivery-row">
                             <img src="./assets-product/icon-delevry.svg" alt="Delivery-icon">
-                            <h5><span class="font-volkhov font-bold text-[16px] leading-[24px] text-black-900">Estimated
+                            <h5><span class="delivery-label">Estimated
                                     Delivery:</span>&nbsp;<span
-                                    class="font-jost text-[16px] leading-[24px] text-black-900">Jul 30 - Aug 03</span>
+                                    class="delivery-value">Jul 30 - Aug 03</span>
                             </h5>
                         </div>
-                        <div class="flex gap-[6.5px]">
+                        <div class="delivery-row-last">
                             <img src="./assets-product/icon-shipping.svg" alt="Shipping">
-                            <h5><span class="font-volkhov font-bold text-[16px] leading-[24px] text-black-900">Free
+                            <h5><span class="delivery-label">Free
                                     Shipping & Returns:</span>&nbsp;<span
-                                    class="font-jost text-[16px] leading-[24px] text-black-900">On all orders over
+                                    class="delivery-value">On all orders over
                                     $75</span></h5>
                         </div>
                     </div>
-                    <div class="bg-[#F8F8F8] items-center flex flex-col justify-center space-y-[20px] py-[20px]">
+                    <div class="secure-checkout">
                         <img src="./assets-product/icon-bance.svg" alt="icon-bance">
-                        <span class="font-volkhov text-[16px] leading-[100%] text-black-900">Guarantee safe & secure
+                        <span class="secure-checkout-text">Guarantee safe & secure
                             checkout</span>
                     </div>
 
@@ -366,19 +814,19 @@
         </section>
 
         <!-- section 2: -->
-        <section class="relative w-full my-[26px]">
+        <section class="peaky-section">
             <!-- PRODUCT
                  < 991px  : stacked (image on top, text below)
                  >= 991px : Figma ratio (1920 x 570.2), never shorter than 480px so your text always fits -->
             <div
-                class="relative w-full flex flex-col overflow-hidden bg-white min-[991px]:block min-[991px]:aspect-[1920/570.2] min-[991px]:min-h-[480px]">
+                class="peaky-wrapper">
 
                 <!-- gray diagonal panel (desktop) -->
                 <div
-                    class="hidden min-[991px]:block absolute inset-0 bg-[#D9D9D9] [clip-path:polygon(55.03%_0,100%_0,100%_100%,45.29%_100%)]">
+                    class="peaky-diagonal-panel">
                 </div>
                 <!-- diagonal line (desktop) -->
-                <svg class="hidden min-[991px]:block absolute inset-0 w-full h-full z-20 pointer-events-none"
+                <svg class="peaky-diagonal-line"
                     viewBox="0 0 945 280" preserveAspectRatio="none">
                     <line x1="520" y1="0" x2="428" y2="280" stroke="#000" stroke-width="1.5"
                         vector-effect="non-scaling-stroke" />
@@ -386,20 +834,20 @@
 
                 <!-- model (mobile only) -->
                 <img src="./assets/fasco-icon-section-3.svg" alt="Woman wearing the Peaky Blinders outfit"
-                    class="min-[991px]:hidden mx-auto my-[30px] h-[360px] w-auto max-w-full object-contain" />
+                    class="peaky-model-mobile" />
 
                 <!-- model zone (desktop): always keeps the Figma ratio, centered vertically,
                      so the model never stretches even when the block is taller -->
                 <div
-                    class="hidden min-[991px]:block absolute inset-x-0 top-1/2 -translate-y-1/2 aspect-[1920/570.2] z-10">
+                    class="peaky-model-zone">
                     <!-- inset 5% = space around the model -->
-                    <div class="absolute inset-[5%]">
+                    <div class="peaky-model-inset">
                         <!-- image (model + black shapes) -->
                         <img src="./assets/fasco-icon-section-3.svg" alt="Woman wearing the Peaky Blinders outfit"
-                            class="absolute bottom-0 left-[9.3%] h-full w-auto max-w-none z-10" />
+                            class="peaky-model-img" />
 
                         <!-- annotation lines -->
-                        <svg class="absolute inset-0 w-full h-full z-20 pointer-events-none" viewBox="0 0 945 280"
+                        <svg class="peaky-annotations" viewBox="0 0 945 280"
                             preserveAspectRatio="none">
                             <g fill="none" stroke="#4a4a4a" stroke-width="1">
                                 <!-- Flat Cap -->
@@ -416,73 +864,73 @@
                         </svg>
 
                         <!-- circles -->
-                        <span class="span-circle left-[27.41%] top-[5.36%]"></span>
-                        <span class="span-circle left-[23.07%] top-[25%]"></span>
-                        <span class="span-circle left-[24.97%] top-[36.43%]"></span>
-                        <span class="span-circle left-[20.85%] top-[53.21%]"></span>
-                        <span class="span-circle left-[25.19%] top-[82.86%]"></span>
+                        <span class="span-circle circle-flat-cap"></span>
+                        <span class="span-circle circle-suspender"></span>
+                        <span class="span-circle circle-hugo-right"></span>
+                        <span class="span-circle circle-hugo-left"></span>
+                        <span class="span-circle circle-santoni"></span>
 
                         <!-- labels -->
-                        <span class="span-picky left-[32.38%] top-[10%]">Flat Cap</span>
-                        <span class="span-picky left-[10.79%] top-[29.29%]">Suspender</span>
-                        <span class="span-picky left-[29.84%] top-[40.71%]">Hugo Boss</span>
-                        <span class="span-picky left-[8.5%] top-[57.5%]">Hugo Boss</span>
-                        <span class="span-picky left-[29.95%] top-[87.5%]">Santoni</span>
+                        <span class="span-picky label-flat-cap">Flat Cap</span>
+                        <span class="span-picky label-suspender">Suspender</span>
+                        <span class="span-picky label-hugo-right">Hugo Boss</span>
+                        <span class="span-picky label-hugo-left">Hugo Boss</span>
+                        <span class="span-picky label-santoni">Santoni</span>
                     </div>
                 </div>
 
                 <!-- product info (your sizes) : stacked under the image < 991px, on the gray panel >= 991px -->
                 <div
-                    class="relative z-30 flex flex-col justify-center bg-[#D9D9D9] px-6 py-10 min-[991px]:absolute min-[991px]:inset-y-0 min-[991px]:left-[56.6%] min-[991px]:w-[40%] min-[991px]:bg-transparent min-[991px]:px-0 min-[991px]:py-[30px]">
-                    <span class="font-poppins text-[16px] leading-[100%] text-grey-600">Women Collection</span>
-                    <h2 class="font-volkhov text-[46px] leading-[100%] text-heather-grey my-[20px]">Peaky Blinders</h2>
-                    <h3 class="font-poppins text-[16px] leading-[100%] underline text-black-900">DESCRIPTION</h3>
-                    <p class="my-[20px] font-poppins text-[16px] leading-[100%] text-grey-600">
+                    class="peaky-info">
+                    <span class="peaky-collection">Women Collection</span>
+                    <h2 class="peaky-title">Peaky Blinders</h2>
+                    <h3 class="peaky-desc-title">DESCRIPTION</h3>
+                    <p class="peaky-desc">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Scelerisque duis ultrices sollicitudin
                         aliquam sem. Scelerisque duis ultrices sollicitudin. Lorem ipsum dolor sit amet, consectetur
                         adipiscing elit. Scelerisque duis.
                     </p>
-                    <div class="flex gap-[15px] items-center">
-                        <span class="font-poppins text-[16px] leading-[100%] text-grey-600">Size:</span>
+                    <div class="peaky-size-row">
+                        <span class="peaky-size-label">Size:</span>
                         <span
-                            class="font-poppins text-[16px] leading-[100%] text-white-900 bg-black-900 py-[6px] px-[20px] rounded-[10px]">M</span>
+                            class="peaky-size-badge">M</span>
                     </div>
-                    <p class="my-[20px] font-poppins font-medium leading-[100%] text-black-900">
-                        <span class="text-[28px]">$100</span><span class="text-[24px]">.00</span>
+                    <p class="peaky-price">
+                        <span class="peaky-price-int">$100</span><span class="peaky-price-dec">.00</span>
                     </p>
                     <button type="button"
-                        class="flex w-[207px] h-[56px] bg-black-900 hover:bg-black-900/70 cursor-pointer items-center justify-center rounded-[10px] text-white-900 font-poppins text-[16px] leading-[100%]">
+                        class="peaky-buy-btn">
                         Buy Now
                     </button>
                 </div>
             </div>
 
             <!-- FEATURES -->
-            <div class="mx-auto max-w-[1040px] px-10 flex justify-between py-[72px]">
-                <div class="flex items-center gap-4">
-                    <img src="./assets/icon-section3-1.svg" alt="High Quality icon" class="w-[38px] h-[50px]" />
-                    <div class="flex flex-col w-fit">
+            <div class="features-row">
+                <div class="feature-item">
+                    <img src="./assets/icon-section3-1.svg" alt="High Quality icon" class="feature-icon" />
+                    <div class="feature-text">
                         <span class="span-quality">High Quality</span>
                         <span class="span-crafter">crafted from top materials</span>
                     </div>
                 </div>
-                <div class="flex items-center gap-4">
-                    <img src="./assets/icon-section3-2.svg" alt="Warranty Protection icon" class="w-[38px] h-[50px]" />
-                    <div class="flex flex-col w-fit">
+                <div class="feature-item">
+                    <img src="./assets/icon-section3-2.svg" alt="Warranty Protection icon" class="feature-icon" />
+                    <div class="feature-text">
                         <span class="span-quality">Warranty Protection</span>
                         <span class="span-crafter">Over 2 years</span>
                     </div>
                 </div>
-                <div class="flex items-center gap-4">
-                    <img src="./assets/icon-section3-3.svg" alt="Free Shipping icon" class="w-[38px] h-[50px]" />
-                    <div class="flex flex-col w-fit">
+                <div class="feature-item">
+                    <img src="./assets/icon-section3-3.svg" alt="Free Shipping icon" class="feature-icon" />
+                    <div class="feature-text">
                         <span class="span-quality">Free Shipping</span>
                         <span class="span-crafter">Order over 150 $</span>
                     </div>
                 </div>
-                <div class="flex items-center gap-4">
-                    <img src="./assets/icon-section3-4.svg" alt="24/7 Support icon" class="w-[38px] h-[50px]" />
-                    <div class="flex flex-col w-fit">
+                <div class="feature-item">
+                    <img src="./assets/icon-section3-4.svg" alt="24/7 Support icon" class="feature-icon" />
+                    <div class="feature-text">
                         <span class="span-quality">24 / 7 Support</span>
                         <span class="span-crafter">Dedicated support</span>
                     </div>
@@ -490,26 +938,26 @@
             </div>
         </section>
         <!-- section 3 : -->
-        <section class="space-y-[150px] pl-36 py-5 bg-gradient-to-b from-[#FFFFFF] to-[#FAFAFA]">
-            <div class="flex justify-between">
-                <div class="max-w-[444px]">
-                    <div class="mb-[50px]">
-                        <h2 class="mb-[20px] text-[46px] font-volkhov leading-[100%] text-heather-grey">
+        <section class="loved-section">
+            <div class="loved-row">
+                <div class="loved-content">
+                    <div class="loved-intro">
+                        <h2 class="loved-title">
                             People Also Loved
                         </h2>
-                        <p class="mb-[40px] text-[16px] text-grey-900 leading-[26px] font-poppins">
+                        <p class="loved-text">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                             Scelerisque duis ultrices sollicitudin aliquam sem. Scelerisque
                             duis ultrices sollicitudin
                         </p>
-                        <button class="bg-black-900 py-[20px] px-[60px] rounded-[10px] leading-[100%] text-white-900">
+                        <button class="loved-buy-btn">
                             Buy Now
                         </button>
                     </div>
                     <div>
-                        <h4 class="font-poppins font-medium text-[28px] leading-[100%] text-heather-grey mb-[15px]">
+                        <h4 class="loved-countdown-title">
                             Hurry, Before It’s Too Late!</h4>
-                        <div class="flex justify-between items-center">
+                        <div class="loved-countdown">
 
                             <div class="div-span">
                                 <span class="number-time_2">02</span>
@@ -535,55 +983,55 @@
                 </div>
 
                 <!-- Images section -->
-                <div class="relative w-[600px] shrink-0">
+                <div class="loved-gallery">
                     <!-- Scrollable images -->
-                    <div class="overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-                        <div class="flex items-start gap-5 w-max">
+                    <div class="loved-scroller">
+                        <div class="loved-track">
                             <!-- Scroll arrows on the left of Image 1 -->
-                            <div class="absolute top-[560px] -left-29 z-10 flex gap-3 -translate-y-1/2">
+                            <div class="loved-arrows">
                                 <!-- Scroll left -->
                                 <button type="button" class="button-click">
-                                    <img src="./assets/icon-left.svg" alt="" class="h-5 w-5" />
+                                    <img src="./assets/icon-left.svg" alt="" class="arrow-icon" />
                                 </button>
 
                                 <!-- Scroll right -->
                                 <button type="button" class="button-click">
-                                    <img src="./assets/icon-right.svg" alt="" class="h-5 w-5" />
+                                    <img src="./assets/icon-right.svg" alt="" class="arrow-icon" />
                                 </button>
                             </div>
 
                             <!-- Image 1: big -->
-                            <div class="shrink-0 relative">
+                            <div class="loved-slide-main">
                                 <img src="./assets/fasco-icon-section1.svg" alt="Fashion model 1"
-                                    class="w-full h-[582px] object-cover" />
+                                    class="loved-slide-main-img" />
 
                                 <!-- Image 1 content -->
                                 <div
-                                    class="absolute bottom-[24px] left-[24px] w-fit p-4 bg-[#FFFFFF]/80 backdrop-blur-[7px]">
-                                    <div class="flex items-center gap-3">
-                                        <span class="font-poppins text-[16px] text-heather-grey">01</span>
-                                        <span class="w-[40px] h-[1px] bg-heather-grey"></span>
-                                        <h6 class="font-poppins text-[16px] text-heather-grey">
+                                    class="loved-slide-caption">
+                                    <div class="loved-caption-row">
+                                        <span class="loved-caption-text">01</span>
+                                        <span class="loved-caption-line"></span>
+                                        <h6 class="loved-caption-text">
                                             Spring Sale
                                         </h6>
                                     </div>
 
-                                    <p class="mt-2 font-poppins text-[28px] font-semibold text-black-900">
+                                    <p class="loved-caption-discount">
                                         30% OFF
                                     </p>
                                 </div>
                             </div>
 
                             <!-- Image 2 -->
-                            <div class="relative shrink-0">
+                            <div class="loved-slide">
                                 <img src="./assets/fasco-icon-section2.svg" alt="Fashion model 2"
-                                    class="w-full h-[486px] object-cover" />
+                                    class="loved-slide-img" />
                                 <div>
                                     <!-- Scroll indicators under Image 2 -->
-                                    <div class="absolute -bottom-[60px] left-[10px] flex items-center gap-2">
+                                    <div class="loved-dots">
                                         <span
-                                            class="w-4 h-4 rounded-full border border-black-900 bg-white flex items-center justify-center">
-                                            <span class="w-2 h-2 rounded-full bg-black-900"></span>
+                                            class="loved-dot-active">
+                                            <span class="loved-dot-active-inner"></span>
                                         </span>
                                         <span class="span"></span>
                                         <span class="span"></span>
@@ -594,7 +1042,7 @@
 
                             <!-- Image 3 -->
                             <div class="30% OFF">
-                                <img src="./assets/fasco-icon-section3.svg" alt="Fashion model 3" class="h-[350px]" />
+                                <img src="./assets/fasco-icon-section3.svg" alt="Fashion model 3" class="loved-slide-small-img" />
                             </div>
                         </div>
                     </div>
@@ -602,26 +1050,26 @@
             </div>
         </section>
         <!-- section 4: -->
-        <section class="mt-[138px] w-full max-w-[1200px] mx-auto px-[30px]">
+        <section class="newsletter-section">
 
-            <div class="flex items-center justify-between gap-[40px]">
+            <div class="newsletter-row">
 
                 <!-- div 1: Left image -->
-                <div class="shrink-0">
+                <div class="newsletter-side">
                     <img src="./assets/fasco-section6-card1.svg" alt="">
                 </div>
 
                 <!-- div 2: Center content -->
-                <div class="flex-1 min-w-0 flex flex-col ">
+                <div class="newsletter-center">
 
                     <!-- Title and description -->
-                    <div class="w-full flex flex-col items-center text-center">
+                    <div class="newsletter-heading">
 
-                        <h3 class="font-volkhov text-[46px] leading-[100%] text-heather-grey whitespace-nowrap">
+                        <h3 class="newsletter-title">
                             Subscribe To Our Newsletter
                         </h3>
 
-                        <p class="font-poppins text-[16px] leading-[26px] text-grey-900 whitespace-nowrap mt-[20px]">
+                        <p class="newsletter-text">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                             Scelerisque duis <br> ultrices sollicitudin aliquam sem.
                             Scelerisque duis ultrices sollicitudin
@@ -630,23 +1078,23 @@
                     </div>
                     <!-- Email -->
                     <div
-                        class="my-[30px] flex justify-start items-start w-[400px] pt-[28px] pb-[32px] pl-[30px] shadow-[0px_3.02px_3.15px_#00000002,0px_13.28px_6.52px_#00000002]">
+                        class="newsletter-email">
 
-                        <span class="font-poppins text-[22px] leading-[26px] text-grey-900">
+                        <span class="newsletter-email-text">
                             michael@ymail.com
                         </span>
 
                     </div>
-                    <div class="flex justify-center">
+                    <div class="newsletter-btn-wrap">
                         <button
-                            class="items-center font-poppins text-[16px] leading-[100%] text-white-900 bg-black-900 w-[207px] h-[56px] shadow-[0px_20px_35px_0px_#00000026] rounded-[10px]">Subscribe
+                            class="newsletter-btn">Subscribe
                             Now</button>
 
                     </div>
                 </div>
 
                 <!-- div 3: Right image -->
-                <div class="shrink-0">
+                <div class="newsletter-side">
                     <img src="./assets/fasco-section6-card2.svg" alt="">
                 </div>
             </div>
@@ -654,10 +1102,10 @@
         </section>
     </main>
     <!-- footer -->
-    <footer class="border-t border-[#DEDFE1] mt-[50px] py-[20px]">
-        <div class="flex justify-between mx-auto max-w-[1040px]">
-            <h2 class="font-volkhov text-[32px] leading-[100%] text-heather-grey">FASCO</h2>
-            <nav class="navbar gap-[38px]">
+    <footer class="site-footer">
+        <div class="footer-top">
+            <h2 class="footer-logo">FASCO</h2>
+            <nav class="navbar footer-nav">
                 <a href="#" class="nav-name">Support Center</a>
                 <a href="#" class="nav-name">Invoicing</a>
                 <a href="#" class="nav-name">Contract</a>
@@ -666,7 +1114,7 @@
                 <a href="#" class="nav-name">FAQ,s</a>
             </nav>
         </div>
-        <div class="items-center flex justify-center mt-[50px] ">
+        <div class="footer-copyright">
             <span>Copyright &copy; 2022 Xpro . All Rights Reseved.</span>
         </div>
     </footer>

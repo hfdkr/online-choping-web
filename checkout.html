@@ -51,6 +51,172 @@
         .btn-black {
             @apply bg-black-900 text-white-900 rounded-[10px] font-poppins hover:bg-heather-grey transition-colors;
         }
+        .span-text{
+            @apply font-poppins text-[16px] leading-[100%] text-grey-900;
+        }
+
+        /* ============================================================
+           Page sections (utilities moved out of the HTML)
+           ============================================================ */
+        /* ===== Header ===== */
+        .header-bar {
+          @apply flex items-center justify-between px-10 mx-auto max-w-[1070px] py-5;
+        }
+        .logo-link {
+          @apply shrink-0;
+        }
+        .logo-title {
+          @apply font-volkhov text-[40px] leading-[100%] text-heather-grey;
+        }
+        .nav-main {
+          @apply gap-8;
+        }
+        .nav-active {
+          @apply border-b border-heather-grey py-[10px];
+        }
+        .header-icons {
+          @apply flex items-center gap-4;
+        }
+        .header-icon {
+          @apply w-6 h-6;
+        }
+
+        /* ===== Page title ===== */
+        .checkout-heading {
+          @apply flex gap-5 shrink-0 justify-center gap-[60px] mt-[78px] mb-[44px];
+        }
+        .checkout-title {
+          @apply font-volkhov text-[42px] leading-[32px] text-black-900;
+        }
+
+        /* ===== Checkout layout ===== */
+        .checkout-main {
+          @apply border-t border-black-900/39;
+        }
+        .checkout-section {
+          @apply mt-[78px];
+        }
+        .checkout-layout {
+          @apply flex items-stretch;
+        }
+
+        /* ===== Checkout form (contact, delivery, payment) ===== */
+        .checkout-form-col {
+          @apply w-1/2 flex justify-end py-5 pr-[60px] pl-5;
+        }
+        .checkout-form {
+          @apply w-full max-w-[505px];
+        }
+        .contact-header {
+          @apply flex items-center justify-between gap-[60px] mb-[26px];
+        }
+        .form-section-title {
+          @apply font-volkhov text-[46px] leading-[100%] text-heather-grey;
+        }
+        .contact-account {
+          @apply font-poppins text-[16px] leading-[100%] text-heather-grey whitespace-nowrap;
+        }
+        .contact-account-link {
+          @apply text-[#1456FF];
+        }
+        .form-input {
+          @apply border border-gray-900 h-[71px] pl-[28px] w-full;
+        }
+        .form-section-header {
+          @apply flex items-center justify-between mt-[60px] mb-[26px];
+        }
+        .delivery-fields {
+          @apply space-y-[16px];
+        }
+        .field-wrapper {
+          @apply relative;
+        }
+        .field-icon-down {
+          @apply absolute top-1/2 -translate-y-1/2 right-[31px];
+        }
+        .field-row {
+          @apply flex gap-[12px];
+        }
+        .save-info {
+          @apply flex gap-[10px] items-center w-fit;
+        }
+        .save-info-checkbox {
+          @apply size-5 accent-black;
+        }
+        .save-info-text {
+          @apply font-poppins text-[16px] leading-[42px] text-grey-900;
+        }
+        .payment-method {
+          @apply flex justify-between border border-gray-900 py-[24px] pl-[23px] pr-[32px] items-center;
+        }
+        .payment-method-input {
+          @apply font-poppins text-[16px] leading-[100%] text-grey-900 outline-none;
+        }
+        .payment-method-icons {
+          @apply flex gap-[8px] items-center;
+        }
+        .payment-down-icon {
+          @apply w-[12px] h-[8px];
+        }
+        .card-details {
+          @apply bg-[#F5F5F5];
+        }
+        .card-details-inner {
+          @apply px-[20px] space-y-[24px];
+        }
+        .card-number-wrapper {
+          @apply relative pt-[18px];
+        }
+        .card-number-input {
+          @apply border border-gray-900 h-[67px] pl-[28px] w-full bg-white-900;
+        }
+        .card-lock-icon {
+          @apply absolute top-[45px] right-[31px];
+        }
+        .card-input {
+          @apply border border-gray-900 h-[71px] pl-[28px] w-full bg-white-900;
+        }
+        .save-info-card {
+          @apply flex gap-[10px] items-center w-fit pb-[28px];
+        }
+        .pay-btn {
+          @apply w-full mt-[29px] bg-black-900 h-[66px] text-white-900 rounded-[10px];
+        }
+        .checkout-copyright {
+          @apply flex justify-center mt-[36px];
+        }
+
+        /* ===== Order summary ===== */
+        .summary-col {
+          @apply relative w-1/2 h-[960px] bg-[#F5F5F5] pt-[52px] space-y-[26px];
+        }
+        .summary-item {
+          @apply flex pl-[46px] gap-[40px] items-center;
+        }
+        .summary-item-name {
+          @apply font-volkhov text-[18px] leading-[100%] text-black-900;
+        }
+        .summary-item-meta {
+          @apply font-poppins text-[16px] leading-[100%] text-grey-900;
+        }
+        .summary-item-price {
+          @apply font-poppins text-[16px] leading-[100%] text-grey-900;
+        }
+        .discount-row {
+          @apply pl-[46px] flex gap-[17px];
+        }
+        .discount-input {
+          @apply border border-gray-900 bg-white-900 h-[71px] pl-[28px] w-[380px];
+        }
+        .discount-btn {
+          @apply bg-black-900 w-[162px] text-white-900 rounded-[10px] font-poppins text-[16px] leading-[100%];
+        }
+        .summary-totals {
+          @apply pt-[52px] space-y-[12px] pl-[46px] w-[580px];
+        }
+        .summary-line {
+          @apply flex justify-between;
+        }
     </style>
 </head>
 
@@ -58,103 +224,103 @@
 
 <body>
     <!-- Header -->
-    <header id="top" class="flex items-center justify-between px-10 mx-auto max-w-[1070px] py-5">
+    <header id="top" class="header-bar">
 
         <!-- Logo -->
-        <a href="#" aria-label="FASCO home" class="shrink-0">
-            <h1 class="font-volkhov text-[40px] leading-[100%] text-heather-grey">
+        <a href="#" aria-label="FASCO home" class="logo-link">
+            <h1 class="logo-title">
                 FASCO
             </h1>
         </a>
 
         <!-- Navigation -->
-        <nav class="navbar gap-8">
+        <nav class="navbar nav-main">
             <a href="#home" class="nav-name">Home</a>
             <a href="#Deals" class="nav-name">Shop</a>
-            <a href="#arrivale" class="nav-name border-b border-heather-grey py-[10px]">Products</a>
+            <a href="#arrivale" class="nav-name nav-active">Products</a>
             <a href="#package" class="nav-name">Pages</a>
         </nav>
 
         <!-- Header Icons -->
-        <div class="flex items-center gap-4">
+        <div class="header-icons">
             <a href="#" aria-label="Search">
-                <img src="./assets-product/icon-search.svg" alt="Search" class="w-6 h-6" />
+                <img src="./assets-product/icon-search.svg" alt="Search" class="header-icon" />
             </a>
 
             <a href="#" aria-label="Shopping cart">
-                <img src="./assets-product/icon-user.svg" alt="User account" class="w-6 h-6" />
+                <img src="./assets-product/icon-user.svg" alt="User account" class="header-icon" />
             </a>
 
             <a href="#" aria-label="User account">
-                <img src="./assets-product/icon-star.svg" alt="Pin Shoping" class="w-6 h-6" />
+                <img src="./assets-product/icon-star.svg" alt="Pin Shoping" class="header-icon" />
             </a>
             <a href="#" aria-label="User account">
-                <img src="./assets-product/icon-wallet.svg" alt="Shopping cart " class="w-6 h-6" />
+                <img src="./assets-product/icon-wallet.svg" alt="Shopping cart " class="header-icon" />
             </a>
         </div>
 
     </header>
-    <div class="flex gap-5 shrink-0 justify-center gap-[60px] mt-[78px] mb-[44px]">
-        <h2 class="font-volkhov text-[42px] leading-[32px] text-black-900">FASCO Demo Checkout</h2>
+    <div class="checkout-heading">
+        <h2 class="checkout-title">FASCO Demo Checkout</h2>
     </div>
 
     <!-- Main Content -->
-    <main class="border-t border-black-900/39">
+    <main class="checkout-main">
         <!-- section 1: -->
-        <section class="mt-[78px]">
-            <div class="flex items-stretch">
+        <section class="checkout-section">
+            <div class="checkout-layout">
                 <!-- LEFT: form -->
-                <div class="w-1/2 flex justify-end py-5 pr-[60px] pl-5">
-                    <form class="w-full max-w-[505px]">
+                <div class="checkout-form-col">
+                    <form class="checkout-form">
                         <!-- email input -->
                         <div>
-                            <div class="flex items-center justify-between gap-[60px] mb-[26px]">
-                                <h3 class="font-volkhov text-[46px] leading-[100%] text-heather-grey">
+                            <div class="contact-header">
+                                <h3 class="form-section-title">
                                     Contact
                                 </h3>
                                 <span
-                                    class="font-poppins text-[16px] leading-[100%] text-heather-grey whitespace-nowrap">
+                                    class="contact-account">
                                     Have an account?
-                                    <a href="#" class="text-[#1456FF]">Create Account</a>
+                                    <a href="#" class="contact-account-link">Create Account</a>
                                 </span>
                             </div>
-                            <input type="email" name="email" class="border border-gray-900 h-[71px] pl-[28px] w-full"
+                            <input type="email" name="email" class="form-input"
                                 placeholder="Email Address">
                         </div>
 
                         <!-- delivery -->
                         <div>
-                            <div class="flex items-center justify-between mt-[60px] mb-[26px]">
-                                <h3 class="font-volkhov text-[46px] leading-[100%] text-heather-grey">Delivery</h3>
+                            <div class="form-section-header">
+                                <h3 class="form-section-title">Delivery</h3>
                             </div>
-                            <div class="space-y-[16px]">
-                                <div class="relative">
+                            <div class="delivery-fields">
+                                <div class="field-wrapper">
                                     <input type="text" name="country"
-                                        class="border border-gray-900 h-[71px] pl-[28px] w-full"
+                                        class="form-input"
                                         placeholder="Country / Region">
                                     <img src="./assets-product/icon-down.svg"
-                                        class="absolute top-1/2 -translate-y-1/2 right-[31px]" alt="down icon">
+                                        class="field-icon-down" alt="down icon">
                                 </div>
-                                <div class="flex gap-[12px]">
+                                <div class="field-row">
                                     <input type="text" name="first_name"
-                                        class="border border-gray-900 h-[71px] pl-[28px] w-full"
+                                        class="form-input"
                                         placeholder="First Name">
                                     <input type="text" name="last_name"
-                                        class="border border-gray-900 h-[71px] pl-[28px] w-full"
+                                        class="form-input"
                                         placeholder="Last Name">
                                 </div>
                                 <input type="text" name="address"
-                                    class="border border-gray-900 h-[71px] pl-[28px] w-full" placeholder="Address">
-                                <div class="flex gap-[12px]">
+                                    class="form-input" placeholder="Address">
+                                <div class="field-row">
                                     <input type="text" name="city"
-                                        class="border border-gray-900 h-[71px] pl-[28px] w-full" placeholder="City">
+                                        class="form-input" placeholder="City">
                                     <input type="text" name="postal_code"
-                                        class="border border-gray-900 h-[71px] pl-[28px] w-full"
+                                        class="form-input"
                                         placeholder="Postal Code">
                                 </div>
-                                <label class="flex gap-[10px] items-center w-fit">
-                                    <input type="checkbox" class="size-5 accent-black">
-                                    <span class="font-poppins text-[16px] leading-[42px] text-grey-900">Save This Info
+                                <label class="save-info">
+                                    <input type="checkbox" class="save-info-checkbox">
+                                    <span class="save-info-text">Save This Info
                                         for future</span>
                                 </label>
                             </div>
@@ -162,71 +328,89 @@
 
                         <!-- payment -->
                         <div>
-                            <div class="flex items-center justify-between mt-[60px] mb-[26px]">
-                                <h3 class="font-volkhov text-[46px] leading-[100%] text-heather-grey">Payment</h3>
+                            <div class="form-section-header">
+                                <h3 class="form-section-title">Payment</h3>
                             </div>
                             <div
-                                class="flex justify-between border border-gray-900 py-[24px] pl-[23px] pr-[32px] items-center">
-                                <span class="font-poppins text-[16px] leading-[100%] text-grey-900">Credit Card</span>
-                                <div class="flex gap-[8px] items-center">
-                                    <img src="./checkout-image/mistercard.svg" alt="master-card">
-                                    <img src="./assets-product/icon-down.svg" class="w-[12px] h-[8px]" alt="down icon">
+                                class="payment-method">
+                                <input type="text" placeholder="Credit Card"
+                                    class="payment-method-input">
+
+                                <div class="payment-method-icons">
+                                    <img src="./checkout-image/mistercard.svg" alt="Mastercard">
+                                    <img src="./assets-product/icon-down.svg" class="payment-down-icon" alt="down icon">
                                 </div>
                             </div>
-                            <div class="bg-[#F5F5F5]">
-                                <div class="px-[20px] space-y-[24px]">
-                                    <div class="relative pt-[18px]">
+                            <div class="card-details">
+                                <div class="card-details-inner">
+                                    <div class="card-number-wrapper">
                                         <input type="text" name="card_number"
-                                            class="border border-gray-900 h-[67px] pl-[28px] w-full rounded-[1px] bg-white-900"
+                                            class="card-number-input"
                                             placeholder="Card Number">
-                                        <img src="./checkout-image/Vector.svg" class="absolute top-[45px] right-[31px]"
+                                        <img src="./checkout-image/Vector.svg" class="card-lock-icon"
                                             alt="lock icon">
                                     </div>
-                                    <div class="flex gap-[12px]">
+                                    <div class="field-row">
                                         <input type="text" name="expiration"
-                                            class="border border-gray-900 h-[71px] pl-[28px] w-full rounded-[1px] bg-white-900"
+                                            class="card-input"
                                             placeholder="Expiration Date">
                                         <input type="text" name="security_code"
-                                            class="border border-gray-900 h-[71px] pl-[28px] w-full rounded-[1px] bg-white-900"
+                                            class="card-input"
                                             placeholder="Security Code">
                                     </div>
                                     <input type="text" name="card_holder"
-                                        class="border border-gray-900 h-[71px] pl-[28px] w-full rounded-[1px] bg-white-900"
+                                        class="card-input"
                                         placeholder="Card Holder Name">
-                                    <label class="flex gap-[10px] items-center w-fit pb-[28px]">
-                                        <input type="checkbox" class="size-5 accent-black">
-                                        <span class="font-poppins text-[16px] leading-[42px] text-grey-900">Save This
+                                    <label class="save-info-card">
+                                        <input type="checkbox" class="save-info-checkbox">
+                                        <span class="save-info-text">Save This
                                             Info for future</span>
                                     </label>
                                 </div>
                             </div>
                             <button type="submit"
-                                class="w-full mt-[29px] bg-black-900 h-[66px] text-white-900 rounded-[10px]">
+                                class="pay-btn">
                                 Pay Now
                             </button>
-                            <span class="flex justify-center mt-[36px]">Copyright &copy; 2022 FASCO . All Rights
+                            <span class="checkout-copyright">Copyright &copy; 2022 FASCO . All Rights
                                 Reserved.</span>
                         </div>
                     </form>
                 </div>
 
                 <!-- RIGHT: full height of the row -->
-                <div class="relative w-1/2 h-[960px] bg-[#F5F5F5] pt-[52px] space-y-[26px]">
-                    <div class="flex justify-evenly items-center">
+                <div class="summary-col">
+                    <div class="summary-item">
                         <img src="./checkout-image/red-girl.svg" alt="red-girl">
                         <div>
-                            <p class="font-volkhov text-[18px] leading-[100%] text-black-900">Mini dress with ruffled
+                            <p class="summary-item-name">Mini dress with ruffled
                                 straps</p>
-                            <span class="font-poppins text-[16px] leading-[100%] text-grey-900">Red</span>
+                            <span class="summary-item-meta">Red</span>
                         </div>
-                        <span class="font-poppins text-[16px] leading-[100%] text-grey-900">$100.00</span>
+                        <span class="summary-item-price">$100.00</span>
 
                     </div>
-                    <div class="pl-[46px] flex gap-[17px]">
-                        <input type="text" name="last_name" class="border border-gray-900 bg-white-900 h-[71px] pl-[28px] w-[380px]"
+                    <div class="discount-row">
+                        <input type="text" name="last_name"
+                            class="discount-input"
                             placeholder="Discount code">
-                        <button class="bg-black-900 w-[162px] text-white-900 rounded-[10px] font-poppins text-[16px] leading-[100%] ">Apply</button>
-                            
+                        <button
+                            class="discount-btn">Apply</button>
+
+                    </div>
+                    <div class="summary-totals">
+                        <div class="summary-line">
+                            <span class="span-text">Subtotal</span>
+                            <span class="span-text">$100.00</span>
+                        </div>
+                        <div class="summary-line">
+                            <span class="span-text">Shipping</span>
+                            <span class="span-text">$40.00</span>
+                        </div>
+                        <div class="summary-line">
+                            <span class="span-text">Total</span>
+                            <span class="span-text">$140.00</span>
+                        </div>
                     </div>
 
                 </div>

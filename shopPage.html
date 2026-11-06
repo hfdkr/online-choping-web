@@ -24,6 +24,16 @@
 
       body {
         font-family: "Poppins", sans-serif;
+        overflow-x: hidden;
+      }
+
+      /* Centered container: 1280px of content + 24px margin on each side.
+         On small screens (laptop) the content never touches the edges. */
+      .container-fasco {
+        width: 100%;
+        max-width: 1328px;
+        margin-inline: auto;
+        padding-inline: 24px;
       }
 
       .diagonal-panel {
@@ -47,10 +57,12 @@
   </head>
 
   <body>
-    <header class="max-w-[1280px] mx-auto">
-      <nav class="flex justify-between items-center py-4">
+    <header class="w-full">
+      <nav class="container-fasco flex justify-between items-center py-4">
         <div class="font-volkhov text-[52px] text-[#484848]">FASCO</div>
-        <div class="flex items-center space-x-[70px] text-[#484848]">
+        <div
+          class="flex items-center gap-10 xl:gap-[70px] text-[#484848]"
+        >
           <a href="#">Home</a>
           <a href="shopPage.html">Shop</a>
           <a href="#">Products</a>
@@ -64,7 +76,7 @@
           </a>
         </div>
 
-        <div class="flex space-x-[20px]">
+        <div class="flex gap-[20px] shrink-0">
           <img src="assets/loup.svg" alt="Search" />
           <img src="assets/star.svg" alt="Favorites" />
           <img src="assets/user.svg" alt="User" />
@@ -72,7 +84,7 @@
         </div>
       </nav>
 
-      <div class="pt-[78px] flex flex-col items-center gap-5">
+      <div class="container-fasco pt-[78px] flex flex-col items-center gap-5">
         <p class="font-volkhov text-[42px] leading-[32px] capitalize">
           fashion
         </p>
@@ -85,8 +97,8 @@
     </header>
 
     <main>
-      <section class="max-w-[1280px] mx-auto flex mt-[103px]">
-        <aside class="space-y-8 pr-4 max-w-[322px] w-full shrink-0">
+      <section class="container-fasco flex gap-6 xl:gap-0 mt-[103px]">
+        <aside class="space-y-8 pr-4 w-[240px] xl:w-[322px] shrink-0">
           <h2 class="font-volkhov text-[30px] leading-[36px]">Filters</h2>
           <div class="space-y-4 max-w-[150px]">
             <h3 class="text-[18px] leading-[28px] font-volkhov">Size</h3>
@@ -117,48 +129,20 @@
           <div class="space-y-4">
             <h3 class="text-[18px] leading-[28px] font-volkhov">Colors</h3>
             <div class="flex flex-wrap gap-2.5 mt-[16px]">
-              <span
-                class="w-[30px] h-[30px] rounded-full bg-[#FF6C6C] cursor-pointer"
-              ></span>
-              <span
-                class="w-[30px] h-[30px] rounded-full bg-[#FF7629] cursor-pointer"
-              ></span>
-              <span
-                class="w-[30px] h-[30px] rounded-full bg-[#FFF06C] cursor-pointer"
-              ></span>
-              <span
-                class="w-[30px] h-[30px] rounded-full bg-[#9BFF6C] cursor-pointer"
-              ></span>
-              <span
-                class="w-[30px] h-[30px] rounded-full bg-[#6CFF9E] cursor-pointer"
-              ></span>
-              <span
-                class="w-[30px] h-[30px] rounded-full bg-[#6CFFDC] cursor-pointer"
-              ></span>
-              <span
-                class="w-[30px] h-[30px] rounded-full bg-[#6CB9FF] cursor-pointer"
-              ></span>
-              <span
-                class="w-[30px] h-[30px] rounded-full bg-[#6CF6FF] cursor-pointer"
-              ></span>
-              <span
-                class="w-[30px] h-[30px] rounded-full bg-[#6CA7FF] cursor-pointer"
-              ></span>
-              <span
-                class="w-[30px] h-[30px] rounded-full bg-[#6C7BFF] cursor-pointer"
-              ></span>
-              <span
-                class="w-[30px] h-[30px] rounded-full bg-[#8A6CFF] cursor-pointer"
-              ></span>
-              <span
-                class="w-[30px] h-[30px] rounded-full bg-[#B66CFF] cursor-pointer"
-              ></span>
-              <span
-                class="w-[30px] h-[30px] rounded-full bg-[#FC6CFF] cursor-pointer"
-              ></span>
-              <span
-                class="w-[30px] h-[30px] rounded-full bg-[#FF6C6C] cursor-pointer"
-              ></span>
+              <span class="w-[30px] h-[30px] rounded-full bg-[#FF6C6C] cursor-pointer"></span>
+              <span class="w-[30px] h-[30px] rounded-full bg-[#FF7629] cursor-pointer"></span>
+              <span class="w-[30px] h-[30px] rounded-full bg-[#FFF06C] cursor-pointer"></span>
+              <span class="w-[30px] h-[30px] rounded-full bg-[#9BFF6C] cursor-pointer"></span>
+              <span class="w-[30px] h-[30px] rounded-full bg-[#6CFF9E] cursor-pointer"></span>
+              <span class="w-[30px] h-[30px] rounded-full bg-[#6CFFDC] cursor-pointer"></span>
+              <span class="w-[30px] h-[30px] rounded-full bg-[#6CB9FF] cursor-pointer"></span>
+              <span class="w-[30px] h-[30px] rounded-full bg-[#6CF6FF] cursor-pointer"></span>
+              <span class="w-[30px] h-[30px] rounded-full bg-[#6CA7FF] cursor-pointer"></span>
+              <span class="w-[30px] h-[30px] rounded-full bg-[#6C7BFF] cursor-pointer"></span>
+              <span class="w-[30px] h-[30px] rounded-full bg-[#8A6CFF] cursor-pointer"></span>
+              <span class="w-[30px] h-[30px] rounded-full bg-[#B66CFF] cursor-pointer"></span>
+              <span class="w-[30px] h-[30px] rounded-full bg-[#FC6CFF] cursor-pointer"></span>
+              <span class="w-[30px] h-[30px] rounded-full bg-[#FF6C6C] cursor-pointer"></span>
             </div>
           </div>
 
@@ -227,14 +211,14 @@
           </div>
         </aside>
 
-        <section class="max-w-[978px] w-full min-w-0">
-          <div class="flex justify-between items-center mb-[24px]">
+        <section class="flex-1 min-w-0">
+          <div class="flex justify-between items-center gap-4 mb-[24px]">
             <div>
               <select class="cursor-pointer font-volkhov leading-[24px]">
                 <option>Best selling</option>
               </select>
             </div>
-            <div class="flex items-center space-x-[10px]">
+            <div class="flex items-center gap-[10px]">
               <button class="p-[11px] bg-[#F2F2F2]">
                 <img src="assets/SVG(3).svg" alt="view" />
               </button>
@@ -253,14 +237,14 @@
             </div>
           </div>
 
-          <div class="grid grid-cols-3 gap-x-[12px] gap-y-[30px] px-[12px]">
+          <div class="grid grid-cols-3 gap-x-[12px] gap-y-[30px] xl:px-[12px]">
             <!-- Produit 1 -->
-            <div class="group">
+            <div class="group min-w-0">
               <div class="mb-[20px] w-full overflow-hidden">
                 <img
                   src="assets/produ1.svg"
                   alt="Rounded Red Hat"
-                  class="w-full h-full object-cover"
+                  class="w-full h-auto object-cover"
                 />
               </div>
               <h4 class="font-volkhov leading-[24px]">Rounded Red Hat</h4>
@@ -276,12 +260,12 @@
             </div>
 
             <!-- Produit 2 -->
-            <div class="group">
-              <div class="relative mb-[20px]">
+            <div class="group min-w-0">
+              <div class="relative mb-[20px] w-full overflow-hidden">
                 <img
                   src="assets/produ2.svg"
                   alt="Linen-Blend Shirt"
-                  class="w-full h-full object-cover"
+                  class="w-full h-auto object-cover"
                 />
                 <span
                   class="absolute inset-0 m-auto bg-[#B1B1B1] text-white text-[10px] leading-[12px] uppercase font-bold rounded-full flex items-center justify-center text-center w-[54px] h-[54px] p-1"
@@ -301,12 +285,12 @@
             </div>
 
             <!-- Produit 3 -->
-            <div class="group">
+            <div class="group min-w-0">
               <div class="mb-[20px] w-full overflow-hidden">
                 <img
                   src="assets/produ3.svg"
                   alt="Long-sleeve Coat"
-                  class="w-full h-full object-cover"
+                  class="w-full h-auto object-cover"
                 />
               </div>
               <h4 class="font-volkhov leading-[24px]">Long-sleeve Coat</h4>
@@ -322,12 +306,12 @@
             </div>
 
             <!-- Produit 4 -->
-            <div class="group">
+            <div class="group min-w-0">
               <div class="mb-[20px] w-full overflow-hidden">
                 <img
                   src="assets/produ4.svg"
-                  alt="Long-sleeve Coat"
-                  class="w-full h-full object-cover"
+                  alt="Boxy Denim Hat"
+                  class="w-full h-auto object-cover"
                 />
               </div>
               <h4 class="font-volkhov leading-[24px]">Boxy Denim Hat</h4>
@@ -343,12 +327,12 @@
             </div>
 
             <!-- Produit 5 -->
-            <div class="group">
+            <div class="group min-w-0">
               <div class="mb-[20px] w-full overflow-hidden">
                 <img
                   src="assets/produ5.svg"
-                  alt="Long-sleeve Coat"
-                  class="w-full h-full object-cover"
+                  alt="Linen Plain Top"
+                  class="w-full h-auto object-cover"
                 />
               </div>
               <h4 class="font-volkhov leading-[24px]">Linen Plain Top</h4>
@@ -364,12 +348,12 @@
             </div>
 
             <!-- Produit 6 -->
-            <div class="group">
+            <div class="group min-w-0">
               <div class="mb-[20px] w-full overflow-hidden">
                 <img
                   src="assets/produ6.svg"
-                  alt="Long-sleeve Coat"
-                  class="w-full h-full object-cover"
+                  alt="Oversized T-shirt"
+                  class="w-full h-auto object-cover"
                 />
               </div>
               <h4 class="font-volkhov leading-[24px]">Oversized T-shirt</h4>
@@ -384,18 +368,18 @@
                   class="w-[26px] h-[26px] rounded-full bg-[#C6AEC7] cursor-pointer"
                 ></span>
                 <span
-                  class="w-[26px] h-[26px] rounded-full bg-[#FFFFFF01] cursor-pointer border-1 border-[grey]"
+                  class="w-[26px] h-[26px] rounded-full bg-white cursor-pointer border border-gray-400"
                 ></span>
               </div>
             </div>
 
             <!-- Produit 7 -->
-            <div class="group">
+            <div class="group min-w-0">
               <div class="mb-[20px] w-full overflow-hidden">
                 <img
                   src="assets/produ7.svg"
-                  alt="Long-sleeve Coat"
-                  class="w-full h-full object-cover"
+                  alt="Polarised Sunglasses"
+                  class="w-full h-auto object-cover"
                 />
               </div>
               <h4 class="font-volkhov leading-[24px]">Polarised Sunglasses</h4>
@@ -413,12 +397,12 @@
             </div>
 
             <!-- Produit 8 -->
-            <div class="group">
+            <div class="group min-w-0">
               <div class="mb-[20px] w-full overflow-hidden">
                 <img
                   src="assets/produ8.svg"
-                  alt="Long-sleeve Coat"
-                  class="w-full h-full object-cover"
+                  alt="Rockstar Jacket"
+                  class="w-full h-auto object-cover"
                 />
               </div>
               <h4 class="font-volkhov leading-[24px]">Rockstar Jacket</h4>
@@ -434,12 +418,12 @@
             </div>
 
             <!-- Produit 9 -->
-            <div class="group">
+            <div class="group min-w-0">
               <div class="mb-[20px] w-full overflow-hidden">
                 <img
                   src="assets/produ9.svg"
-                  alt="Long-sleeve Coat"
-                  class="w-full h-full object-cover"
+                  alt="Dotted Black Dress"
+                  class="w-full h-auto object-cover"
                 />
               </div>
               <h4 class="font-volkhov leading-[24px]">Dotted Black Dress</h4>
@@ -459,9 +443,7 @@
           </div>
 
           <!-- Pagination -->
-          <div
-            class="flex justify-center items-center space-x-4 mt-[70px] gap-2"
-          >
+          <div class="flex justify-center items-center gap-6 mt-[70px]">
             <span
               class="w-[44px] h-[44px] rounded-full bg-[#F3F3F3] leading-[24px] flex items-center justify-center"
               >1</span
@@ -482,7 +464,8 @@
         </section>
       </section>
 
-      <section class="flex mt-[70px] w-full">
+      <!-- Peaky Blinders (full width) -->
+      <section class="mt-[70px] w-full">
         <div class="grid grid-cols-2 w-full h-[570px]">
           <!-- Left Image Container -->
           <div
@@ -497,12 +480,12 @@
 
           <!-- Right description Container -->
           <div
-            class="diagonal-panel bg-[#DADADA] h-[570px] flex z-20 pl-[150px] -ml-[150px] pr-[80px]"
+            class="diagonal-panel bg-[#DADADA] h-[570px] flex z-20 pl-[150px] -ml-[150px] pr-10 xl:pr-[80px]"
           >
-            <div class="flex flex-col justify-center space-y-[20px]">
+            <div class="flex flex-col justify-center gap-4 xl:gap-[20px]">
               <p class="text-[#767676] font-poppins">Women Collection</p>
 
-              <p class="font-volkhov text-[46px] text-[#484848]">
+              <p class="font-volkhov text-[38px] xl:text-[46px] leading-tight text-[#484848]">
                 Peaky Blinders
               </p>
 
@@ -540,36 +523,37 @@
         </div>
       </section>
 
+      <!-- Features -->
       <section class="w-full">
         <div
-          class="flex justify-between items-center font-poppins text-[#484848] py-[72px] max-w-[1280px] mx-auto"
+          class="container-fasco grid grid-cols-2 gap-x-8 gap-y-10 xl:flex xl:justify-between xl:items-center font-poppins text-[#484848] py-[72px]"
         >
-          <div class="flex space-x-[13px]">
-            <img src="assets/qualityIcon.svg" alt="high quality icon" />
+          <div class="flex gap-[13px] justify-self-center">
+            <img src="assets/qualityIcon.svg" alt="High quality icon" />
             <div>
               <p class="font-medium text-[20px]">High Quality</p>
               <p class="leading-[26px]">crafted from top materials</p>
             </div>
           </div>
 
-          <div class="flex space-x-[13px]">
-            <img src="assets/warrantytyIcon.svg" alt="high quality icon" />
+          <div class="flex gap-[13px] justify-self-center">
+            <img src="assets/warrantytyIcon.svg" alt="Warranty icon" />
             <div>
-              <p class="font-medium text-[20px]">Warrany Protection</p>
+              <p class="font-medium text-[20px]">Warranty Protection</p>
               <p class="leading-[26px]">Over 2 years</p>
             </div>
           </div>
 
-          <div class="flex space-x-[13px]">
-            <img src="assets/shippingIcon.svg" alt="high quality icon" />
+          <div class="flex gap-[13px] justify-self-center">
+            <img src="assets/shippingIcon.svg" alt="Shipping icon" />
             <div>
               <p class="font-medium text-[20px]">Free Shipping</p>
               <p class="leading-[26px]">Order over 150 $</p>
             </div>
           </div>
 
-          <div class="flex space-x-[13px]">
-            <img src="assets/supportIcon.svg" alt="high quality icon" />
+          <div class="flex gap-[13px] justify-self-center">
+            <img src="assets/supportIcon.svg" alt="Support icon" />
             <div>
               <p class="font-medium text-[20px]">24 / 7 Support</p>
               <p class="leading-[26px]">Dedicated support</p>
@@ -578,13 +562,12 @@
         </div>
       </section>
 
+      <!-- Instagram -->
       <section
-        class="bg-linear-to-b from-[#F8F8F8] to-white pt-[70px] space-y-[100px] w-full overflow-hidden mx-auto"
+        class="bg-linear-to-b from-[#F8F8F8] to-white pt-[70px] space-y-[100px] w-full overflow-hidden"
       >
-        <div class="space-y-[20px] text-center max-w-[614px] mx-auto">
-          <p class="font-volkhov text-[46px] px-[39px]">
-            Follow Us On Instagram
-          </p>
+        <div class="container-fasco space-y-[20px] text-center max-w-[662px]">
+          <p class="font-volkhov text-[46px]">Follow Us On Instagram</p>
           <p class="font-poppins leading-[26px] text-[#8A8A8A]">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Scelerisque
             duis ultrices sollicitudin aliquam sem. Scelerisque duis ultrices
@@ -592,75 +575,80 @@
           </p>
         </div>
 
-        <div class="w-full flex justify-center items-center">
-          <div class="w-[320px]">
-            <img
-              class="w-full h-[308px] object-cover"
-              src="assets/fasco-section4-image-1.svg"
-              alt="Instagram post"
-            />
-          </div>
+        <!-- Strip: 1920px wide minimum (cropped on the sides on small screens),
+             grows proportionally on screens wider than 1920px -->
+        <div class="flex justify-center">
+          <div class="flex items-center shrink-0 w-[max(100%,1920px)]">
+            <div class="w-[16.6667%] aspect-[320/308]">
+              <img
+                class="w-full h-full object-cover"
+                src="assets/fasco-section4-image-1.svg"
+                alt="Instagram post"
+              />
+            </div>
 
-          <div class="w-[256px]">
-            <img
-              class="w-full h-[380px] object-cover"
-              src="assets/fasco-section4-image-2.svg"
-              alt="Instagram post"
-            />
-          </div>
+            <div class="w-[13.3333%] aspect-[256/380]">
+              <img
+                class="w-full h-full object-cover"
+                src="assets/fasco-section4-image-2.svg"
+                alt="Instagram post"
+              />
+            </div>
 
-          <div class="w-[256px]">
-            <img
-              class="w-full h-[308px] object-cover"
-              src="assets/fasco-section4-image-3.svg"
-              alt="Instagram post"
-            />
-          </div>
+            <div class="w-[13.3333%] aspect-[256/308]">
+              <img
+                class="w-full h-full object-cover"
+                src="assets/fasco-section4-image-3.svg"
+                alt="Instagram post"
+              />
+            </div>
 
-          <div class="w-[256px]">
-            <img
-              class="w-full h-[380px] object-cover"
-              src="assets/fasco-section4-image-4.svg"
-              alt="Instagram post center"
-            />
-          </div>
+            <div class="w-[13.3333%] aspect-[256/380]">
+              <img
+                class="w-full h-full object-cover"
+                src="assets/fasco-section4-image-4.svg"
+                alt="Instagram post"
+              />
+            </div>
 
-          <div class="w-[256px]">
-            <img
-              class="w-full h-[308px] object-cover"
-              src="assets/fasco-section4-image-5.svg"
-              alt="Instagram post"
-            />
-          </div>
+            <div class="w-[13.3333%] aspect-[256/308]">
+              <img
+                class="w-full h-full object-cover"
+                src="assets/fasco-section4-image-5.svg"
+                alt="Instagram post"
+              />
+            </div>
 
-          <div class="w-[256px]">
-            <img
-              class="w-full h-[380px] object-cover"
-              src="assets/fasco-section4-image-6.svg"
-              alt="Instagram post"
-            />
-          </div>
+            <div class="w-[13.3333%] aspect-[256/380]">
+              <img
+                class="w-full h-full object-cover"
+                src="assets/fasco-section4-image-6.svg"
+                alt="Instagram post"
+              />
+            </div>
 
-          <div class="w-[320px]">
-            <img
-              class="w-full h-[308px] object-cover"
-              src="assets/fasco-section4-image-7.svg"
-              alt="Instagram post"
-            />
+            <div class="w-[16.6667%] aspect-[320/308]">
+              <img
+                class="w-full h-full object-cover"
+                src="assets/fasco-section4-image-7.svg"
+                alt="Instagram post"
+              />
+            </div>
           </div>
         </div>
       </section>
 
+      <!-- Newsletter -->
       <section
-        class="max-w-[1280px] mx-auto mt-[196px] flex justify-between items-center"
+        class="container-fasco mt-[196px] flex justify-between items-center gap-6"
       >
         <img
-          class="object-contain"
+          class="w-[24%] max-w-[342px] min-w-0 h-auto object-contain"
           src="assets/fasco-section6-card1.svg"
           alt=""
         />
-        <div class="text-center space-y-[20px]">
-          <p class="font-volkhov text-[46px] text-[#484848]">
+        <div class="flex-1 min-w-0 max-w-[620px] text-center space-y-[20px]">
+          <p class="font-volkhov text-[36px] xl:text-[46px] leading-tight text-[#484848]">
             Subscribe To Our Newsletter
           </p>
           <p class="px-[10px] font-poppins leading-[26px] text-[#8A8A8A]">
@@ -669,7 +657,7 @@
             sollicitudin
           </p>
           <input
-            type="text"
+            type="email"
             placeholder="michael@ymail.com"
             class="mt-[10px] py-[28px] pl-[30px] text-left w-full shadow-[0px_3.02px_3.15px_0px_#00000002,_0px_13.28px_6.52px_0px_#00000004,_0px_32.6px_13px_0px_#00000005,_0px_62.79px_25.48px_0px_#00000006,_0px_105.65px_46.85px_0px_#00000008,_0px_163px_80px_0px_#0000000A]"
           />
@@ -682,19 +670,17 @@
         </div>
 
         <img
-          class="object-contain"
+          class="w-[24%] max-w-[342px] min-w-0 h-auto object-contain"
           src="assets/fasco-section6-card2.svg"
           alt=""
         />
       </section>
     </main>
 
-    <footer
-      class="border border-t border-[#DEDFE1] space-y-[50px] py-[30px] mt-[50px]"
-    >
-      <div class="flex justify-between items-center max-w-[1280px] mx-auto">
+    <footer class="border-t border-[#DEDFE1] space-y-[50px] py-[30px] mt-[50px]">
+      <div class="container-fasco flex justify-between items-center">
         <div class="font-volkhov text-[32px] text-[#484848]">FASCO</div>
-        <div class="flex items-center space-x-[70px] text-[#484848]">
+        <div class="flex items-center gap-10 xl:gap-[70px] text-[#484848]">
           <a href="#">Home</a>
           <a href="shopPage.html">Shop</a>
           <a href="#">Products</a>
@@ -711,7 +697,7 @@
       <p
         class="font-poppins text-[12px] leading-[26px] text-[#484848] text-center"
       >
-        Copyright © 2022 FASCO . All Rights Reseved.
+        Copyright © 2022 FASCO . All Rights Reserved.
       </p>
     </footer>
   </body>

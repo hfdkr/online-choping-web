@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>FASCO | Set New Password</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Volkhov:wght@400;700&family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  </head>
+
+  <body class="font-[Poppins] text-neutral-800 antialiased">
+    <main class="flex min-h-screen items-center justify-center bg-white p-4 md:p-8">
+      <section class="relative flex min-h-[627px] w-full max-w-[1114px] overflow-hidden rounded-r-[18px] border border-[#dedede] bg-white lg:h-[627px]">
+        <div class="hidden w-[49.4%] shrink-0 lg:block">
+          <img
+            src="assets/Rectangle 19280(1).png"
+            alt="Woman in a pink one-shoulder top posing against a colorful painted wall"
+            class="h-full w-full object-cover"
+          />
+        </div>
+
+        <div class="flex w-full items-center justify-center px-6 py-10 lg:w-[50.6%] lg:px-8 lg:py-0">
+          <div class="w-full max-w-[386px] self-start pt-6 sm:pt-8 lg:mt-[46px] lg:translate-x-[9px] lg:pt-0">
+            <h1 class="font-[Volkhov] text-[40px] font-bold leading-[1.2] text-[#4a4a4a]">
+              FASCO
+            </h1>
+
+            <h2 class="mt-[145px] font-[Volkhov] text-[18px] font-normal leading-tight text-black">
+              Enter Your New Password
+            </h2>
+
+            <form action="signin.html" method="post" class="mt-[35px]">
+              <label for="new-password" class="sr-only">New Password</label>
+              <input
+                id="new-password"
+                name="newPassword"
+                type="password"
+                placeholder="New Password"
+                autocomplete="new-password"
+                required
+                class="w-full border-0 border-b border-[#d1d1d1] bg-transparent px-0 pb-2 pt-1 text-[10px] tracking-wide text-[#222] placeholder-[#999] focus:border-black focus:outline-none focus:ring-0"
+              />
+
+              <label for="confirm-password" class="sr-only">Confirmation Password</label>
+              <input
+                id="confirm-password"
+                name="confirmPassword"
+                type="password"
+                placeholder="Confirmation Password"
+                autocomplete="new-password"
+                required
+                class="mt-[17px] w-full border-0 border-b border-[#d1d1d1] bg-transparent px-0 pb-2 pt-1 text-[10px] tracking-wide text-[#222] placeholder-[#999] focus:border-black focus:outline-none focus:ring-0"
+              />
+
+              <button
+                type="submit"
+                class="mt-[18px] h-[35px] w-full rounded-[5px] bg-[#5b82e5] text-[10px] font-semibold tracking-wide text-white transition hover:bg-[#4b72d5] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#5b82e5] focus-visible:ring-offset-2"
+              >
+                Submit
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <a href="#" class="absolute bottom-[18px] right-[46px] text-[9px] text-black">
+          FASCO Terms &amp; Conditions
+        </a>
+      </section>
+    </main>
+  </body>
+</html>

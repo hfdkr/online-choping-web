@@ -2,26 +2,26 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-    <link
-        href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&family=Volkhov:wght@400;700&family=Share+Tech+Mono&display=swap"
-        rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&family=Volkhov:wght@400;700&family=Share+Tech+Mono&display=swap"
+    rel="stylesheet" />
 
-    <!-- Digital Numbers Font -->
-    <link href="https://fonts.cdnfonts.com/css/digital-numbers" rel="stylesheet" />
-    <title>Shopping Product</title>
+  <!-- Digital Numbers Font -->
+  <link href="https://fonts.cdnfonts.com/css/digital-numbers" rel="stylesheet" />
+  <title>Shopping Product</title>
 
-    <style type="text/tailwindcss">
-        @theme {
+  <style type="text/tailwindcss">
+    @theme {
             /* Colors */
             --color-heather-grey: #484848;
             --color-grey-900: #8a8a8a;
@@ -61,21 +61,22 @@
         .span-picky{
             @apply absolute z-30 flex items-center justify-center w-[6.43%] h-[6.35%] border border-[#000000] bg-white/60 text-[11px] whitespace-nowrap;
         }
-        .span.button{
+        /* "Subtotal" */
+        .span-button{
             @apply font-volkhov text-[22px] leading-[32px] text-black-900;
         }
-
-        /* ============================================================
-           Page sections (utilities moved out of the HTML)
-           ============================================================ */
-        /* ===== Page ===== */
-        .page-body {
-          @apply bg-white-900;
+        .span-thired{
+            @apply font-jost text-[16px] leading-[24px] text-black-900;
         }
 
-        /* ===== Header ===== */
+           /* Page sections */
+        /* Page  */
+        .page-body {
+          @apply bg-white-900 overflow-x-hidden;
+        }
+        /*  Header  */
         .header-bar {
-          @apply flex items-center justify-between px-10 mx-auto max-w-[1070px] py-5;
+          @apply flex items-center justify-between gap-6 px-10 mx-auto max-w-[1070px] py-5;
         }
         .logo-link {
           @apply shrink-0;
@@ -90,21 +91,22 @@
           @apply border-b border-heather-grey py-[10px];
         }
         .header-icons {
-          @apply flex items-center gap-4;
+          @apply flex items-center gap-4 shrink-0;
         }
         .header-icon {
           @apply w-6 h-6;
         }
 
-        /* ===== Product details ===== */
+        /*  Product details  */
         .main-content {
           @apply relative;
         }
+        /* 1070px of content + 24px margin on each side */
         .product-section {
-          @apply mx-auto max-w-[1070px] py-5;
+          @apply mx-auto max-w-[1118px] px-6 py-5;
         }
         .product-layout {
-          @apply flex justify-center gap-[60px];
+          @apply flex justify-center gap-8 xl:gap-[60px];
         }
         .product-gallery {
           @apply flex gap-5 shrink-0;
@@ -112,14 +114,16 @@
         .gallery-thumbs {
           @apply space-y-[10px];
         }
+        /* main image: 340px under 1280px, 400px above */
         .gallery-main {
-          @apply w-[400px] shrink-0;
+          @apply w-[340px] xl:w-[400px] shrink-0;
         }
         .gallery-main-img {
           @apply w-full h-auto block;
         }
+        /* right column: takes the remaining space, max 490px */
         .product-info {
-          @apply w-[490px] shrink-0;
+          @apply flex-1 min-w-0 max-w-[490px];
         }
         .product-brand {
           @apply block font-volkhov my-[5px] text-[14px] uppercase;
@@ -167,7 +171,7 @@
           @apply w-full h-[58px] border border-[#F8CCCC] bg-[#FDEFEE] rounded-[4px] my-[30px] px-[15px];
         }
         .sale-timer-inner {
-          @apply flex justify-between items-center h-full;
+          @apply flex justify-between items-center gap-3 h-full;
         }
         .sale-timer-title {
           @apply font-volkhov text-[18px] leading-[28px] text-[#FF706B] whitespace-nowrap;
@@ -230,10 +234,10 @@
           @apply font-volkhov text-[16px] leading-[24px] text-black-900;
         }
         .quantity-row {
-          @apply flex gap-[30px] mt-[13px] pb-[65px] w-full;
+          @apply flex gap-[20px] xl:gap-[30px] mt-[13px] pb-[65px] w-full;
         }
         .quantity-picker {
-          @apply border border-light-gray w-[128px] h-[46px] items-center flex justify-evenly;
+          @apply border border-light-gray w-[128px] h-[46px] items-center flex justify-evenly shrink-0;
         }
         .qty-btn {
           @apply cursor-pointer;
@@ -242,13 +246,13 @@
           @apply flex-1 h-[45px] rounded-[5px] border flex items-center justify-center cursor-pointer hover:bg-black-900 hover:text-white-900 hover:rounded-[10px];
         }
         .product-actions {
-          @apply w-full flex gap-[30px];
+          @apply w-full flex flex-wrap gap-x-[30px] gap-y-2;
         }
         .product-action {
           @apply flex items-center gap-[8px];
         }
 
-        /* ===== Shopping cart (overlay + side panel) ===== */
+        /*  Shopping cart */
         .cart-overlay {
           @apply fixed inset-0 z-40 bg-[#78787869];
         }
@@ -269,6 +273,9 @@
         }
         .cart-item {
           @apply mt-[67px] flex gap-[22px] pb-[20px] border-b border-light-gray;
+        }
+        .cart-item-img {
+          @apply shrink-0;
         }
         .cart-item-name {
           @apply font-volkhov text-[22px] leading-[42px] text-black-900;
@@ -311,322 +318,305 @@
 
 <body class="page-body">
 
-    <!-- Header -->
-    <header id="top" class="header-bar">
+  <!-- Header -->
+  <header id="top" class="header-bar">
 
-        <!-- Logo -->
-        <a href="#" aria-label="FASCO home" class="logo-link">
-            <h1 class="logo-title">
-                FASCO
-            </h1>
-        </a>
+    <!-- Logo -->
+    <a href="#" aria-label="FASCO home" class="logo-link">
+      <h1 class="logo-title">
+        FASCO
+      </h1>
+    </a>
 
-        <!-- Navigation -->
-        <nav class="navbar nav-main">
-            <a href="#home" class="nav-name">Home</a>
-            <a href="#Deals" class="nav-name">Shop</a>
-            <a href="#arrivale" class="nav-name nav-active">Products</a>
-            <a href="#package" class="nav-name">Pages</a>
-        </nav>
+    <!-- Navigation -->
+    <nav class="navbar nav-main">
+      <a href="#home" class="nav-name">Home</a>
+      <a href="#Deals" class="nav-name">Shop</a>
+      <a href="#arrivale" class="nav-name nav-active">Products</a>
+      <a href="#package" class="nav-name">Pages</a>
+    </nav>
 
-        <!-- Header Icons -->
-        <div class="header-icons">
-            <a href="#" aria-label="Search">
-                <img src="./assets-product/icon-search.svg" alt="Search" class="header-icon" />
-            </a>
+    <!-- Header Icons -->
+    <div class="header-icons">
+      <a href="#" aria-label="Search">
+        <img src="./assets-product/icon-search.svg" alt="Search" class="header-icon" />
+      </a>
 
-            <a href="#" aria-label="Shopping cart">
-                <img src="./assets-product/icon-user.svg" alt="User account" class="header-icon" />
-            </a>
+      <a href="#" aria-label="User account">
+        <img src="./assets-product/icon-user.svg" alt="User account" class="header-icon" />
+      </a>
 
-            <a href="#" aria-label="User account">
-                <img src="./assets-product/icon-star.svg" alt="Pin Shoping" class="header-icon" />
-            </a>
-            <a href="#" aria-label="User account">
-                <img src="./assets-product/icon-wallet.svg" alt="Shopping cart " class="header-icon" />
-            </a>
+      <a href="#" aria-label="Favorites">
+        <img src="./assets-product/icon-star.svg" alt="Favorites" class="header-icon" />
+      </a>
+      <a href="#" aria-label="Shopping cart">
+        <img src="./assets-product/icon-wallet.svg" alt="Shopping cart" class="header-icon" />
+      </a>
+    </div>
+
+  </header>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <!-- section 1: -->
+    <section class="product-section">
+      <!-- gap between image and text: 32px under 1280px, 60px above -->
+      <div class="product-layout">
+        <div class="product-gallery">
+          <!-- div images -->
+          <div class="gallery-thumbs">
+            <div class="">
+              <img src="./assets-product/icon-section1-Jacket.svg" alt="Women's jacket" />
+            </div>
+            <div class="div-active">
+              <img src="./assets-product/icon-section1-girl.svg" alt="Woman wearing a fashion outfit" />
+            </div>
+            <div class="">
+              <img src="./assets-product/icon-section1-man.svg" alt="Man wearing casual clothing" />
+            </div>
+            <div>
+              <img src="./assets-product/icon-section1-full_girl.svg"
+                alt="Full-body view of a woman in a fashion outfit" />
+            </div>
+            <div class="">
+              <img src="./assets-product/icon-section1-jacket-janes.svg" alt="Women's jeans jacket" />
+            </div>
+            <div class="">
+              <img src="./assets-product/icon-section1-black_Jacket.svg" alt="Black jacket" />
+            </div>
+            <div class="">
+              <img src="./assets-product/icon-section1-full_body.svg" alt="Full-body fashion model" />
+            </div>
+          </div>
+          <!-- main image: 340px under 1280px, 400px above, height follows the ratio -->
+          <div class="gallery-main">
+            <img src="./assets-product/icon-section1-red_girl.svg" alt="Woman wearing a red jacket"
+              class="gallery-main-img">
+          </div>
         </div>
 
-    </header>
+        <!-- right column: remaining space, max 490px -->
+        <div class="product-info">
+          <span class="product-brand">
+            Fasco
+          </span>
 
-    <!-- Main Content -->
-    <main class="main-content">
-        <!-- section 1: -->
-        <section class="product-section">
-            <!-- fixed gap between image and text (adjust to the Figma value) -->
-            <div class="product-layout">
-                <div class="product-gallery">
-                    <!-- div images -->
-                    <div class="gallery-thumbs">
-                        <div class="">
-                            <img src="./assets-product/icon-section1-Jacket.svg" alt="Women's jacket" />
-                        </div>
-                        <div class="div-active">
-                            <img src="./assets-product/icon-section1-girl.svg" alt="Woman wearing a fashion outfit" />
-                        </div>
-                        <div class="">
-                            <img src="./assets-product/icon-section1-man.svg" alt="Man wearing casual clothing" />
-                        </div>
-                        <div>
-                            <img src="./assets-product/icon-section1-full_girl.svg"
-                                alt="Full-body view of a woman in a fashion outfit" />
-                        </div>
-                        <div class="">
-                            <img src="./assets-product/icon-section1-jacket-janes.svg" alt="Women's jeans jacket" />
-                        </div>
-                        <div class="">
-                            <img src="./assets-product/icon-section1-black_Jacket.svg" alt="Black jacket" />
-                        </div>
-                        <div class="">
-                            <img src="./assets-product/icon-section1-full_body.svg" alt="Full-body fashion model" />
-                        </div>
-                    </div>
-                    <!-- main image: fixed width, height follows the ratio -->
-                    <div class="gallery-main">
-                        <img src="./assets-product/icon-section1-red_girl.svg" alt="Woman wearing a red jacket"
-                            class="gallery-main-img">
-                    </div>
-                </div>
+          <div class="product-title-row">
+            <h2 class="product-title">
+              Denim Jacket
+            </h2>
 
-                <!-- right column: width = widest content (490px) -->
-                <div class="product-info">
-                    <span class="product-brand">
-                        Fasco
-                    </span>
-
-                    <div class="product-title-row">
-                        <h2 class="product-title">
-                            Denim Jacket
-                        </h2>
-
-                        <div class="wishlist-btn">
-                            <img src="./assets-product/icon-star.svg" alt="icon star">
-                        </div>
-                    </div>
-
-                    <!-- div stars -->
-                    <div class="rating-row">
-                        <div class="rating-stars">
-                            <span><img src="./assets-product/black-star.svg" alt="icon-star" /></span>
-                            <span><img src="./assets-product/black-star.svg" alt="icon-star" /></span>
-                            <span><img src="./assets-product/black-star.svg" alt="icon-star" /></span>
-                            <span><img src="./assets-product/black-star.svg" alt="icon-star" /></span>
-                            <span><img src="./assets-product/white-star.svg" alt="icon-star" /></span>
-                        </div>
-                        <div>
-                            <span class="rating-count">(3)</span>
-                        </div>
-                    </div>
-
-                    <!-- div price -->
-                    <div class="price-row">
-                        <div class="price-group">
-                            <span class="price-current">$39.00</span>
-                            <span
-                                class="price-old">$59.00</span>
-                            <button
-                                class="price-badge">
-                                <span
-                                    class="price-badge-text">Save<span
-                                        class="">33%</span></span>
-                            </button>
-                        </div>
-                    </div>
-
-                    <!-- div viewing -->
-                    <div class="viewers-row">
-                        <img src="./assets-product/icon-view.svg" alt="">
-                        <span class="">24 <span>people are viewing this right now</span></span>
-                    </div>
-
-                    <!-- div time -->
-                    <div class="sale-timer">
-                        <div class="sale-timer-inner">
-                            <h5 class="sale-timer-title">
-                                Hurry up! Sale ends in:
-                            </h5>
-
-                            <div class="sale-timer-digits">
-                                <span class="number-time">02</span>
-                                <span class="number-time">:</span>
-                                <span class="number-time">06</span>
-                                <span class="number-time">:</span>
-                                <span class="number-time">05</span>
-                                <span class="number-time">:</span>
-                                <span class="number-time">30</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- div stock -->
-                    <div class="stock-block">
-                        <span class="stock-text">Only <span>9</span> item(s)
-                            left in stock!</span>
-                        <div class="stock-bar">
-                            <div class="stock-bar-fill"></div>
-                        </div>
-                    </div>
-
-                    <!-- div size -->
-                    <div class="size-block">
-                        <span class="option-label">Size: M</span>
-
-                        <div class="size-options">
-                            <!-- Size M (active) -->
-                            <div
-                                class="size-btn-active">
-                                M
-                            </div>
-                            <!-- Size L -->
-                            <div
-                                class="size-btn">
-                                L
-                            </div>
-                            <!-- Size XL -->
-                            <div
-                                class="size-btn">
-                                XL
-                            </div>
-                            <!-- Size XXL -->
-                            <div
-                                class="size-btn">
-                                XXL
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- div color -->
-                    <div class="color-block">
-                        <span class="option-label">Color:
-                            Blue</span>
-
-                        <div class="color-options">
-                            <!-- Color 1 (active) -->
-                            <div
-                                class="swatch-active">
-                                <div class="swatch-blue"></div>
-                            </div>
-                            <!-- Color 2 -->
-                            <div class="swatch">
-                                <div class="swatch-black"></div>
-                            </div>
-                            <!-- Color 3 -->
-                            <div class="swatch">
-                                <div class="swatch-pink"></div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- div quantity -->
-                    <div class="quantity-block">
-                        <span class="quantity-label">
-                            Quantity
-                        </span>
-                        <div class="quantity-row">
-                            <div class="quantity-picker">
-                                <span class="qty-btn">-</span>
-                                <span>1</span>
-                                <span class="qty-btn">+</span>
-                            </div>
-
-                            <div
-                                class="add-to-cart-btn">
-                                <span>Add to cart</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- div actions (border = full column width) -->
-                    <div class="product-actions">
-                        <!-- first one -->
-                        <div class="product-action">
-                            <img src="./assets-product/icon-compare.svg" alt="icon compare">
-                            <span class="span-thired">Compare</span>
-                        </div>
-                        <!-- second one -->
-                        <div class="product-action">
-                            <img src="./assets-product/icon-ask.svg" alt="icon ask">
-                            <span class="span-thired">Ask a question</span>
-                        </div>
-                        <!-- last one -->
-                        <div class="product-action">
-                            <img src="./assets-product/icon-share.svg" alt="icon share">
-                            <span class="span-thired">Share</span>
-                        </div>
-                    </div>
-                </div>
+            <div class="wishlist-btn">
+              <img src="./assets-product/icon-star.svg" alt="icon star">
             </div>
-        </section>
-    </main>
+          </div>
 
-    <!-- gray overlay on the whole page (behind the cart), like Figma -->
-    <div class="cart-overlay"></div>
+          <!-- div stars -->
+          <div class="rating-row">
+            <div class="rating-stars">
+              <span><img src="./assets-product/black-star.svg" alt="icon-star" /></span>
+              <span><img src="./assets-product/black-star.svg" alt="icon-star" /></span>
+              <span><img src="./assets-product/black-star.svg" alt="icon-star" /></span>
+              <span><img src="./assets-product/black-star.svg" alt="icon-star" /></span>
+              <span><img src="./assets-product/white-star.svg" alt="icon-star" /></span>
+            </div>
+            <div>
+              <span class="rating-count">(3)</span>
+            </div>
+          </div>
 
-    <!-- Shopping cart panel: pinned to the right edge of the screen, full height.
-         flex-col: products at the top, subtotal + checkout pushed to the bottom -->
-    <aside
-        class="cart-panel">
+          <!-- div price -->
+          <div class="price-row">
+            <div class="price-group">
+              <span class="price-current">$39.00</span>
+              <span class="price-old">$59.00</span>
+              <button class="price-badge">
+                <span class="price-badge-text">Save<span class="">33%</span></span>
+              </button>
+            </div>
+          </div>
 
-        <!-- close button -->
-        <button type="button" aria-label="Close cart" class="cart-close-btn">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="1.5"
-                stroke-linecap="round">
-                <path d="M5 5l14 14M19 5L5 19" />
-            </svg>
-        </button>
+          <!-- div viewing -->
+          <div class="viewers-row">
+            <img src="./assets-product/icon-view.svg" alt="">
+            <span class="">24 <span>people are viewing this right now</span></span>
+          </div>
 
-        <!-- top: title + products -->
+          <!-- div time -->
+          <div class="sale-timer">
+            <div class="sale-timer-inner">
+              <h5 class="sale-timer-title">
+                Hurry up! Sale ends in:
+              </h5>
+
+              <div class="sale-timer-digits">
+                <span class="number-time">02</span>
+                <span class="number-time">:</span>
+                <span class="number-time">06</span>
+                <span class="number-time">:</span>
+                <span class="number-time">05</span>
+                <span class="number-time">:</span>
+                <span class="number-time">30</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- div stock -->
+          <div class="stock-block">
+            <span class="stock-text">Only <span>9</span> item(s)
+              left in stock!</span>
+            <div class="stock-bar">
+              <div class="stock-bar-fill"></div>
+            </div>
+          </div>
+
+          <!-- div size -->
+          <div class="size-block">
+            <span class="option-label">Size: M</span>
+
+            <div class="size-options">
+              <!-- Size M (active) -->
+              <div class="size-btn-active">
+                M
+              </div>
+              <!-- Size L -->
+              <div class="size-btn">
+                L
+              </div>
+              <!-- Size XL -->
+              <div class="size-btn">
+                XL
+              </div>
+              <!-- Size XXL -->
+              <div class="size-btn">
+                XXL
+              </div>
+            </div>
+          </div>
+
+          <!-- div color -->
+          <div class="color-block">
+            <span class="option-label">Color:
+              Blue</span>
+
+            <div class="color-options">
+              <!-- Color 1 (active) -->
+              <div class="swatch-active">
+                <div class="swatch-blue"></div>
+              </div>
+              <!-- Color 2 -->
+              <div class="swatch">
+                <div class="swatch-black"></div>
+              </div>
+              <!-- Color 3 -->
+              <div class="swatch">
+                <div class="swatch-pink"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- div quantity -->
+          <div class="quantity-block">
+            <span class="quantity-label">
+              Quantity
+            </span>
+            <div class="quantity-row">
+              <div class="quantity-picker">
+                <span class="qty-btn">-</span>
+                <span>1</span>
+                <span class="qty-btn">+</span>
+              </div>
+
+              <div class="add-to-cart-btn">
+                <span>Add to cart</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- div actions -->
+          <div class="product-actions">
+            <!-- first one -->
+            <div class="product-action">
+              <img src="./assets-product/icon-compare.svg" alt="icon compare">
+              <span class="span-thired">Compare</span>
+            </div>
+            <!-- second one -->
+            <div class="product-action">
+              <img src="./assets-product/icon-ask.svg" alt="icon ask">
+              <span class="span-thired">Ask a question</span>
+            </div>
+            <!-- last one -->
+            <div class="product-action">
+              <img src="./assets-product/icon-share.svg" alt="icon share">
+              <span class="span-thired">Share</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- gray overlay on the whole page (behind the cart), like Figma -->
+  <div class="cart-overlay"></div>
+
+  <!-- Shopping cart panel -->
+  <aside class="cart-panel">
+
+    <!-- close button -->
+    <button type="button" aria-label="Close cart" class="cart-close-btn">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="1.5"
+        stroke-linecap="round">
+        <path d="M5 5l14 14M19 5L5 19" />
+      </svg>
+    </button>
+
+    <!-- top: title + products -->
+    <div>
+      <h2 class="cart-title">Shopping Cart</h2>
+      <p class="cart-shipping-note">Buy <span class="cart-highlight">$122.35</span> More And Get <span
+          class="cart-highlight">Free Shipping</span></p>
+
+      <!-- product -->
+      <div class="cart-item">
+        <img src="./assets-product/Product-Image.svg" alt="Denim Jacket" class="cart-item-img">
         <div>
-            <h2 class="cart-title">Shopping Cart</h2>
-            <p class="cart-shipping-note">Buy <span
-                    class="cart-highlight">$122.35</span> More And Get <span
-                    class="cart-highlight">Free Shipping</span></p>
-
-            <!-- product -->
-            <div class="cart-item">
-                <img src="./assets-product/Product-Image.svg" alt="Product-Image">
-                <div>
-                    <h5 class="cart-item-name">Denim Jacket</h5>
-                    <p class="cart-item-color">Color : Red</p>
-                    <span class="cart-item-price">$14.80</span>
-                    <div
-                        class="cart-qty-picker">
-                        <span class="qty-btn">-</span>
-                        <span>1</span>
-                        <span class="qty-btn">+</span>
-                    </div>
-                </div>
-            </div>
+          <h5 class="cart-item-name">Denim Jacket</h5>
+          <p class="cart-item-color">Color : Red</p>
+          <span class="cart-item-price">$14.80</span>
+          <div class="cart-qty-picker">
+            <span class="qty-btn">-</span>
+            <span>1</span>
+            <span class="qty-btn">+</span>
+          </div>
         </div>
+      </div>
+    </div>
 
-        <!-- bottom: pushed down with mt-auto -->
-        <div class="cart-bottom">
-            <!-- gift wrap -->
-            <label class="cart-gift">
-                <input type="checkbox" class="cart-gift-checkbox">
-                <span class="cart-gift-text">For <span
-                        class="cart-gift-price">$10.00</span> Please Wrap The Product</span>
-            </label>
+    <!-- bottom: pushed down with mt-auto -->
+    <div class="cart-bottom">
+      <!-- gift wrap -->
+      <label class="cart-gift">
+        <input type="checkbox" class="cart-gift-checkbox">
+        <span class="cart-gift-text">For <span class="cart-gift-price">$10.00</span> Please Wrap The Product</span>
+      </label>
 
-            <!-- subtotal -->
-            <div class="cart-subtotal">
-                <span class="span-button">Subtotal</span>
-                <span class="span-button">$100.00</span>
-            </div>
+      <!-- subtotal -->
+      <div class="cart-subtotal">
+        <span class="span-button">Subtotal</span>
+        <span class="span-button">$100.00</span>
+      </div>
 
-            <!-- checkout -->
-            <button type="button"
-                class="cart-checkout-btn">
-                Checkout
-            </button>
+      <!-- checkout -->
+      <button type="button" class="cart-checkout-btn">
+        Checkout
+      </button>
 
-            <!-- view cart -->
-            <a href="#"
-                class="cart-view-link">
-                View Cart
-            </a>
-        </div>
-    </aside>
+      <!-- view cart -->
+      <a href="#" class="cart-view-link">
+        View Cart
+      </a>
+    </div>
+  </aside>
 </body>
 
 </html>

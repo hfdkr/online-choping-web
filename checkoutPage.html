@@ -24,6 +24,15 @@
 
       body {
         font-family: "Poppins", sans-serif;
+        overflow-x: hidden;
+      }
+
+      /* Centered container: 1280px of content + 24px margin on each side */
+      .container-fasco {
+        width: 100%;
+        max-width: 1328px;
+        margin-inline: auto;
+        padding-inline: 24px;
       }
     </style>
   </head>
@@ -31,10 +40,10 @@
   <body>
     <!-- Header -->
     <header class="border-b border-[#00000063]">
-      <div class="max-w-[1280px] mx-auto">
+      <div class="container-fasco">
         <nav class="flex justify-between items-center py-4 font-poppins">
           <div class="font-volkhov text-[52px] text-[#484848]">FASCO</div>
-          <div class="flex items-center space-x-[70px] text-[#484848]">
+          <div class="flex items-center gap-10 xl:gap-[70px] text-[#484848]">
             <a href="#">Home</a>
             <a href="shopPage.html">Shop</a>
             <a href="#">Products</a>
@@ -47,7 +56,7 @@
               />
             </a>
           </div>
-          <div class="flex space-x-[20px]">
+          <div class="flex gap-[20px] shrink-0 pr-3">
             <img src="assets/loup.svg" alt="Search" />
             <img src="assets/star.svg" alt="Favorites" />
             <img src="assets/user.svg" alt="User" />
@@ -72,75 +81,81 @@
       </div>
     </header>
     <main>
-      <section class="max-w-[1280px] mx-auto grid grid-cols-2">
-        <div class="pr-[33px] border-r border-[#00000063]">
+      <section class="container-fasco grid grid-cols-2">
+        <!-- LEFT: form -->
+        <div class="min-w-0 pr-6 xl:pr-[33px] border-r border-[#00000063]">
           <form class="space-y-[60px] text-[#8A8A8A] py-[80px]">
             <div>
               <div
-                class="flex justify-between items-center w-full space-y-[34px]"
+                class="flex justify-between items-center gap-4 w-full mb-[16px]"
               >
-                <p class="font-volkhov text-[46px] text-[#484848]">Contact</p>
-                <p class="font-poppins">
+                <p class="font-volkhov text-[36px] xl:text-[46px] text-[#484848]">
+                  Contact
+                </p>
+                <p class="font-poppins text-right">
                   Have an account?<span class="text-[#1456FF]">
                     Create Account
                   </span>
                 </p>
               </div>
               <input
-                type="text"
+                type="email"
                 placeholder="Email Address"
-                class="appareance-none border border-[#8A8A8A] py-[23px] px-[28px] w-full"
+                class="appearance-none border border-[#8A8A8A] py-[23px] px-[28px] w-full min-w-0"
               />
             </div>
 
             <div>
-              <p class="font-volkhov text-[46px] text-[#484848]">Delivery</p>
+              <p class="font-volkhov text-[36px] xl:text-[46px] text-[#484848]">
+                Delivery
+              </p>
 
               <div class="space-y-[16px]">
                 <input
-                  type="select"
+                  type="text"
                   placeholder="Country/Region"
-                  class="appareance-none border border-[#8A8A8A] py-[23px] px-[28px] w-full"
+                  class="appearance-none border border-[#8A8A8A] py-[23px] px-[28px] w-full min-w-0"
                 />
 
-                <div class="flex space-x-[12px]">
+                <div class="flex gap-[12px]">
                   <input
                     type="text"
                     placeholder="First Name"
-                    class="appareance-none border border-[#8A8A8A] py-[23px] px-[28px] w-full"
+                    class="appearance-none border border-[#8A8A8A] py-[23px] px-[28px] w-full min-w-0"
                   />
                   <input
                     type="text"
                     placeholder="Last Name"
-                    class="appareance-none border border-[#8A8A8A] py-[23px] px-[28px] w-full"
+                    class="appearance-none border border-[#8A8A8A] py-[23px] px-[28px] w-full min-w-0"
                   />
                 </div>
 
                 <input
                   type="text"
                   placeholder="Address"
-                  class="appareance-none border border-[#8A8A8A] py-[23px] px-[28px] w-full"
+                  class="appearance-none border border-[#8A8A8A] py-[23px] px-[28px] w-full min-w-0"
                 />
 
-                <div class="flex space-x-[12px]">
+                <div class="flex gap-[12px]">
                   <input
                     type="text"
                     placeholder="City"
-                    class="appareance-none border border-[#8A8A8A] py-[23px] px-[28px] w-full"
+                    class="appearance-none border border-[#8A8A8A] py-[23px] px-[28px] w-full min-w-0"
                   />
                   <input
                     type="text"
                     placeholder="Postal Code"
-                    class="appareance-none border border-[#8A8A8A] py-[23px] px-[28px] w-full"
+                    class="appearance-none border border-[#8A8A8A] py-[23px] px-[28px] w-full min-w-0"
                   />
                 </div>
 
-                <div class="flex align-center space-x-[10px]">
+                <div class="flex items-center gap-[10px]">
                   <input
+                    id="save-delivery"
                     type="checkbox"
-                    class="appearance-none w-[32px] h-[32px] border border-[3px] bg-white border-black checked:bg-black"
+                    class="appearance-none shrink-0 w-[32px] h-[32px] border-[3px] bg-white border-black checked:bg-black"
                   />
-                  <label class="leading-[42px] font-poppins"
+                  <label for="save-delivery" class="leading-[42px] font-poppins"
                     >Save This Info for future</label
                   >
                 </div>
@@ -148,16 +163,18 @@
             </div>
 
             <div>
-              <p class="font-volkhov text-[46px] text-[#484848]">Payment</p>
+              <p class="font-volkhov text-[36px] xl:text-[46px] text-[#484848]">
+                Payment
+              </p>
               <div class="relative">
                 <input
-                  type="select"
+                  type="text"
                   placeholder="Credit Card"
-                  class="appareance-none border border-[#8A8A8A] py-[23px] px-[28px] w-full"
+                  class="appearance-none border border-[#8A8A8A] py-[23px] pl-[28px] pr-[110px] w-full min-w-0"
                 />
-                <div class="space-x-[8px] flex absolute top-[33%] right-[5%]">
-                  <img src="assets/Mastercard.png" class="w-[50px] h-[25px]" />
-                  <img src="assets/arrowDown.svg" class="w-[12px]" />
+                <div class="gap-[8px] flex items-center absolute top-1/2 -translate-y-1/2 right-[5%]">
+                  <img src="assets/Mastercard.png" alt="Mastercard" class="w-[50px] h-[25px]" />
+                  <img src="assets/arrowDown.svg" alt="Dropdown" class="w-[12px]" />
                 </div>
               </div>
 
@@ -167,42 +184,44 @@
                     <input
                       type="text"
                       placeholder="Card Number"
-                      class="appareance-none border border-[#8A8A8A] py-[23px] px-[28px] w-full"
+                      class="appearance-none border border-[#8A8A8A] py-[23px] pl-[28px] pr-[60px] w-full min-w-0"
                     />
 
                     <span>
                       <img
                         src="assets/lock.svg"
-                        class="absolute top-[33%] right-[5%]"
+                        alt="Lock"
+                        class="absolute top-1/2 -translate-y-1/2 right-[5%]"
                     /></span>
                   </div>
 
-                  <div class="flex space-x-[5px]">
+                  <div class="flex gap-[5px]">
                     <input
                       type="text"
                       placeholder="Expiration Date"
-                      class="appareance-none border border-[#8A8A8A] py-[23px] px-[28px] w-full"
+                      class="appearance-none border border-[#8A8A8A] py-[23px] px-[28px] w-full min-w-0"
                     />
 
                     <input
                       type="text"
                       placeholder="Security Code"
-                      class="appareance-none border border-[#8A8A8A] py-[23px] px-[28px] w-full"
+                      class="appearance-none border border-[#8A8A8A] py-[23px] px-[28px] w-full min-w-0"
                     />
                   </div>
 
                   <input
                     type="text"
                     placeholder="Card Holder Name"
-                    class="appareance-none border border-[#8A8A8A] py-[23px] px-[28px] w-full"
+                    class="appearance-none border border-[#8A8A8A] py-[23px] px-[28px] w-full min-w-0"
                   />
 
-                  <div class="flex align-center space-x-[10px]">
+                  <div class="flex items-center gap-[10px]">
                     <input
+                      id="save-card"
                       type="checkbox"
-                      class="appearance-none w-[32px] h-[32px] border border-black border-[3px] bg-white checked:bg-black"
+                      class="appearance-none shrink-0 w-[32px] h-[32px] border-[3px] border-black bg-white checked:bg-black"
                     />
-                    <label class="leading-[42px] font-poppins"
+                    <label for="save-card" class="leading-[42px] font-poppins"
                       >Save This Info for future</label
                     >
                   </div>
@@ -217,21 +236,22 @@
           </form>
         </div>
 
-        <div class="relative">
+        <!-- RIGHT: order summary (gray background goes to the right edge of the screen) -->
+        <div class="relative min-w-0">
           <div
             class="absolute top-0 left-0 w-[50vw] h-[68%] bg-[#F9F9F9] -z-10"
           ></div>
-          <div class="ml-[82px] space-y-[21px] max-w-[560px] pt-[52px]">
-            <div class="flex items-center space-x-[21px] w-full">
-              <div class="max-w-[137px] relative">
-                <img src="assets/produ6.svg" alt="" class="object-contain" />
+          <div class="ml-6 xl:ml-[82px] space-y-[21px] max-w-[560px] pt-[52px]">
+            <div class="flex items-center gap-[21px] w-full">
+              <div class="w-[110px] xl:w-[137px] shrink-0 relative">
+                <img src="assets/produ6.svg" alt="Mini dress with ruffled straps" class="w-full h-auto object-contain" />
                 <span
                   class="absolute bottom-[95%] left-[95%] bg-[#FF0606] text-white w-[24px] h-[24px] rounded-full flex items-center justify-center font-volkhov"
                   >1</span
                 >
               </div>
 
-              <div class="w-full mb-[21px]">
+              <div class="flex-1 min-w-0 mb-[21px]">
                 <p class="text-[18px] capitalize font-volkhov">
                   Mini dress with ruffled straps
                 </p>
@@ -243,14 +263,14 @@
             </div>
 
             <div class="space-y-[21px]">
-              <div class="flex items-center space-x-[17px]">
+              <div class="flex items-center gap-[17px]">
                 <input
                   type="text"
-                  placeholder=" Discount code"
-                  class="appareance-none bg-white px-[28px] py-[24px] max-w-[380px]"
+                  placeholder="Discount code"
+                  class="appearance-none bg-white px-[28px] py-[24px] flex-1 min-w-0 max-w-[380px]"
                 />
                 <button
-                  class="rounded-[10px] bg-black text-white py-[25px] px-[57px] font-poppins"
+                  class="shrink-0 rounded-[10px] bg-black text-white py-[25px] px-8 xl:px-[57px] font-poppins"
                 >
                   Apply
                 </button>
@@ -275,15 +295,16 @@
         </div>
       </section>
 
+      <!-- Newsletter -->
       <section class="pt-[109px] border-t border-[#00000063]">
-        <div class="max-w-[1280px] mx-auto flex justify-between items-center">
+        <div class="container-fasco flex justify-between items-center gap-6">
           <img
-            class="object-contain"
+            class="w-[24%] max-w-[342px] min-w-0 h-auto object-contain"
             src="assets/fasco-section6-card1.svg"
             alt=""
           />
-          <div class="text-center space-y-[20px]">
-            <p class="font-volkhov text-[46px] text-[#484848]">
+          <div class="flex-1 min-w-0 max-w-[620px] text-center space-y-[20px]">
+            <p class="font-volkhov text-[36px] xl:text-[46px] leading-tight text-[#484848]">
               Subscribe To Our Newsletter
             </p>
             <p class="px-[10px] font-poppins leading-[26px] text-[#8A8A8A]">
@@ -292,7 +313,7 @@
               duis ultrices sollicitudin
             </p>
             <input
-              type="text"
+              type="email"
               placeholder="michael@ymail.com"
               class="mt-[10px] py-[28px] pl-[30px] text-left w-full shadow-[0px_3.02px_3.15px_0px_#00000002,_0px_13.28px_6.52px_0px_#00000004,_0px_32.6px_13px_0px_#00000005,_0px_62.79px_25.48px_0px_#00000006,_0px_105.65px_46.85px_0px_#00000008,_0px_163px_80px_0px_#0000000A]"
             />
@@ -305,36 +326,37 @@
           </div>
 
           <img
-            class="object-contain"
+            class="w-[24%] max-w-[342px] min-w-0 h-auto object-contain"
             src="assets/fasco-section6-card2.svg"
             alt=""
           />
         </div>
       </section>
     </main>
-  </body>
-  <footer class="border-t border-[#DEDFE1] space-y-[50px] py-[30px] mt-[50px]">
-    <div class="flex justify-between items-center max-w-[1280px] mx-auto">
-      <div class="font-volkhov text-[32px] text-[#484848]">FASCO</div>
-      <div class="flex items-center space-x-[70px] text-[#484848]">
-        <a href="#">Home</a>
-        <a href="shopPage.html">Shop</a>
-        <a href="#">Products</a>
-        <a href="#" class="flex items-center gap-1.5 cursor-pointer">
-          <span>Pages</span>
-          <img
-            src="assets/arrowDown.svg"
-            alt="Dropdown"
-            class="object-contain"
-          />
-        </a>
-      </div>
-    </div>
 
-    <p
-      class="font-poppins text-[12px] leading-[26px] text-[#484848] text-center"
-    >
-      Copyright © 2022 FASCO . All Rights Reseved.
-    </p>
-  </footer>
+    <footer class="border-t border-[#DEDFE1] space-y-[50px] py-[30px] mt-[50px]">
+      <div class="container-fasco flex justify-between items-center">
+        <div class="font-volkhov text-[32px] text-[#484848]">FASCO</div>
+        <div class="flex items-center gap-10 xl:gap-[70px] text-[#484848]">
+          <a href="#">Home</a>
+          <a href="shopPage.html">Shop</a>
+          <a href="#">Products</a>
+          <a href="#" class="flex items-center gap-1.5 cursor-pointer">
+            <span>Pages</span>
+            <img
+              src="assets/arrowDown.svg"
+              alt="Dropdown"
+              class="object-contain"
+            />
+          </a>
+        </div>
+      </div>
+
+      <p
+        class="font-poppins text-[12px] leading-[26px] text-[#484848] text-center"
+      >
+        Copyright © 2022 FASCO . All Rights Reserved.
+      </p>
+    </footer>
+  </body>
 </html>

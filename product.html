@@ -58,13 +58,14 @@
         .number-time{
             @apply font-jost font-semibold text-[20px] leading-[32px] text-[#FF706B] px-[2px];
         }
-        /* Peaky Blinders: label boxes (top-left corner = end of the line) */
+        /* Peaky Blinders: label boxes (top-left corner = end of the line)
+           font grows with the screen: 11px at 1920px and below, bigger on very large screens */
         .span-picky{
-            @apply absolute z-30 flex items-center justify-center w-[6.43%] h-[6.35%] border border-heather-grey bg-white-900 font-poppins text-[11px] text-heather-grey whitespace-nowrap;
+            @apply absolute z-30 flex items-center justify-center w-[6.43%] h-[6.35%] border border-heather-grey bg-white-900 font-poppins text-[length:clamp(11px,0.573vw,28px)] text-heather-grey whitespace-nowrap;
         }
         /* Peaky Blinders: points on the model (left/top = center of the circle) */
         .span-circle{
-            @apply absolute z-30 w-[14px] h-[14px] rounded-full bg-white-900 border-[1.5px] border-heather-grey -translate-x-1/2 -translate-y-1/2;
+            @apply absolute z-30 w-[clamp(14px,0.73vw,36px)] h-[clamp(14px,0.73vw,36px)] rounded-full bg-white-900 border-[1.5px] border-heather-grey -translate-x-1/2 -translate-y-1/2;
         }
         /* Features row */
         .span-quality{
@@ -80,7 +81,7 @@
             @apply font-poppins text-[24px] leading-[120%] text-heather-grey;
         }
         .div-span {
-            @apply flex flex-col items-center bg-white-900 py-[12px] px-[22px] shadow-[0px_4px_14px_1px_#00000029] rounded-[10px];
+            @apply flex flex-col items-center bg-white-900 py-[12px] px-4 xl:px-[22px] shadow-[0px_4px_14px_1px_#00000029] rounded-[10px];
         }
         .button-click {
             @apply flex h-[48px] w-[48px] items-center justify-center rounded-full border border-gray-300 bg-white shadow-md hover:bg-gray-100;
@@ -97,12 +98,12 @@
            ============================================================ */
         /* ===== Page ===== */
         .page-body {
-          @apply bg-white-900;
+          @apply bg-white-900 overflow-x-hidden;
         }
 
         /* ===== Header ===== */
         .header-bar {
-          @apply flex items-center justify-between px-10 mx-auto max-w-[1070px] py-5;
+          @apply flex items-center justify-between gap-6 px-10 mx-auto max-w-[1070px] py-5;
         }
         .logo-link {
           @apply shrink-0;
@@ -117,18 +118,19 @@
           @apply border-b border-heather-grey py-[10px];
         }
         .header-icons {
-          @apply flex items-center gap-4;
+          @apply flex items-center gap-4 shrink-0;
         }
         .header-icon {
           @apply w-6 h-6;
         }
 
         /* ===== Product details ===== */
+        /* 1070px of content + 24px margin on each side */
         .product-section {
-          @apply mx-auto max-w-[1070px] py-5;
+          @apply mx-auto max-w-[1280px] px-6 py-5;
         }
         .product-layout {
-          @apply flex justify-center gap-[60px];
+          @apply flex justify-center gap-8 xl:gap-[60px];
         }
         .product-gallery {
           @apply flex gap-5 shrink-0;
@@ -136,14 +138,16 @@
         .gallery-thumbs {
           @apply space-y-[10px];
         }
+        /* main image: 340px under 1280px, 400px above */
         .gallery-main {
-          @apply w-[400px] shrink-0;
+          @apply w-[340px] xl:w-[400px] shrink-0;
         }
         .gallery-main-img {
           @apply w-full h-auto block;
         }
+        /* right column: takes the remaining space, max 490px */
         .product-info {
-          @apply w-[490px] shrink-0;
+          @apply flex-1 min-w-0 max-w-[490px];
         }
         .product-brand {
           @apply block font-volkhov my-[5px] text-[14px] uppercase;
@@ -191,7 +195,7 @@
           @apply w-full h-[58px] border border-[#F8CCCC] bg-[#FDEFEE] rounded-[4px] my-[30px] px-[15px];
         }
         .sale-timer-inner {
-          @apply flex justify-between items-center h-full;
+          @apply flex justify-between items-center gap-3 h-full;
         }
         .sale-timer-title {
           @apply font-volkhov text-[18px] leading-[28px] text-[#FF706B] whitespace-nowrap;
@@ -254,10 +258,10 @@
           @apply font-volkhov text-[16px] leading-[24px] text-black-900;
         }
         .quantity-row {
-          @apply flex gap-[30px] mt-[13px] pb-[65px] w-full;
+          @apply flex gap-[20px] xl:gap-[30px] mt-[13px] pb-[65px] w-full;
         }
         .quantity-picker {
-          @apply border border-light-gray w-[128px] h-[46px] items-center flex justify-evenly;
+          @apply border border-light-gray w-[128px] h-[46px] items-center flex justify-evenly shrink-0;
         }
         .qty-btn {
           @apply cursor-pointer;
@@ -266,7 +270,7 @@
           @apply flex-1 h-[45px] rounded-[5px] border flex items-center justify-center cursor-pointer hover:bg-black-900 hover:text-white-900 hover:rounded-[10px];
         }
         .product-actions {
-          @apply w-full flex gap-[30px] border-b border-light-gray pb-[12px];
+          @apply w-full flex flex-wrap gap-x-[30px] gap-y-2 border-b border-light-gray pb-[12px];
         }
         .product-action {
           @apply flex items-center gap-[8px];
@@ -275,7 +279,7 @@
           @apply my-[30px];
         }
         .delivery-row {
-          @apply flex gap-[6.5px] mb-[8px];
+          @apply flex items-start gap-[6.5px] mb-[8px];
         }
         .delivery-label {
           @apply font-volkhov font-bold text-[16px] leading-[24px] text-black-900;
@@ -284,10 +288,10 @@
           @apply font-jost text-[16px] leading-[24px] text-black-900;
         }
         .delivery-row-last {
-          @apply flex gap-[6.5px];
+          @apply flex items-start gap-[6.5px];
         }
         .secure-checkout {
-          @apply bg-[#F8F8F8] items-center flex flex-col justify-center space-y-[20px] py-[20px];
+          @apply bg-[#F8F8F8] items-center flex flex-col justify-center space-y-[20px] py-[20px] px-4 text-center;
         }
         .secure-checkout-text {
           @apply font-volkhov text-[16px] leading-[100%] text-black-900;
@@ -352,7 +356,7 @@
           @apply left-[29.95%] top-[87.5%];
         }
         .peaky-info {
-          @apply relative z-30 flex flex-col justify-center bg-[#D9D9D9] px-6 py-10 min-[991px]:absolute min-[991px]:inset-y-0 min-[991px]:left-[56.6%] min-[991px]:w-[40%] min-[991px]:bg-transparent min-[991px]:px-0 min-[991px]:py-[30px];
+          @apply relative z-30 flex flex-col justify-center bg-[#D9D9D9] px-6 py-10 min-[991px]:absolute min-[991px]:inset-y-0 min-[991px]:left-[56.6%] min-[991px]:w-[40%] min-[991px]:max-w-[620px] min-[991px]:bg-transparent min-[991px]:px-0 min-[991px]:py-[30px];
         }
         .peaky-collection {
           @apply font-poppins text-[16px] leading-[100%] text-grey-600;
@@ -389,11 +393,12 @@
         }
 
         /* ===== Features ===== */
+        /* 2 x 2 grid under 1280px, one row above */
         .features-row {
-          @apply mx-auto max-w-[1040px] px-10 flex justify-between py-[72px];
+          @apply mx-auto max-w-[1040px] px-6 xl:px-10 grid grid-cols-2 gap-x-8 gap-y-10 xl:flex xl:justify-between py-[72px];
         }
         .feature-item {
-          @apply flex items-center gap-4;
+          @apply flex items-center gap-4 justify-self-center;
         }
         .feature-icon {
           @apply w-[38px] h-[50px];
@@ -404,13 +409,14 @@
 
         /* ===== People also loved ===== */
         .loved-section {
-          @apply space-y-[150px] pl-36 py-5 bg-gradient-to-b from-[#FFFFFF] to-[#FAFAFA];
+          @apply space-y-[150px] py-5 bg-linear-to-b from-[#FFFFFF] to-[#FAFAFA];
         }
+        /* centered block (max 1920px), left margin 24px under 1280px, 144px above */
         .loved-row {
-          @apply flex justify-between;
+          @apply flex justify-between items-start gap-10 max-w-[1920px] mx-auto pl-6 xl:pl-36;
         }
         .loved-content {
-          @apply max-w-[444px];
+          @apply w-[400px] xl:w-[444px] shrink-0;
         }
         .loved-intro {
           @apply mb-[50px];
@@ -428,10 +434,11 @@
           @apply font-poppins font-medium text-[28px] leading-[100%] text-heather-grey mb-[15px];
         }
         .loved-countdown {
-          @apply flex justify-between items-center;
+          @apply flex justify-between items-center gap-3;
         }
+        /* image window: shrinks on small screens, max 600px */
         .loved-gallery {
-          @apply relative w-[600px] shrink-0;
+          @apply relative flex-1 min-w-0 max-w-[600px];
         }
         .loved-scroller {
           @apply overflow-x-auto [scrollbar-width:none];
@@ -490,13 +497,17 @@
 
         /* ===== Newsletter ===== */
         .newsletter-section {
-          @apply mt-[138px] w-full max-w-[1200px] mx-auto px-[30px];
+          @apply mt-[138px] w-full max-w-[1200px] mx-auto px-6 xl:px-[30px];
         }
         .newsletter-row {
-          @apply flex items-center justify-between gap-[40px];
+          @apply flex items-center justify-between gap-6 xl:gap-[40px];
         }
+        /* side images: 20% of the width, never bigger than their real size */
         .newsletter-side {
-          @apply shrink-0;
+          @apply w-[20%] min-w-0 shrink-0 flex justify-center;
+        }
+        .newsletter-side-img {
+          @apply w-full max-w-max h-auto;
         }
         .newsletter-center {
           @apply flex-1 min-w-0 flex flex-col;
@@ -505,13 +516,13 @@
           @apply w-full flex flex-col items-center text-center;
         }
         .newsletter-title {
-          @apply font-volkhov text-[46px] leading-[100%] text-heather-grey whitespace-nowrap;
+          @apply font-volkhov text-[36px] xl:text-[46px] leading-[110%] text-heather-grey text-balance;
         }
         .newsletter-text {
-          @apply font-poppins text-[16px] leading-[26px] text-grey-900 whitespace-nowrap mt-[20px];
+          @apply font-poppins text-[16px] leading-[26px] text-grey-900 mt-[20px];
         }
         .newsletter-email {
-          @apply my-[30px] flex justify-start items-start w-[400px] pt-[28px] pb-[32px] pl-[30px] shadow-[0px_3.02px_3.15px_#00000002,0px_13.28px_6.52px_#00000002];
+          @apply my-[30px] flex justify-start items-start w-full max-w-[400px] self-center pt-[28px] pb-[32px] pl-[30px] shadow-[0px_3.02px_3.15px_#00000002,0px_13.28px_6.52px_#00000002];
         }
         .newsletter-email-text {
           @apply font-poppins text-[22px] leading-[26px] text-grey-900;
@@ -528,16 +539,16 @@
           @apply border-t border-[#DEDFE1] mt-[50px] py-[20px];
         }
         .footer-top {
-          @apply flex justify-between mx-auto max-w-[1040px];
+          @apply flex justify-between items-center gap-6 mx-auto max-w-[1088px] px-6;
         }
         .footer-logo {
           @apply font-volkhov text-[32px] leading-[100%] text-heather-grey;
         }
         .footer-nav {
-          @apply gap-[38px];
+          @apply gap-6 xl:gap-[38px];
         }
         .footer-copyright {
-          @apply items-center flex justify-center mt-[50px];
+          @apply items-center flex justify-center mt-[50px] px-6;
         }
     </style>
 </head>
@@ -568,15 +579,15 @@
                 <img src="./assets-product/icon-search.svg" alt="Search" class="header-icon" />
             </a>
 
-            <a href="#" aria-label="Shopping cart">
+            <a href="#" aria-label="User account">
                 <img src="./assets-product/icon-user.svg" alt="User account" class="header-icon" />
             </a>
 
-            <a href="#" aria-label="User account">
-                <img src="./assets-product/icon-star.svg" alt="Pin Shoping" class="header-icon" />
+            <a href="#" aria-label="Favorites">
+                <img src="./assets-product/icon-star.svg" alt="Favorites" class="header-icon" />
             </a>
-            <a href="#" aria-label="User account">
-                <img src="./assets-product/icon-wallet.svg" alt="Shopping cart " class="header-icon" />
+            <a href="#" aria-label="Shopping cart">
+                <img src="./assets-product/icon-wallet.svg" alt="Shopping cart" class="header-icon" />
             </a>
         </div>
 
@@ -586,7 +597,7 @@
     <main>
         <!-- section 1: -->
         <section class="product-section">
-            <!-- fixed gap between image and text (adjust to the Figma value) -->
+            <!-- gap between image and text: 32px under 1280px, 60px above -->
             <div class="product-layout">
                 <div class="product-gallery">
                     <!-- div images -->
@@ -614,14 +625,14 @@
                             <img src="./assets-product/icon-section1-full_body.svg" alt="Full-body fashion model" />
                         </div>
                     </div>
-                    <!-- main image: fixed width, height follows the ratio -->
+                    <!-- main image: 340px under 1280px, 400px above, height follows the ratio -->
                     <div class="gallery-main">
                         <img src="./assets-product/icon-section1-red_girl.svg" alt="Woman wearing a red jacket"
                             class="gallery-main-img">
                     </div>
                 </div>
 
-                <!-- right column: width = widest content (490px) -->
+                <!-- right column: remaining space, max 490px -->
                 <div class="product-info">
                     <span class="product-brand">
                         Fasco
@@ -961,22 +972,22 @@
 
                             <div class="div-span">
                                 <span class="number-time_2">02</span>
-                                <span class="zone-spane">Days</span>
+                                <span class="zone-span">Days</span>
                             </div>
 
                             <div class="div-span">
                                 <span class="number-time_2">06</span>
-                                <span class="zone-spane">Hr</span>
+                                <span class="zone-span">Hr</span>
                             </div>
 
                             <div class="div-span">
                                 <span class="number-time_2">05</span>
-                                <span class="zone-spane">Mins</span>
+                                <span class="zone-span">Mins</span>
                             </div>
 
                             <div class="div-span">
                                 <span class="number-time_2">30</span>
-                                <span class="zone-spane">Sec</span>
+                                <span class="zone-span">Sec</span>
                             </div>
                         </div>
                     </div>
@@ -990,12 +1001,12 @@
                             <!-- Scroll arrows on the left of Image 1 -->
                             <div class="loved-arrows">
                                 <!-- Scroll left -->
-                                <button type="button" class="button-click">
+                                <button type="button" class="button-click" aria-label="Scroll left">
                                     <img src="./assets/icon-left.svg" alt="" class="arrow-icon" />
                                 </button>
 
                                 <!-- Scroll right -->
-                                <button type="button" class="button-click">
+                                <button type="button" class="button-click" aria-label="Scroll right">
                                     <img src="./assets/icon-right.svg" alt="" class="arrow-icon" />
                                 </button>
                             </div>
@@ -1041,7 +1052,7 @@
                             </div>
 
                             <!-- Image 3 -->
-                            <div class="30% OFF">
+                            <div class="loved-slide">
                                 <img src="./assets/fasco-icon-section3.svg" alt="Fashion model 3" class="loved-slide-small-img" />
                             </div>
                         </div>
@@ -1056,7 +1067,7 @@
 
                 <!-- div 1: Left image -->
                 <div class="newsletter-side">
-                    <img src="./assets/fasco-section6-card1.svg" alt="">
+                    <img src="./assets/fasco-section6-card1.svg" alt="" class="newsletter-side-img">
                 </div>
 
                 <!-- div 2: Center content -->
@@ -1071,7 +1082,7 @@
 
                         <p class="newsletter-text">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                            Scelerisque duis <br> ultrices sollicitudin aliquam sem.
+                            Scelerisque duis ultrices sollicitudin aliquam sem.
                             Scelerisque duis ultrices sollicitudin
                         </p>
 
@@ -1095,7 +1106,7 @@
 
                 <!-- div 3: Right image -->
                 <div class="newsletter-side">
-                    <img src="./assets/fasco-section6-card2.svg" alt="">
+                    <img src="./assets/fasco-section6-card2.svg" alt="" class="newsletter-side-img">
                 </div>
             </div>
 
@@ -1115,7 +1126,7 @@
             </nav>
         </div>
         <div class="footer-copyright">
-            <span>Copyright &copy; 2022 Xpro . All Rights Reseved.</span>
+            <span>Copyright &copy; 2022 Xpro . All Rights Reserved.</span>
         </div>
     </footer>
 </body>

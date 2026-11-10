@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>FASCO | Confirm Account</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Volkhov:wght@400;700&family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  </head>
+
+  <body class="font-[Poppins] text-neutral-800 antialiased">
+    <main
+      class="flex min-h-screen items-center justify-center bg-white p-4 md:p-8"
+    >
+      <section
+        class="relative flex min-h-[627px] w-full max-w-[1114px] overflow-hidden rounded-r-[18px] border border-[#dedede] bg-white lg:h-[627px]"
+      >
+        <div class="hidden w-[49.4%] shrink-0 lg:block">
+          <img
+            src="assets/Rectangle 19280(1).png"
+            alt="Woman in a pink one-shoulder top posing against a colorful painted wall"
+            class="h-full w-full object-cover"
+          />
+        </div>
+
+        <div
+          class="flex w-full items-center justify-center px-6 py-10 lg:w-[50.6%] lg:px-8 lg:py-0"
+        >
+          <div
+            class="w-full max-w-[386px] self-start pt-6 sm:pt-8 lg:mt-[46px] lg:translate-x-[9px] lg:pt-0"
+          >
+            <h1
+              class="font-[Volkhov] text-[40px] font-bold leading-[1.2] text-[#4a4a4a]"
+            >
+              FASCO
+            </h1>
+
+            <h2
+              class="mt-[145px] font-[Volkhov] text-[18px] font-normal leading-tight text-black"
+            >
+              Enter The Confirmation Code
+            </h2>
+
+            <form action="newpsswrd.html" method="post" class="mt-[40px]">
+              <label for="confirmation-code" class="sr-only">Confirmation Code</label>
+              <input
+                id="confirmation-code"
+                name="confirmationCode"
+                type="text"
+                inputmode="numeric"
+                autocomplete="one-time-code"
+                placeholder="Confirmation Code"
+                required
+                class="w-full border-0 border-b border-[#c7c7c7] bg-transparent px-0 pb-2 pt-1 text-[10px] tracking-wide text-[#222] placeholder-[#999] focus:border-black focus:outline-none focus:ring-0"
+              />
+
+              <button
+                type="submit"
+                class="mx-auto mt-[16px] block h-[35px] w-full max-w-[333px] rounded-[7px] bg-black text-[10px] font-semibold tracking-wide text-white shadow-[0_10px_18px_rgba(0,0,0,0.2)] transition hover:bg-neutral-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2"
+              >
+                Recover Account
+              </button>
+            </form>
+
+            <p
+              class="mt-[17px] text-center text-[10px] tracking-wide text-black"
+            >
+              Didn’t receive Confirmation Code?
+              <a href="confirmation.html" class="font-semibold text-[#4a7de0] hover:underline">Resend Now</a>
+            </p>
+          </div>
+        </div>
+
+        <a
+          href="#"
+          class="absolute bottom-[18px] right-[46px] text-[9px] text-black"
+        >
+          FASCO Terms &amp; Conditions
+        </a>
+      </section>
+    </main>
+  </body>
+</html>

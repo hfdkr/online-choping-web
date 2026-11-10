@@ -25,19 +25,39 @@
       body {
         font-family: "Poppins", sans-serif;
       }
+      /*Navigation active state*/
+      .nav-link {
+        position: relative;
+      }
+
+      .nav-link::after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 1px;
+        bottom: -4px;
+        left: 0;
+        background-color: #484848;
+        transition: width 0.3s ease-in-out;
+      }
+
+      .nav-link:hover::after,
+      .nav-link.active::after {
+        width: 100%;
+      }
     </style>
   </head>
 
   <body>
     <!-- Header -->
-    <header class="max-w-[1280px] mx-auto">
+    <header class="max-w-[1280px] mx-auto pt-[70px]">
       <!--Navigation-->
       <nav class="flex justify-between items-center py-4">
         <div class="font-volkhov text-[52px] text-[#484848]">FASCO</div>
         <div class="flex items-center space-x-[70px] text-[#484848]">
-          <a href="#">Home</a>
-          <a href="shopPage.html">Shop</a>
-          <a href="#">Products</a>
+          <a href="homepage.html" class="nav-link">Home</a>
+          <a href="shopPage.html" class="nav-link">Shop</a>
+          <a href="#" class="nav-link">Products</a>
           <a href="#" class="flex items-center gap-1.5 cursor-pointer">
             <span>Pages</span>
             <img
@@ -75,7 +95,7 @@
     </header>
 
     <main>
-      <section class="max-w-[1240px] mx-auto mt-[70px]">
+      <section class="max-w-[1280px] mx-auto mt-[70px]">
         <div class="py-[35px] flex justify-between border-b border-[#00000063]">
           <p class="font-volkhov text-[22px] leading-[32px]">Product</p>
           <p class="font-volkhov text-[22px] leading-[32px]">Price</p>
@@ -154,7 +174,7 @@
       </section>
 
       <section
-        class="max-w-[1280px] mx-auto mt-[109px] flex justify-between items-center"
+        class="max-w-[1400px] mx-auto mt-[109px] flex justify-between items-center"
       >
         <img
           class="object-contain"
@@ -186,30 +206,32 @@
         <img class="object-contain" src="assets/fasco-section6-card2.svg" />
       </section>
     </main>
-  </body>
 
-  <footer class="border-t border-[#DEDFE1] space-y-[50px] py-[30px] mt-[50px]">
-    <div class="flex justify-between items-center max-w-[1280px] mx-auto">
-      <div class="font-volkhov text-[32px] text-[#484848]">FASCO</div>
-      <div class="flex items-center space-x-[70px] text-[#484848]">
-        <a href="#">Home</a>
-        <a href="shopPage.html">Shop</a>
-        <a href="#">Products</a>
-        <a href="#" class="flex items-center gap-1.5 cursor-pointer">
-          <span>Pages</span>
-          <img
-            src="assets/arrowDown.svg"
-            alt="Dropdown"
-            class="object-contain"
-          />
-        </a>
-      </div>
-    </div>
-
-    <p
-      class="font-poppins text-[12px] leading-[26px] text-[#484848] text-center"
+    <footer
+      class="border-t border-[#DEDFE1] space-y-[50px] py-[30px] mt-[50px] "
     >
-      Copyright © 2022 FASCO . All Rights Reseved.
-    </p>
-  </footer>
+      <div class="flex justify-between items-center max-w-[1280px] mx-auto">
+        <div class="font-volkhov text-[32px] text-[#484848]">FASCO</div>
+        <div class="flex items-center space-x-[70px] text-[#484848]">
+          <a href="#">Home</a>body body
+          <a href="shopPage.html">Shop</a>
+          <a href="#">Products</a>
+          <a href="#" class="flex items-center gap-1.5 cursor-pointer">
+            <span>Pages</span>
+            <img
+              src="assets/arrowDown.svg"
+              alt="Dropdown"
+              class="object-contain"
+            />
+          </a>
+        </div>
+      </div>
+
+      <p
+        class="font-poppins text-[12px] leading-[26px] text-[#484848] text-center"
+      >
+        Copyright © 2022 FASCO . All Rights Reseved.
+      </p>
+    </footer>
+  </body>
 </html>

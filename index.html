@@ -31,9 +31,8 @@
          --font-volkhov: "Volkhov", serif;
          --font-digital: "Digital Numbers", sans-serif;
         }
-        /* header */
       .header {
-        @apply flex items-center justify-between gap-6 max-w-[1280px] mx-auto;
+        @apply flex items-center justify-between px-10 py-5 w-full max-w-[1040px] mx-auto;
       }
       .nav-name {
         @apply font-poppins text-[16px] leading-[100%] text-heather-grey hover:text-black-900 hover:underline;
@@ -102,7 +101,18 @@
       .span-crafter {
         @apply whitespace-nowrap font-poppins text-[12px] leading-[26px] text-heather-grey;
       }
-      
+      /* auto scroll card image  */
+      @keyframes scroll {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-30%);
+        }
+      }
+      .auto-scroll {
+        animation: scroll 15s linear infinite alternate;
+      }
       .span-picky{
         @apply absolute z-30 flex items-center justify-center w-[6.43%] h-[6.35%] border border-[#000000] bg-white/60 text-[11px] whitespace-nowrap;
       }
@@ -118,18 +128,18 @@
       }
       /* main sections  */
       .main-section-1{
-        @apply mx-auto max-w-[1280px] py-5;
+        @apply mx-auto max-w-[1040px] px-10 py-5;
     }
 
-      /* 
+      /* ============================================================
          Page sections (utilities moved out of the HTML)
-          */
-      /*  Page  */
+         ============================================================ */
+      /* ===== Page ===== */
       .page-body {
         @apply bg-white-900;
       }
 
-      /*  Header  */
+      /* ===== Header ===== */
       .logo-link {
         @apply shrink-0;
       }
@@ -137,7 +147,7 @@
         @apply gap-8;
       }
 
-      /*  Hero  */
+      /* ===== Hero ===== */
       .hero-grid {
         @apply relative grid grid-cols-[1fr_1.1fr_1fr] items-stretch gap-6;
       }
@@ -175,7 +185,7 @@
         @apply h-[150px] rounded-[10px] overflow-hidden;
       }
 
-      /*  Floating actions (cart + back to top)  */
+      /* ===== Floating actions (cart + back to top) ===== */
       .floating-actions {
         @apply fixed right-6 bottom-[22%] flex items-center gap-4 z-999 blur-[0.6px] hover:blur-none;
       }
@@ -192,12 +202,12 @@
         @apply w-[17px] h-[26px];
       }
 
-      /*  Brands  */
+      /* ===== Brands ===== */
       .brands-section {
         @apply mt-8 bg-white py-7;
       }
       .brands-list {
-        @apply mx-auto flex max-w-[1280px] flex-wrap items-center justify-between gap-x-10 gap-y-6 px-10 text-black-900;
+        @apply mx-auto flex max-w-[1080px] flex-wrap items-center justify-between gap-x-10 gap-y-6 px-10 text-black-900;
       }
       .brand-logo-lg {
         @apply h-6 w-auto;
@@ -209,9 +219,9 @@
         @apply h-7 w-auto;
       }
 
-      /*  Deals of the month  */
+      /* ===== Deals of the month ===== */
       .deals-section {
-        @apply space-y-[150px] mx-auto max-w-[1280px] py-5 bg-gradient-to-b from-[#FFFFFF] to-[#FAFAFA];
+        @apply space-y-[150px] pl-36 py-5 bg-gradient-to-b from-[#FFFFFF] to-[#FAFAFA];
       }
       .deals-row {
         @apply flex justify-between;
@@ -295,12 +305,12 @@
         @apply h-[350px];
       }
 
-      /*  New arrivals  */
+      /* ===== New arrivals ===== */
       .arrivals-section {
         @apply px-10 py-5 bg-white-700;
       }
       .arrivals-container {
-        @apply mt-[150px] mx-auto items-center max-w-[1280px];
+        @apply mt-[150px] mx-auto items-center max-w-[1040px];
       }
       .arrivals-header {
         @apply items-center flex flex-col justify-center;
@@ -333,7 +343,7 @@
         @apply mx-auto mt-[50px] block w-[207px] h-[56px] text-center bg-black-900 hover:bg-black-900/60 hover:cursor-pointer text-white rounded-[10px];
       }
 
-      /*  Peaky Blinders  */
+      /* ===== Peaky Blinders ===== */
       .peaky-section {
         @apply relative w-full my-[26px];
       }
@@ -426,9 +436,9 @@
         @apply flex w-[207px] h-[56px] bg-black-900 hover:bg-black-900/70 cursor-pointer items-center justify-center rounded-[10px] text-white-900 font-poppins text-[16px] leading-[100%];
       }
 
-      /*  Features  */
+      /* ===== Features ===== */
       .features-row {
-        @apply mx-auto max-w-[1280px] px-10 flex justify-between py-[72px];
+        @apply mx-auto max-w-[1040px] px-10 flex justify-between py-[72px];
       }
       .feature-item {
         @apply flex items-center gap-4;
@@ -440,36 +450,36 @@
         @apply flex flex-col w-fit;
       }
 
-      /*  Follow us on Instagram  */
+      /* ===== Follow us on Instagram ===== */
       .insta-section {
-        @apply bg-linear-to-b from-[#F8F8F8] to-white pt-[70px] space-y-[100px] w-full overflow-hidden mx-auto;
+        @apply py-5 bg-white-700;
+      }
+      .insta-container {
+        @apply mt-[150px] items-center;
+      }
+      .insta-header {
+        @apply items-center mx-auto max-w-[1040px] flex flex-col justify-center;
       }
       .insta-heading {
-        @apply space-y-[20px] text-center max-w-[614px] mx-auto;
+        @apply max-w-[614px] text-center space-y-[20px];
       }
       .insta-title {
-        @apply font-volkhov text-[46px] px-[39px];
+        @apply font-volkhov text-[46px] leading-[100%] text-heather-grey;
       }
       .insta-text {
-        @apply font-poppins leading-[26px] text-[#8A8A8A];
+        @apply font-poppins text-[16px] leading-[26px] text-grey-900;
+      }
+      .insta-viewport {
+        @apply overflow-hidden mt-[100px] mx-auto max-w-[1240px] flex flex-col justify-center;
       }
       .insta-track {
-        @apply w-full flex justify-center items-center;
+        @apply flex w-max;
       }
-      .insta-card {
-        @apply w-[256px];
-      }
-      .insta-card-wide {
-        @apply w-[320px];
-      }
-      .insta-img {
-        @apply w-full h-[308px] object-cover;
-      }
-      .insta-img-tall {
-        @apply w-full h-[380px] object-cover;
+      .insta-img-offset {
+        @apply py-[30px];
       }
 
-      /*  Customer reviews  */
+      /* ===== Customer reviews ===== */
       .reviews-section {
         @apply py-5 bg-white-700;
       }
@@ -486,7 +496,7 @@
         @apply font-poppins text-[16px] leading-[26px] text-grey-900 max-w-[614px] mx-auto text-center;
       }
       .reviews-stage {
-        @apply relative mx-auto max-w-[1280px] flex flex-col items-center justify-center;
+        @apply relative mx-auto max-w-[1040px] flex flex-col items-center justify-center;
       }
       .reviews-cards {
         @apply flex relative;
@@ -552,9 +562,9 @@
         @apply absolute top-[470px] z-99 flex gap-3;
       }
 
-      /*  Newsletter  */
+      /* ===== Newsletter ===== */
       .newsletter-section {
-        @apply mt-[650px] w-full max-w-[1280px] mx-auto px-[30px];
+        @apply mt-[650px] w-full max-w-[1200px] mx-auto px-[30px];
       }
       .newsletter-row {
         @apply flex items-center justify-between gap-[40px];
@@ -587,12 +597,12 @@
         @apply items-center font-poppins text-[16px] leading-[100%] text-white-900 bg-black-900 w-[207px] h-[56px] shadow-[0px_20px_35px_0px_#00000026] rounded-[10px];
       }
 
-      /*  Footer  */
+      /* ===== Footer ===== */
       .site-footer {
         @apply border-t border-[#DEDFE1] mt-[50px] py-[20px];
       }
       .footer-top {
-        @apply flex justify-between mx-auto max-w-[1280px];
+        @apply flex justify-between mx-auto max-w-[1040px];
       }
       .footer-logo {
         @apply font-volkhov text-[32px] leading-[100%] text-heather-grey;
@@ -610,7 +620,7 @@
     <!-- Header -->
     <header id="top" class="header">
         <!-- Logo -->
-        <a href="/index.html" aria-label="FASCO home" class="logo-link">
+        <a href="#" aria-label="FASCO home" class="logo-link">
             <h1>
                 FASCO
             </h1>
@@ -618,7 +628,7 @@
 
         <!-- Navigation -->
         <nav class="navbar nav-main">
-            <a href="/index.html" class="nav-name">Home</a>
+            <a href="#home" class="nav-name">Home</a>
             <a href="#Deals" class="nav-name">Deals</a>
             <a href="#arrivale" class="nav-name">New Arrivals</a>
             <a href="#package" class="nav-name">Packages</a>
@@ -1120,76 +1130,63 @@
         </section>
         <!-- section 6: -->
         <section class="insta-section">
-        <div class="insta-heading">
-          <p class="insta-title">
-            Follow Us On Instagram
-          </p>
-          <p class="insta-text">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Scelerisque
-            duis ultrices sollicitudin aliquam sem. Scelerisque duis ultrices
-            sollicitudin
-          </p>
-        </div>
+            <div class="insta-container">
+                <div class="insta-header">
+                    <div class="insta-heading">
+                        <h3 class="insta-title">
+                            Follow Us On Instagram
+                        </h3>
+                        <p class="insta-text">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            Scelerisque duis ultrices sollicitudin aliquam sem. Scelerisque
+                            duis ultrices sollicitudin
+                        </p>
+                    </div>
+                </div>
 
-        <div class="insta-track">
-          <div class="insta-card-wide">
-            <img
-              class="insta-img"
-              src="assets/fasco-section4-image-1.svg"
-              alt="Instagram post"
-            />
-          </div>
+                <div class="insta-viewport">
+                    <div class="auto-scroll insta-track">
+                        <div>
+                            <img src="./assets/fasco-section4-image-1.svg" class="insta-img-offset"
+                                alt="Fashion collection card 1" />
+                        </div>
 
-          <div class="insta-card">
-            <img
-              class="insta-img-tall"
-              src="assets/fasco-section4-image-2.svg"
-              alt="Instagram post"
-            />
-          </div>
+                        <!-- card img 2 -->
+                        <div>
+                            <img src="./assets/fasco-section4-image-2.svg" alt="Fashion collection card 2" />
+                        </div>
 
-          <div class="insta-card">
-            <img
-              class="insta-img"
-              src="assets/fasco-section4-image-3.svg"
-              alt="Instagram post"
-            />
-          </div>
+                        <!-- card img 3 -->
+                        <div>
+                            <img src="./assets/fasco-section4-image-3.svg" class="insta-img-offset"
+                                alt="Fashion collection card 3" />
+                        </div>
 
-          <div class="insta-card">
-            <img
-              class="insta-img-tall"
-              src="assets/fasco-section4-image-4.svg"
-              alt="Instagram post center"
-            />
-          </div>
+                        <!-- card img 4 -->
+                        <div>
+                            <img src="./assets/fasco-section4-image-4.svg" alt="Fashion collection card 4" />
+                        </div>
 
-          <div class="insta-card">
-            <img
-              class="insta-img"
-              src="assets/fasco-section4-image-5.svg"
-              alt="Instagram post"
-            />
-          </div>
+                        <!-- card img 5 -->
+                        <div>
+                            <img src="./assets/fasco-section4-image-5.svg" class="insta-img-offset"
+                                alt="Fashion collection card 5" />
+                        </div>
 
-          <div class="insta-card">
-            <img
-              class="insta-img-tall"
-              src="assets/fasco-section4-image-6.svg"
-              alt="Instagram post"
-            />
-          </div>
+                        <!-- card img 6 -->
+                        <div>
+                            <img src="./assets/fasco-section4-image-6.svg" alt="Fashion collection card 6" />
+                        </div>
 
-          <div class="insta-card-wide">
-            <img
-              class="insta-img"
-              src="assets/fasco-section4-image-7.svg"
-              alt="Instagram post"
-            />
-          </div>
-        </div>
-      </section>
-
+                        <!-- card img 7 -->
+                        <div>
+                            <img src="./assets/fasco-section4-image-7.svg" class="insta-img-offset"
+                                alt="Fashion collection card 7" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
         <!-- section 7: -->
         <section class="reviews-section">
             <div class="reviews-container">

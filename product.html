@@ -2,33 +2,33 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- Tailwind CSS -->
-  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-  <link
-    href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&family=Volkhov:wght@400;700&family=Share+Tech+Mono&display=swap"
-    rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&family=Volkhov:wght@400;700&family=Share+Tech+Mono&display=swap"
+        rel="stylesheet" />
 
-  <!-- Digital Numbers Font -->
-  <link href="https://fonts.cdnfonts.com/css/digital-numbers" rel="stylesheet" />
-  <title>Shopping Product</title>
+    <!-- Digital Numbers Font -->
+    <link href="https://fonts.cdnfonts.com/css/digital-numbers" rel="stylesheet" />
+    <title>Shopping Product</title>
 
-  <style type="text/tailwindcss">
-    @theme {
+    <style type="text/tailwindcss">
+        @theme {
             /* Colors */
             --color-heather-grey: #484848;
             --color-grey-900: #8a8a8a;
             --color-grey-600: #767676;
             --color-grey-700: #e0e0e0;
+            --color-light-gray:#EEEEEE;
             --color-grey-800: #d9d9d9;
-            --color-light-gray: #EEEEEE;
             --color-black-900: #000000;
             --color-white-900: #ffffff;
             --color-white-700: #fafafa;
@@ -58,25 +58,51 @@
         .number-time{
             @apply font-jost font-semibold text-[20px] leading-[32px] text-[#FF706B] px-[2px];
         }
+        /* Peaky Blinders: label boxes (top-left corner = end of the line) */
         .span-picky{
-            @apply absolute z-30 flex items-center justify-center w-[6.43%] h-[6.35%] border border-[#000000] bg-white/60 text-[11px] whitespace-nowrap;
+            @apply absolute z-30 flex items-center justify-center w-[6.43%] h-[6.35%] border border-heather-grey bg-white-900 font-poppins text-[11px] text-heather-grey whitespace-nowrap;
         }
-        /* "Subtotal" */
-        .span-button{
-            @apply font-volkhov text-[22px] leading-[32px] text-black-900;
+        /* Peaky Blinders: points on the model (left/top = center of the circle) */
+        .span-circle{
+            @apply absolute z-30 w-[14px] h-[14px] rounded-full bg-white-900 border-[1.5px] border-heather-grey -translate-x-1/2 -translate-y-1/2;
+        }
+        /* Features row */
+        .span-quality{
+            @apply font-poppins text-[20px] leading-[30px] text-heather-grey;
+        }
+        .span-crafter{
+            @apply font-poppins text-[16px] leading-[24px] text-heather-grey;
+        }
+        .number-time_2 {
+            @apply font-digital text-[32px] leading-[100%] text-heather-grey;
+        }
+        .zone-span {
+            @apply font-poppins text-[24px] leading-[120%] text-heather-grey;
+        }
+        .div-span {
+            @apply flex flex-col items-center bg-white-900 py-[12px] px-[22px] shadow-[0px_4px_14px_1px_#00000029] rounded-[10px];
+        }
+        .button-click {
+            @apply flex h-[48px] w-[48px] items-center justify-center rounded-full border border-gray-300 bg-white shadow-md hover:bg-gray-100;
+        }
+         .span {
+            @apply w-3 h-3 rounded-full bg-grey-800;
         }
         .span-thired{
             @apply font-jost text-[16px] leading-[24px] text-black-900;
         }
 
-           /* Page sections */
-        /* Page  */
+        /* ============================================================
+           Page sections (utilities moved out of the HTML)
+           ============================================================ */
+        /* ===== Page ===== */
         .page-body {
-          @apply bg-white-900 overflow-x-hidden;
+          @apply bg-white-900;
         }
-        /*  Header  */
+
+        /* ===== Header ===== */
         .header-bar {
-          @apply flex items-center justify-between gap-6 px-10 mx-auto max-w-[1280px] py-5;
+          @apply flex items-center justify-between px-10 mx-auto max-w-[1070px] py-5;
         }
         .logo-link {
           @apply shrink-0;
@@ -91,22 +117,18 @@
           @apply border-b border-heather-grey py-[10px];
         }
         .header-icons {
-          @apply flex items-center gap-4 shrink-0;
+          @apply flex items-center gap-4;
         }
         .header-icon {
           @apply w-6 h-6;
         }
 
-        /*  Product details  */
-        .main-content {
-          @apply relative;
-        }
-        /* 1070px of content + 24px margin on each side */
+        /* ===== Product details ===== */
         .product-section {
-          @apply mx-auto max-w-[1280px] px-6 py-5;
+          @apply mx-auto max-w-[1070px] py-5;
         }
         .product-layout {
-          @apply flex justify-center gap-8 xl:gap-[60px];
+          @apply flex justify-center gap-[60px];
         }
         .product-gallery {
           @apply flex gap-5 shrink-0;
@@ -114,16 +136,14 @@
         .gallery-thumbs {
           @apply space-y-[10px];
         }
-        /* main image: 340px under 1280px, 400px above */
         .gallery-main {
-          @apply w-[340px] xl:w-[400px] shrink-0;
+          @apply w-[400px] shrink-0;
         }
         .gallery-main-img {
           @apply w-full h-auto block;
         }
-        /* right column: takes the remaining space, max 490px */
         .product-info {
-          @apply flex-1 min-w-0 max-w-[490px];
+          @apply w-[490px] shrink-0;
         }
         .product-brand {
           @apply block font-volkhov my-[5px] text-[14px] uppercase;
@@ -171,7 +191,7 @@
           @apply w-full h-[58px] border border-[#F8CCCC] bg-[#FDEFEE] rounded-[4px] my-[30px] px-[15px];
         }
         .sale-timer-inner {
-          @apply flex justify-between items-center gap-3 h-full;
+          @apply flex justify-between items-center h-full;
         }
         .sale-timer-title {
           @apply font-volkhov text-[18px] leading-[28px] text-[#FF706B] whitespace-nowrap;
@@ -234,10 +254,10 @@
           @apply font-volkhov text-[16px] leading-[24px] text-black-900;
         }
         .quantity-row {
-          @apply flex gap-[20px] xl:gap-[30px] mt-[13px] pb-[65px] w-full;
+          @apply flex gap-[30px] mt-[13px] pb-[65px] w-full;
         }
         .quantity-picker {
-          @apply border border-light-gray w-[128px] h-[46px] items-center flex justify-evenly shrink-0;
+          @apply border border-light-gray w-[128px] h-[46px] items-center flex justify-evenly;
         }
         .qty-btn {
           @apply cursor-pointer;
@@ -246,377 +266,858 @@
           @apply flex-1 h-[45px] rounded-[5px] border flex items-center justify-center cursor-pointer hover:bg-black-900 hover:text-white-900 hover:rounded-[10px];
         }
         .product-actions {
-          @apply w-full flex flex-wrap gap-x-[30px] gap-y-2;
+          @apply w-full flex gap-[30px] border-b border-light-gray pb-[12px];
         }
         .product-action {
           @apply flex items-center gap-[8px];
         }
+        .delivery-info {
+          @apply my-[30px];
+        }
+        .delivery-row {
+          @apply flex gap-[6.5px] mb-[8px];
+        }
+        .delivery-label {
+          @apply font-volkhov font-bold text-[16px] leading-[24px] text-black-900;
+        }
+        .delivery-value {
+          @apply font-jost text-[16px] leading-[24px] text-black-900;
+        }
+        .delivery-row-last {
+          @apply flex gap-[6.5px];
+        }
+        .secure-checkout {
+          @apply bg-[#F8F8F8] items-center flex flex-col justify-center space-y-[20px] py-[20px];
+        }
+        .secure-checkout-text {
+          @apply font-volkhov text-[16px] leading-[100%] text-black-900;
+        }
 
-        /*  Shopping cart */
-        .cart-overlay {
-          @apply fixed inset-0 z-40 bg-[#78787869];
+        /* ===== Peaky Blinders ===== */
+        .peaky-section {
+          @apply relative w-full my-[26px];
         }
-        .cart-panel {
-          @apply fixed top-0 right-0 z-50 w-[500px] max-w-full h-screen overflow-y-auto bg-white-900 flex flex-col px-[44px] pt-[45px] pb-[40px];
+        .peaky-wrapper {
+          @apply relative w-full flex flex-col overflow-hidden bg-white min-[991px]:block min-[991px]:aspect-[1920/570.2] min-[991px]:min-h-[480px];
         }
-        .cart-close-btn {
-          @apply absolute top-[45px] right-[44px] cursor-pointer;
+        .peaky-diagonal-panel {
+          @apply hidden min-[991px]:block absolute inset-0 bg-[#D9D9D9] [clip-path:polygon(55.03%_0,100%_0,100%_100%,45.29%_100%)];
         }
-        .cart-title {
-          @apply font-volkhov text-[42px] leading-[32px] text-black-900;
+        .peaky-diagonal-line {
+          @apply hidden min-[991px]:block absolute inset-0 w-full h-full z-20 pointer-events-none;
         }
-        .cart-shipping-note {
-          @apply font-poppins text-[20px] leading-[32px] whitespace-nowrap mt-[26px] text-grey-900;
+        .peaky-model-mobile {
+          @apply min-[991px]:hidden mx-auto my-[30px] h-[360px] w-auto max-w-full object-contain;
         }
-        .cart-highlight {
-          @apply font-bold text-black-900;
+        .peaky-model-zone {
+          @apply hidden min-[991px]:block absolute inset-x-0 top-1/2 -translate-y-1/2 aspect-[1920/570.2] z-10;
         }
-        .cart-item {
-          @apply mt-[67px] flex gap-[22px] pb-[20px] border-b border-light-gray;
+        .peaky-model-inset {
+          @apply absolute inset-[5%];
         }
-        .cart-item-img {
+        .peaky-model-img {
+          @apply absolute bottom-0 left-[9.3%] h-full w-auto max-w-none z-10;
+        }
+        .peaky-annotations {
+          @apply absolute inset-0 w-full h-full z-20 pointer-events-none;
+        }
+        .circle-flat-cap {
+          @apply left-[27.41%] top-[5.36%];
+        }
+        .circle-suspender {
+          @apply left-[23.07%] top-[25%];
+        }
+        .circle-hugo-right {
+          @apply left-[24.97%] top-[36.43%];
+        }
+        .circle-hugo-left {
+          @apply left-[20.85%] top-[53.21%];
+        }
+        .circle-santoni {
+          @apply left-[25.19%] top-[82.86%];
+        }
+        .label-flat-cap {
+          @apply left-[32.38%] top-[10%];
+        }
+        .label-suspender {
+          @apply left-[10.79%] top-[29.29%];
+        }
+        .label-hugo-right {
+          @apply left-[29.84%] top-[40.71%];
+        }
+        .label-hugo-left {
+          @apply left-[8.5%] top-[57.5%];
+        }
+        .label-santoni {
+          @apply left-[29.95%] top-[87.5%];
+        }
+        .peaky-info {
+          @apply relative z-30 flex flex-col justify-center bg-[#D9D9D9] px-6 py-10 min-[991px]:absolute min-[991px]:inset-y-0 min-[991px]:left-[56.6%] min-[991px]:w-[40%] min-[991px]:bg-transparent min-[991px]:px-0 min-[991px]:py-[30px];
+        }
+        .peaky-collection {
+          @apply font-poppins text-[16px] leading-[100%] text-grey-600;
+        }
+        .peaky-title {
+          @apply font-volkhov text-[46px] leading-[100%] text-heather-grey my-[20px];
+        }
+        .peaky-desc-title {
+          @apply font-poppins text-[16px] leading-[100%] underline text-black-900;
+        }
+        .peaky-desc {
+          @apply my-[20px] font-poppins text-[16px] leading-[100%] text-grey-600;
+        }
+        .peaky-size-row {
+          @apply flex gap-[15px] items-center;
+        }
+        .peaky-size-label {
+          @apply font-poppins text-[16px] leading-[100%] text-grey-600;
+        }
+        .peaky-size-badge {
+          @apply font-poppins text-[16px] leading-[100%] text-white-900 bg-black-900 py-[6px] px-[20px] rounded-[10px];
+        }
+        .peaky-price {
+          @apply my-[20px] font-poppins font-medium leading-[100%] text-black-900;
+        }
+        .peaky-price-int {
+          @apply text-[28px];
+        }
+        .peaky-price-dec {
+          @apply text-[24px];
+        }
+        .peaky-buy-btn {
+          @apply flex w-[207px] h-[56px] bg-black-900 hover:bg-black-900/70 cursor-pointer items-center justify-center rounded-[10px] text-white-900 font-poppins text-[16px] leading-[100%];
+        }
+
+        /* ===== Features ===== */
+        .features-row {
+          @apply mx-auto max-w-[1040px] px-10 flex justify-between py-[72px];
+        }
+        .feature-item {
+          @apply flex items-center gap-4;
+        }
+        .feature-icon {
+          @apply w-[38px] h-[50px];
+        }
+        .feature-text {
+          @apply flex flex-col w-fit;
+        }
+
+        /* ===== People also loved ===== */
+        .loved-section {
+          @apply space-y-[150px] pl-36 py-5 bg-gradient-to-b from-[#FFFFFF] to-[#FAFAFA];
+        }
+        .loved-row {
+          @apply flex justify-between;
+        }
+        .loved-content {
+          @apply max-w-[444px];
+        }
+        .loved-intro {
+          @apply mb-[50px];
+        }
+        .loved-title {
+          @apply mb-[20px] text-[46px] font-volkhov leading-[100%] text-heather-grey;
+        }
+        .loved-text {
+          @apply mb-[40px] text-[16px] text-grey-900 leading-[26px] font-poppins;
+        }
+        .loved-buy-btn {
+          @apply bg-black-900 py-[20px] px-[60px] rounded-[10px] leading-[100%] text-white-900;
+        }
+        .loved-countdown-title {
+          @apply font-poppins font-medium text-[28px] leading-[100%] text-heather-grey mb-[15px];
+        }
+        .loved-countdown {
+          @apply flex justify-between items-center;
+        }
+        .loved-gallery {
+          @apply relative w-[600px] shrink-0;
+        }
+        .loved-scroller {
+          @apply overflow-x-auto [scrollbar-width:none];
+        }
+        .loved-scroller::-webkit-scrollbar {  /* = [&::-webkit-scrollbar]:hidden */
+          display: none;
+        }
+        .loved-track {
+          @apply flex items-start gap-5 w-max;
+        }
+        .loved-arrows {
+          @apply absolute top-[560px] -left-29 z-10 flex gap-3 -translate-y-1/2;
+        }
+        .arrow-icon {
+          @apply h-5 w-5;
+        }
+        .loved-slide-main {
+          @apply shrink-0 relative;
+        }
+        .loved-slide-main-img {
+          @apply w-full h-[582px] object-cover;
+        }
+        .loved-slide-caption {
+          @apply absolute bottom-[24px] left-[24px] w-fit p-4 bg-[#FFFFFF]/80 backdrop-blur-[7px];
+        }
+        .loved-caption-row {
+          @apply flex items-center gap-3;
+        }
+        .loved-caption-text {
+          @apply font-poppins text-[16px] text-heather-grey;
+        }
+        .loved-caption-line {
+          @apply w-[40px] h-[1px] bg-heather-grey;
+        }
+        .loved-caption-discount {
+          @apply mt-2 font-poppins text-[28px] font-semibold text-black-900;
+        }
+        .loved-slide {
+          @apply relative shrink-0;
+        }
+        .loved-slide-img {
+          @apply w-full h-[486px] object-cover;
+        }
+        .loved-dots {
+          @apply absolute -bottom-[60px] left-[10px] flex items-center gap-2;
+        }
+        .loved-dot-active {
+          @apply w-4 h-4 rounded-full border border-black-900 bg-white flex items-center justify-center;
+        }
+        .loved-dot-active-inner {
+          @apply w-2 h-2 rounded-full bg-black-900;
+        }
+        .loved-slide-small-img {
+          @apply h-[350px];
+        }
+
+        /* ===== Newsletter ===== */
+        .newsletter-section {
+          @apply mt-[138px] w-full max-w-[1200px] mx-auto px-[30px];
+        }
+        .newsletter-row {
+          @apply flex items-center justify-between gap-[40px];
+        }
+        .newsletter-side {
           @apply shrink-0;
         }
-        .cart-item-name {
-          @apply font-volkhov text-[22px] leading-[42px] text-black-900;
+        .newsletter-center {
+          @apply flex-1 min-w-0 flex flex-col;
         }
-        .cart-item-color {
-          @apply font-poppins text-[22px] leading-[42px] text-grey-900;
+        .newsletter-heading {
+          @apply w-full flex flex-col items-center text-center;
         }
-        .cart-item-price {
-          @apply font-poppins text-[22px] leading-[42px] text-black-900;
+        .newsletter-title {
+          @apply font-volkhov text-[46px] leading-[100%] text-heather-grey whitespace-nowrap;
         }
-        .cart-qty-picker {
-          @apply w-[170px] h-[59px] rounded-[5px] px-[15px] bg-[#F1F1F1] mt-[9px] items-center flex justify-evenly;
+        .newsletter-text {
+          @apply font-poppins text-[16px] leading-[26px] text-grey-900 whitespace-nowrap mt-[20px];
         }
-        .cart-bottom {
-          @apply mt-auto pt-[40px];
+        .newsletter-email {
+          @apply my-[30px] flex justify-start items-start w-[400px] pt-[28px] pb-[32px] pl-[30px] shadow-[0px_3.02px_3.15px_#00000002,0px_13.28px_6.52px_#00000002];
         }
-        .cart-gift {
-          @apply flex items-center gap-[12px] pb-[20px] border-b border-light-gray cursor-pointer;
+        .newsletter-email-text {
+          @apply font-poppins text-[22px] leading-[26px] text-grey-900;
         }
-        .cart-gift-checkbox {
-          @apply w-[22px] h-[22px] accent-black-900 cursor-pointer;
+        .newsletter-btn-wrap {
+          @apply flex justify-center;
         }
-        .cart-gift-text {
-          @apply font-poppins text-[16px] leading-[24px] text-grey-900;
+        .newsletter-btn {
+          @apply items-center font-poppins text-[16px] leading-[100%] text-white-900 bg-black-900 w-[207px] h-[56px] shadow-[0px_20px_35px_0px_#00000026] rounded-[10px];
         }
-        .cart-gift-price {
-          @apply text-black-900;
+
+        /* ===== Footer ===== */
+        .site-footer {
+          @apply border-t border-[#DEDFE1] mt-[50px] py-[20px];
         }
-        .cart-subtotal {
-          @apply flex justify-between items-center mt-[25px];
+        .footer-top {
+          @apply flex justify-between mx-auto max-w-[1040px];
         }
-        .cart-checkout-btn {
-          @apply mt-[25px] w-full h-[56px] rounded-[10px] bg-black-900 hover:bg-black-900/70 cursor-pointer text-white-900 font-poppins text-[16px] leading-[100%] shadow-[0px_20px_35px_#00000026];
+        .footer-logo {
+          @apply font-volkhov text-[32px] leading-[100%] text-heather-grey;
         }
-        .cart-view-link {
-          @apply block mt-[20px] text-center font-volkhov text-[18px] leading-[24px] text-black-900 underline;
+        .footer-nav {
+          @apply gap-[38px];
+        }
+        .footer-copyright {
+          @apply items-center flex justify-center mt-[50px];
         }
     </style>
 </head>
 
 <body class="page-body">
 
-  <!-- Header -->
-  <header id="top" class="header-bar">
+    <!-- Header -->
+    <header id="top" class="header-bar">
 
-    <!-- Logo -->
-    <a href="#" aria-label="FASCO home" class="logo-link">
-      <h1 class="logo-title">
-        FASCO
-      </h1>
-    </a>
+        <!-- Logo -->
+        <a href="#" aria-label="FASCO home" class="logo-link">
+            <h1 class="logo-title">
+                FASCO
+            </h1>
+        </a>
 
-    <!-- Navigation -->
-    <nav class="navbar nav-main">
-      <a href="#home" class="nav-name">Home</a>
-      <a href="#Deals" class="nav-name">Shop</a>
-      <a href="#arrivale" class="nav-name nav-active">Products</a>
-      <a href="#package" class="nav-name">Pages</a>
-    </nav>
+        <!-- Navigation -->
+        <nav class="navbar nav-main">
+            <a href="#home" class="nav-name">Home</a>
+            <a href="#Deals" class="nav-name">Shop</a>
+            <a href="#arrivale" class="nav-name nav-active">Products</a>
+            <a href="#package" class="nav-name">Pages</a>
+        </nav>
 
-    <!-- Header Icons -->
-    <div class="header-icons">
-      <a href="#" aria-label="Search">
-        <img src="./assets-product/icon-search.svg" alt="Search" class="header-icon" />
-      </a>
+        <!-- Header Icons -->
+        <div class="header-icons">
+            <a href="#" aria-label="Search">
+                <img src="./assets-product/icon-search.svg" alt="Search" class="header-icon" />
+            </a>
 
-      <a href="#" aria-label="User account">
-        <img src="./assets-product/icon-user.svg" alt="User account" class="header-icon" />
-      </a>
+            <a href="#" aria-label="Shopping cart">
+                <img src="./assets-product/icon-user.svg" alt="User account" class="header-icon" />
+            </a>
 
-      <a href="#" aria-label="Favorites">
-        <img src="./assets-product/icon-star.svg" alt="Favorites" class="header-icon" />
-      </a>
-      <a href="#" aria-label="Shopping cart">
-        <img src="./assets-product/icon-wallet.svg" alt="Shopping cart" class="header-icon" />
-      </a>
-    </div>
-
-  </header>
-
-  <!-- Main Content -->
-  <main class="main-content">
-    <!-- section 1: -->
-    <section class="product-section">
-      <!-- gap between image and text: 32px under 1280px, 60px above -->
-      <div class="product-layout">
-        <div class="product-gallery">
-          <!-- div images -->
-          <div class="gallery-thumbs">
-            <div class="">
-              <img src="./assets-product/icon-section1-Jacket.svg" alt="Women's jacket" />
-            </div>
-            <div class="div-active">
-              <img src="./assets-product/icon-section1-girl.svg" alt="Woman wearing a fashion outfit" />
-            </div>
-            <div class="">
-              <img src="./assets-product/icon-section1-man.svg" alt="Man wearing casual clothing" />
-            </div>
-            <div>
-              <img src="./assets-product/icon-section1-full_girl.svg"
-                alt="Full-body view of a woman in a fashion outfit" />
-            </div>
-            <div class="">
-              <img src="./assets-product/icon-section1-jacket-janes.svg" alt="Women's jeans jacket" />
-            </div>
-            <div class="">
-              <img src="./assets-product/icon-section1-black_Jacket.svg" alt="Black jacket" />
-            </div>
-            <div class="">
-              <img src="./assets-product/icon-section1-full_body.svg" alt="Full-body fashion model" />
-            </div>
-          </div>
-          <!-- main image: 340px under 1280px, 400px above, height follows the ratio -->
-          <div class="gallery-main">
-            <img src="./assets-product/icon-section1-red_girl.svg" alt="Woman wearing a red jacket"
-              class="gallery-main-img">
-          </div>
+            <a href="#" aria-label="User account">
+                <img src="./assets-product/icon-star.svg" alt="Pin Shoping" class="header-icon" />
+            </a>
+            <a href="#" aria-label="User account">
+                <img src="./assets-product/icon-wallet.svg" alt="Shopping cart " class="header-icon" />
+            </a>
         </div>
 
-        <!-- right column: remaining space, max 490px -->
-        <div class="product-info">
-          <span class="product-brand">
-            Fasco
-          </span>
+    </header>
 
-          <div class="product-title-row">
-            <h2 class="product-title">
-              Denim Jacket
-            </h2>
+    <!-- Main Content -->
+    <main>
+        <!-- section 1: -->
+        <section class="product-section">
+            <!-- fixed gap between image and text (adjust to the Figma value) -->
+            <div class="product-layout">
+                <div class="product-gallery">
+                    <!-- div images -->
+                    <div class="gallery-thumbs">
+                        <div class="">
+                            <img src="./assets-product/icon-section1-Jacket.svg" alt="Women's jacket" />
+                        </div>
+                        <div class="div-active">
+                            <img src="./assets-product/icon-section1-girl.svg" alt="Woman wearing a fashion outfit" />
+                        </div>
+                        <div class="">
+                            <img src="./assets-product/icon-section1-man.svg" alt="Man wearing casual clothing" />
+                        </div>
+                        <div>
+                            <img src="./assets-product/icon-section1-full_girl.svg"
+                                alt="Full-body view of a woman in a fashion outfit" />
+                        </div>
+                        <div class="">
+                            <img src="./assets-product/icon-section1-jacket-janes.svg" alt="Women's jeans jacket" />
+                        </div>
+                        <div class="">
+                            <img src="./assets-product/icon-section1-black_Jacket.svg" alt="Black jacket" />
+                        </div>
+                        <div class="">
+                            <img src="./assets-product/icon-section1-full_body.svg" alt="Full-body fashion model" />
+                        </div>
+                    </div>
+                    <!-- main image: fixed width, height follows the ratio -->
+                    <div class="gallery-main">
+                        <img src="./assets-product/icon-section1-red_girl.svg" alt="Woman wearing a red jacket"
+                            class="gallery-main-img">
+                    </div>
+                </div>
 
-            <div class="wishlist-btn">
-              <img src="./assets-product/icon-star.svg" alt="icon star">
+                <!-- right column: width = widest content (490px) -->
+                <div class="product-info">
+                    <span class="product-brand">
+                        Fasco
+                    </span>
+
+                    <div class="product-title-row">
+                        <h2 class="product-title">
+                            Denim Jacket
+                        </h2>
+
+                        <div class="wishlist-btn">
+                            <img src="./assets-product/icon-star.svg" alt="icon star">
+                        </div>
+                    </div>
+
+                    <!-- div stars -->
+                    <div class="rating-row">
+                        <div class="rating-stars">
+                            <span><img src="./assets-product/black-star.svg" alt="icon-star" /></span>
+                            <span><img src="./assets-product/black-star.svg" alt="icon-star" /></span>
+                            <span><img src="./assets-product/black-star.svg" alt="icon-star" /></span>
+                            <span><img src="./assets-product/black-star.svg" alt="icon-star" /></span>
+                            <span><img src="./assets-product/white-star.svg" alt="icon-star" /></span>
+                        </div>
+                        <div>
+                            <span class="rating-count">(3)</span>
+                        </div>
+                    </div>
+
+                    <!-- div price -->
+                    <div class="price-row">
+                        <div class="price-group">
+                            <span class="price-current">$39.00</span>
+                            <span
+                                class="price-old">$59.00</span>
+                            <button
+                                class="price-badge">
+                                <span
+                                    class="price-badge-text">Save<span
+                                        class="">33%</span></span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- div viewing -->
+                    <div class="viewers-row">
+                        <img src="./assets-product/icon-view.svg" alt="">
+                        <span class="">24 <span>people are viewing this right now</span></span>
+                    </div>
+
+                    <!-- div time -->
+                    <div class="sale-timer">
+                        <div class="sale-timer-inner">
+                            <h5 class="sale-timer-title">
+                                Hurry up! Sale ends in:
+                            </h5>
+
+                            <div class="sale-timer-digits">
+                                <span class="number-time">02</span>
+                                <span class="number-time">:</span>
+                                <span class="number-time">06</span>
+                                <span class="number-time">:</span>
+                                <span class="number-time">05</span>
+                                <span class="number-time">:</span>
+                                <span class="number-time">30</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- div stock -->
+                    <div class="stock-block">
+                        <span class="stock-text">Only <span>9</span> item(s)
+                            left in stock!</span>
+                        <div class="stock-bar">
+                            <div class="stock-bar-fill"></div>
+                        </div>
+                    </div>
+
+                    <!-- div size -->
+                    <div class="size-block">
+                        <span class="option-label">Size: M</span>
+
+                        <div class="size-options">
+                            <!-- Size M (active) -->
+                            <div
+                                class="size-btn-active">
+                                M
+                            </div>
+                            <!-- Size L -->
+                            <div
+                                class="size-btn">
+                                L
+                            </div>
+                            <!-- Size XL -->
+                            <div
+                                class="size-btn">
+                                XL
+                            </div>
+                            <!-- Size XXL -->
+                            <div
+                                class="size-btn">
+                                XXL
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- div color -->
+                    <div class="color-block">
+                        <span class="option-label">Color:
+                            Blue</span>
+
+                        <div class="color-options">
+                            <!-- Color 1 (active) -->
+                            <div
+                                class="swatch-active">
+                                <div class="swatch-blue"></div>
+                            </div>
+                            <!-- Color 2 -->
+                            <div class="swatch">
+                                <div class="swatch-black"></div>
+                            </div>
+                            <!-- Color 3 -->
+                            <div class="swatch">
+                                <div class="swatch-pink"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- div quantity -->
+                    <div class="quantity-block">
+                        <span class="quantity-label">
+                            Quantity
+                        </span>
+                        <div class="quantity-row">
+                            <div class="quantity-picker">
+                                <span class="qty-btn">-</span>
+                                <span>1</span>
+                                <span class="qty-btn">+</span>
+                            </div>
+
+                            <div
+                                class="add-to-cart-btn">
+                                <span>Add to cart</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- div actions (border = full column width) -->
+                    <div class="product-actions">
+                        <!-- first one -->
+                        <div class="product-action">
+                            <img src="./assets-product/icon-compare.svg" alt="icon compare">
+                            <span class="span-thired">Compare</span>
+                        </div>
+                        <!-- second one -->
+                        <div class="product-action">
+                            <img src="./assets-product/icon-ask.svg" alt="icon ask">
+                            <span class="span-thired">Ask a question</span>
+                        </div>
+                        <!-- last one -->
+                        <div class="product-action">
+                            <img src="./assets-product/icon-share.svg" alt="icon share">
+                            <span class="span-thired">Share</span>
+                        </div>
+                    </div>
+                    <div class="delivery-info">
+                        <div class="delivery-row">
+                            <img src="./assets-product/icon-delevry.svg" alt="Delivery-icon">
+                            <h5><span class="delivery-label">Estimated
+                                    Delivery:</span>&nbsp;<span
+                                    class="delivery-value">Jul 30 - Aug 03</span>
+                            </h5>
+                        </div>
+                        <div class="delivery-row-last">
+                            <img src="./assets-product/icon-shipping.svg" alt="Shipping">
+                            <h5><span class="delivery-label">Free
+                                    Shipping & Returns:</span>&nbsp;<span
+                                    class="delivery-value">On all orders over
+                                    $75</span></h5>
+                        </div>
+                    </div>
+                    <div class="secure-checkout">
+                        <img src="./assets-product/icon-bance.svg" alt="icon-bance">
+                        <span class="secure-checkout-text">Guarantee safe & secure
+                            checkout</span>
+                    </div>
+
+                </div>
             </div>
-          </div>
+        </section>
 
-          <!-- div stars -->
-          <div class="rating-row">
-            <div class="rating-stars">
-              <span><img src="./assets-product/black-star.svg" alt="icon-star" /></span>
-              <span><img src="./assets-product/black-star.svg" alt="icon-star" /></span>
-              <span><img src="./assets-product/black-star.svg" alt="icon-star" /></span>
-              <span><img src="./assets-product/black-star.svg" alt="icon-star" /></span>
-              <span><img src="./assets-product/white-star.svg" alt="icon-star" /></span>
+        <!-- section 2: -->
+        <section class="peaky-section">
+            <!-- PRODUCT
+                 < 991px  : stacked (image on top, text below)
+                 >= 991px : Figma ratio (1920 x 570.2), never shorter than 480px so your text always fits -->
+            <div
+                class="peaky-wrapper">
+
+                <!-- gray diagonal panel (desktop) -->
+                <div
+                    class="peaky-diagonal-panel">
+                </div>
+                <!-- diagonal line (desktop) -->
+                <svg class="peaky-diagonal-line"
+                    viewBox="0 0 945 280" preserveAspectRatio="none">
+                    <line x1="520" y1="0" x2="428" y2="280" stroke="#000" stroke-width="1.5"
+                        vector-effect="non-scaling-stroke" />
+                </svg>
+
+                <!-- model (mobile only) -->
+                <img src="./assets/fasco-icon-section-3.svg" alt="Woman wearing the Peaky Blinders outfit"
+                    class="peaky-model-mobile" />
+
+                <!-- model zone (desktop): always keeps the Figma ratio, centered vertically,
+                     so the model never stretches even when the block is taller -->
+                <div
+                    class="peaky-model-zone">
+                    <!-- inset 5% = space around the model -->
+                    <div class="peaky-model-inset">
+                        <!-- image (model + black shapes) -->
+                        <img src="./assets/fasco-icon-section-3.svg" alt="Woman wearing the Peaky Blinders outfit"
+                            class="peaky-model-img" />
+
+                        <!-- annotation lines -->
+                        <svg class="peaky-annotations" viewBox="0 0 945 280"
+                            preserveAspectRatio="none">
+                            <g fill="none" stroke="#4a4a4a" stroke-width="1">
+                                <!-- Flat Cap -->
+                                <polyline points="259,15 294,15 306,28" vector-effect="non-scaling-stroke" />
+                                <!-- Suspender -->
+                                <polyline points="218,70 154,70 143,82" vector-effect="non-scaling-stroke" />
+                                <!-- Hugo Boss (right) -->
+                                <polyline points="236,102 271,102 282,114" vector-effect="non-scaling-stroke" />
+                                <!-- Hugo Boss (left) -->
+                                <polyline points="197,149 133,149 122,161" vector-effect="non-scaling-stroke" />
+                                <!-- Santoni -->
+                                <polyline points="238,232 272,232 283,245" vector-effect="non-scaling-stroke" />
+                            </g>
+                        </svg>
+
+                        <!-- circles -->
+                        <span class="span-circle circle-flat-cap"></span>
+                        <span class="span-circle circle-suspender"></span>
+                        <span class="span-circle circle-hugo-right"></span>
+                        <span class="span-circle circle-hugo-left"></span>
+                        <span class="span-circle circle-santoni"></span>
+
+                        <!-- labels -->
+                        <span class="span-picky label-flat-cap">Flat Cap</span>
+                        <span class="span-picky label-suspender">Suspender</span>
+                        <span class="span-picky label-hugo-right">Hugo Boss</span>
+                        <span class="span-picky label-hugo-left">Hugo Boss</span>
+                        <span class="span-picky label-santoni">Santoni</span>
+                    </div>
+                </div>
+
+                <!-- product info (your sizes) : stacked under the image < 991px, on the gray panel >= 991px -->
+                <div
+                    class="peaky-info">
+                    <span class="peaky-collection">Women Collection</span>
+                    <h2 class="peaky-title">Peaky Blinders</h2>
+                    <h3 class="peaky-desc-title">DESCRIPTION</h3>
+                    <p class="peaky-desc">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Scelerisque duis ultrices sollicitudin
+                        aliquam sem. Scelerisque duis ultrices sollicitudin. Lorem ipsum dolor sit amet, consectetur
+                        adipiscing elit. Scelerisque duis.
+                    </p>
+                    <div class="peaky-size-row">
+                        <span class="peaky-size-label">Size:</span>
+                        <span
+                            class="peaky-size-badge">M</span>
+                    </div>
+                    <p class="peaky-price">
+                        <span class="peaky-price-int">$100</span><span class="peaky-price-dec">.00</span>
+                    </p>
+                    <button type="button"
+                        class="peaky-buy-btn">
+                        Buy Now
+                    </button>
+                </div>
             </div>
-            <div>
-              <span class="rating-count">(3)</span>
+
+            <!-- FEATURES -->
+            <div class="features-row">
+                <div class="feature-item">
+                    <img src="./assets/icon-section3-1.svg" alt="High Quality icon" class="feature-icon" />
+                    <div class="feature-text">
+                        <span class="span-quality">High Quality</span>
+                        <span class="span-crafter">crafted from top materials</span>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <img src="./assets/icon-section3-2.svg" alt="Warranty Protection icon" class="feature-icon" />
+                    <div class="feature-text">
+                        <span class="span-quality">Warranty Protection</span>
+                        <span class="span-crafter">Over 2 years</span>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <img src="./assets/icon-section3-3.svg" alt="Free Shipping icon" class="feature-icon" />
+                    <div class="feature-text">
+                        <span class="span-quality">Free Shipping</span>
+                        <span class="span-crafter">Order over 150 $</span>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <img src="./assets/icon-section3-4.svg" alt="24/7 Support icon" class="feature-icon" />
+                    <div class="feature-text">
+                        <span class="span-quality">24 / 7 Support</span>
+                        <span class="span-crafter">Dedicated support</span>
+                    </div>
+                </div>
             </div>
-          </div>
+        </section>
+        <!-- section 3 : -->
+        <section class="loved-section">
+            <div class="loved-row">
+                <div class="loved-content">
+                    <div class="loved-intro">
+                        <h2 class="loved-title">
+                            People Also Loved
+                        </h2>
+                        <p class="loved-text">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            Scelerisque duis ultrices sollicitudin aliquam sem. Scelerisque
+                            duis ultrices sollicitudin
+                        </p>
+                        <button class="loved-buy-btn">
+                            Buy Now
+                        </button>
+                    </div>
+                    <div>
+                        <h4 class="loved-countdown-title">
+                            Hurry, Before It’s Too Late!</h4>
+                        <div class="loved-countdown">
 
-          <!-- div price -->
-          <div class="price-row">
-            <div class="price-group">
-              <span class="price-current">$39.00</span>
-              <span class="price-old">$59.00</span>
-              <button class="price-badge">
-                <span class="price-badge-text">Save<span class="">33%</span></span>
-              </button>
+                            <div class="div-span">
+                                <span class="number-time_2">02</span>
+                                <span class="zone-spane">Days</span>
+                            </div>
+
+                            <div class="div-span">
+                                <span class="number-time_2">06</span>
+                                <span class="zone-spane">Hr</span>
+                            </div>
+
+                            <div class="div-span">
+                                <span class="number-time_2">05</span>
+                                <span class="zone-spane">Mins</span>
+                            </div>
+
+                            <div class="div-span">
+                                <span class="number-time_2">30</span>
+                                <span class="zone-spane">Sec</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Images section -->
+                <div class="loved-gallery">
+                    <!-- Scrollable images -->
+                    <div class="loved-scroller">
+                        <div class="loved-track">
+                            <!-- Scroll arrows on the left of Image 1 -->
+                            <div class="loved-arrows">
+                                <!-- Scroll left -->
+                                <button type="button" class="button-click">
+                                    <img src="./assets/icon-left.svg" alt="" class="arrow-icon" />
+                                </button>
+
+                                <!-- Scroll right -->
+                                <button type="button" class="button-click">
+                                    <img src="./assets/icon-right.svg" alt="" class="arrow-icon" />
+                                </button>
+                            </div>
+
+                            <!-- Image 1: big -->
+                            <div class="loved-slide-main">
+                                <img src="./assets/fasco-icon-section1.svg" alt="Fashion model 1"
+                                    class="loved-slide-main-img" />
+
+                                <!-- Image 1 content -->
+                                <div
+                                    class="loved-slide-caption">
+                                    <div class="loved-caption-row">
+                                        <span class="loved-caption-text">01</span>
+                                        <span class="loved-caption-line"></span>
+                                        <h6 class="loved-caption-text">
+                                            Spring Sale
+                                        </h6>
+                                    </div>
+
+                                    <p class="loved-caption-discount">
+                                        30% OFF
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Image 2 -->
+                            <div class="loved-slide">
+                                <img src="./assets/fasco-icon-section2.svg" alt="Fashion model 2"
+                                    class="loved-slide-img" />
+                                <div>
+                                    <!-- Scroll indicators under Image 2 -->
+                                    <div class="loved-dots">
+                                        <span
+                                            class="loved-dot-active">
+                                            <span class="loved-dot-active-inner"></span>
+                                        </span>
+                                        <span class="span"></span>
+                                        <span class="span"></span>
+                                        <span class="span"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Image 3 -->
+                            <div class="30% OFF">
+                                <img src="./assets/fasco-icon-section3.svg" alt="Fashion model 3" class="loved-slide-small-img" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
+        </section>
+        <!-- section 4: -->
+        <section class="newsletter-section">
 
-          <!-- div viewing -->
-          <div class="viewers-row">
-            <img src="./assets-product/icon-view.svg" alt="">
-            <span class="">24 <span>people are viewing this right now</span></span>
-          </div>
+            <div class="newsletter-row">
 
-          <!-- div time -->
-          <div class="sale-timer">
-            <div class="sale-timer-inner">
-              <h5 class="sale-timer-title">
-                Hurry up! Sale ends in:
-              </h5>
+                <!-- div 1: Left image -->
+                <div class="newsletter-side">
+                    <img src="./assets/fasco-section6-card1.svg" alt="">
+                </div>
 
-              <div class="sale-timer-digits">
-                <span class="number-time">02</span>
-                <span class="number-time">:</span>
-                <span class="number-time">06</span>
-                <span class="number-time">:</span>
-                <span class="number-time">05</span>
-                <span class="number-time">:</span>
-                <span class="number-time">30</span>
-              </div>
+                <!-- div 2: Center content -->
+                <div class="newsletter-center">
+
+                    <!-- Title and description -->
+                    <div class="newsletter-heading">
+
+                        <h3 class="newsletter-title">
+                            Subscribe To Our Newsletter
+                        </h3>
+
+                        <p class="newsletter-text">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            Scelerisque duis <br> ultrices sollicitudin aliquam sem.
+                            Scelerisque duis ultrices sollicitudin
+                        </p>
+
+                    </div>
+                    <!-- Email -->
+                    <div
+                        class="newsletter-email">
+
+                        <span class="newsletter-email-text">
+                            michael@ymail.com
+                        </span>
+
+                    </div>
+                    <div class="newsletter-btn-wrap">
+                        <button
+                            class="newsletter-btn">Subscribe
+                            Now</button>
+
+                    </div>
+                </div>
+
+                <!-- div 3: Right image -->
+                <div class="newsletter-side">
+                    <img src="./assets/fasco-section6-card2.svg" alt="">
+                </div>
             </div>
-          </div>
 
-          <!-- div stock -->
-          <div class="stock-block">
-            <span class="stock-text">Only <span>9</span> item(s)
-              left in stock!</span>
-            <div class="stock-bar">
-              <div class="stock-bar-fill"></div>
-            </div>
-          </div>
-
-          <!-- div size -->
-          <div class="size-block">
-            <span class="option-label">Size: M</span>
-
-            <div class="size-options">
-              <!-- Size M (active) -->
-              <div class="size-btn-active">
-                M
-              </div>
-              <!-- Size L -->
-              <div class="size-btn">
-                L
-              </div>
-              <!-- Size XL -->
-              <div class="size-btn">
-                XL
-              </div>
-              <!-- Size XXL -->
-              <div class="size-btn">
-                XXL
-              </div>
-            </div>
-          </div>
-
-          <!-- div color -->
-          <div class="color-block">
-            <span class="option-label">Color:
-              Blue</span>
-
-            <div class="color-options">
-              <!-- Color 1 (active) -->
-              <div class="swatch-active">
-                <div class="swatch-blue"></div>
-              </div>
-              <!-- Color 2 -->
-              <div class="swatch">
-                <div class="swatch-black"></div>
-              </div>
-              <!-- Color 3 -->
-              <div class="swatch">
-                <div class="swatch-pink"></div>
-              </div>
-            </div>
-          </div>
-
-          <!-- div quantity -->
-          <div class="quantity-block">
-            <span class="quantity-label">
-              Quantity
-            </span>
-            <div class="quantity-row">
-              <div class="quantity-picker">
-                <span class="qty-btn">-</span>
-                <span>1</span>
-                <span class="qty-btn">+</span>
-              </div>
-
-              <div class="add-to-cart-btn">
-                <span>Add to cart</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- div actions -->
-          <div class="product-actions">
-            <!-- first one -->
-            <div class="product-action">
-              <img src="./assets-product/icon-compare.svg" alt="icon compare">
-              <span class="span-thired">Compare</span>
-            </div>
-            <!-- second one -->
-            <div class="product-action">
-              <img src="./assets-product/icon-ask.svg" alt="icon ask">
-              <span class="span-thired">Ask a question</span>
-            </div>
-            <!-- last one -->
-            <div class="product-action">
-              <img src="./assets-product/icon-share.svg" alt="icon share">
-              <span class="span-thired">Share</span>
-            </div>
-          </div>
+        </section>
+    </main>
+    <!-- footer -->
+    <footer class="site-footer">
+        <div class="footer-top">
+            <h2 class="footer-logo">FASCO</h2>
+            <nav class="navbar footer-nav">
+                <a href="#" class="nav-name">Support Center</a>
+                <a href="#" class="nav-name">Invoicing</a>
+                <a href="#" class="nav-name">Contract</a>
+                <a href="#" class="nav-name">Careers</a>
+                <a href="#" class="nav-name">Blog</a>
+                <a href="#" class="nav-name">FAQ,s</a>
+            </nav>
         </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- gray overlay on the whole page (behind the cart), like Figma -->
-  <div class="cart-overlay"></div>
-
-  <!-- Shopping cart panel -->
-  <aside class="cart-panel">
-
-    <!-- close button -->
-    <button type="button" aria-label="Close cart" class="cart-close-btn">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="1.5"
-        stroke-linecap="round">
-        <path d="M5 5l14 14M19 5L5 19" />
-      </svg>
-    </button>
-
-    <!-- top: title + products -->
-    <div>
-      <h2 class="cart-title">Shopping Cart</h2>
-      <p class="cart-shipping-note">Buy <span class="cart-highlight">$122.35</span> More And Get <span
-          class="cart-highlight">Free Shipping</span></p>
-
-      <!-- product -->
-      <div class="cart-item">
-        <img src="./assets-product/Product-Image.svg" alt="Denim Jacket" class="cart-item-img">
-        <div>
-          <h5 class="cart-item-name">Denim Jacket</h5>
-          <p class="cart-item-color">Color : Red</p>
-          <span class="cart-item-price">$14.80</span>
-          <div class="cart-qty-picker">
-            <span class="qty-btn">-</span>
-            <span>1</span>
-            <span class="qty-btn">+</span>
-          </div>
+        <div class="footer-copyright">
+            <span>Copyright &copy; 2022 Xpro . All Rights Reseved.</span>
         </div>
-      </div>
-    </div>
-
-    <!-- bottom: pushed down with mt-auto -->
-    <div class="cart-bottom">
-      <!-- gift wrap -->
-      <label class="cart-gift">
-        <input type="checkbox" class="cart-gift-checkbox">
-        <span class="cart-gift-text">For <span class="cart-gift-price">$10.00</span> Please Wrap The Product</span>
-      </label>
-
-      <!-- subtotal -->
-      <div class="cart-subtotal">
-        <span class="span-button">Subtotal</span>
-        <span class="span-button">$100.00</span>
-      </div>
-
-      <!-- checkout -->
-      <button type="button" class="cart-checkout-btn">
-        Checkout
-      </button>
-
-      <!-- view cart -->
-      <a href="#" class="cart-view-link">
-        View Cart
-      </a>
-    </div>
-  </aside>
+    </footer>
 </body>
 
 </html>

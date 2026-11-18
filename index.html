@@ -2,19 +2,21 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com"/>
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-    <link href="https://fonts.cdnfonts.com/css/digital-numbers" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Volkhov:wght@400;700&family=Share+Tech+Mono&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.cdnfonts.com/css/digital-numbers" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Volkhov:wght@400;700&family=Share+Tech+Mono&display=swap"
+    rel="stylesheet" />
 
-    <title>Online Shopping</title>
-    <style type="text/tailwindcss">
-        @import "tailwindcss";
+  <title>Online Shopping</title>
+  <style type="text/tailwindcss">
+    @import "tailwindcss";
         @theme {
          /* colors */
          --color-heather-grey: #484848;
@@ -100,18 +102,6 @@
       }
       .span-crafter {
         @apply whitespace-nowrap font-poppins text-[12px] leading-[26px] text-heather-grey;
-      }
-      /* auto scroll card image  */
-      @keyframes scroll {
-        0% {
-          transform: translateX(0);
-        }
-        100% {
-          transform: translateX(-30%);
-        }
-      }
-      .auto-scroll {
-        animation: scroll 15s linear infinite alternate;
       }
       .span-picky{
         @apply absolute z-30 flex items-center justify-center w-[6.43%] h-[6.35%] border border-[#000000] bg-white/60 text-[11px] whitespace-nowrap;
@@ -220,80 +210,128 @@
       }
 
       /* ===== Deals of the month ===== */
+      /* --k = 1px on a 1920px screen (Figma size), it scales down with the screen
+         and with the browser zoom -> the section always looks like the design */
       .deals-section {
-        @apply space-y-[150px] pl-36 py-5 bg-gradient-to-b from-[#FFFFFF] to-[#FAFAFA];
+        --k: calc(min(100vw, 1920px) / 1920);
+        padding-left: calc(320 * var(--k) + (100vw - 1920 * var(--k)) / 2);
+        @apply py-[60px] bg-gradient-to-b from-[#FFFFFF] to-[#FAFAFA];
       }
       .deals-row {
-        @apply flex justify-between;
+        @apply flex flex-col gap-10 min-[991px]:flex-row min-[991px]:items-start;
+        column-gap: calc(120 * var(--k));
       }
       .deals-content {
-        @apply max-w-[444px];
+        @apply shrink-0 pr-6 min-[991px]:pr-0;
       }
       .deals-intro {
-        @apply mb-[50px];
+        margin-bottom: max(30px, 50 * var(--k));
       }
       .deals-title {
-        @apply mb-[20px] text-[46px] font-volkhov leading-[100%] text-heather-grey;
+        @apply font-volkhov leading-[100%] text-heather-grey;
+        font-size: max(28px, 46 * var(--k));
+        margin-bottom: max(12px, 20 * var(--k));
       }
       .deals-text {
-        @apply mb-[40px] text-[16px] text-grey-900 leading-[26px] font-poppins;
+        @apply font-poppins leading-[1.625] text-grey-900;
+        font-size: max(14px, 16 * var(--k));
+        margin-bottom: max(20px, 40 * var(--k));
       }
       .deals-buy-btn {
-        @apply bg-black-900 py-[20px] px-[60px] rounded-[10px] leading-[100%] text-white-900;
+        @apply bg-black-900 rounded-[10px] font-poppins leading-[100%] text-white-900 cursor-pointer transition-colors hover:bg-black-900/70 shadow-[0_20px_35px_0_#00000026];
+        font-size: max(14px, 16 * var(--k));
+        padding: max(14px, 20 * var(--k)) max(36px, 60 * var(--k));
       }
       .deals-countdown-title {
-        @apply font-poppins font-medium text-[28px] leading-[100%] text-heather-grey mb-[15px];
+        @apply font-poppins font-medium leading-[100%] text-heather-grey;
+        font-size: max(20px, 28 * var(--k));
+        margin-bottom: max(10px, 15 * var(--k));
       }
       .deals-countdown {
-        @apply flex justify-between items-center;
+        @apply flex justify-between items-center gap-3;
       }
+      .deals-countdown .div-span {
+        padding: max(8px, 12 * var(--k)) max(14px, 22 * var(--k));
+      }
+      .deals-countdown .number-time {
+        font-size: max(20px, 32 * var(--k));
+      }
+      .deals-countdown .zone-span {
+        font-size: max(14px, 24 * var(--k));
+      }
+
+      /* ----- images ----- */
       .deals-gallery {
-        @apply relative w-[600px] shrink-0;
+        @apply relative min-w-0 flex-1 max-[990px]:pb-16;
       }
       .deals-scroller {
-        @apply overflow-x-auto [scrollbar-width:none];
+        @apply overflow-x-auto overflow-y-hidden [scrollbar-width:none];
       }
       .deals-scroller::-webkit-scrollbar {  /* = [&::-webkit-scrollbar]:hidden */
         display: none;
       }
       .deals-track {
-        @apply flex items-start gap-5 w-max;
+        @apply flex items-start w-max;
+        gap: calc(24 * var(--k));
       }
+      /* arrows : left of image 1, aligned with its bottom */
       .deals-arrows {
-        @apply absolute top-[560px] -left-29 z-10 flex gap-3 -translate-y-1/2;
+        @apply absolute z-10 flex gap-3 -translate-y-full;
+        top: calc(582 * var(--k));
+        right: calc(100% + 24 * var(--k));
+      }
+      .deals-arrows .button-click {
+        width: max(36px, 48 * var(--k));
+        height: max(36px, 48 * var(--k));
       }
       .arrow-icon {
         @apply h-5 w-5;
       }
+      /* image 1 : 404 x 582 */
       .deals-slide-main {
         @apply shrink-0 relative;
+        width: calc(404 * var(--k));
+        height: calc(582 * var(--k));
       }
       .deals-slide-main-img {
-        @apply w-full h-[582px] object-cover;
+        @apply size-full object-cover;
       }
       .deals-slide-caption {
-        @apply absolute bottom-[24px] left-[24px] w-fit p-4 bg-[#FFFFFF]/80 backdrop-blur-[7px];
+        @apply absolute w-fit bg-[#FFFFFF]/80 backdrop-blur-[7px];
+        left: calc(24 * var(--k));
+        bottom: calc(24 * var(--k));
+        padding: max(10px, 16 * var(--k)) max(12px, 20 * var(--k));
       }
       .deals-caption-row {
-        @apply flex items-center gap-3;
+        @apply flex items-center;
+        gap: max(8px, 12 * var(--k));
       }
       .deals-caption-text {
-        @apply font-poppins text-[16px] text-heather-grey;
+        @apply font-poppins leading-none text-heather-grey whitespace-nowrap;
+        font-size: max(11px, 16 * var(--k));
       }
       .deals-caption-line {
-        @apply w-[40px] h-[1px] bg-heather-grey;
+        @apply h-[1px] bg-heather-grey;
+        width: max(20px, 40 * var(--k));
       }
       .deals-caption-discount {
-        @apply mt-2 font-poppins text-[28px] font-semibold text-black-900;
+        @apply font-poppins font-semibold leading-none text-black-900 whitespace-nowrap;
+        margin-top: max(6px, 10 * var(--k));
+        font-size: max(18px, 28 * var(--k));
       }
+      /* image 2 : 372 x 486 */
       .deals-slide {
         @apply relative shrink-0;
+        width: calc(372 * var(--k));
       }
       .deals-slide-img {
-        @apply w-full h-[486px] object-cover;
+        @apply w-full object-cover;
+        height: calc(486 * var(--k));
       }
+      /* dots : under image 2, at the level of the bottom of image 1 */
       .deals-dots {
-        @apply absolute -bottom-[60px] left-[10px] flex items-center gap-2;
+        @apply absolute left-0 flex items-center gap-2;
+        top: calc(582 * var(--k) - 16px);
       }
       .deals-dot-active {
         @apply w-4 h-4 rounded-full border border-black-900 bg-white flex items-center justify-center;
@@ -301,8 +339,43 @@
       .deals-dot-active-inner {
         @apply w-2 h-2 rounded-full bg-black-900;
       }
+      /* image 3 : same height as image 2, cut by the right edge of the screen */
+      .deals-slide-last {
+        @apply relative shrink-0;
+      }
       .deals-slide-small-img {
-        @apply h-[350px];
+        @apply w-auto max-w-none;
+        height: calc(486 * var(--k));
+      }
+
+      @media (min-width: 991px) {
+        .deals-content {
+          width: max(320px, 444 * var(--k));
+        }
+      }
+      /* small laptops (< 1200px) : the text is taller than image 1 -> arrows go under image 1 */
+      @media (max-width: 1199px) {
+        .deals-gallery {
+          @apply pb-16;
+        }
+        .deals-arrows {
+          @apply left-0 right-auto translate-y-0;
+          top: calc(582 * var(--k) + 16px);
+        }
+        .deals-dots {
+          top: calc(486 * var(--k) + 16px);
+        }
+      }
+      /* phones / tablets (< 991px) : stacked, fixed scale */
+      @media (max-width: 990px) {
+        .deals-section {
+          --k: 0.6px;
+          padding-left: 24px;
+        }
+        .deals-arrows {
+          @apply left-0 right-auto translate-y-0;
+          top: calc(582 * var(--k) + 16px);
+        }
       }
 
       /* ===== New arrivals ===== */
@@ -469,14 +542,42 @@
       .insta-text {
         @apply font-poppins text-[16px] leading-[26px] text-grey-900;
       }
+      /* full width strip (left edge -> right edge), same look at every zoom:
+         each card = 1/5.5 of the visible width, so ~5.5 cards are always on screen */
+      /* full width until 50% zoom (3840px = 1920px screen at 50%),
+         below 50% zoom the strip stops growing and stays centered */
       .insta-viewport {
-        @apply overflow-hidden mt-[100px] mx-auto max-w-[1240px] flex flex-col justify-center;
+        @apply overflow-hidden mt-[100px] w-full max-w-[3840px] mx-auto;
+        container-type: inline-size;   /* 100cqw = visible width of the strip */
       }
       .insta-track {
-        @apply flex w-max;
+        @apply flex w-max items-center;
+        animation: insta-marquee 45s linear infinite;
       }
-      .insta-img-offset {
-        @apply py-[30px];
+      .insta-viewport:hover .insta-track {
+        animation-play-state: paused;
+      }
+      .insta-card {
+        @apply shrink-0;
+        width: calc(100cqw / 5.5);
+      }
+      .insta-card img {
+        @apply block w-full object-cover;
+        aspect-ratio: 349 / 518;   /* tall cards */
+      }
+      .insta-card-short img {
+        aspect-ratio: 349 / 420;   /* short cards */
+      }
+      /* the images are written 2 times -> moving by -50% loops with no gap */
+      @keyframes insta-marquee {
+        from { transform: translateX(0); }
+        to   { transform: translateX(-50%); }
+      }
+      @media (max-width: 990px) {
+        .insta-card { width: calc(100cqw / 2.5); }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .insta-track { animation: none; }
       }
 
       /* ===== Customer reviews ===== */
@@ -617,746 +718,749 @@
 </head>
 
 <body class="page-body">
-    <!-- Header -->
-    <header id="top" class="header">
-        <!-- Logo -->
-        <a href="#" aria-label="FASCO home" class="logo-link">
-            <h1>
-                FASCO
-            </h1>
-        </a>
+  <!-- Header -->
+  <header id="top" class="header">
+    <!-- Logo -->
+    <a href="#" aria-label="FASCO home" class="logo-link">
+      <h1>
+        FASCO
+      </h1>
+    </a>
 
-        <!-- Navigation -->
-        <nav class="navbar nav-main">
-            <a href="#home" class="nav-name">Home</a>
-            <a href="#Deals" class="nav-name">Deals</a>
-            <a href="#arrivale" class="nav-name">New Arrivals</a>
-            <a href="#package" class="nav-name">Packages</a>
-            <a href="signin.html" class="nav-name">Sign in</a>
-            <a href="sign up.html" class="btn-black span-head">
-                Sign Up
+    <!-- Navigation -->
+    <nav class="navbar nav-main">
+      <a href="#home" class="nav-name">Home</a>
+      <a href="#Deals" class="nav-name">Deals</a>
+      <a href="#arrivale" class="nav-name">New Arrivals</a>
+      <a href="#package" class="nav-name">Packages</a>
+      <a href="signin.html" class="nav-name">Sign in</a>
+      <a href="sign up.html" class="btn-black span-head">
+        Sign Up
+      </a>
+    </nav>
+  </header>
+  <!-- main  -->
+  <main>
+    <section class="main-section-1">
+      <div class="hero-grid">
+        <div class="hero-card hero-card-tall">
+          <img class="hero-side-img" src="./assets/fasco-icon-main1.svg"
+            alt="Man in grey sweater sitting on a wooden crate" />
+        </div>
+
+        <div class="hero-center">
+          <div class="hero-banner-top">
+            <img class="hero-banner-img" src="./assets/fasco-icon-main2.svg" alt="Four women posing together" />
+          </div>
+
+          <div class="hero-title-wrap">
+            <h2 class="hero-title">
+              ULTIMATE
+            </h2>
+            <p class="outline-text hero-sale">
+              SALE
+            </p>
+            <p class="hero-subtitle">
+              NEW COLLECTION
+            </p>
+            <a href="#" class="btn-black hero-shop-btn">
+              SHOP NOW
             </a>
-        </nav>
-    </header>
-    <!-- main  -->
-    <main>
-        <section class="main-section-1">
-            <div class="hero-grid">
-                <div class="hero-card hero-card-tall">
-                    <img class="hero-side-img" src="./assets/fasco-icon-main1.svg"
-                        alt="Man in grey sweater sitting on a wooden crate" />
-                </div>
+          </div>
 
-                <div class="hero-center">
-                    <div class="hero-banner-top">
-                        <img class="hero-banner-img" src="./assets/fasco-icon-main2.svg"
-                            alt="Four women posing together" />
-                    </div>
+          <div class="hero-banner-bottom">
+            <img class="hero-banner-img" src="./assets/fasco-icon-main3.svg" alt="Two smiling women" />
+          </div>
+        </div>
 
-                    <div class="hero-title-wrap">
-                        <h2 class="hero-title">
-                            ULTIMATE
-                        </h2>
-                        <p class="outline-text hero-sale">
-                            SALE
-                        </p>
-                        <p class="hero-subtitle">
-                            NEW COLLECTION
-                        </p>
-                        <a href="#" class="btn-black hero-shop-btn">
-                            SHOP NOW
-                        </a>
-                    </div>
+        <div class="hero-card hero-card-tall">
+          <img class="hero-side-img" src="./assets/fasco-icon-main4.svg"
+            alt="Man in rust turtleneck sitting on a stool" />
+        </div>
+      </div>
+    </section>
+    <!-- image shop and return to top  -->
+    <div class="floating-actions">
+      <button type="button" class="floating-cart-btn">
+        <img src="./assets/icon-shoping.svg" alt="icon shoping" class="floating-cart-icon" />
+      </button>
 
-                    <div class="hero-banner-bottom">
-                        <img class="hero-banner-img" src="./assets/fasco-icon-main3.svg" alt="Two smiling women" />
-                    </div>
-                </div>
+      <a href="#" class="floating-top-btn">
+        <img class="floating-top-icon" src="./assets/icon-top.svg" alt="icon return to top" />
+      </a>
+    </div>
 
-                <div class="hero-card hero-card-tall">
-                    <img class="hero-side-img" src="./assets/fasco-icon-main4.svg"
-                        alt="Man in rust turtleneck sitting on a stool" />
-                </div>
+    <section class="brands-section">
+      <ul class="brands-list">
+        <li>
+          <img src="./assets/chanel-logo.svg" alt="CHANEL" class="brand-logo-lg" />
+        </li>
+        <li>
+          <img src="./assets/luis-vuitton-logo.svg" alt="Louis Vuitton" class="brand-logo" />
+        </li>
+        <li>
+          <img src="./assets/prada-logo.svg" alt="PRADA" class="brand-logo-xl" />
+        </li>
+        <li>
+          <img src="./assets/calvin-klein-logo.svg" alt="Calvin Klein" class="brand-logo" />
+        </li>
+        <li>
+          <img src="./assets/denim-logo.svg" alt="DENIM" class="brand-logo" />
+        </li>
+      </ul>
+    </section>
+    <!-- section 3: -->
+    <section id="Deals" class="deals-section">
+      <div class="deals-row">
+        <div class="deals-content">
+          <div class="deals-intro">
+            <h2 class="deals-title">
+              Deals Of The Month
+            </h2>
+            <p class="deals-text">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Scelerisque duis ultrices sollicitudin aliquam sem. Scelerisque
+              duis ultrices sollicitudin
+            </p>
+            <button type="button" class="deals-buy-btn">
+              Buy Now
+            </button>
+          </div>
+          <div>
+            <h4 class="deals-countdown-title">
+              Hurry, Before It’s Too Late!</h4>
+            <div class="deals-countdown">
+
+              <div class="div-span">
+                <span class="number-time">02</span>
+                <span class="zone-span">Days</span>
+              </div>
+
+              <div class="div-span">
+                <span class="number-time">06</span>
+                <span class="zone-span">Hr</span>
+              </div>
+
+              <div class="div-span">
+                <span class="number-time">05</span>
+                <span class="zone-span">Mins</span>
+              </div>
+
+              <div class="div-span">
+                <span class="number-time">30</span>
+                <span class="zone-span">Sec</span>
+              </div>
             </div>
-        </section>
-        <!-- image shop and return to top  -->
-        <div class="floating-actions">
-            <button type="button" class="floating-cart-btn">
-                <img src="./assets/icon-shoping.svg" alt="icon shoping" class="floating-cart-icon" />
+          </div>
+        </div>
+
+        <!-- Images section -->
+        <div class="deals-gallery">
+          <!-- Scrollable images -->
+          <div class="deals-scroller">
+            <div class="deals-track">
+              <!-- Scroll arrows on the left of Image 1 -->
+              <div class="deals-arrows">
+                <!-- Scroll left -->
+                <button type="button" class="button-click">
+                  <img src="./assets/icon-left.svg" alt="" class="arrow-icon" />
+                </button>
+
+                <!-- Scroll right -->
+                <button type="button" class="button-click">
+                  <img src="./assets/icon-right.svg" alt="" class="arrow-icon" />
+                </button>
+              </div>
+
+              <!-- Image 1: big -->
+              <div class="deals-slide-main">
+                <img src="./assets/fasco-icon-section1.svg" alt="Fashion model 1" class="deals-slide-main-img" />
+
+                <!-- Image 1 content -->
+                <div class="deals-slide-caption">
+                  <div class="deals-caption-row">
+                    <span class="deals-caption-text">01</span>
+                    <span class="deals-caption-line"></span>
+                    <h6 class="deals-caption-text">
+                      Spring Sale
+                    </h6>
+                  </div>
+
+                  <p class="deals-caption-discount">
+                    30% OFF
+                  </p>
+                </div>
+              </div>
+
+              <!-- Image 2 -->
+              <div class="deals-slide">
+                <img src="./assets/fasco-icon-section2.svg" alt="Fashion model 2" class="deals-slide-img" />
+                <div>
+                  <!-- Scroll indicators under Image 2 -->
+                  <div class="deals-dots">
+                    <span class="deals-dot-active">
+                      <span class="deals-dot-active-inner"></span>
+                    </span>
+                    <span class="span"></span>
+                    <span class="span"></span>
+                    <span class="span"></span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Image 3 -->
+              <div class="deals-slide-last">
+                <img src="./assets/fasco-icon-section3.svg" alt="Fashion model 3" class="deals-slide-small-img" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- section 4: -->
+    <section class="arrivals-section">
+      <div class="arrivals-container">
+        <div class="arrivals-header">
+          <div class="arrivals-heading">
+            <h3 class="arrivals-title">
+              New Arrivals
+            </h3>
+            <p class="arrivals-text">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Scelerisque duis ultrices sollicitudin aliquam sem. Scelerisque
+              duis ultrices sollicitudin
+            </p>
+          </div>
+        </div>
+        <div class="arrivals-filters">
+          <button class="button-arrival">Men’s Fashion</button>
+          <button class="button-shadow">Women’s Fashion</button>
+          <button class="button-arrival">Women Accessories</button>
+          <button class="button-arrival">Men Accessories</button>
+          <button class="button-arrival">Discount Deals</button>
+        </div>
+        <div class="div-cards">
+          <!-- card 1 -->
+          <div class="card">
+            <div>
+              <img src="./assets/fasco-icon-section2-1.svg" alt="" />
+            </div>
+            <div class="div-spanCard">
+              <div>
+                <h4 class="text-card">Shiny Dress</h4>
+                <span class="card-brand">Al Karam</span>
+              </div>
+              <div class="card-stars">
+                <span><img src="./assets/icon-star.svg" alt="icon-star" /></span>
+                <span><img src="./assets/icon-star.svg" alt="icon-star" /></span>
+                <span><img src="./assets/icon-star.svg" alt="icon-star" /></span>
+                <span><img src="./assets/icon-star.svg" alt="icon-star" /></span>
+                <span><img src="./assets/icon-star.svg" alt="icon-star" /></span>
+              </div>
+            </div>
+            <div class="card-reviews">
+              <span class="span-text">(4.1k) Customer Reviews</span>
+            </div>
+
+            <div class="card-footer">
+              <span class="span-prix">$95.50</span>
+              <span class="span-sold">Almost Sold Out</span>
+            </div>
+          </div>
+          <!-- card 2 -->
+          <div class="card">
+            <div>
+              <img src="./assets/fasco-icon-section2-2.svg" alt="" />
+            </div>
+            <div class="div-spanCard">
+              <div>
+                <h4 class="text-card">Long Dress</h4>
+                <span class="card-brand">Al Karam</span>
+              </div>
+              <!-- div 5 star -->
+              <div class="card-stars">
+                <span><img src="./assets/icon-star.svg" alt="icon-star" /></span>
+                <span><img src="./assets/icon-star.svg" alt="icon-star" /></span>
+                <span><img src="./assets/icon-star.svg" alt="icon-star" /></span>
+                <span><img src="./assets/icon-star.svg" alt="icon-star" /></span>
+                <span><img src="./assets/icon-star.svg" alt="icon-star" /></span>
+              </div>
+            </div>
+            <div class="card-reviews">
+              <span class="span-text">(4.1k) Customer Reviews</span>
+            </div>
+
+            <div class="card-footer">
+              <span class="span-prix">$95.50</span>
+              <span class="span-sold">Almost Sold Out</span>
+            </div>
+          </div>
+          <!-- card 3 -->
+          <div class="card">
+            <div>
+              <img src="./assets/fasco-icon-section2-3.svg" alt="" />
+            </div>
+            <div class="div-spanCard">
+              <div>
+                <h4 class="text-card">Full Sweater</h4>
+                <span class="card-brand">Al Karam</span>
+              </div>
+              <!-- div 5 star -->
+              <div class="card-stars">
+                <span><img src="./assets/icon-star.svg" alt="icon-star" /></span>
+                <span><img src="./assets/icon-star.svg" alt="icon-star" /></span>
+                <span><img src="./assets/icon-star.svg" alt="icon-star" /></span>
+                <span><img src="./assets/icon-star.svg" alt="icon-star" /></span>
+                <span><img src="./assets/icon-star.svg" alt="icon-star" /></span>
+              </div>
+            </div>
+            <div class="card-reviews">
+              <span class="span-text">(4.1k) Customer Reviews</span>
+            </div>
+
+            <div class="card-footer">
+              <span class="span-prix">$95.50</span>
+              <span class="span-sold">Almost Sold Out</span>
+            </div>
+          </div>
+          <!-- card 4 -->
+          <div class="card">
+            <div>
+              <img src="./assets/fasco-icon-section2-4.svg" alt="" />
+            </div>
+            <div class="div-spanCard">
+              <div>
+                <h4 class="text-card">White Dress</h4>
+                <span class="card-brand">Al Karam</span>
+              </div>
+              <!-- div 5 star -->
+              <div class="card-stars">
+                <span><img src="./assets/icon-star.svg" alt="icon-star" /></span>
+                <span><img src="./assets/icon-star.svg" alt="icon-star" /></span>
+                <span><img src="./assets/icon-star.svg" alt="icon-star" /></span>
+                <span><img src="./assets/icon-star.svg" alt="icon-star" /></span>
+                <span><img src="./assets/icon-star.svg" alt="icon-star" /></span>
+              </div>
+            </div>
+            <div class="card-reviews">
+              <span class="span-text">(4.1k) Customer Reviews</span>
+            </div>
+
+            <div class="card-footer">
+              <span class="span-prix">$95.50</span>
+              <span class="span-sold">Almost Sold Out</span>
+            </div>
+          </div>
+          <!-- card 5 -->
+          <div class="card">
+            <div>
+              <img src="./assets/fasco-icon-section2-5.svg" alt="" />
+            </div>
+            <div class="div-spanCard">
+              <div>
+                <h4 class="text-card">Colorful Dress</h4>
+                <span class="card-brand">Al Karam</span>
+              </div>
+              <!-- div 5 star -->
+              <div class="card-stars">
+                <span><img src="./assets/icon-star.svg" alt="icon-star" /></span>
+                <span><img src="./assets/icon-star.svg" alt="icon-star" /></span>
+                <span><img src="./assets/icon-star.svg" alt="icon-star" /></span>
+                <span><img src="./assets/icon-star.svg" alt="icon-star" /></span>
+                <span><img src="./assets/icon-star.svg" alt="icon-star" /></span>
+              </div>
+            </div>
+            <div class="card-reviews">
+              <span class="span-text">(4.1k) Customer Reviews</span>
+            </div>
+
+            <div class="card-footer">
+              <span class="span-prix">$95.50</span>
+              <span class="span-sold">Almost Sold Out</span>
+            </div>
+          </div>
+          <!-- card 6 -->
+          <div class="card">
+            <div>
+              <img src="./assets/fasco-icon-section2-6.svg" alt="" />
+            </div>
+            <div class="div-spanCard">
+              <div>
+                <h4 class="text-card">White Shirt</h4>
+                <span class="card-brand">Al Karam</span>
+              </div>
+              <!-- div 5 star -->
+              <div class="card-stars">
+                <span><img src="./assets/icon-star.svg" alt="icon-star" /></span>
+                <span><img src="./assets/icon-star.svg" alt="icon-star" /></span>
+                <span><img src="./assets/icon-star.svg" alt="icon-star" /></span>
+                <span><img src="./assets/icon-star.svg" alt="icon-star" /></span>
+                <span><img src="./assets/icon-star.svg" alt="icon-star" /></span>
+              </div>
+            </div>
+            <div class="card-reviews">
+              <span class="span-text">(4.1k) Customer Reviews</span>
+            </div>
+
+            <div class="card-footer">
+              <span class="span-prix">$95.50</span>
+              <span class="span-sold">Almost Sold Out</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="arrivals-more-btn">
+        View More
+      </button>
+    </section>
+    <!-- section 5: -->
+    <section class="peaky-section">
+      <!-- PRODUCT-->
+      <div class="peaky-wrapper">
+
+        <!-- gray diagonal panel (desktop) -->
+        <div class="peaky-diagonal-panel">
+        </div>
+        <!-- diagonal line (desktop) -->
+        <svg class="peaky-diagonal-line" viewBox="0 0 945 280" preserveAspectRatio="none">
+          <line x1="520" y1="0" x2="428" y2="280" stroke="#000" stroke-width="1.5" vector-effect="non-scaling-stroke" />
+        </svg>
+
+        <!-- model (mobile only) -->
+        <img src="./assets/fasco-icon-section-3.svg" alt="Woman wearing the Peaky Blinders outfit"
+          class="peaky-model-mobile" />
+
+        <!-- model + annotations (desktop): inset 5% = space around, everything scales together -->
+        <div class="peaky-model-zone">
+          <!-- image (model + black shapes) -->
+          <img src="./assets/fasco-icon-section-3.svg" alt="Woman wearing the Peaky Blinders outfit"
+            class="peaky-model-img" />
+
+          <!-- annotation lines -->
+          <svg class="peaky-annotations" viewBox="0 0 945 280" preserveAspectRatio="none">
+            <g fill="none" stroke="#4a4a4a" stroke-width="1">
+              <!-- Flat Cap -->
+              <polyline points="259,15 294,15 306,28" vector-effect="non-scaling-stroke" />
+              <!-- Suspender -->
+              <polyline points="218,70 154,70 143,82" vector-effect="non-scaling-stroke" />
+              <!-- Hugo Boss (right) -->
+              <polyline points="236,102 271,102 282,114" vector-effect="non-scaling-stroke" />
+              <!-- Hugo Boss (left) -->
+              <polyline points="197,149 133,149 122,161" vector-effect="non-scaling-stroke" />
+              <!-- Santoni -->
+              <polyline points="238,232 272,232 283,245" vector-effect="non-scaling-stroke" />
+            </g>
+          </svg>
+
+          <!-- circles -->
+          <span class="span-circle circle-flat-cap"></span>
+          <span class="span-circle circle-suspender"></span>
+          <span class="span-circle circle-hugo-right"></span>
+          <span class="span-circle circle-hugo-left"></span>
+          <span class="span-circle circle-santoni"></span>
+
+          <!-- labels -->
+          <span class="span-picky label-flat-cap">Flat Cap</span>
+          <span class="span-picky label-suspender">Suspender</span>
+          <span class="span-picky label-hugo-right">Hugo Boss</span>
+          <span class="span-picky label-hugo-left">Hugo Boss</span>
+          <span class="span-picky label-santoni">Santoni</span>
+        </div>
+
+        <!-- product info (your sizes) : stacked under the image < 991px, on the gray panel >= 991px -->
+        <div class="peaky-info">
+          <span class="peaky-collection">Women Collection</span>
+          <h2 class="peaky-title">Peaky Blinders</h2>
+          <h3 class="peaky-desc-title">DESCRIPTION</h3>
+          <p class="peaky-desc">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Scelerisque duis ultrices sollicitudin
+            aliquam sem. Scelerisque duis ultrices sollicitudin. Lorem ipsum dolor sit amet, consectetur
+            adipiscing elit. Scelerisque duis.
+          </p>
+          <div class="peaky-size-row">
+            <span class="peaky-size-label">Size:</span>
+            <span class="peaky-size-badge">M</span>
+          </div>
+          <p class="peaky-price">
+            <span class="peaky-price-int">$100</span><span class="peaky-price-dec">.00</span>
+          </p>
+          <button type="button" class="peaky-buy-btn">
+            Buy Now
+          </button>
+        </div>
+      </div>
+
+      <!-- FEATURES -->
+      <div class="features-row">
+        <div class="feature-item">
+          <img src="./assets/icon-section3-1.svg" alt="High Quality icon" class="feature-icon" />
+          <div class="feature-text">
+            <span class="span-quality">High Quality</span>
+            <span class="span-crafter">crafted from top materials</span>
+          </div>
+        </div>
+        <div class="feature-item">
+          <img src="./assets/icon-section3-2.svg" alt="Warranty Protection icon" class="feature-icon" />
+          <div class="feature-text">
+            <span class="span-quality">Warranty Protection</span>
+            <span class="span-crafter">Over 2 years</span>
+          </div>
+        </div>
+        <div class="feature-item">
+          <img src="./assets/icon-section3-3.svg" alt="Free Shipping icon" class="feature-icon" />
+          <div class="feature-text">
+            <span class="span-quality">Free Shipping</span>
+            <span class="span-crafter">Order over 150 $</span>
+          </div>
+        </div>
+        <div class="feature-item">
+          <img src="./assets/icon-section3-4.svg" alt="24/7 Support icon" class="feature-icon" />
+          <div class="feature-text">
+            <span class="span-quality">24 / 7 Support</span>
+            <span class="span-crafter">Dedicated support</span>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- section 6: -->
+    <section class="insta-section">
+      <div class="insta-container">
+        <div class="insta-header">
+          <div class="insta-heading">
+            <h3 class="insta-title">
+              Follow Us On Instagram
+            </h3>
+            <p class="insta-text">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Scelerisque duis ultrices sollicitudin aliquam sem. Scelerisque
+              duis ultrices sollicitudin
+            </p>
+          </div>
+        </div>
+
+        <div class="insta-viewport">
+          <div class="insta-track">
+            <!-- images 1 -> 7 -->
+            <div class="insta-card insta-card-short">
+              <img src="./assets/fasco-section4-image-1.svg" alt="Fashion collection card 1" />
+            </div>
+            <div class="insta-card">
+              <img src="./assets/fasco-section4-image-2.svg" alt="Fashion collection card 2" />
+            </div>
+            <div class="insta-card insta-card-short">
+              <img src="./assets/fasco-section4-image-3.svg" alt="Fashion collection card 3" />
+            </div>
+            <div class="insta-card">
+              <img src="./assets/fasco-section4-image-4.svg" alt="Fashion collection card 4" />
+            </div>
+            <div class="insta-card insta-card-short">
+              <img src="./assets/fasco-section4-image-5.svg" alt="Fashion collection card 5" />
+            </div>
+            <div class="insta-card">
+              <img src="./assets/fasco-section4-image-6.svg" alt="Fashion collection card 6" />
+            </div>
+            <div class="insta-card insta-card-short">
+              <img src="./assets/fasco-section4-image-7.svg" alt="Fashion collection card 7" />
+            </div>
+
+            <!-- same images again (for the infinite loop, hidden from screen readers) -->
+            <div class="contents" aria-hidden="true">
+            <div class="insta-card insta-card-short">
+              <img src="./assets/fasco-section4-image-1.svg" alt="" />
+            </div>
+            <div class="insta-card">
+              <img src="./assets/fasco-section4-image-2.svg" alt="" />
+            </div>
+            <div class="insta-card insta-card-short">
+              <img src="./assets/fasco-section4-image-3.svg" alt="" />
+            </div>
+            <div class="insta-card">
+              <img src="./assets/fasco-section4-image-4.svg" alt="" />
+            </div>
+            <div class="insta-card insta-card-short">
+              <img src="./assets/fasco-section4-image-5.svg" alt="" />
+            </div>
+            <div class="insta-card">
+              <img src="./assets/fasco-section4-image-6.svg" alt="" />
+            </div>
+            <div class="insta-card insta-card-short">
+              <img src="./assets/fasco-section4-image-7.svg" alt="" />
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- section 7: -->
+    <section class="reviews-section">
+      <div class="reviews-container">
+        <div class="reviews-heading">
+          <h3 class="reviews-title">
+            This Is What Our Customers Say
+          </h3>
+          <p class="reviews-text">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Scelerisque duis
+          </p>
+        </div>
+        <!-- div cards  -->
+        <div class="reviews-stage">
+          <div class="reviews-cards">
+            <!-- card 1 -->
+            <div class="review-card-back">
+              <div class="review-card-back-inner">
+                <div class="review-photo-bg"></div>
+                <div class="review-photo">
+                  <img src="./assets/fasco-section5-card2.svg" alt="fasco image" />
+                </div>
+              </div>
+            </div>
+            <!-- card 2 -->
+            <div class="review-card-right">
+              <div class="review-card-right-inner">
+                <div class="review-photo-bg"></div>
+                <div class="review-photo">
+                  <img src="./assets/fasco-section5-card2.svg" alt="fasco image" />
+                </div>
+                <div>
+                  <p class="review-quote-sm">
+                    "You won't regret it. I would like to personally thank you
+                    for your outstanding product. Absolutely wonderful!"
+                  </p>
+                  <div class="review-stars-sm">
+                    <span><img src="./assets/icon-star.svg" alt="icon-star" /></span>
+                    <span><img src="./assets/icon-star.svg" alt="icon-star" /></span>
+                    <span><img src="./assets/icon-star.svg" alt="icon-star" /></span>
+                    <span><img src="./assets/icon-star.svg" alt="icon-star" /></span>
+                    <span><img src="./assets/icon-star.svg" alt="icon-star" /></span>
+                  </div>
+                  <div class="review-divider"></div>
+                  <div class="review-author">
+                    <h5 class="review-name-sm">
+                      Megen W.
+                    </h5>
+                    <span class="review-role-sm">UI
+                      Designer</span>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            <!-- card 3 -->
+            <div class="review-card-main">
+              <div class="review-card-main-inner">
+                <div class="review-photo-bg-lg"></div>
+                <div class="review-photo">
+                  <img src="./assets/fasco-section5-card1.svg" alt="fasco image" />
+                </div>
+                <div>
+                  <p class="review-quote">
+                    "You won't regret it. I would like to personally thank you
+                    for your outstanding product. Absolutely wonderful!"
+                  </p>
+                  <div class="review-stars">
+                    <span><img src="./assets/icon-star.svg" alt="icon-star" /></span>
+                    <span><img src="./assets/icon-star.svg" alt="icon-star" /></span>
+                    <span><img src="./assets/icon-star.svg" alt="icon-star" /></span>
+                    <span><img src="./assets/icon-star.svg" alt="icon-star" /></span>
+                    <span><img src="./assets/icon-star.svg" alt="icon-star" /></span>
+                  </div>
+                  <div class="review-divider"></div>
+                  <div class="review-author">
+                    <h5 class="review-name">
+                      James K.
+                    </h5>
+                    <span class="review-role">Traveler</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Scroll arrows on the left of Image 1 -->
+          <div class="reviews-arrows">
+            <!-- Scroll left -->
+            <button type="button" class="button-click">
+              <img src="./assets/icon-left.svg" alt="" class="arrow-icon" />
             </button>
 
-            <a href="#" class="floating-top-btn">
-                <img class="floating-top-icon" src="./assets/icon-top.svg" alt="icon return to top" />
-            </a>
-        </div>
-
-        <section class="brands-section">
-            <ul class="brands-list">
-                <li>
-                    <img src="./assets/chanel-logo.svg" alt="CHANEL" class="brand-logo-lg" />
-                </li>
-                <li>
-                    <img src="./assets/luis-vuitton-logo.svg" alt="Louis Vuitton" class="brand-logo" />
-                </li>
-                <li>
-                    <img src="./assets/prada-logo.svg" alt="PRADA" class="brand-logo-xl" />
-                </li>
-                <li>
-                    <img src="./assets/calvin-klein-logo.svg" alt="Calvin Klein" class="brand-logo" />
-                </li>
-                <li>
-                    <img src="./assets/denim-logo.svg" alt="DENIM" class="brand-logo" />
-                </li>
-            </ul>
-        </section>
-        <!-- section 3: -->
-        <section class="deals-section">
-            <div class="deals-row">
-                <div class="deals-content">
-                    <div class="deals-intro">
-                        <h2 class="deals-title">
-                            Deals Of The Month
-                        </h2>
-                        <p class="deals-text">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                            Scelerisque duis ultrices sollicitudin aliquam sem. Scelerisque
-                            duis ultrices sollicitudin
-                        </p>
-                        <button class="deals-buy-btn">
-                            Buy Now
-                        </button>
-                    </div>
-                    <div>
-                        <h4 class="deals-countdown-title">
-                            Hurry, Before It’s Too Late!</h4>
-                        <div class="deals-countdown">
-
-                            <div class="div-span">
-                                <span class="number-time">02</span>
-                                <span class="zone-spane">Days</span>
-                            </div>
-
-                            <div class="div-span">
-                                <span class="number-time">06</span>
-                                <span class="zone-spane">Hr</span>
-                            </div>
-
-                            <div class="div-span">
-                                <span class="number-time">05</span>
-                                <span class="zone-spane">Mins</span>
-                            </div>
-
-                            <div class="div-span">
-                                <span class="number-time">30</span>
-                                <span class="zone-spane">Sec</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Images section -->
-                <div class="deals-gallery">
-                    <!-- Scrollable images -->
-                    <div class="deals-scroller">
-                        <div class="deals-track">
-                            <!-- Scroll arrows on the left of Image 1 -->
-                            <div class="deals-arrows">
-                                <!-- Scroll left -->
-                                <button type="button" class="button-click">
-                                    <img src="./assets/icon-left.svg" alt="" class="arrow-icon" />
-                                </button>
-
-                                <!-- Scroll right -->
-                                <button type="button" class="button-click">
-                                    <img src="./assets/icon-right.svg" alt="" class="arrow-icon" />
-                                </button>
-                            </div>
-
-                            <!-- Image 1: big -->
-                            <div class="deals-slide-main">
-                                <img src="./assets/fasco-icon-section1.svg" alt="Fashion model 1"
-                                    class="deals-slide-main-img" />
-
-                                <!-- Image 1 content -->
-                                <div class="deals-slide-caption">
-                                    <div class="deals-caption-row">
-                                        <span class="deals-caption-text">01</span>
-                                        <span class="deals-caption-line"></span>
-                                        <h6 class="deals-caption-text">
-                                            Spring Sale
-                                        </h6>
-                                    </div>
-
-                                    <p class="deals-caption-discount">
-                                        30% OFF
-                                    </p>
-                                </div>
-                            </div>
-
-                            <!-- Image 2 -->
-                            <div class="deals-slide">
-                                <img src="./assets/fasco-icon-section2.svg" alt="Fashion model 2"
-                                    class="deals-slide-img" />
-                                <div>
-                                    <!-- Scroll indicators under Image 2 -->
-                                    <div class="deals-dots">
-                                        <span class="deals-dot-active">
-                                            <span class="deals-dot-active-inner"></span>
-                                        </span>
-                                        <span class="span"></span>
-                                        <span class="span"></span>
-                                        <span class="span"></span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Image 3 -->
-                            <div class="30% OFF">
-                                <img src="./assets/fasco-icon-section3.svg" alt="Fashion model 3"
-                                    class="deals-slide-small-img" />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- section 4: -->
-        <section class="arrivals-section">
-            <div class="arrivals-container">
-                <div class="arrivals-header">
-                    <div class="arrivals-heading">
-                        <h3 class="arrivals-title">
-                            New Arrivals
-                        </h3>
-                        <p class="arrivals-text">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                            Scelerisque duis ultrices sollicitudin aliquam sem. Scelerisque
-                            duis ultrices sollicitudin
-                        </p>
-                    </div>
-                </div>
-                <div class="arrivals-filters">
-                    <button class="button-arrival">Men’s Fashion</button>
-                    <button class="button-shadow">Women’s Fashion</button>
-                    <button class="button-arrival">Women Accessories</button>
-                    <button class="button-arrival">Men Accessories</button>
-                    <button class="button-arrival">Discount Deals</button>
-                </div>
-                <div class="div-cards">
-                    <!-- card 1 -->
-                    <div class="card">
-                        <div>
-                            <img src="./assets/fasco-icon-section2-1.svg" alt="" />
-                        </div>
-                        <div class="div-spanCard">
-                            <div>
-                                <h4 class="text-card">Shiny Dress</h4>
-                                <span class="card-brand">Al Karam</span>
-                            </div>
-                            <div class="card-stars">
-                                <span><img src="./assets/icon-star.svg" alt="icon-star" /></span>
-                                <span><img src="./assets/icon-star.svg" alt="icon-star" /></span>
-                                <span><img src="./assets/icon-star.svg" alt="icon-star" /></span>
-                                <span><img src="./assets/icon-star.svg" alt="icon-star" /></span>
-                                <span><img src="./assets/icon-star.svg" alt="icon-star" /></span>
-                            </div>
-                        </div>
-                        <div class="card-reviews">
-                            <span class="span-text">(4.1k) Customer Reviews</span>
-                        </div>
-
-                        <div class="card-footer">
-                            <span class="span-prix">$95.50</span>
-                            <span class="span-sold">Almost Sold Out</span>
-                        </div>
-                    </div>
-                    <!-- card 2 -->
-                    <div class="card">
-                        <div>
-                            <img src="./assets/fasco-icon-section2-2.svg" alt="" />
-                        </div>
-                        <div class="div-spanCard">
-                            <div>
-                                <h4 class="text-card">Long Dress</h4>
-                                <span class="card-brand">Al Karam</span>
-                            </div>
-                            <!-- div 5 star -->
-                            <div class="card-stars">
-                                <span><img src="./assets/icon-star.svg" alt="icon-star" /></span>
-                                <span><img src="./assets/icon-star.svg" alt="icon-star" /></span>
-                                <span><img src="./assets/icon-star.svg" alt="icon-star" /></span>
-                                <span><img src="./assets/icon-star.svg" alt="icon-star" /></span>
-                                <span><img src="./assets/icon-star.svg" alt="icon-star" /></span>
-                            </div>
-                        </div>
-                        <div class="card-reviews">
-                            <span class="span-text">(4.1k) Customer Reviews</span>
-                        </div>
-
-                        <div class="card-footer">
-                            <span class="span-prix">$95.50</span>
-                            <span class="span-sold">Almost Sold Out</span>
-                        </div>
-                    </div>
-                    <!-- card 3 -->
-                    <div class="card">
-                        <div>
-                            <img src="./assets/fasco-icon-section2-3.svg" alt="" />
-                        </div>
-                        <div class="div-spanCard">
-                            <div>
-                                <h4 class="text-card">Full Sweater</h4>
-                                <span class="card-brand">Al Karam</span>
-                            </div>
-                            <!-- div 5 star -->
-                            <div class="card-stars">
-                                <span><img src="./assets/icon-star.svg" alt="icon-star" /></span>
-                                <span><img src="./assets/icon-star.svg" alt="icon-star" /></span>
-                                <span><img src="./assets/icon-star.svg" alt="icon-star" /></span>
-                                <span><img src="./assets/icon-star.svg" alt="icon-star" /></span>
-                                <span><img src="./assets/icon-star.svg" alt="icon-star" /></span>
-                            </div>
-                        </div>
-                        <div class="card-reviews">
-                            <span class="span-text">(4.1k) Customer Reviews</span>
-                        </div>
-
-                        <div class="card-footer">
-                            <span class="span-prix">$95.50</span>
-                            <span class="span-sold">Almost Sold Out</span>
-                        </div>
-                    </div>
-                    <!-- card 4 -->
-                    <div class="card">
-                        <div>
-                            <img src="./assets/fasco-icon-section2-4.svg" alt="" />
-                        </div>
-                        <div class="div-spanCard">
-                            <div>
-                                <h4 class="text-card">White Dress</h4>
-                                <span class="card-brand">Al Karam</span>
-                            </div>
-                            <!-- div 5 star -->
-                            <div class="card-stars">
-                                <span><img src="./assets/icon-star.svg" alt="icon-star" /></span>
-                                <span><img src="./assets/icon-star.svg" alt="icon-star" /></span>
-                                <span><img src="./assets/icon-star.svg" alt="icon-star" /></span>
-                                <span><img src="./assets/icon-star.svg" alt="icon-star" /></span>
-                                <span><img src="./assets/icon-star.svg" alt="icon-star" /></span>
-                            </div>
-                        </div>
-                        <div class="card-reviews">
-                            <span class="span-text">(4.1k) Customer Reviews</span>
-                        </div>
-
-                        <div class="card-footer">
-                            <span class="span-prix">$95.50</span>
-                            <span class="span-sold">Almost Sold Out</span>
-                        </div>
-                    </div>
-                    <!-- card 5 -->
-                    <div class="card">
-                        <div>
-                            <img src="./assets/fasco-icon-section2-5.svg" alt="" />
-                        </div>
-                        <div class="div-spanCard">
-                            <div>
-                                <h4 class="text-card">Colorful Dress</h4>
-                                <span class="card-brand">Al Karam</span>
-                            </div>
-                            <!-- div 5 star -->
-                            <div class="card-stars">
-                                <span><img src="./assets/icon-star.svg" alt="icon-star" /></span>
-                                <span><img src="./assets/icon-star.svg" alt="icon-star" /></span>
-                                <span><img src="./assets/icon-star.svg" alt="icon-star" /></span>
-                                <span><img src="./assets/icon-star.svg" alt="icon-star" /></span>
-                                <span><img src="./assets/icon-star.svg" alt="icon-star" /></span>
-                            </div>
-                        </div>
-                        <div class="card-reviews">
-                            <span class="span-text">(4.1k) Customer Reviews</span>
-                        </div>
-
-                        <div class="card-footer">
-                            <span class="span-prix">$95.50</span>
-                            <span class="span-sold">Almost Sold Out</span>
-                        </div>
-                    </div>
-                    <!-- card 6 -->
-                    <div class="card">
-                        <div>
-                            <img src="./assets/fasco-icon-section2-6.svg" alt="" />
-                        </div>
-                        <div class="div-spanCard">
-                            <div>
-                                <h4 class="text-card">White Shirt</h4>
-                                <span class="card-brand">Al Karam</span>
-                            </div>
-                            <!-- div 5 star -->
-                            <div class="card-stars">
-                                <span><img src="./assets/icon-star.svg" alt="icon-star" /></span>
-                                <span><img src="./assets/icon-star.svg" alt="icon-star" /></span>
-                                <span><img src="./assets/icon-star.svg" alt="icon-star" /></span>
-                                <span><img src="./assets/icon-star.svg" alt="icon-star" /></span>
-                                <span><img src="./assets/icon-star.svg" alt="icon-star" /></span>
-                            </div>
-                        </div>
-                        <div class="card-reviews">
-                            <span class="span-text">(4.1k) Customer Reviews</span>
-                        </div>
-
-                        <div class="card-footer">
-                            <span class="span-prix">$95.50</span>
-                            <span class="span-sold">Almost Sold Out</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <button class="arrivals-more-btn">
-                View More
+            <!-- Scroll right -->
+            <button type="button" class="button-click">
+              <img src="./assets/icon-right.svg" alt="" class="arrow-icon" />
             </button>
-        </section>
-        <!-- section 5: -->
-        <section class="peaky-section">
-            <!-- PRODUCT
-                 < 991px  : stacked (image on top, text below)
-                 >= 991px : Figma layout (1920 x 570.2) that grows/shrinks with the screen -->
-            <div class="peaky-wrapper">
+          </div>
 
-                <!-- gray diagonal panel (desktop) -->
-                <div class="peaky-diagonal-panel">
-                </div>
-                <!-- diagonal line (desktop) -->
-                <svg class="peaky-diagonal-line" viewBox="0 0 945 280" preserveAspectRatio="none">
-                    <line x1="520" y1="0" x2="428" y2="280" stroke="#000" stroke-width="1.5"
-                        vector-effect="non-scaling-stroke" />
-                </svg>
-
-                <!-- model (mobile only) -->
-                <img src="./assets/fasco-icon-section-3.svg" alt="Woman wearing the Peaky Blinders outfit"
-                    class="peaky-model-mobile" />
-
-                <!-- model + annotations (desktop): inset 5% = space around, everything scales together -->
-                <div class="peaky-model-zone">
-                    <!-- image (model + black shapes) -->
-                    <img src="./assets/fasco-icon-section-3.svg" alt="Woman wearing the Peaky Blinders outfit"
-                        class="peaky-model-img" />
-
-                    <!-- annotation lines -->
-                    <svg class="peaky-annotations" viewBox="0 0 945 280" preserveAspectRatio="none">
-                        <g fill="none" stroke="#4a4a4a" stroke-width="1">
-                            <!-- Flat Cap -->
-                            <polyline points="259,15 294,15 306,28" vector-effect="non-scaling-stroke" />
-                            <!-- Suspender -->
-                            <polyline points="218,70 154,70 143,82" vector-effect="non-scaling-stroke" />
-                            <!-- Hugo Boss (right) -->
-                            <polyline points="236,102 271,102 282,114" vector-effect="non-scaling-stroke" />
-                            <!-- Hugo Boss (left) -->
-                            <polyline points="197,149 133,149 122,161" vector-effect="non-scaling-stroke" />
-                            <!-- Santoni -->
-                            <polyline points="238,232 272,232 283,245" vector-effect="non-scaling-stroke" />
-                        </g>
-                    </svg>
-
-                    <!-- circles -->
-                    <span class="span-circle circle-flat-cap"></span>
-                    <span class="span-circle circle-suspender"></span>
-                    <span class="span-circle circle-hugo-right"></span>
-                    <span class="span-circle circle-hugo-left"></span>
-                    <span class="span-circle circle-santoni"></span>
-
-                    <!-- labels -->
-                    <span class="span-picky label-flat-cap">Flat Cap</span>
-                    <span class="span-picky label-suspender">Suspender</span>
-                    <span class="span-picky label-hugo-right">Hugo Boss</span>
-                    <span class="span-picky label-hugo-left">Hugo Boss</span>
-                    <span class="span-picky label-santoni">Santoni</span>
-                </div>
-
-                <!-- product info (your sizes) : stacked under the image < 991px, on the gray panel >= 991px -->
-                <div class="peaky-info">
-                    <span class="peaky-collection">Women Collection</span>
-                    <h2 class="peaky-title">Peaky Blinders</h2>
-                    <h3 class="peaky-desc-title">DESCRIPTION</h3>
-                    <p class="peaky-desc">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Scelerisque duis ultrices sollicitudin
-                        aliquam sem. Scelerisque duis ultrices sollicitudin. Lorem ipsum dolor sit amet, consectetur
-                        adipiscing elit. Scelerisque duis.
-                    </p>
-                    <div class="peaky-size-row">
-                        <span class="peaky-size-label">Size:</span>
-                        <span class="peaky-size-badge">M</span>
-                    </div>
-                    <p class="peaky-price">
-                        <span class="peaky-price-int">$100</span><span class="peaky-price-dec">.00</span>
-                    </p>
-                    <button type="button" class="peaky-buy-btn">
-                        Buy Now
-                    </button>
-                </div>
-            </div>
-
-            <!-- FEATURES -->
-            <div class="features-row">
-                <div class="feature-item">
-                    <img src="./assets/icon-section3-1.svg" alt="High Quality icon" class="feature-icon" />
-                    <div class="feature-text">
-                        <span class="span-quality">High Quality</span>
-                        <span class="span-crafter">crafted from top materials</span>
-                    </div>
-                </div>
-                <div class="feature-item">
-                    <img src="./assets/icon-section3-2.svg" alt="Warranty Protection icon" class="feature-icon" />
-                    <div class="feature-text">
-                        <span class="span-quality">Warranty Protection</span>
-                        <span class="span-crafter">Over 2 years</span>
-                    </div>
-                </div>
-                <div class="feature-item">
-                    <img src="./assets/icon-section3-3.svg" alt="Free Shipping icon" class="feature-icon" />
-                    <div class="feature-text">
-                        <span class="span-quality">Free Shipping</span>
-                        <span class="span-crafter">Order over 150 $</span>
-                    </div>
-                </div>
-                <div class="feature-item">
-                    <img src="./assets/icon-section3-4.svg" alt="24/7 Support icon" class="feature-icon" />
-                    <div class="feature-text">
-                        <span class="span-quality">24 / 7 Support</span>
-                        <span class="span-crafter">Dedicated support</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- section 6: -->
-        <section class="insta-section">
-            <div class="insta-container">
-                <div class="insta-header">
-                    <div class="insta-heading">
-                        <h3 class="insta-title">
-                            Follow Us On Instagram
-                        </h3>
-                        <p class="insta-text">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                            Scelerisque duis ultrices sollicitudin aliquam sem. Scelerisque
-                            duis ultrices sollicitudin
-                        </p>
-                    </div>
-                </div>
-
-                <div class="insta-viewport">
-                    <div class="auto-scroll insta-track">
-                        <div>
-                            <img src="./assets/fasco-section4-image-1.svg" class="insta-img-offset"
-                                alt="Fashion collection card 1" />
-                        </div>
-
-                        <!-- card img 2 -->
-                        <div>
-                            <img src="./assets/fasco-section4-image-2.svg" alt="Fashion collection card 2" />
-                        </div>
-
-                        <!-- card img 3 -->
-                        <div>
-                            <img src="./assets/fasco-section4-image-3.svg" class="insta-img-offset"
-                                alt="Fashion collection card 3" />
-                        </div>
-
-                        <!-- card img 4 -->
-                        <div>
-                            <img src="./assets/fasco-section4-image-4.svg" alt="Fashion collection card 4" />
-                        </div>
-
-                        <!-- card img 5 -->
-                        <div>
-                            <img src="./assets/fasco-section4-image-5.svg" class="insta-img-offset"
-                                alt="Fashion collection card 5" />
-                        </div>
-
-                        <!-- card img 6 -->
-                        <div>
-                            <img src="./assets/fasco-section4-image-6.svg" alt="Fashion collection card 6" />
-                        </div>
-
-                        <!-- card img 7 -->
-                        <div>
-                            <img src="./assets/fasco-section4-image-7.svg" class="insta-img-offset"
-                                alt="Fashion collection card 7" />
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- section 7: -->
-        <section class="reviews-section">
-            <div class="reviews-container">
-                <div class="reviews-heading">
-                    <h3 class="reviews-title">
-                        This Is What Our Customers Say
-                    </h3>
-                    <p class="reviews-text">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Scelerisque duis
-                    </p>
-                </div>
-                <!-- div cards  -->
-                <div class="reviews-stage">
-                    <div class="reviews-cards">
-                        <!-- card 1 -->
-                        <div class="review-card-back">
-                            <div class="review-card-back-inner">
-                                <div class="review-photo-bg"></div>
-                                <div class="review-photo">
-                                    <img src="./assets/fasco-section5-card2.svg" alt="fasco image" />
-                                </div>
-                            </div>
-                        </div>
-                        <!-- card 2 -->
-                        <div class="review-card-right">
-                            <div class="review-card-right-inner">
-                                <div class="review-photo-bg"></div>
-                                <div class="review-photo">
-                                    <img src="./assets/fasco-section5-card2.svg" alt="fasco image" />
-                                </div>
-                                <div>
-                                    <p class="review-quote-sm">
-                                        "You won't regret it. I would like to personally thank you
-                                        for your outstanding product. Absolutely wonderful!"
-                                    </p>
-                                    <div class="review-stars-sm">
-                                        <span><img src="./assets/icon-star.svg" alt="icon-star" /></span>
-                                        <span><img src="./assets/icon-star.svg" alt="icon-star" /></span>
-                                        <span><img src="./assets/icon-star.svg" alt="icon-star" /></span>
-                                        <span><img src="./assets/icon-star.svg" alt="icon-star" /></span>
-                                        <span><img src="./assets/icon-star.svg" alt="icon-star" /></span>
-                                    </div>
-                                    <div class="review-divider"></div>
-                                    <div class="review-author">
-                                        <h5 class="review-name-sm">
-                                            Megen W.
-                                        </h5>
-                                        <span class="review-role-sm">UI
-                                            Designer</span>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                        <!-- card 3 -->
-                        <div class="review-card-main">
-                            <div class="review-card-main-inner">
-                                <div class="review-photo-bg-lg"></div>
-                                <div class="review-photo">
-                                    <img src="./assets/fasco-section5-card1.svg" alt="fasco image" />
-                                </div>
-                                <div>
-                                    <p class="review-quote">
-                                        "You won't regret it. I would like to personally thank you
-                                        for your outstanding product. Absolutely wonderful!"
-                                    </p>
-                                    <div class="review-stars">
-                                        <span><img src="./assets/icon-star.svg" alt="icon-star" /></span>
-                                        <span><img src="./assets/icon-star.svg" alt="icon-star" /></span>
-                                        <span><img src="./assets/icon-star.svg" alt="icon-star" /></span>
-                                        <span><img src="./assets/icon-star.svg" alt="icon-star" /></span>
-                                        <span><img src="./assets/icon-star.svg" alt="icon-star" /></span>
-                                    </div>
-                                    <div class="review-divider"></div>
-                                    <div class="review-author">
-                                        <h5 class="review-name">
-                                            James K.
-                                        </h5>
-                                        <span class="review-role">Traveler</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Scroll arrows on the left of Image 1 -->
-                    <div class="reviews-arrows">
-                        <!-- Scroll left -->
-                        <button type="button" class="button-click">
-                            <img src="./assets/icon-left.svg" alt="" class="arrow-icon" />
-                        </button>
-
-                        <!-- Scroll right -->
-                        <button type="button" class="button-click">
-                            <img src="./assets/icon-right.svg" alt="" class="arrow-icon" />
-                        </button>
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-        <!-- section 8: -->
-        <section class="newsletter-section">
-
-            <div class="newsletter-row">
-
-                <!-- div 1: Left image -->
-                <div class="newsletter-side">
-                    <img src="./assets/fasco-section6-card1.svg" alt="">
-                </div>
-
-                <!-- div 2: Center content -->
-                <div class="newsletter-center">
-
-                    <!-- Title and description -->
-                    <div class="newsletter-heading">
-
-                        <h3 class="newsletter-title">
-                            Subscribe To Our Newsletter
-                        </h3>
-
-                        <p class="newsletter-text">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                            Scelerisque duis <br> ultrices sollicitudin aliquam sem.
-                            Scelerisque duis ultrices sollicitudin
-                        </p>
-
-                    </div>
-                    <!-- Email -->
-                    <div class="newsletter-email">
-
-                        <span class="newsletter-email-text">
-                            michael@ymail.com
-                        </span>
-
-                    </div>
-                    <div class="newsletter-btn-wrap">
-                        <button class="newsletter-btn">Subscribe
-                            Now</button>
-
-                    </div>
-                </div>
-
-                <!-- div 3: Right image -->
-                <div class="newsletter-side">
-                    <img src="./assets/fasco-section6-card2.svg" alt="">
-                </div>
-            </div>
-
-        </section>
-    </main>
-    <footer class="site-footer">
-        <div class="footer-top">
-            <h2 class="footer-logo">FASCO</h2>
-            <nav class="navbar footer-nav">
-                <a href="#" class="nav-name">Support Center</a>
-                <a href="#" class="nav-name">Invoicing</a>
-                <a href="#" class="nav-name">Contract</a>
-                <a href="#" class="nav-name">Careers</a>
-                <a href="#" class="nav-name">Blog</a>
-                <a href="#" class="nav-name">FAQ,s</a>
-            </nav>
         </div>
-        <div class="footer-copyright">
-            <span>Copyright &copy; 2022 Xpro . All Rights Reseved.</span>
+
+      </div>
+
+    </section>
+
+    <!-- section 8: -->
+    <section class="newsletter-section">
+
+      <div class="newsletter-row">
+
+        <!-- div 1: Left image -->
+        <div class="newsletter-side">
+          <img src="./assets/fasco-section6-card1.svg" alt="">
         </div>
-    </footer>
+
+        <!-- div 2: Center content -->
+        <div class="newsletter-center">
+
+          <!-- Title and description -->
+          <div class="newsletter-heading">
+
+            <h3 class="newsletter-title">
+              Subscribe To Our Newsletter
+            </h3>
+
+            <p class="newsletter-text">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Scelerisque duis <br> ultrices sollicitudin aliquam sem.
+              Scelerisque duis ultrices sollicitudin
+            </p>
+
+          </div>
+          <!-- Email -->
+          <div class="newsletter-email">
+
+            <span class="newsletter-email-text">
+              michael@ymail.com
+            </span>
+
+          </div>
+          <div class="newsletter-btn-wrap">
+            <button class="newsletter-btn">Subscribe
+              Now</button>
+
+          </div>
+        </div>
+
+        <!-- div 3: Right image -->
+        <div class="newsletter-side">
+          <img src="./assets/fasco-section6-card2.svg" alt="">
+        </div>
+      </div>
+
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="footer-top">
+      <h2 class="footer-logo">FASCO</h2>
+      <nav class="navbar footer-nav">
+        <a href="#" class="nav-name">Support Center</a>
+        <a href="#" class="nav-name">Invoicing</a>
+        <a href="#" class="nav-name">Contract</a>
+        <a href="#" class="nav-name">Careers</a>
+        <a href="#" class="nav-name">Blog</a>
+        <a href="#" class="nav-name">FAQ,s</a>
+      </nav>
+    </div>
+    <div class="footer-copyright">
+      <span>Copyright &copy; 2022 Xpro . All Rights Reseved.</span>
+    </div>
+  </footer>
 </body>
 
 </html>

@@ -417,12 +417,15 @@
       }
 
       /* ===== Peaky Blinders ===== */
+      /* >= 991px : sizes follow the section width (cqw) -> same look as the design
+         on every laptop / desktop / zoom. If the text needs more room, the section
+         grows instead of cutting it. < 991px : image then text, stacked. */
       .peaky-section {
         @apply relative w-full my-[26px];
       }
       .peaky-wrapper {
-        @apply relative w-full flex flex-col overflow-hidden bg-white min-[991px]:block min-[991px]:aspect-[1920/570.2];
-        container-type: inline-size;  /* = @container */
+        @apply relative w-full flex flex-col overflow-hidden bg-white min-[991px]:flex-row min-[991px]:items-center min-[991px]:min-h-[29.7vw]; /* 29.7vw = 570/1920 design ratio, grows if the text needs more */
+        container-type: inline-size;  /* = @container -> 1cqw = 1% of the section width */
       }
       .peaky-diagonal-panel {
         @apply hidden min-[991px]:block absolute inset-0 bg-[#D9D9D9] [clip-path:polygon(55.03%_0,100%_0,100%_100%,45.29%_100%)];
@@ -433,8 +436,10 @@
       .peaky-model-mobile {
         @apply min-[991px]:hidden mx-auto my-[30px] h-[360px] w-auto max-w-full object-contain;
       }
+      /* the model zone keeps the design ratio (centered), so the annotations always
+         stay on the right spot even if the section grows */
       .peaky-model-zone {
-        @apply hidden min-[991px]:block absolute inset-[5%] z-10;
+        @apply hidden min-[991px]:block absolute left-[5%] top-1/2 w-[90%] -translate-y-1/2 aspect-[1920/570.2] z-10;
       }
       .peaky-model-img {
         @apply absolute bottom-0 left-[9.3%] h-full w-auto max-w-none z-10;
@@ -472,52 +477,82 @@
       .label-santoni {
         @apply left-[29.95%] top-[87.5%];
       }
+      /* labels text scales with the section */
+      .peaky-model-zone .span-picky {
+        font-size: max(8px, 1.02cqw);
+      }
+      .peaky-model-zone .span-circle {
+        width: max(10px, 1.1cqw);
+        height: max(10px, 1.1cqw);
+      }
+
+      /* ----- product info ----- */
       .peaky-info {
-        @apply relative z-30 flex flex-col justify-center bg-[#D9D9D9] px-6 py-10 min-[991px]:absolute min-[991px]:inset-y-0 min-[991px]:left-[56.6%] min-[991px]:w-[40%] min-[991px]:bg-transparent min-[991px]:p-0;
+        @apply relative z-30 flex flex-col justify-center bg-[#D9D9D9] px-6 py-10 min-[991px]:ml-[56.6%] min-[991px]:w-[40%] min-[991px]:bg-transparent min-[991px]:px-0;
       }
       .peaky-collection {
-        @apply font-poppins text-[16px] leading-[100%] text-grey-600;
+        @apply font-poppins leading-[100%] text-grey-600;
+        font-size: max(13px, 0.833cqw);
       }
       .peaky-title {
-        @apply font-volkhov text-[46px] leading-[100%] text-heather-grey my-[20px];
+        @apply font-volkhov leading-[100%] text-heather-grey;
+        font-size: max(28px, 2.396cqw);
+        margin-block: max(10px, 1.042cqw);
       }
       .peaky-desc-title {
-        @apply font-poppins text-[16px] leading-[100%] underline text-black-900;
+        @apply font-poppins leading-[100%] underline text-black-900;
+        font-size: max(13px, 0.833cqw);
       }
       .peaky-desc {
-        @apply my-[20px] font-poppins text-[16px] leading-[100%] text-grey-600;
+        @apply font-poppins leading-[1.35] text-grey-600;
+        font-size: max(13px, 0.833cqw);
+        margin-block: max(10px, 1.042cqw);
       }
       .peaky-size-row {
-        @apply flex gap-[15px] items-center;
+        @apply flex items-center;
+        gap: max(10px, 0.78cqw);
       }
       .peaky-size-label {
-        @apply font-poppins text-[16px] leading-[100%] text-grey-600;
+        @apply font-poppins leading-[100%] text-grey-600;
+        font-size: max(13px, 0.833cqw);
       }
       .peaky-size-badge {
-        @apply font-poppins text-[16px] leading-[100%] text-white-900 bg-black-900 py-[6px] px-[20px] rounded-[10px];
+        @apply font-poppins leading-[100%] text-white-900 bg-black-900 rounded-[10px];
+        font-size: max(13px, 0.833cqw);
+        padding: max(5px, 0.3125cqw) max(14px, 1.042cqw);
       }
       .peaky-price {
-        @apply my-[20px] font-poppins font-medium leading-[100%] text-black-900;
+        @apply font-poppins font-medium leading-[100%] text-black-900;
+        margin-block: max(10px, 1.042cqw);
       }
       .peaky-price-int {
-        @apply text-[28px];
+        font-size: max(20px, 1.458cqw);
       }
       .peaky-price-dec {
-        @apply text-[24px];
+        font-size: max(17px, 1.25cqw);
       }
       .peaky-buy-btn {
-        @apply flex w-[207px] h-[56px] bg-black-900 hover:bg-black-900/70 cursor-pointer items-center justify-center rounded-[10px] text-white-900 font-poppins text-[16px] leading-[100%];
+        @apply flex shrink-0 bg-black-900 hover:bg-black-900/70 cursor-pointer items-center justify-center rounded-[10px] text-white-900 font-poppins leading-[100%];
+        width: max(150px, 10.78cqw);
+        height: max(42px, 2.917cqw);
+        font-size: max(14px, 0.833cqw);
+      }
+      @media (min-width: 991px) {
+        .peaky-info {
+          padding-block: max(20px, 2cqw);
+        }
       }
 
       /* ===== Features ===== */
+      /* phone : 1 column / tablet & small laptop : 2 columns / >= 1200px : 1 row */
       .features-row {
-        @apply mx-auto max-w-[1040px] px-10 flex justify-between py-[72px];
+        @apply mx-auto max-w-[1040px] px-6 sm:px-10 py-[56px] min-[1200px]:py-[72px] grid grid-cols-1 gap-8 sm:grid-cols-2 sm:gap-x-10 min-[1200px]:flex min-[1200px]:justify-between;
       }
       .feature-item {
         @apply flex items-center gap-4;
       }
       .feature-icon {
-        @apply w-[38px] h-[50px];
+        @apply w-[38px] h-[50px] shrink-0;
       }
       .feature-text {
         @apply flex flex-col w-fit;
@@ -581,91 +616,170 @@
       }
 
       /* ===== Customer reviews ===== */
+      /* --k = 1px on a 1920px screen (design size), scales with the screen and the zoom.
+         Never smaller than 0.62px so the cards stay readable on small laptops. */
       .reviews-section {
-        @apply py-5 bg-white-700;
-      }
-      .reviews-container {
-        @apply mt-[150px];
+        --k: max(0.62px, calc(min(100vw, 1920px) / 1920));
+        @apply relative overflow-hidden bg-white-700;
+        padding-block: max(60px, 100 * var(--k));
       }
       .reviews-heading {
-        @apply text-center space-y-[20px];
+        @apply px-6 text-center;
       }
       .reviews-title {
-        @apply font-volkhov text-[46px] leading-[100%] text-heather-grey whitespace-nowrap;
+        @apply font-volkhov leading-[100%] text-heather-grey min-[991px]:whitespace-nowrap;
+        font-size: max(30px, 46 * var(--k));
       }
       .reviews-text {
-        @apply font-poppins text-[16px] leading-[26px] text-grey-900 max-w-[614px] mx-auto text-center;
+        @apply mx-auto max-w-[614px] text-center font-poppins text-grey-900;
+        margin-top: max(14px, 20 * var(--k));
+        font-size: max(14px, 16 * var(--k));
+        line-height: 1.625;
       }
+
+      /* stage : big card in the middle, the 2 small cards behind it */
       .reviews-stage {
-        @apply relative mx-auto max-w-[1040px] flex flex-col items-center justify-center;
+        @apply relative mx-auto;
+        height: calc(400 * var(--k));
+        margin-top: max(40px, 80 * var(--k));
       }
-      .reviews-cards {
-        @apply flex relative;
-      }
-      .review-card-back {
-        @apply mt-[70px] absolute -right-[9px] top-[160px] w-[646px] h-[299px] -translate-y-1/2 z-0;
-      }
-      .review-card-back-inner {
-        @apply relative bg-white-900 flex gap-[83px] p-[50px] max-w-[856px] shadow-[0px_20px_60px_0px_#2E213D14];
-      }
-      .review-photo-bg {
-        @apply bg-grey-800 w-[180px] h-[180px];
-      }
-      .review-photo {
-        @apply absolute top-[30px] left-[69px];
-      }
-      .review-card-right {
-        @apply mt-[70px] absolute -right-[619px] top-[160px] w-[600px] h-[299px] -translate-y-1/2 z-0;
-      }
-      .review-card-right-inner {
-        @apply relative flex justify-between gap-[200px] bg-white-900 flex gap-[83px] p-[50px] max-w-[856px] shadow-[0px_20px_60px_0px_#2E213D14];
-      }
-      .review-quote-sm {
-        @apply font-poppins text-[12px] leading-[100%] text-heather-grey;
-      }
-      .review-stars-sm {
-        @apply flex mt-[30px] w-[71px] h-[14px];
-      }
-      .review-divider {
-        @apply w-[230px] h-[1px] bg-heather-grey mt-[27px] mb-[15px];
-      }
-      .review-author {
-        @apply space-y-[13px];
-      }
-      .review-name-sm {
-        @apply font-volkhov text-[24px] leading-[100%] text-heather-grey;
-      }
-      .review-role-sm {
-        @apply font-poppins text-[12px] leading-[100%] text-heather-grey;
+      .review-card {
+        @apply absolute flex items-center bg-white-900 shadow-[0px_20px_60px_0px_#2E213D14];
       }
       .review-card-main {
-        @apply absolute top-0 left-1/2 -translate-x-1/2 bg-white-900 flex gap-[50px] w-[864px] h-[400px] z-99 shadow-[0px_20px_60px_0px_#2E213D14];
+        @apply left-1/2 top-0 z-10 -translate-x-1/2;
+        width: calc(864 * var(--k));
+        height: calc(400 * var(--k));
+        padding: calc(50 * var(--k));
+        gap: calc(83 * var(--k));
       }
-      .review-card-main-inner {
-        @apply relative bg-white-900 flex gap-[83px] p-[50px] shadow-[0px_20px_60px_0px_#2E213D14];
+      .review-card-left,
+      .review-card-right {
+        @apply top-1/2 z-0 -translate-y-1/2;
+        width: calc(646 * var(--k));
+        height: calc(299 * var(--k));
+        padding: calc(50 * var(--k));
+        gap: calc(83 * var(--k));
       }
-      .review-photo-bg-lg {
-        @apply bg-grey-800 w-[242px] h-[242px];
+      .review-card-left {
+        left: calc(50% - 692 * var(--k));   /* 260px visible on the left */
+      }
+      .review-card-right {
+        right: calc(50% - 692 * var(--k));  /* 260px visible on the right */
+      }
+
+      /* photo + grey square behind it (offset bottom-left) */
+      .review-photo-wrap {
+        @apply relative shrink-0;
+        width: calc(180 * var(--k));
+        height: calc(180 * var(--k));
+      }
+      .review-card-main .review-photo-wrap {
+        width: calc(242 * var(--k));
+        height: calc(242 * var(--k));
+      }
+      .review-photo-bg {
+        @apply absolute inset-0 bg-grey-800;
+        transform: translate(calc(-20 * var(--k)), calc(20 * var(--k)));
+      }
+      .review-photo {
+        @apply relative size-full object-cover;
+      }
+
+      /* text */
+      .review-body {
+        @apply min-w-0;
       }
       .review-quote {
-        @apply font-poppins text-[16px] leading-[100%] text-heather-grey max-w-[419px];
+        @apply font-poppins text-heather-grey;
+        font-size: max(10px, 12 * var(--k));
+        line-height: 1.5;
+      }
+      .review-card-main .review-quote {
+        @apply max-w-[419px];
+        font-size: max(13px, 16 * var(--k));
       }
       .review-stars {
-        @apply flex mt-[30px];
+        @apply flex;
+        margin-top: calc(20 * var(--k));
+      }
+      .review-card-main .review-stars {
+        margin-top: calc(30 * var(--k));
+      }
+      .review-stars img {
+        width: max(10px, 14 * var(--k));
+        height: max(10px, 14 * var(--k));
+      }
+      .review-card-main .review-stars img {
+        width: max(14px, 19 * var(--k));
+        height: max(14px, 19 * var(--k));
+      }
+      .review-divider {
+        @apply h-px bg-heather-grey;
+        width: calc(180 * var(--k));
+        margin-top: calc(20 * var(--k));
+        margin-bottom: calc(12 * var(--k));
+      }
+      .review-card-main .review-divider {
+        width: calc(230 * var(--k));
+        margin-top: calc(27 * var(--k));
+        margin-bottom: calc(15 * var(--k));
       }
       .review-name {
-        @apply font-volkhov text-[32px] leading-[100%] text-heather-grey;
+        @apply font-volkhov leading-[100%] text-heather-grey;
+        font-size: max(16px, 24 * var(--k));
+      }
+      .review-card-main .review-name {
+        font-size: max(22px, 32 * var(--k));
       }
       .review-role {
-        @apply font-poppins text-[16px] leading-[100%] text-heather-grey;
+        @apply block font-poppins leading-[100%] text-heather-grey;
+        margin-top: calc(13 * var(--k));
+        font-size: max(10px, 12 * var(--k));
       }
+      .review-card-main .review-role {
+        font-size: max(13px, 16 * var(--k));
+      }
+
+      /* arrows : centered under the big card */
       .reviews-arrows {
-        @apply absolute top-[470px] z-99 flex gap-3;
+        @apply flex justify-center gap-3;
+        margin-top: max(30px, 76 * var(--k));
+      }
+      .reviews-arrows .button-click {
+        width: max(40px, 48 * var(--k));
+        height: max(40px, 48 * var(--k));
+      }
+
+      /* phones / tablets (< 991px) : only the big card, photo on top */
+      @media (max-width: 990px) {
+        .reviews-stage {
+          @apply h-auto px-6;
+        }
+        .review-card-left,
+        .review-card-right {
+          @apply hidden;
+        }
+        .review-card-main {
+          @apply relative left-auto translate-x-0 mx-auto w-full max-w-[560px] h-auto flex-col text-center gap-8 p-8;
+        }
+        .review-card-main .review-photo-wrap {
+          @apply size-[200px];
+        }
+        .review-photo-bg {
+          transform: translate(-12px, 12px);
+        }
+        .review-card-main .review-stars {
+          @apply justify-center;
+        }
+        .review-card-main .review-divider {
+          @apply mx-auto;
+        }
       }
 
       /* ===== Newsletter ===== */
       .newsletter-section {
-        @apply mt-[650px] w-full max-w-[1200px] mx-auto px-[30px];
+        @apply mt-[100px] w-full max-w-[1200px] mx-auto px-[30px];
       }
       .newsletter-row {
         @apply flex items-center justify-between gap-[40px];
@@ -1291,108 +1405,86 @@
         </div>
       </div>
     </section>
-    <!-- section 7: -->
+    <!-- section 7: Customer reviews -->
     <section class="reviews-section">
-      <div class="reviews-container">
-        <div class="reviews-heading">
-          <h3 class="reviews-title">
-            This Is What Our Customers Say
-          </h3>
-          <p class="reviews-text">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            Scelerisque duis
-          </p>
-        </div>
-        <!-- div cards  -->
-        <div class="reviews-stage">
-          <div class="reviews-cards">
-            <!-- card 1 -->
-            <div class="review-card-back">
-              <div class="review-card-back-inner">
-                <div class="review-photo-bg"></div>
-                <div class="review-photo">
-                  <img src="./assets/fasco-section5-card2.svg" alt="fasco image" />
-                </div>
-              </div>
-            </div>
-            <!-- card 2 -->
-            <div class="review-card-right">
-              <div class="review-card-right-inner">
-                <div class="review-photo-bg"></div>
-                <div class="review-photo">
-                  <img src="./assets/fasco-section5-card2.svg" alt="fasco image" />
-                </div>
-                <div>
-                  <p class="review-quote-sm">
-                    "You won't regret it. I would like to personally thank you
-                    for your outstanding product. Absolutely wonderful!"
-                  </p>
-                  <div class="review-stars-sm">
-                    <span><img src="./assets/icon-star.svg" alt="icon-star" /></span>
-                    <span><img src="./assets/icon-star.svg" alt="icon-star" /></span>
-                    <span><img src="./assets/icon-star.svg" alt="icon-star" /></span>
-                    <span><img src="./assets/icon-star.svg" alt="icon-star" /></span>
-                    <span><img src="./assets/icon-star.svg" alt="icon-star" /></span>
-                  </div>
-                  <div class="review-divider"></div>
-                  <div class="review-author">
-                    <h5 class="review-name-sm">
-                      Megen W.
-                    </h5>
-                    <span class="review-role-sm">UI
-                      Designer</span>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-            <!-- card 3 -->
-            <div class="review-card-main">
-              <div class="review-card-main-inner">
-                <div class="review-photo-bg-lg"></div>
-                <div class="review-photo">
-                  <img src="./assets/fasco-section5-card1.svg" alt="fasco image" />
-                </div>
-                <div>
-                  <p class="review-quote">
-                    "You won't regret it. I would like to personally thank you
-                    for your outstanding product. Absolutely wonderful!"
-                  </p>
-                  <div class="review-stars">
-                    <span><img src="./assets/icon-star.svg" alt="icon-star" /></span>
-                    <span><img src="./assets/icon-star.svg" alt="icon-star" /></span>
-                    <span><img src="./assets/icon-star.svg" alt="icon-star" /></span>
-                    <span><img src="./assets/icon-star.svg" alt="icon-star" /></span>
-                    <span><img src="./assets/icon-star.svg" alt="icon-star" /></span>
-                  </div>
-                  <div class="review-divider"></div>
-                  <div class="review-author">
-                    <h5 class="review-name">
-                      James K.
-                    </h5>
-                    <span class="review-role">Traveler</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- Scroll arrows on the left of Image 1 -->
-          <div class="reviews-arrows">
-            <!-- Scroll left -->
-            <button type="button" class="button-click">
-              <img src="./assets/icon-left.svg" alt="" class="arrow-icon" />
-            </button>
-
-            <!-- Scroll right -->
-            <button type="button" class="button-click">
-              <img src="./assets/icon-right.svg" alt="" class="arrow-icon" />
-            </button>
-          </div>
-
-        </div>
-
+      <div class="reviews-heading">
+        <h3 class="reviews-title">
+          This Is What Our Customers Say
+        </h3>
+        <p class="reviews-text">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          Scelerisque duis
+        </p>
       </div>
 
+      <!-- cards -->
+      <div class="reviews-stage">
+        <!-- card left (behind) -->
+        <article class="review-card review-card-left" aria-hidden="true">
+          <div class="review-photo-wrap">
+            <div class="review-photo-bg"></div>
+            <img src="./assets/fasco-section5-card2.svg" alt="" class="review-photo" />
+          </div>
+        </article>
+
+        <!-- card right (behind) -->
+        <article class="review-card review-card-right">
+          <div class="review-photo-wrap">
+            <div class="review-photo-bg"></div>
+            <img src="./assets/fasco-section5-card2.svg" alt="Megen W." class="review-photo" />
+          </div>
+          <div class="review-body">
+            <p class="review-quote">
+              "You won't regret it. I would like to personally thank you
+              for your outstanding product. Absolutely wonderful!"
+            </p>
+            <div class="review-stars">
+              <img src="./assets/icon-star.svg" alt="" />
+              <img src="./assets/icon-star.svg" alt="" />
+              <img src="./assets/icon-star.svg" alt="" />
+              <img src="./assets/icon-star.svg" alt="" />
+              <img src="./assets/icon-star.svg" alt="" />
+            </div>
+            <div class="review-divider"></div>
+            <h5 class="review-name">Megen W.</h5>
+            <span class="review-role">UI Designer</span>
+          </div>
+        </article>
+
+        <!-- card main (front) -->
+        <article class="review-card review-card-main">
+          <div class="review-photo-wrap">
+            <div class="review-photo-bg"></div>
+            <img src="./assets/fasco-section5-card1.svg" alt="James K." class="review-photo" />
+          </div>
+          <div class="review-body">
+            <p class="review-quote">
+              "You won't regret it. I would like to personally thank you
+              for your outstanding product. Absolutely wonderful!"
+            </p>
+            <div class="review-stars" aria-label="5 stars">
+              <img src="./assets/icon-star.svg" alt="" />
+              <img src="./assets/icon-star.svg" alt="" />
+              <img src="./assets/icon-star.svg" alt="" />
+              <img src="./assets/icon-star.svg" alt="" />
+              <img src="./assets/icon-star.svg" alt="" />
+            </div>
+            <div class="review-divider"></div>
+            <h5 class="review-name">James K.</h5>
+            <span class="review-role">Traveler</span>
+          </div>
+        </article>
+      </div>
+
+      <!-- arrows -->
+      <div class="reviews-arrows">
+        <button type="button" class="button-click" aria-label="Previous review">
+          <img src="./assets/icon-left.svg" alt="" class="arrow-icon" />
+        </button>
+        <button type="button" class="button-click" aria-label="Next review">
+          <img src="./assets/icon-right.svg" alt="" class="arrow-icon" />
+        </button>
+      </div>
     </section>
 
     <!-- section 8: -->
